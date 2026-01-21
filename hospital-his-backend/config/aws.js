@@ -80,7 +80,7 @@ const deleteFile = async (key) => {
         });
 
         const response = await s3Client.send(command);
-        logger.info(`File deleted from S3: ${key}`),
+        logger.info(`File deleted from S3: ${key}`);
         return { success: true, key };
     } catch (error) {
         logger.error(`S3 delete error: ${error.message}`);
