@@ -123,7 +123,6 @@ hospital-his-backend/
 │   ├── ✅ notification.controller.js
 │   └── ✅ admin.controller.js
 │
-<<<<<<< HEAD
 ├── 📁 middleware/ (ALL 6 MIDDLEWARE COMPLETE ✅🔧)
 │   ├── 🔧 auth.middleware.js          # JWT verification - COMPLETED
 │   ├── 🔧 rbac.middleware.js          # Role-based access control - COMPLETED
@@ -159,41 +158,6 @@ hospital-his-backend/
 │   ├── ⬜ unit/
 │   ├── ⬜ integration/
 │   └── ⬜ e2e/
-=======
-├── middleware/
-│   ├── ✅ auth.middleware.js          # JWT verification
-│   ├── ✅ rbac.middleware.js          # Role-based access control
-│   ├── ✅ validation.middleware.js    # Request validation
-│   ├── ✅ error.middleware.js         # Error handling
-│   ├── ✅ audit.middleware.js         # Audit logging
-│   └── ✅ upload.middleware.js        # File upload handling
-│
-├── services/
-│   ├── ✅ patient.service.js          # Patient business logic
-│   ├── ✅ appointment.service.js      # Appointment scheduling
-│   ├── ✅ billing.service.js          # Billing calculations
-│   ├── ✅ insurance.service.js        # Insurance processing
-│   ├── ✅ inventory.service.js        # Stock management
-│   ├── ✅ notification.service.js     # Email/SMS/Push notifications
-│   ├── ✅ report.service.js           # Report generation
-│   ├── ✅ pdf.service.js              # PDF generation
-│   ├── ✅ excel.service.js            # Excel generation
-│   ├── ✅ socket.service.js           # Real-time updates
-│   └── ✅ ml.service.js               # ML API caller (Python bridge)
-│
-├── utils/
-│   ├── ✅ validators.js               # Input validators
-│   ├── ✅ helpers.js                  # Helper functions
-│   ├── ✅ encryption.js               # Password hashing
-│   ├── ✅ date.utils.js               # Date utilities
-│   ├── ✅ response.js                 # Standard API responses
-│   └── ✅ logger.js                   # Winston logger
-│
-├── tests/
-│   ├── ✅ unit/                       # Unit tests (patient, billing, validators, date)
-│   ├── ✅ integration/                # Integration tests (auth, patient APIs)
-│   └── ✅ e2e/                        # End-to-end tests (patient flow)
->>>>>>> 946bb99ccc8242776f0b9fbeb4e0a5d37ada4bc7
 │
 ├── 📁 socket/
 │   └── ⬜ socket.handler.js           # Socket.io event handlers
@@ -217,7 +181,6 @@ hospital-his-backend/
 ```
 hospital-his-ml/
 │
-<<<<<<< HEAD
 ├── 📁 revenue_leakage/
 │   ├── ⬜ app.py                      # Flask API for revenue ML
 │   ├── ⬜ data_processor.py           # Data preprocessing
@@ -252,7 +215,6 @@ hospital-his-ml/
 ```
 
 ---
-=======
 ├── revenue_leakage/
 │   ├── app.py                      # Flask API for revenue ML [DONE]
 │   ├── data_processor.py           # Data preprocessing [DONE]
@@ -285,7 +247,7 @@ hospital-his-ml/
 ├── docker-compose.yml              # Multi-service setup
 └── README.md
 
->>>>>>> 946bb99ccc8242776f0b9fbeb4e0a5d37ada4bc7
+
 Frontend Architecture (React.js)
 hospital-his-frontend/
 │
