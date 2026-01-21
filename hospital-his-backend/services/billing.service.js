@@ -164,6 +164,294 @@ class BillingService {
 
         return summary[0] || { totalBilled: 0, totalCollected: 0, totalOutstanding: 0, billCount: 0 };
     }
+
+    /**
+     * Add auto-generated charge to a bill
+     */
+    async addAutoCharge(billId, chargeData) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+        if (bill.isLocked) throw new Error('Cannot modify a locked bill');
+
+        const autoChargeItem = {
+            itemType: chargeData.itemType,
+            itemReference: chargeData.itemReference,
+            description: chargeData.description,
+            quantity: chargeData.quantity || 1,
+            rate: chargeData.rate,
+            amount: (chargeData.quantity || 1) * chargeData.rate,
+            netAmount: (chargeData.quantity || 1) * chargeData.rate,
+            isSystemGenerated: true,
+            billedAt: new Date(),
+        };
+
+        bill.items.push(autoChargeItem);
+        await bill.save();
+        return bill;
+    }
+
+    /**
+     * Generate bed charges for admission
+     */
+    async generateBedCharges(admissionId) {
+        const Admission = require('../models/Admission');
+        const admission = await Admission.findById(admissionId).populate('bed');
+        if (!admission || !admission.bed) throw new Error('Admission or bed not found');
+
+        const bill = await Billing.findOne({ visit: admissionId, visitModel: 'Admission', status: 'draft' });
+        if (!bill) throw new Error('Bill not found for this admission');
+
+        // Calculate duration
+        const admissionDate = new Date(admission.admissionDate);
+        const today = new Date();
+        const daysStayed = Math.ceil((today - admissionDate) / (1000 * 60 * 60 * 24));
+
+        // Get bed rate
+        let bedRate = 500; // Default
+        const tariff = await Tariff.findOne({ serviceType: 'bed', category: admission.bed.type, isActive: true });
+        if (tariff) bedRate = tariff.rate;
+
+        return this.addAutoCharge(bill._id, {
+            itemType: 'bed',
+            itemReference: admission.bed._id,
+            description: `Bed Charges - ${admission.bed.bedNumber} (${admission.bed.type}) - ${daysStayed} day(s)`,
+            quantity: daysStayed,
+            rate: bedRate,
+        });
+    }
+
+    /**
+     * Generate OT charges for surgery
+     */
+    async generateOTCharges(surgeryId) {
+        const Surgery = require('../models/Surgery');
+        const surgery = await Surgery.findById(surgeryId);
+        if (!surgery) throw new Error('Surgery not found');
+
+        const bill = await Billing.findOne({ patient: surgery.patient, status: 'draft' }).sort({ createdAt: -1 });
+        if (!bill) throw new Error('Active bill not found');
+
+        // OT room charges
+        const otRoomTariff = await Tariff.findOne({ serviceType: 'surgery', category: 'ot_room', isActive: true });
+        if (otRoomTariff) {
+            await this.addAutoCharge(bill._id, {
+                itemType: 'surgery',
+                itemReference: surgery._id,
+                description: `OT Room Charges - ${surgery.surgeryType}`,
+                quantity: 1,
+                rate: otRoomTariff.rate,
+            });
+        }
+
+        // Surgeon fees
+        const surgeonTariff = await Tariff.findOne({ serviceType: 'surgery', category: surgery.surgeryType, isActive: true });
+        if (surgeonTariff) {
+            await this.addAutoCharge(bill._id, {
+                itemType: 'surgery',
+                itemReference: surgery._id,
+                description: `Surgeon Fee - ${surgery.surgeryType}`,
+                quantity: 1,
+                rate: surgeonTariff.rate,
+            });
+        }
+
+        return bill;
+    }
+
+    /**
+     * Generate lab charges
+     */
+    async generateLabCharges(labTestId) {
+        const LabTest = require('../models/LabTest');
+        const labTest = await LabTest.findById(labTestId).populate('testMaster');
+        if (!labTest) throw new Error('Lab test not found');
+
+        const bill = await Billing.findOne({ patient: labTest.patient, status: 'draft' }).sort({ createdAt: -1 });
+        if (!bill) throw new Error('Active bill not found');
+
+        return this.addAutoCharge(bill._id, {
+            itemType: 'lab',
+            itemReference: labTest._id,
+            description: `Lab Test - ${labTest.testMaster?.testName || labTest.testName}`,
+            quantity: 1,
+            rate: labTest.testMaster?.price || labTest.price || 0,
+        });
+    }
+
+    /**
+     * Generate pharmacy charges
+     */
+    async generatePharmacyCharges(dispenseId) {
+        const PharmacyDispense = require('../models/PharmacyDispense');
+        const dispense = await PharmacyDispense.findById(dispenseId).populate('medicine');
+        if (!dispense) throw new Error('Dispense record not found');
+
+        const bill = await Billing.findOne({ patient: dispense.patient, status: 'draft' }).sort({ createdAt: -1 });
+        if (!bill) throw new Error('Active bill not found');
+
+        return this.addAutoCharge(bill._id, {
+            itemType: 'medicine',
+            itemReference: dispense._id,
+            description: `Medicine - ${dispense.medicine?.name || dispense.medicineName}`,
+            quantity: dispense.quantity,
+            rate: dispense.rate || dispense.medicine?.sellingPrice || 0,
+        });
+    }
+
+    /**
+     * Request discount on a bill
+     */
+    async requestDiscount(billId, discountAmount, reason, requestedBy) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+        if (bill.isLocked) throw new Error('Cannot request discount on locked bill');
+        if (bill.status !== 'draft') throw new Error('Discount can only be requested on draft bills');
+
+        bill.discountRequest = {
+            amount: discountAmount,
+            reason,
+            requestedBy,
+            requestedAt: new Date(),
+            status: 'pending',
+        };
+
+        bill.auditTrail.push({
+            action: 'discount_requested',
+            performedBy: requestedBy,
+            performedAt: new Date(),
+            details: { amount: discountAmount, reason },
+        });
+
+        await bill.save();
+        return bill;
+    }
+
+    /**
+     * Approve or reject discount
+     */
+    async approveDiscount(billId, approverId, isApproved, rejectionReason = null) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+        if (bill.discountRequest.status !== 'pending') throw new Error('No pending discount request');
+
+        if (isApproved) {
+            bill.discountRequest.status = 'approved';
+            bill.discountApprovedBy = approverId;
+            bill.discountApprovalDate = new Date();
+            bill.totalDiscount = (bill.totalDiscount || 0) + bill.discountRequest.amount;
+
+            bill.auditTrail.push({
+                action: 'discount_approved',
+                performedBy: approverId,
+                performedAt: new Date(),
+                details: { amount: bill.discountRequest.amount },
+            });
+        } else {
+            bill.discountRequest.status = 'rejected';
+            bill.discountRejectionReason = rejectionReason;
+
+            bill.auditTrail.push({
+                action: 'discount_rejected',
+                performedBy: approverId,
+                performedAt: new Date(),
+                details: { reason: rejectionReason },
+            });
+        }
+
+        await bill.save();
+        return bill;
+    }
+
+    /**
+     * Finalize bill (lock it)
+     */
+    async finalizeBill(billId, userId) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+        if (bill.isLocked) throw new Error('Bill is already finalized');
+
+        bill.status = 'finalized';
+        bill.isLocked = true;
+        bill.lockedAt = new Date();
+        bill.lockedBy = userId;
+
+        bill.auditTrail.push({
+            action: 'finalized',
+            performedBy: userId,
+            performedAt: new Date(),
+            previousStatus: 'draft',
+            newStatus: 'finalized',
+        });
+
+        await bill.save();
+        return bill;
+    }
+
+    /**
+     * Set payment responsibility (Patient vs Insurance)
+     */
+    async setPaymentResponsibility(billId, { patientAmount, insuranceAmount, insuranceClaimId, insuranceStatus }) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+
+        bill.paymentResponsibility = {
+            patientAmount: patientAmount || 0,
+            insuranceAmount: insuranceAmount || 0
+        };
+
+        if (insuranceClaimId) {
+            bill.insuranceClaim = insuranceClaimId;
+        }
+
+        if (insuranceStatus) {
+            bill.insuranceStatus = insuranceStatus;
+        } else if (insuranceAmount > 0) {
+            bill.insuranceStatus = 'pending';
+        }
+
+        await bill.save();
+        return bill;
+    }
+
+    /**
+     * Record a payment
+     */
+    async recordPayment(billId, { amount, mode, reference, notes, receivedBy }) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+
+        const newPaidAmount = (bill.paidAmount || 0) + Number(amount);
+
+        // Prevent overpayment
+        if (newPaidAmount > bill.grandTotal) {
+            throw new Error(`Payment amount exceeds outstanding balance. Balance: ${bill.balanceAmount}, Attempted: ${amount}`);
+        }
+
+        bill.paidAmount = newPaidAmount;
+        bill.balanceAmount = bill.grandTotal - bill.paidAmount;
+
+        // Update payment status
+        if (bill.paidAmount >= bill.grandTotal) {
+            bill.paymentStatus = PAYMENT_STATUS.PAID;
+            if (bill.insuranceStatus === 'pending' && mode === 'insurance') {
+                bill.insuranceStatus = 'settled';
+            }
+        } else if (bill.paidAmount > 0) {
+            bill.paymentStatus = PAYMENT_STATUS.PARTIAL;
+        }
+
+        bill.auditTrail.push({
+            action: 'payment_received',
+            performedBy: receivedBy,
+            performedAt: new Date(),
+            details: { amount, mode, reference, notes },
+            previousStatus: bill.paymentStatus,
+            newStatus: bill.paymentStatus
+        });
+
+        await bill.save();
+        return bill;
+    }
 }
 
 module.exports = new BillingService();

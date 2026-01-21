@@ -54,4 +54,15 @@ router.get('/dashboard', authorize('billing', 'admin'), billingController.getDas
  */
 router.post('/bills/:id/cancel', authorize('admin'), billingController.cancelBill);
 
+// New routes for advanced billing features
+router.post('/bills/:id/request-discount', authorize('billing', 'admin'), billingController.requestDiscount);
+router.post('/bills/:id/approve-discount', authorize('admin'), billingController.approveDiscount);
+router.post('/bills/:id/finalize', authorize('billing', 'admin'), billingController.finalizeBill);
+router.post('/bills/:id/responsibility', authorize('billing', 'admin'), billingController.setResponsibility);
+router.post('/bills/:id/pay', authorize('billing', 'admin'), billingController.recordPayment);
+router.post('/auto-charge', authorize('billing', 'admin', 'doctor', 'nurse'), billingController.generateAutoCharge);
+router.get('/reports/revenue', authorize('billing', 'admin'), billingController.getRevenueReport);
+router.get('/bills/:id/audit', authorize('billing', 'admin'), billingController.getBillAudit);
+router.get('/pending-discounts', authorize('admin'), billingController.getPendingDiscounts);
+
 module.exports = router;

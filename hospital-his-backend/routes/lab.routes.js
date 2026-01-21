@@ -11,7 +11,7 @@ router.use(authenticate);
  * @route   POST /api/lab/orders
  * @desc    Create a new lab order
  */
-router.post('/orders', authorize('doctor', 'nurse'), labController.createLabOrder);
+router.post('/orders', authorize('doctor', 'nurse', 'admin'), labController.createLabOrder);
 
 /**
  * @route   GET /api/lab/orders

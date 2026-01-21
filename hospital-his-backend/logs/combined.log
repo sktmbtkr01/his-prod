@@ -2898,3 +2898,964 @@ Error: User role 'doctor' is not authorized to access this route
 2026-01-21 13:22:21 [INFO]: 🔌 WebSocket enabled
 2026-01-21 13:22:21 [INFO]: 📋 Health check: http://localhost:5000/api/health
 2026-01-21 13:22:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:09:37 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:10:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 16:12:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:13:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:18:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:18:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:18:23 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:18:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:18:23 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 16:18:23 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 16:18:23 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:18:23 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 16:18:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:28:10 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 16:31:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:31:42 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:31:42 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 16:31:42 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 16:31:42 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:31:42 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 16:31:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:34:06 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 16:34:07 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 16:34:07 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 16:34:08 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 16:40:44 [ERROR]: Please provide email and password
+Error: Please provide email and password
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:17:21
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/utils/asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:175:3)
+2026-01-21 16:55:08 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:55:09 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:55:09 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:55:09 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:55:10 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:55:27 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:56:50 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:56:52 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:57:23 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:57:24 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:57:24 [ERROR]: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+ValidationError: Insurance validation failed: claimNumber: Path `claimNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 16:57:35 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 16:57:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:57:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:57:42 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:57:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:57:42 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 16:57:42 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 16:57:42 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:57:42 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 16:57:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:58:04 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 16:58:13 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 16:58:18 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 16:58:21 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 16:58:35 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 17:02:11 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 17:02:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:02:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:02:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:02:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:02:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 17:02:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 17:02:56 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:02:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 17:02:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:44:37 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:44:40 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:46:45 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:46:47 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:46:47 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:46:47 [ERROR]: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+ValidationError: Billing validation failed: visit: Visit reference is required, billNumber: Path `billNumber` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 17:46:53 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 17:46:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:46:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:46:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:46:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:46:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 17:46:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 17:46:56 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:46:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 17:46:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:48:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 17:48:57 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 17:49:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:49:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:49:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:49:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:49:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 17:49:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 17:49:02 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:49:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 17:49:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:51:51 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 17:51:53 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 17:51:53 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 17:53:43 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 17:53:48 [ERROR]: User role 'billing' is not authorized to access this route
+Error: User role 'billing' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-21 18:15:43 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-21 18:15:45 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-21 18:19:07 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:07 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:07 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:07 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:28 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:28 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:28 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:19:28 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:21:15 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:21:15 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:21:15 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:21:15 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:25:37 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 18:25:46 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:25:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:25:46 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:25:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:25:46 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 18:25:46 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 18:25:46 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:25:46 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 18:25:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:28:46 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:28:46 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:28:46 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:28:46 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 18:43:17 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 18:43:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:43:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:43:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:43:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:43:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 18:43:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 18:43:20 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:43:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 18:43:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:45:41 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-21 18:45:47 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-21 18:59:46 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 18:59:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 18:59:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:59:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 18:59:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 18:59:54 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:59:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 18:59:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:06:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 19:07:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 19:07:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:07:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:07:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:07:35 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 19:07:35 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 19:07:35 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:07:35 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 19:07:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:09:47 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 19:10:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 19:10:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:10:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:10:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:10:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 19:10:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 19:10:12 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:10:12 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 19:10:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:14:08 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 19:14:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 19:14:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:14:11 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:14:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:14:11 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 19:14:11 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 19:14:11 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:14:11 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 19:14:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:15:24 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:25 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:26 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:15:27 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 19:26:51 [ERROR]: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+ValidationError: Insurance validation failed: status: `submitted` is not a valid enum value for path `status`.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-21 20:01:47 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:01:47 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:01:47 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:01:47 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:21:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:03:59 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 20:04:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:04:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:04:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:04:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:04:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 20:04:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 20:04:21 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:04:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 20:04:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:17:45 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:46 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:46 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:47 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:50 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:51 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:51 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:51 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:56 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:56 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:56 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:56 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:57 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:57 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:17:57 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:27 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:27 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:27 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:27 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:27 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:36 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:19:48 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 20:20:06 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:20:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:20:06 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:20:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:20:06 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 20:20:06 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 20:20:06 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:20:06 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 20:20:06 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:19 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:20 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:22 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:22 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:22 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:23 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:23 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:24 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:24 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:25 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:26 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:26 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:26 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:26 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:20:26 [ERROR]: User not found
+Error: User not found
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-21 20:27:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-21 20:27:31 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:27:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:27:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:27:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:27:31 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-21 20:27:31 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-21 20:27:31 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:27:31 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-21 20:27:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:29:50 [WARN]: MongoDB disconnected. Attempting to reconnect...

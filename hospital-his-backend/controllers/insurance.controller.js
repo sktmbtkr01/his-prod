@@ -133,3 +133,146 @@ exports.addProvider = asyncHandler(async (req, res, next) => {
         data: provider,
     });
 });
+
+/**
+ * @desc    Submit claim with ICD validation
+ * @route   POST /api/insurance/claims/:id/submit
+ */
+const insuranceService = require('../services/insurance.service');
+
+exports.submitClaim = asyncHandler(async (req, res, next) => {
+    const claim = await insuranceService.submitClaimWithICD(req.params.id, req.user.id);
+
+    res.status(200).json({
+        success: true,
+        message: 'Claim submitted successfully',
+        data: claim,
+    });
+});
+
+/**
+ * @desc    Update pre-authorization status
+ * @route   PUT /api/insurance/claims/:id/pre-auth
+ */
+exports.updatePreAuthStatus = asyncHandler(async (req, res, next) => {
+    const { status, amount, remarks } = req.body;
+
+    const claim = await insuranceService.updatePreAuthStatus(
+        req.params.id,
+        status,
+        amount,
+        remarks,
+        req.user.id
+    );
+
+    res.status(200).json({
+        success: true,
+        message: 'Pre-authorization status updated',
+        data: claim,
+    });
+});
+
+/**
+ * @desc    Approve claim
+ * @route   POST /api/insurance/claims/:id/approve
+ */
+exports.approveClaim = asyncHandler(async (req, res, next) => {
+    const { approvedAmount, remarks } = req.body;
+
+    const claim = await insuranceService.approveClaim(
+        req.params.id,
+        approvedAmount,
+        req.user.id,
+        remarks
+    );
+
+    res.status(200).json({
+        success: true,
+        message: 'Claim approved',
+        data: claim,
+    });
+});
+
+/**
+ * @desc    Reject claim
+ * @route   POST /api/insurance/claims/:id/reject
+ */
+exports.rejectClaim = asyncHandler(async (req, res, next) => {
+    const { rejectionReason } = req.body;
+
+    const claim = await insuranceService.rejectClaim(
+        req.params.id,
+        rejectionReason,
+        req.user.id
+    );
+
+    res.status(200).json({
+        success: true,
+        message: 'Claim rejected',
+        data: claim,
+    });
+});
+
+/**
+ * @desc    Settle claim
+ * @route   POST /api/insurance/claims/:id/settle
+ */
+exports.settleClaim = asyncHandler(async (req, res, next) => {
+    const { settlementAmount, settlementReference, remarks } = req.body;
+
+    const claim = await insuranceService.settleClaim(
+        req.params.id,
+        settlementAmount,
+        settlementReference,
+        remarks,
+        req.user.id
+    );
+
+    res.status(200).json({
+        success: true,
+        message: 'Claim settled successfully',
+        data: claim,
+    });
+});
+
+/**
+ * @desc    Get claim timeline
+ * @route   GET /api/insurance/claims/:id/timeline
+ */
+exports.getClaimTimeline = asyncHandler(async (req, res, next) => {
+    const timeline = await insuranceService.getClaimTimeline(req.params.id);
+
+    res.status(200).json({
+        success: true,
+        data: timeline,
+    });
+});
+
+/**
+ * @desc    Get TPA providers  
+ * @route   GET /api/insurance/tpa-providers
+ */
+const TPAProvider = require('../models/TPAProvider');
+
+exports.getTPAProviders = asyncHandler(async (req, res, next) => {
+    const providers = await TPAProvider.find({ isActive: true }).sort({ name: 1 });
+
+    res.status(200).json({
+        success: true,
+        count: providers.length,
+        data: providers,
+    });
+});
+
+/**
+ * @desc    Add TPA provider
+ * @route   POST /api/insurance/tpa-providers
+ */
+exports.addTPAProvider = asyncHandler(async (req, res, next) => {
+    const provider = await TPAProvider.create(req.body);
+
+    res.status(201).json({
+        success: true,
+        data: provider,
+    });
+});

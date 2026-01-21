@@ -11,7 +11,6 @@ const billingSchema = new mongoose.Schema(
         billNumber: {
             type: String,
             unique: true,
-            required: true,
         },
         patient: {
             type: mongoose.Schema.Types.ObjectId,
@@ -21,17 +20,17 @@ const billingSchema = new mongoose.Schema(
         visit: {
             type: mongoose.Schema.Types.ObjectId,
             refPath: 'visitModel',
-            required: [true, 'Visit reference is required'],
+            // Optional for manual bills
         },
         visitModel: {
             type: String,
             enum: ['Appointment', 'Admission', 'Emergency'],
-            required: true,
+            // Required only if visit is present
         },
         visitType: {
             type: String,
             enum: Object.values(VISIT_TYPES),
-            required: [true, 'Visit type is required'],
+            default: 'opd',
         },
         billDate: {
             type: Date,
@@ -137,6 +136,75 @@ const billingSchema = new mongoose.Schema(
             ref: 'User',
             required: true,
         },
+        // Payment Responsibility
+        paymentResponsibility: {
+            patientAmount: { type: Number, default: 0 },
+            insuranceAmount: { type: Number, default: 0 },
+        },
+        insuranceStatus: {
+            type: String,
+            enum: ['none', 'pending', 'submitted', 'approved', 'rejected', 'settled'],
+            default: 'none',
+        },
+        // Discount Approval Workflow
+        discountRequest: {
+            amount: { type: Number, default: 0 },
+            reason: { type: String, trim: true },
+            requestedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+            requestedAt: { type: Date },
+            status: {
+                type: String,
+                enum: ['none', 'pending', 'approved', 'rejected'],
+                default: 'none',
+            },
+        },
+        discountApprovedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        discountApprovalDate: {
+            type: Date,
+        },
+        discountRejectionReason: {
+            type: String,
+            trim: true,
+        },
+        // Lock Mechanism
+        isLocked: {
+            type: Boolean,
+            default: false,
+        },
+        lockedAt: {
+            type: Date,
+        },
+        lockedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        // Audit Trail
+        auditTrail: [
+            {
+                action: {
+                    type: String,
+                    required: true,
+                    // Actions: created, updated, finalized, discount_requested, discount_approved, discount_rejected, payment_received, cancelled
+                },
+                performedBy: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'User',
+                    required: true,
+                },
+                performedAt: {
+                    type: Date,
+                    default: Date.now,
+                },
+                details: {
+                    type: mongoose.Schema.Types.Mixed,
+                },
+                previousStatus: String,
+                newStatus: String,
+            },
+        ],
     },
     {
         timestamps: true,

@@ -48,4 +48,14 @@ router.get('/providers', insuranceController.getProviders);
  */
 router.post('/providers', authorize('admin'), insuranceController.addProvider);
 
+// New routes for advanced insurance features
+router.post('/claims/:id/submit', authorize('insurance', 'billing', 'admin'), insuranceController.submitClaim);
+router.put('/claims/:id/pre-auth', authorize('insurance', 'billing', 'admin'), insuranceController.updatePreAuthStatus);
+router.post('/claims/:id/approve', authorize('insurance', 'admin'), insuranceController.approveClaim);
+router.post('/claims/:id/reject', authorize('insurance', 'admin'), insuranceController.rejectClaim);
+router.post('/claims/:id/settle', authorize('insurance', 'admin'), insuranceController.settleClaim);
+router.get('/claims/:id/timeline', authorize('insurance', 'billing', 'admin'), insuranceController.getClaimTimeline);
+router.get('/tpa-providers', insuranceController.getTPAProviders);
+router.post('/tpa-providers', authorize('admin'), insuranceController.addTPAProvider);
+
 module.exports = router;
