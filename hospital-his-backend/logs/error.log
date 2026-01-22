@@ -2777,3 +2777,160 @@ Error: User role 'doctor' is not authorized to access this route
     at next (C:\Users\shrav\OneDrive\Desktop\HIS Quasar\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
     at C:\Users\shrav\OneDrive\Desktop\HIS Quasar\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 13:44:53 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-22 13:50:21 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:50:22 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:50:22 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:50:27 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:50:27 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:50:28 [ERROR]: AdmissionRequest validation failed: reason: Path `reason` is required.
+ValidationError: AdmissionRequest validation failed: reason: Path `reason` is required.
+    at Document.invalidate (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3221:32)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/document.js:3014:17
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/mongoose/lib/schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-01-22 13:51:57 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-22 13:52:06 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-22 13:52:09 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-22 13:54:33 [ERROR]: File too large
+MulterError: File too large
+    at abortWithCode (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/multer/lib/make-middleware.js:73:22)
+    at FileStream.<anonymous> (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/multer/lib/make-middleware.js:136:11)
+    at FileStream.emit (node:events:508:28)
+    at SBMH.ssCb [as _cb] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/busboy/lib/types/multipart.js:479:32)
+    at feed (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/streamsearch/lib/sbmh.js:248:10)
+    at SBMH.push (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/streamsearch/lib/sbmh.js:104:16)
+    at Multipart._write (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/busboy/lib/types/multipart.js:567:19)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+2026-01-22 14:07:03 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:07:04 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:07:53 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:22 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:45 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:46 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:08:46 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:10:07 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:10:07 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:22:07 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:22:08 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:24:05 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:24:06 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:24:07 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-22 14:24:07 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

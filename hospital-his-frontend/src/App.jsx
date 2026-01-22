@@ -20,7 +20,6 @@ import BedManagement from './pages/dashboard/BedManagement';
 import DoctorRounds from './pages/doctor/DoctorRounds';
 import NurseDutyRoster from './pages/nursing/NurseDutyRoster';
 import Admin from './pages/dashboard/Admin';
-import Nursing from './pages/dashboard/Nursing';
 import DashboardLayout from './layouts/DashboardLayout';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
@@ -70,7 +69,6 @@ function App() {
             <Route path="insurance" element={<Insurance />} />
             <Route path="ot" element={<OperationTheatre />} />
             <Route path="admin" element={<Admin />} />
-            <Route path="nursing" element={<Nursing />} />
             <Route path="nursing" element={<Nursing />} />
             <Route path="bed-management" element={<BedManagement />} />
             <Route path="doctor-rounds" element={<DoctorRounds />} />

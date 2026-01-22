@@ -48,7 +48,6 @@ const adminDashboardRoutes = require('./routes/adminDashboard.routes');
 const revenueAnomalyRoutes = require('./routes/revenueAnomaly.routes');
 const breakGlassRoutes = require('./routes/breakGlass.routes');
 const adminBreakGlassRoutes = require('./routes/adminBreakGlass.routes');
-const nursingRoutes = require('./routes/nursing.routes');
 
 // Initialize Express app
 const app = express();

@@ -40,3 +40,12 @@ ValidationError: Prescription validation failed: prescriptionNumber: Path `presc
 [2026-01-22T04:52:46.868Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
 [2026-01-22T04:52:46.873Z] Creating Prescription with 1 items
 [2026-01-22T04:52:46.938Z] Created Rx ID: 6971ad1ea4f122ffc0afcefb
+[2026-01-22T08:17:30.994Z] Start creating prescription for 6971dca228ba3e478d8f17d6
+[2026-01-22T08:17:30.997Z] Processing med: sleep medicine
+[2026-01-22T08:17:31.010Z] Med NOT FOUND: sleep medicine
+[2026-01-22T08:17:31.011Z] No valid medicines found to create Rx
+[2026-01-22T08:22:50.375Z] Start creating prescription for 6971de1a28ba3e478d8f1a35
+[2026-01-22T08:22:50.377Z] Processing med: Paracetamol 500mg
+[2026-01-22T08:22:50.388Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-22T08:22:50.388Z] Creating Prescription with 1 items
+[2026-01-22T08:22:50.416Z] Created Rx ID: 6971de5a28ba3e478d8f1af9
