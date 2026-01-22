@@ -60,6 +60,10 @@ exports.hasPermission = (permission) => {
                 'order_radiology',
                 'view_appointment',
                 'create_appointment',
+                // Emergency permissions
+                'view_emergency',
+                'edit_emergency_triage',
+                'edit_emergency_status',
             ],
             [USER_ROLES.NURSE]: [
                 'view_patient',
@@ -71,6 +75,10 @@ exports.hasPermission = (permission) => {
                 'view_vitals',
                 'edit_vitals',
                 'view_bed',
+                // Emergency permissions
+                'view_emergency',
+                'edit_emergency_triage',
+                'edit_emergency_status',
             ],
             [USER_ROLES.RECEPTIONIST]: [
                 'view_patient',
@@ -81,6 +89,8 @@ exports.hasPermission = (permission) => {
                 'edit_appointment',
                 'view_billing',
                 'create_billing',
+                // Emergency permissions
+                'view_emergency',
             ],
             [USER_ROLES.LAB_TECH]: [
                 'view_lab',

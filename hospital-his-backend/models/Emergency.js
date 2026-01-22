@@ -88,6 +88,38 @@ const emergencySchema = new mongoose.Schema(
         dischargeTime: {
             type: Date,
         },
+        // New fields for Emergency Dashboard
+        triageTime: {
+            type: Date,
+        },
+        triageBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        treatmentStartTime: {
+            type: Date,
+        },
+        treatmentEndTime: {
+            type: Date,
+        },
+        triageHistory: [{
+            level: {
+                type: String,
+                enum: Object.values(TRIAGE_LEVELS),
+            },
+            changedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            changedAt: {
+                type: Date,
+                default: Date.now,
+            },
+            reason: {
+                type: String,
+                trim: true,
+            },
+        }],
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
@@ -105,6 +137,8 @@ emergencySchema.index({ patient: 1 });
 emergencySchema.index({ status: 1 });
 emergencySchema.index({ triageLevel: 1 });
 emergencySchema.index({ arrivalTime: -1 });
+// Composite index for live board queries
+emergencySchema.index({ status: 1, arrivalTime: -1 });
 
 // Auto-generate emergencyNumber before saving
 emergencySchema.pre('save', async function (next) {

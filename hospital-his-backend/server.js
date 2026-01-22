@@ -1,6 +1,7 @@
 // No changes needed.
 
 require('dotenv').config();
+console.log("Mongo URI found:", !!process.env.MONGODB_URI);
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -197,6 +198,12 @@ io.on('connection', (socket) => {
     socket.on('join-ward', (wardId) => {
         socket.join(`ward-${wardId}`);
         logger.info(`Socket ${socket.id} joined ward ${wardId}`);
+    });
+
+    // Join emergency room (for live ER dashboard)
+    socket.on('join-emergency', () => {
+        socket.join('emergency-room');
+        logger.info(`Socket ${socket.id} joined emergency room`);
     });
 
     // Handle disconnection

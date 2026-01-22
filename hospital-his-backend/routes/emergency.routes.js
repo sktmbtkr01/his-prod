@@ -42,4 +42,22 @@ router.get('/queue', emergencyController.getEmergencyQueue);
  */
 router.get('/dashboard', emergencyController.getDashboard);
 
+/**
+ * @route   GET /api/emergency/live-board
+ * @desc    Get live emergency board with all active cases
+ */
+router.get('/live-board', emergencyController.getLiveBoard);
+
+/**
+ * @route   POST /api/emergency/cases/:id/triage
+ * @desc    Update triage level for an emergency case
+ */
+router.post('/cases/:id/triage', authorize('doctor', 'nurse', 'admin'), emergencyController.updateTriage);
+
+/**
+ * @route   PUT /api/emergency/cases/:id/status
+ * @desc    Update status for an emergency case (waiting -> treating -> admitted/discharged)
+ */
+router.put('/cases/:id/status', authorize('doctor', 'nurse', 'admin'), emergencyController.updateStatus);
+
 module.exports = router;
