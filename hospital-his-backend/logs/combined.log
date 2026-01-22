@@ -3940,3 +3940,34 @@ Error: Please provide email and password
 Error: Invalid credentials
     at /Users/khush/Desktop/Hackathons/Quasar/HIS_Quasar_2/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
 2026-01-21 23:04:20 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 11:02:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 11:02:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:02:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 11:02:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:02:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 11:02:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 11:02:26 [INFO]: 🔌 WebSocket enabled
+2026-01-22 11:02:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 11:02:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:09:30 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 11:09:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 11:09:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:09:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 11:09:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:09:35 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 11:09:35 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 11:09:35 [INFO]: 🔌 WebSocket enabled
+2026-01-22 11:09:35 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 11:09:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:27:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-22 11:27:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:27:50 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 11:27:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 11:27:50 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 11:27:50 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 11:27:50 [INFO]: 🔌 WebSocket enabled
+2026-01-22 11:27:50 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 11:27:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 12:07:42 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 12:07:54 [INFO]: MongoDB reconnected
+2026-01-22 12:11:02 [WARN]: MongoDB disconnected. Attempting to reconnect...
