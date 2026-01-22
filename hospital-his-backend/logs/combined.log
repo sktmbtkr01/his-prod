@@ -2898,3 +2898,1388 @@ Error: User role 'doctor' is not authorized to access this route
 2026-01-21 13:22:21 [INFO]: 🔌 WebSocket enabled
 2026-01-21 13:22:21 [INFO]: 📋 Health check: http://localhost:5000/api/health
 2026-01-21 13:22:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 15:54:29 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 15:54:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 15:54:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 15:54:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 15:54:29 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 15:54:29 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 15:54:29 [INFO]: 🔌 WebSocket enabled
+2026-01-21 15:54:29 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 15:54:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:16:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:16:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:16:01 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:16:01 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:16:01 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:16:01 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:16:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:18:27 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 16:19:00 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 16:21:10 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 16:22:10 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:22:10 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:22:41 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:23:11 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:23:41 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:24:11 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:24:41 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:25:11 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:25:41 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:26:11 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:26:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:27:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:28:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:29:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 16:29:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:29:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:29:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:29:01 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:29:01 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:29:01 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:29:01 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:29:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:29:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:30:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:31:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:32:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:33:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:34:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:35:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:36:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:37:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:38:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:39:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:39:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:39:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:10 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:39:10 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:39:10 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:39:10 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:39:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 16:39:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:39:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:12 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:39:12 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:39:12 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:39:12 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:39:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:39:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:40:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:40:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:40:47 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:40:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:40:47 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:40:47 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:40:47 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:40:47 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:40:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:40:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:41:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:42:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:42:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:42:34 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:42:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:42:34 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:42:34 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:42:34 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:42:34 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:42:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:42:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:43:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:44:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 16:44:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:44:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:44:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:44:04 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:44:04 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:44:04 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:44:04 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:44:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:44:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:45:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:46:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:47:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:47:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:47:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:04 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:47:04 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:47:04 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:47:04 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:47:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:47:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:47:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:08 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:47:08 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:47:08 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:47:08 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:47:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:47:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:48:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:49:56 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:50:31 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:50:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:50:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:31 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:50:31 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:50:31 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:50:31 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:50:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:50:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:32 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:50:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:32 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:50:32 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:50:32 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:50:32 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:50:32 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:50:53 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:51:03 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:51:03 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:52:04 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:53:04 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:54:04 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:55:04 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:55:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 16:55:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:55:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 16:55:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:55:54 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 16:55:54 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 16:55:54 [INFO]: 🔌 WebSocket enabled
+2026-01-21 16:55:54 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 16:55:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 16:56:04 [ERROR]: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+CastError: Cast to ObjectId failed for value "adm001" (type string) at path "admission" for model "MedicationAdministration"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\nursing.controller.js:21:22
+2026-01-21 16:56:24 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:56:24 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:56:38 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:56:38 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:56:50 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:57:21 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:57:51 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:58:21 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:59:27 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 16:59:57 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 17:00:27 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 17:00:57 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 17:12:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:12:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:12:58 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:12:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:12:58 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:12:58 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:12:58 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:12:58 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:12:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:13:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:13:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:13:48 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:13:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:13:48 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:13:48 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:13:48 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:13:48 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:13:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:14:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:14:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:14:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:14:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:14:55 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:14:55 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:14:55 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:14:55 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:14:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:16:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:16:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:16:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:16:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:16:43 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:16:43 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:16:43 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:16:43 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:16:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:18:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:07 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:18:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:07 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:18:07 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:18:07 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:18:07 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:18:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:52 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:18:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:52 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:18:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:18:52 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:18:52 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:18:52 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:18:52 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:18:52 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:20:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:20:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:40 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:20:40 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:20:40 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:20:40 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:20:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:20:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:53 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:20:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:20:53 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:20:53 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:20:53 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:20:53 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:20:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:23:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:23:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:23:43 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:23:43 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:23:43 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:23:43 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:23:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:24:26 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 17:24:34 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 17:24:51 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 17:32:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 17:32:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:32:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:32:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:32:08 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:32:08 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:32:08 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:32:08 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:32:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:34:46 [ERROR]: User role 'pharmacist' is not authorized to access this route
+Error: User role 'pharmacist' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-21 17:34:49 [ERROR]: User role 'pharmacist' is not authorized to access this route
+Error: User role 'pharmacist' is not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:59:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-21 17:36:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:36:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:36:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:36:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:36:16 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:36:16 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:36:16 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:36:16 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:36:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:43:53 [ERROR]: PharmacyDispense validation failed: dispenseNumber: Path `dispenseNumber` is required.
+ValidationError: PharmacyDispense validation failed: dispenseNumber: Path `dispenseNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-21 17:45:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 17:45:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:45:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 17:45:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 17:45:01 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 17:45:01 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 17:45:01 [INFO]: 🔌 WebSocket enabled
+2026-01-21 17:45:01 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 17:45:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:00:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:00:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:00:22 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:00:22 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:00:22 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:00:22 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:03:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:03:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:03:18 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:03:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:03:18 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:03:18 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:03:18 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:03:18 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:03:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 18:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:23 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:23 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:52:23 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:52:23 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:52:23 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:52:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 18:52:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:52:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:52:25 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:52:25 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:52:25 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:52:25 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:52:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 18:54:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:54:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:08 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:54:08 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:54:08 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:54:08 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:54:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 18:54:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:54:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:54:10 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:54:10 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:54:10 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:54:10 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:54:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:55:36 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 18:55:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:55:36 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:55:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:55:36 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:55:36 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:55:36 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:55:36 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:55:36 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:14 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 18:56:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:14 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:56:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:14 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:56:14 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:56:14 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:56:14 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:56:14 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:56:16 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:56:16 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:56:16 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:56:16 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:56:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:57:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 18:57:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:57:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:57:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:57:19 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:57:19 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:57:19 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:57:19 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:57:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:18 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 18:59:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:18 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:59:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:18 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:59:18 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:59:18 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:59:18 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:59:18 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 18:59:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 18:59:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 18:59:20 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 18:59:20 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 18:59:20 [INFO]: 🔌 WebSocket enabled
+2026-01-21 18:59:20 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 18:59:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:07 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 19:01:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:07 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:01:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:07 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:01:07 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:01:07 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:01:07 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:01:07 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:09 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 19:01:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:01:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:01:09 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:01:09 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:01:09 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:01:09 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:01:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:35:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 19:35:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:35:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:35:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:35:19 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:35:19 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:35:19 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:35:19 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:35:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:43:37 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 19:43:43 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 19:46:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 19:46:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:46:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:46:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:46:26 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:46:26 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:46:26 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:46:26 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:46:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:47:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 19:47:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:47:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:47:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:47:35 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:47:35 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:47:35 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:47:35 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:47:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:51:49 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 19:59:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 19:59:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:59:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 19:59:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 19:59:35 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 19:59:35 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 19:59:35 [INFO]: 🔌 WebSocket enabled
+2026-01-21 19:59:35 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 19:59:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:00:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:00:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:00:22 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:00:22 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:00:22 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:00:22 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:00:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:04:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:04:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:04:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:04:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:04:35 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:04:35 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:04:35 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:04:35 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:04:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:07:53 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:07:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:07:53 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:07:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:07:53 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:07:53 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:07:53 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:07:53 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:07:53 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:14:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:14:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:14:25 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:14:25 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:14:25 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:14:25 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:15:37 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:15:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:15:37 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:15:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:15:37 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:15:37 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:15:37 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:15:37 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:15:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:16:29 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:16:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:16:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:16:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:16:29 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:16:29 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:16:29 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:16:29 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:16:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:17:56 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:18:27 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:18:56 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:19:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:19:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:19:48 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:19:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:19:48 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:19:48 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:19:48 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:19:48 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:19:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:19:56 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:20:45 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:20:53 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:21:23 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:21:53 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:22:23 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:22:53 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:23:54 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:24:55 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:25:10 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:25:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:25:10 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:25:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:25:10 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:25:10 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:25:10 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:25:10 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:25:10 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:25:56 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:26:56 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:27:38 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:27:53 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:28:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:28:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:15 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:28:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:15 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:28:15 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:28:15 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:28:15 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:28:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:28:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:28:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:38 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:28:38 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:28:38 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:28:38 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:28:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:28:53 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:29:23 [ERROR]: User not found
+Error: User not found
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-21 20:29:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:29:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:29:48 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:29:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:29:48 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:29:48 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:29:48 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:29:48 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:29:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:39:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:39:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:26 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:39:26 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:39:26 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:39:26 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:39:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:39:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:39:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:39:43 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:39:43 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:39:43 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:39:43 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:39:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:41:22 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:41:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:41:22 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:41:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:41:22 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:41:22 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:41:22 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:41:22 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:41:22 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:44:39 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 20:45:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-21 20:45:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:45:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:45:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:45:40 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:45:40 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:45:40 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:45:40 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:45:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:46:01 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-21 20:47:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:47:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:47:50 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:47:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:47:50 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:47:50 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:47:50 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:47:50 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:47:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:51:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:51:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:01 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:51:01 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:51:01 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:51:01 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:51:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-21 20:51:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:51:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:04 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:51:04 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:51:04 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:51:04 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:51:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:11 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-21 20:51:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:11 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-21 20:51:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:51:11 [INFO]: 🚀 Server running in development mode on port 5000
+2026-01-21 20:51:11 [INFO]: 📡 API Base URL: http://localhost:5000/api/v1
+2026-01-21 20:51:11 [INFO]: 🔌 WebSocket enabled
+2026-01-21 20:51:11 [INFO]: 📋 Health check: http://localhost:5000/api/health
+2026-01-21 20:51:11 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-21 20:57:40 [ERROR]: Cannot read properties of null (reading '_id')
+TypeError: Cannot read properties of null (reading '_id')
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:72
+    at Array.map (<anonymous>)
+    at methods.<computed> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\array\methods\index.js:1027:24)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-21 20:57:41 [ERROR]: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+CastError: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PharmacySafetyService.getBatchesFEFO (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\services\pharmacy.safety.service.js:175:25)
+2026-01-21 20:57:41 [ERROR]: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+CastError: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+    at ObjectId.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PharmacySafetyService.getBatchesFEFO (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\services\pharmacy.safety.service.js:175:25)
+2026-01-21 21:15:31 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 01:14:08 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:526:9)
+2026-01-22 01:14:18 [INFO]: MongoDB reconnected
+2026-01-22 10:15:15 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 10:15:22 [INFO]: MongoDB reconnected

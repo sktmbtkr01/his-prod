@@ -653,3 +653,634 @@ Require stack:
     at require (node:internal/modules/helpers:152:16)
     at Object.<anonymous> (C:\Users\shrav\OneDrive\Desktop\HIS Quasar\HIS_Quasar\hospital-his-backend\controllers\surgery.controller.js:6:28)
     at Module._compile (node:internal/modules/cjs/loader:1760:14)
+2026-01-21 19:10:07 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:10:08 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:10:48 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:14:02 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:16:59 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:17:45 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:18:27 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:19:23 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:19:54 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:20:29 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:20:59 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:21:28 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:22:13 [ERROR]: uncaughtException: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module '../middleware/async'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\inventory.routes.js
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\inventory.controller.js:1:22)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:22:55 [ERROR]: uncaughtException: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:23:53 [ERROR]: uncaughtException: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:27:17 [ERROR]: uncaughtException: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:29:02 [ERROR]: uncaughtException: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 19:29:25 [ERROR]: uncaughtException: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+Error: Cannot find module './routes/inventory.routes'
+Require stack:
+- D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\server.js:33:25)
+    at Module._compile (node:internal/modules/cjs/loader:1554:14)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2026-01-21 20:07:37 [ERROR]: uncaughtException: Identifier 'Appointment' has already been declared
+D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\opd.controller.js:2
+const Appointment = require('../models/Appointment');
+      ^
+
+SyntaxError: Identifier 'Appointment' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\opd.routes.js:3:23)
+D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\controllers\opd.controller.js:2
+const Appointment = require('../models/Appointment');
+      ^
+
+SyntaxError: Identifier 'Appointment' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module._compile (node:internal/modules/cjs/loader:1528:20)
+    at Object..js (node:internal/modules/cjs/loader:1706:10)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (D:\HIS Quasar 2\HIS_Quasar\hospital-his-backend\routes\opd.routes.js:3:23)
