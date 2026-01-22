@@ -65,13 +65,13 @@ router.get('/orders/:id/report', labController.getReport);
  * @route   GET /api/lab/queue
  * @desc    Get lab work queue
  */
-router.get('/queue', authorize('lab_tech', 'admin'), labController.getLabQueue);
+router.get('/queue', authorize('lab_tech', 'admin', 'doctor'), labController.getLabQueue);
 
 /**
  * @route   GET /api/lab/dashboard
  * @desc    Get lab dashboard stats
  */
-router.get('/dashboard', authorize('lab_tech', 'admin'), labController.getDashboard);
+router.get('/dashboard', authorize('lab_tech', 'admin', 'doctor'), labController.getDashboard);
 
 /**
  * @route   GET /api/lab/tests

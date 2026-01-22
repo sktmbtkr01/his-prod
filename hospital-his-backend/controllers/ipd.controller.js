@@ -93,10 +93,55 @@ exports.getAdmissionById = asyncHandler(async (req, res, next) => {
         return next(new ErrorResponse('Admission not found', 404));
     }
 
-    res.status(200).json({
-        success: true,
-        data: admission,
-    });
+    // Merge Nursing Data (VitalSigns and NursingNotes collections)
+    try {
+        const VitalSigns = require('../models/VitalSigns');
+        const NursingNote = require('../models/NursingNote');
+
+        const [nursingVitals, nursingNotes] = await Promise.all([
+            VitalSigns.find({ admission: req.params.id }).sort('recordedAt'),
+            NursingNote.find({ admission: req.params.id }).sort('recordedAt')
+        ]);
+
+        const admissionObj = admission.toObject();
+
+        const mappedVitals = nursingVitals.map(v => ({
+            temperature: v.temperature?.value?.toString(),
+            bpSystolic: v.bloodPressure?.systolic,
+            bpDiastolic: v.bloodPressure?.diastolic,
+            pulse: v.pulse?.rate,
+            spo2: v.oxygenSaturation?.value,
+            recordedAt: v.recordedAt,
+            recordedBy: v.recordedBy,
+            source: 'nursing'
+        }));
+
+        const mappedNotes = nursingNotes.map(n => ({
+            note: n.content,
+            type: n.noteType || 'nursing_note',
+            recordedAt: n.recordedAt,
+            recordedBy: n.recordedBy,
+            category: n.category
+        }));
+
+        admissionObj.vitals = [...(admissionObj.vitals || []), ...mappedVitals]
+            .sort((a, b) => new Date(a.recordedAt) - new Date(b.recordedAt));
+
+        admissionObj.clinicalNotes = [...(admissionObj.clinicalNotes || []), ...mappedNotes]
+            .sort((a, b) => new Date(a.recordedAt) - new Date(b.recordedAt));
+
+        return res.status(200).json({
+            success: true,
+            data: admissionObj,
+        });
+
+    } catch (error) {
+        console.error('Error merging nursing data:', error);
+        res.status(200).json({
+            success: true,
+            data: admission,
+        });
+    }
 });
 
 /**
@@ -281,15 +326,23 @@ exports.approveDischarge = asyncHandler(async (req, res, next) => {
     const admission = await Admission.findById(req.params.id);
     if (!admission) return next(new ErrorResponse('Admission not found', 404));
 
-    if (!req.user.role === 'doctor' && req.user.role !== 'admin') {
+    if (req.user.role !== 'doctor' && req.user.role !== 'admin') {
         return next(new ErrorResponse('Only doctors can approve discharge', 403));
     }
+
+    // Ensure discharge subdocument exists (for older records)
+    if (!admission.discharge) admission.discharge = {};
 
     admission.discharge.isApprovedByDoctor = true;
     admission.discharge.approvedBy = req.user.id;
     admission.discharge.initiatedAt = new Date();
 
-    await admission.save();
+    try {
+        await admission.save();
+    } catch (err) {
+        console.error('[IPD] approveDischarge save error:', err);
+        return next(new ErrorResponse('Failed to approve discharge', 500));
+    }
 
     res.status(200).json({ success: true, message: 'Discharge approved', data: admission });
 });

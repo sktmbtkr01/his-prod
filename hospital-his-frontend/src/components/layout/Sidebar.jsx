@@ -5,7 +5,7 @@ import {
     LayoutDashboard, Users, Calendar, Stethoscope,
     FlaskConical, Pill, FileText, Settings,
     Menu, X, Activity, ShieldCheck, Database,
-    Banknote, ScanLine, Siren, Scissors
+    Banknote, ScanLine, Siren, Scissors, ClipboardList, BedDouble
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,60 +14,88 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     const role = user?.role || 'guest';
 
     // Navigation Config based on Roles
+    // Navigation Config based on Roles
     const allNavItems = [
+        // -------------------------------------------------------------------------
+        // CLINICAL MODULES (Non-Admin)
+        // -------------------------------------------------------------------------
         {
             title: 'Dashboard',
             path: '/dashboard',
             icon: <LayoutDashboard size={20} />,
-            roles: ['admin', 'doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'billing']
+            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'billing', 'head_nurse'] // REMOVED 'admin'
         },
         {
             title: 'Patients',
             path: '/dashboard/patients',
             icon: <Users size={20} />,
-            roles: ['admin', 'doctor', 'nurse', 'receptionist']
+            roles: ['doctor', 'nurse', 'receptionist', 'head_nurse']
         },
         {
             title: 'Appointments',
             path: '/dashboard/appointments',
             icon: <Calendar size={20} />,
-            roles: ['admin', 'doctor', 'nurse', 'receptionist']
+            roles: ['doctor', 'nurse', 'receptionist']
         },
         {
             title: 'OPD Queue',
             path: '/dashboard/opd-queue',
             icon: <Stethoscope size={20} />,
-            roles: ['admin', 'doctor', 'nurse', 'receptionist']
+            roles: ['doctor', 'nurse', 'receptionist']
         },
         {
             title: 'IPD / Wards',
             path: '/dashboard/ipd',
             icon: <Activity size={20} />,
-            roles: ['admin', 'doctor', 'nurse', 'receptionist']
+            roles: ['doctor', 'nurse', 'receptionist', 'head_nurse']
+        },
+        {
+            title: 'Bed Management',
+            path: '/dashboard/bed-management',
+            icon: <BedDouble size={20} />,
+            roles: ['doctor', 'nurse', 'receptionist', 'head_nurse', 'admin']
         },
         {
             title: 'Laboratory',
             path: '/dashboard/lab',
             icon: <FlaskConical size={20} />,
-            roles: ['admin', 'doctor', 'lab_tech']
+            roles: ['doctor', 'lab_tech']
         },
         {
             title: 'Radiology',
             path: '/dashboard/radiology',
             icon: <ScanLine size={20} />,
-            roles: ['admin', 'doctor', 'radiologist']
+            roles: ['doctor', 'radiologist']
         },
         {
             title: 'Pharmacy',
             path: '/dashboard/pharmacy',
             icon: <Pill size={20} />,
-            roles: ['admin', 'pharmacist']
+            roles: ['pharmacist']
         },
         {
             title: 'Operation Theatre',
             path: '/dashboard/ot',
             icon: <Scissors size={20} />,
-            roles: ['admin', 'doctor', 'nurse']
+            roles: ['doctor', 'nurse']
+        },
+        {
+            title: 'Nursing',
+            path: '/dashboard/nursing',
+            icon: <Activity size={20} />,
+            roles: ['nurse', 'head_nurse']
+        },
+        {
+            title: 'Doctor Rounds',
+            path: '/dashboard/doctor-rounds',
+            icon: <ClipboardList size={20} />,
+            roles: ['doctor']
+        },
+        {
+            title: 'Duty Roster',
+            path: '/dashboard/duty-roster',
+            icon: <Calendar size={20} />,
+            roles: ['head_nurse']
         },
         {
             title: 'Nursing Station',
@@ -79,31 +107,77 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             title: 'Billing',
             path: '/dashboard/billing',
             icon: <Banknote size={20} />,
-            roles: ['admin', 'billing', 'receptionist']
+            roles: ['billing', 'receptionist']
         },
         {
             title: 'Insurance',
             path: '/dashboard/insurance',
             icon: <ShieldCheck size={20} />,
-            roles: ['admin', 'insurance', 'billing']
+            roles: ['insurance', 'billing']
         },
+
+        // -------------------------------------------------------------------------
+        // ADMIN MODULES (Admin Only)
+        // -------------------------------------------------------------------------
         {
-            title: 'Inventory',
-            path: '/dashboard/pharmacy?tab=inventory',
-            icon: <Database size={20} />,
-            roles: ['admin', 'pharmacist']
-        },
-        {
-            title: 'Admin',
-            path: '/dashboard/admin',
-            icon: <Siren size={20} />, // Changed icon to distinguish
+            title: 'Governance Dashboard',
+            path: '/admin',
+            icon: <LayoutDashboard size={20} />,
             roles: ['admin']
         },
         {
-            title: 'Settings',
-            path: '/dashboard/settings',
-            icon: <Settings size={20} />,
-            roles: ['admin'] // Everyone usually has settings, but simplified for now
+            title: 'User Management',
+            path: '/admin/users',
+            icon: <Users size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Break-Glass',
+            path: '/admin/break-glass',
+            icon: <Siren size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Audit Logs',
+            path: '/admin/audit-logs',
+            icon: <FileText size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Revenue Anomalies',
+            path: '/admin/revenue-anomalies',
+            icon: <Banknote size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Incidents',
+            path: '/admin/incidents',
+            icon: <ShieldCheck size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Compliance',
+            path: '/admin/compliance',
+            icon: <ClipboardList size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Master Data',
+            path: '/admin/master-data',
+            icon: <Database size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'Departments',
+            path: '/admin/departments',
+            icon: <Menu size={20} />,
+            roles: ['admin']
+        },
+        {
+            title: 'System Health',
+            path: '/admin/system',
+            icon: <Activity size={20} />,
+            roles: ['admin']
         },
     ];
 

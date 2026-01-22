@@ -85,13 +85,18 @@ appointmentSchema.index({ department: 1, scheduledDate: 1 });
 
 // Auto-generate appointmentNumber before saving
 appointmentSchema.pre('save', async function (next) {
-    if (this.isNew) {
-        const today = new Date();
-        const dateStr = today.toISOString().slice(0, 10).replace(/-/g, '');
+    if (this.isNew && !this.appointmentNumber) {
+        const now = new Date();
+        const dateStr = now.toISOString().slice(0, 10).replace(/-/g, '');
+
+        // Create separate date objects to avoid mutation
+        const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+        const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+
         const count = await mongoose.model('Appointment').countDocuments({
             createdAt: {
-                $gte: new Date(today.setHours(0, 0, 0, 0)),
-                $lt: new Date(today.setHours(23, 59, 59, 999)),
+                $gte: startOfDay,
+                $lt: endOfDay,
             },
         });
         this.appointmentNumber = `APT${dateStr}${String(count + 1).padStart(4, '0')}`;

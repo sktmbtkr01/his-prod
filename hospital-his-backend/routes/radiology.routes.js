@@ -46,13 +46,13 @@ router.post('/orders/:id/enter-report', authorize('radiologist'), radiologyContr
  * @route   GET /api/radiology/queue
  * @desc    Get radiology work queue
  */
-router.get('/queue', authorize('radiologist', 'admin'), radiologyController.getRadiologyQueue);
+router.get('/queue', authorize('radiologist', 'admin', 'doctor'), radiologyController.getRadiologyQueue);
 
 /**
  * @route   GET /api/radiology/dashboard
  * @desc    Get radiology dashboard stats
  */
-router.get('/dashboard', authorize('radiologist', 'admin'), radiologyController.getDashboard);
+router.get('/dashboard', authorize('radiologist', 'admin', 'doctor'), radiologyController.getDashboard);
 
 /**
  * @route   GET /api/radiology/tests

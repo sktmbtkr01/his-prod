@@ -1,80 +1,89 @@
 const mongoose = require('mongoose');
 
 /**
- * DrugInteraction Model
- * 
- * Master table for known drug-drug interactions.
- * Used to check safety at prescription, dispense, and MAR stages.
- * 
- * CLINICAL CONTEXT:
- * - Major interactions can cause serious harm and should block dispense
- * - Moderate interactions require clinical judgement
- * - Minor interactions are informational
+ * Drug Interaction Model
+ * Defines interactions between medications
+ * Admin configures these; Pharmacy/Prescription systems use them for alerts
  */
 
 const drugInteractionSchema = new mongoose.Schema(
     {
-        // Drug pair - order-independent (handled by service logic)
+        // Drug Pair
         drug1: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Medicine',
             required: [true, 'First drug is required'],
+        },
+        drug1Name: {
+            type: String,
+            required: true,  // Denormalized for quick lookup
         },
         drug2: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Medicine',
             required: [true, 'Second drug is required'],
         },
-
-        // Severity classification
-        severity: {
+        drug2Name: {
             type: String,
-            enum: ['major', 'moderate', 'minor'],
-            required: [true, 'Severity is required'],
+            required: true,  // Denormalized for quick lookup
         },
 
-        // Clinical details
+        // Interaction Details
+        interactionType: {
+            type: String,
+            enum: ['pharmacokinetic', 'pharmacodynamic', 'combined'],
+            required: true,
+        },
+        severity: {
+            type: String,
+            enum: ['minor', 'moderate', 'major', 'contraindicated'],
+            required: true,
+        },
         description: {
             type: String,
             required: [true, 'Description is required'],
-            trim: true,
-        },
-        clinicalEffect: {
-            type: String,
-            trim: true,
-            // e.g., "Increased bleeding risk", "Serotonin syndrome"
         },
         mechanism: {
-            type: String,
-            trim: true,
-            // e.g., "CYP3A4 inhibition", "Additive QT prolongation"
+            type: String,  // How the interaction occurs
+        },
+        clinicalEffect: {
+            type: String,  // Clinical outcome of the interaction
         },
         recommendation: {
             type: String,
-            trim: true,
-            // e.g., "Avoid combination", "Monitor INR closely"
+            required: [true, 'Recommendation is required'],
         },
 
-        // Management options
-        managementOptions: [{
-            option: String,
-            details: String,
-        }],
-
-        // Clinical evidence level
+        // Evidence
         evidenceLevel: {
             type: String,
             enum: ['established', 'probable', 'suspected', 'theoretical'],
-            default: 'probable',
+            default: 'suspected',
         },
-
-        // Documentation reference
         references: [{
-            source: String, // e.g., "Micromedex", "UpToDate", "FDA"
+            source: String,
+            citation: String,
             url: String,
         }],
 
-        // Active status
+        // Alert Configuration
+        alertMessage: {
+            type: String,
+        },
+        blockPrescription: {
+            type: Boolean,
+            default: false,  // If true, cannot co-prescribe without override
+        },
+        requiresOverride: {
+            type: Boolean,
+            default: false,  // Requires supervisor approval
+        },
+        overrideRoles: [{
+            type: String,
+            enum: ['senior_doctor', 'pharmacist', 'admin'],
+        }],
+
+        // Status
         isActive: {
             type: Boolean,
             default: true,
@@ -84,89 +93,81 @@ const drugInteractionSchema = new mongoose.Schema(
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
+            required: true,
         },
-        updatedBy: {
+        lastModifiedBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
+        approvedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        approvedAt: Date,
     },
     {
         timestamps: true,
     }
 );
 
-// Compound index for efficient lookup (both directions)
+// Compound index for drug pairs (bidirectional lookup)
 drugInteractionSchema.index({ drug1: 1, drug2: 1 }, { unique: true });
 drugInteractionSchema.index({ drug2: 1, drug1: 1 });
 drugInteractionSchema.index({ severity: 1 });
 drugInteractionSchema.index({ isActive: 1 });
+drugInteractionSchema.index({ drug1Name: 'text', drug2Name: 'text' });
 
 /**
- * Static method to find interactions for a list of medicine IDs.
- * Checks both directions (drug1↔drug2) for each pair.
- * 
- * @param {Array} medicineIds - Array of Medicine ObjectIds
- * @returns {Array} - Array of interaction objects
+ * Static: Check interactions for a list of drugs
+ * @param {Array} drugIds - Array of Medicine ObjectIds
+ * @returns {Array} - List of interactions found
  */
-drugInteractionSchema.statics.findInteractionsForMedicines = async function(medicineIds) {
-    if (!medicineIds || medicineIds.length < 2) {
-        return [];
+drugInteractionSchema.statics.checkInteractions = async function (drugIds) {
+    if (!drugIds || drugIds.length < 2) return [];
+
+    const interactions = [];
+
+    // Check all pairs
+    for (let i = 0; i < drugIds.length; i++) {
+        for (let j = i + 1; j < drugIds.length; j++) {
+            const interaction = await this.findOne({
+                $or: [
+                    { drug1: drugIds[i], drug2: drugIds[j] },
+                    { drug1: drugIds[j], drug2: drugIds[i] },
+                ],
+                isActive: true,
+            });
+
+            if (interaction) {
+                interactions.push(interaction);
+            }
+        }
     }
 
-    // Find all interactions where both drugs are in the list
-    const interactions = await this.find({
-        isActive: true,
-        $or: [
-            { drug1: { $in: medicineIds }, drug2: { $in: medicineIds } },
-        ]
-    })
-    .populate('drug1', 'name genericName')
-    .populate('drug2', 'name genericName');
+    // Sort by severity (contraindicated first)
+    const severityOrder = { contraindicated: 0, major: 1, moderate: 2, minor: 3 };
+    interactions.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
 
     return interactions;
 };
 
 /**
- * Static method to check interaction between two specific drugs.
- * 
- * @param {ObjectId} drugAId - First drug ID
- * @param {ObjectId} drugBId - Second drug ID
- * @returns {Object|null} - Interaction object or null
+ * Static: Get all interactions for a specific drug
  */
-drugInteractionSchema.statics.checkPairInteraction = async function(drugAId, drugBId) {
-    const interaction = await this.findOne({
+drugInteractionSchema.statics.getInteractionsForDrug = async function (drugId) {
+    return this.find({
+        $or: [{ drug1: drugId }, { drug2: drugId }],
         isActive: true,
-        $or: [
-            { drug1: drugAId, drug2: drugBId },
-            { drug1: drugBId, drug2: drugAId },
-        ]
     })
-    .populate('drug1', 'name genericName')
-    .populate('drug2', 'name genericName');
-
-    return interaction;
+        .populate('drug1', 'name genericName')
+        .populate('drug2', 'name genericName')
+        .sort({ severity: 1 });
 };
 
-/**
- * Pre-save: Ensure drug1 < drug2 (ObjectId comparison) for consistency.
- * This prevents duplicate entries like (A,B) and (B,A).
- */
-drugInteractionSchema.pre('save', function(next) {
-    if (this.isNew || this.isModified('drug1') || this.isModified('drug2')) {
-        const d1 = this.drug1.toString();
-        const d2 = this.drug2.toString();
-        
-        // Swap if drug1 > drug2 to maintain consistent ordering
-        if (d1 > d2) {
-            const temp = this.drug1;
-            this.drug1 = this.drug2;
-            this.drug2 = temp;
-        }
-
-        // Prevent self-interaction
-        if (d1 === d2) {
-            return next(new Error('A drug cannot interact with itself'));
-        }
+// Pre-save: Generate alert message if not provided
+drugInteractionSchema.pre('save', function (next) {
+    if (!this.alertMessage) {
+        this.alertMessage = `Drug interaction alert: ${this.drug1Name} and ${this.drug2Name} - ${this.severity.toUpperCase()}. ${this.recommendation}`;
     }
     next();
 });

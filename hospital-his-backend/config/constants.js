@@ -15,6 +15,7 @@ const USER_ROLES = {
     BILLING: 'billing',
     INSURANCE: 'insurance',
     COMPLIANCE: 'compliance',
+    HEAD_NURSE: 'head_nurse',
 };
 
 // Appointment Status

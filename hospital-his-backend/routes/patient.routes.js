@@ -11,7 +11,11 @@ router.use(authenticate);
  * @route   POST /api/patients
  * @desc    Register a new patient
  */
-router.post('/', authorize('receptionist', 'admin', 'doctor', 'nurse'), patientController.createPatient);
+/**
+ * @route   POST /api/patients
+ * @desc    Register a new patient
+ */
+router.post('/', authorize('receptionist', 'admin', 'doctor', 'nurse', 'head_nurse'), patientController.createPatient);
 
 /**
  * @route   GET /api/patients
@@ -35,7 +39,7 @@ router.get('/:id', patientController.getPatientById);
  * @route   PUT /api/patients/:id
  * @desc    Update patient details
  */
-router.put('/:id', authorize('receptionist', 'admin', 'doctor', 'nurse'), patientController.updatePatient);
+router.put('/:id', authorize('receptionist', 'admin', 'doctor', 'nurse', 'head_nurse'), patientController.updatePatient);
 
 /**
  * @route   DELETE /api/patients/:id

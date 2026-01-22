@@ -1,103 +1,339 @@
 const express = require('express');
-const nursingController = require('../controllers/nursing.controller');
-const { authenticate, authorize } = require('../middleware/auth.middleware');
-const { USER_ROLES } = require('../config/constants');
-
 const router = express.Router();
+const nursingController = require('../controllers/nursing.controller');
+const { authenticate } = require('../middleware/auth.middleware');
+const { authorize } = require('../middleware/rbac.middleware');
 
 // All routes require authentication
 router.use(authenticate);
 
-// ============================================================
-// MEDICATION ADMINISTRATION RECORD (MAR)
-// ============================================================
+// ═══════════════════════════════════════════════════════════════════════════════
+// SHIFT MANAGEMENT
+// ═══════════════════════════════════════════════════════════════════════════════
 
 /**
- * @route   GET /api/nursing/mar/:admissionId
- * @desc    Get MAR schedule for an admission
- * @access  Nurse, Doctor
+ * @route   POST /api/nursing/shifts/start
+ * @desc    Start a nursing shift
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/shifts/start',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.startShift
+);
+
+/**
+ * @route   GET /api/nursing/shifts/current
+ * @desc    Get current active shift
+ * @access  Nurse, Admin
  */
 router.get(
-    '/mar/:admissionId',
-    authorize(USER_ROLES.NURSE, USER_ROLES.DOCTOR, USER_ROLES.ADMIN),
-    nursingController.getMARSchedule
+    '/shifts/current',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.getCurrentShift
 );
 
 /**
- * @route   GET /api/nursing/mar/:admissionId/overdue
- * @desc    Get overdue medications for an admission
- * @access  Nurse, Doctor
+ * @route   POST /api/nursing/shifts/end
+ * @desc    End shift (initiate handover)
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/shifts/end',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.endShift
+);
+
+/**
+ * @route   GET /api/nursing/dashboard
+ * @desc    Get nursing dashboard data
+ * @access  Nurse, Admin
  */
 router.get(
-    '/mar/:admissionId/overdue',
-    authorize(USER_ROLES.NURSE, USER_ROLES.DOCTOR, USER_ROLES.ADMIN),
-    nursingController.getOverdueMedications
+    '/dashboard',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.getDashboard
 );
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// PATIENT TASKS
+// ═══════════════════════════════════════════════════════════════════════════════
+
 /**
- * @route   GET /api/nursing/mar/record/:marId
- * @desc    Get single MAR record details
- * @access  Nurse, Doctor
+ * @route   GET /api/nursing/patients/:patientId/tasks
+ * @desc    Get patient care tasks
+ * @access  Nurse, Doctor, Admin
  */
 router.get(
-    '/mar/record/:marId',
-    authorize(USER_ROLES.NURSE, USER_ROLES.DOCTOR, USER_ROLES.ADMIN),
-    nursingController.getMARRecord
+    '/patients/:patientId/tasks',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getPatientTasks
 );
 
 /**
- * @route   POST /api/nursing/mar/:marId/safety-check
- * @desc    Perform pre-administration safety check
- * @access  Nurse
+ * @route   POST /api/nursing/tasks/:taskId/complete
+ * @desc    Complete a nursing task
+ * @access  Nurse, Admin
  */
 router.post(
-    '/mar/:marId/safety-check',
-    authorize(USER_ROLES.NURSE, USER_ROLES.DOCTOR),
-    nursingController.preAdminSafetyCheck
+    '/tasks/:taskId/complete',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.completeTask
 );
 
 /**
- * @route   POST /api/nursing/mar/:marId/administer
- * @desc    Record medication administration
- * @access  Nurse
+ * @route   POST /api/nursing/tasks/:taskId/skip
+ * @desc    Skip a task with reason
+ * @access  Nurse, Admin
  */
 router.post(
-    '/mar/:marId/administer',
-    authorize(USER_ROLES.NURSE),
-    nursingController.recordAdministration
+    '/tasks/:taskId/skip',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.skipTask
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// VITAL SIGNS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   POST /api/nursing/vitals
+ * @desc    Record vital signs
+ * @access  Nurse, Doctor, Admin
+ */
+router.post(
+    '/vitals',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.recordVitals
 );
 
 /**
- * @route   POST /api/nursing/mar/:marId/hold
- * @desc    Hold a medication
- * @access  Nurse
+ * @route   GET /api/nursing/vitals/:patientId
+ * @desc    Get vital signs history
+ * @access  Nurse, Doctor, Admin
  */
-router.post(
-    '/mar/:marId/hold',
-    authorize(USER_ROLES.NURSE),
-    nursingController.holdMedication
+router.get(
+    '/vitals/:patientId',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getVitalsHistory
 );
 
 /**
- * @route   POST /api/nursing/mar/:marId/refuse
- * @desc    Record patient refusal
- * @access  Nurse
+ * @route   GET /api/nursing/vitals/:patientId/trends
+ * @desc    Get vital signs trends for charts
+ * @access  Nurse, Doctor, Admin
  */
-router.post(
-    '/mar/:marId/refuse',
-    authorize(USER_ROLES.NURSE),
-    nursingController.recordRefusal
+router.get(
+    '/vitals/:patientId/trends',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getVitalsTrends
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// MEDICATION ADMINISTRATION (MAR)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   GET /api/nursing/medications/:patientId
+ * @desc    Get medication schedule
+ * @access  Nurse, Doctor, Admin
+ */
+router.get(
+    '/medications/:patientId',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getMedicationSchedule
 );
 
 /**
- * @route   POST /api/nursing/mar/create-schedule
- * @desc    Manually create MAR schedule from dispense
- * @access  Nurse, Pharmacist
+ * @route   POST /api/nursing/medications/:marId/administer
+ * @desc    Administer medication
+ * @access  Nurse, Admin
  */
 router.post(
-    '/mar/create-schedule',
-    authorize(USER_ROLES.NURSE, USER_ROLES.PHARMACIST),
-    nursingController.createMARSchedule
+    '/medications/:marId/administer',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.administerMedication
+);
+
+/**
+ * @route   POST /api/nursing/medications/:marId/skip
+ * @desc    Skip medication with reason
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/medications/:marId/skip',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.skipMedication
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// NURSING NOTES
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   POST /api/nursing/notes
+ * @desc    Create nursing note
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/notes',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.createNote
+);
+
+/**
+ * @route   GET /api/nursing/notes/:patientId
+ * @desc    Get patient nursing notes
+ * @access  Nurse, Doctor, Admin
+ */
+router.get(
+    '/notes/:patientId',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getPatientNotes
+);
+
+/**
+ * @route   POST /api/nursing/notes/:noteId/addendum
+ * @desc    Add addendum to note
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/notes/:noteId/addendum',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.addAddendum
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CARE PLANS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   GET /api/nursing/care-plans/:patientId
+ * @desc    Get patient care plans
+ * @access  Nurse, Doctor, Admin
+ */
+router.get(
+    '/care-plans/:patientId',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getCarePlans
+);
+
+/**
+ * @route   POST /api/nursing/care-plans/:planId/interventions/:index/complete
+ * @desc    Complete intervention
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/care-plans/:planId/interventions/:index/complete',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.completeIntervention
+);
+
+/**
+ * @route   POST /api/nursing/care-plans/:planId/evaluate
+ * @desc    Add evaluation to care plan
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/care-plans/:planId/evaluate',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.addEvaluation
+);
+
+/**
+ * @route   POST /api/nursing/care-plans/:planId/flag
+ * @desc    Flag issue in care plan
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/care-plans/:planId/flag',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.flagIssue
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SHIFT HANDOVER
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   POST /api/nursing/handover
+ * @desc    Create shift handover
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/handover',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.createHandover
+);
+
+/**
+ * @route   POST /api/nursing/handover/:handoverId/acknowledge
+ * @desc    Acknowledge handover
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/handover/:handoverId/acknowledge',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.acknowledgeHandover
+);
+
+/**
+ * @route   GET /api/nursing/handover/pending
+ * @desc    Get pending handovers
+ * @access  Nurse, Admin
+ */
+router.get(
+    '/handover/pending',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.getPendingHandovers
+);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CRITICAL ALERTS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @route   GET /api/nursing/alerts
+ * @desc    Get active alerts
+ * @access  Nurse, Doctor, Admin
+ */
+router.get(
+    '/alerts',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.getActiveAlerts
+);
+
+/**
+ * @route   POST /api/nursing/alerts/:alertId/acknowledge
+ * @desc    Acknowledge alert
+ * @access  Nurse, Doctor, Admin
+ */
+router.post(
+    '/alerts/:alertId/acknowledge',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.acknowledgeAlert
+);
+
+/**
+ * @route   POST /api/nursing/alerts/:alertId/resolve
+ * @desc    Resolve alert
+ * @access  Nurse, Doctor, Admin
+ */
+router.post(
+    '/alerts/:alertId/resolve',
+    authorize('nurse', 'doctor', 'admin', 'head_nurse'),
+    nursingController.resolveAlert
+);
+
+/**
+ * @route   POST /api/nursing/alerts/escalate
+ * @desc    Create manual escalation
+ * @access  Nurse, Admin
+ */
+router.post(
+    '/alerts/escalate',
+    authorize('nurse', 'admin', 'head_nurse'),
+    nursingController.createEscalation
 );
 
 module.exports = router;

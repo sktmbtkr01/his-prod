@@ -67,6 +67,13 @@ const userSchema = new mongoose.Schema(
                 type: String,
                 trim: true,
             },
+            employeeId: {
+                type: String,
+                trim: true,
+            },
+            dateOfJoining: {
+                type: Date,
+            },
         },
         isActive: {
             type: Boolean,
@@ -78,6 +85,141 @@ const userSchema = new mongoose.Schema(
         refreshToken: {
             type: String,
             select: false,
+        },
+
+        // ═══════════════════════════════════════════════════════════════════
+        // SECURITY & ACCESS CONTROL FIELDS
+        // ═══════════════════════════════════════════════════════════════════
+
+        // Account Status
+        accountStatus: {
+            type: String,
+            enum: ['active', 'suspended', 'locked', 'pending_activation', 'deactivated'],
+            default: 'active',
+        },
+        deactivatedAt: {
+            type: Date,
+        },
+        deactivatedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        deactivationReason: {
+            type: String,
+        },
+
+        // Account Lockout
+        failedLoginAttempts: {
+            type: Number,
+            default: 0,
+        },
+        lockoutUntil: {
+            type: Date,
+        },
+        lastFailedLogin: {
+            type: Date,
+        },
+
+        // Password Security
+        passwordChangedAt: {
+            type: Date,
+        },
+        passwordExpiresAt: {
+            type: Date,
+        },
+        passwordHistory: [{
+            hash: String,
+            changedAt: Date,
+        }],
+        mustChangePassword: {
+            type: Boolean,
+            default: false,
+        },
+        passwordResetToken: {
+            type: String,
+            select: false,
+        },
+        passwordResetExpires: {
+            type: Date,
+            select: false,
+        },
+
+        // Break-Glass Access (Emergency Override)
+        breakGlassPermissions: {
+            enabled: {
+                type: Boolean,
+                default: false,
+            },
+            grantedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            grantedAt: {
+                type: Date,
+            },
+            expiresAt: {
+                type: Date,
+            },
+            reason: {
+                type: String,
+            },
+            accessLevel: {
+                type: String,
+                enum: ['view_only', 'full_clinical', 'emergency'],
+                default: 'view_only',
+            },
+        },
+
+        // Role History (Audit Trail)
+        roleHistory: [{
+            previousRole: String,
+            newRole: String,
+            changedAt: {
+                type: Date,
+                default: Date.now,
+            },
+            changedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            reason: String,
+        }],
+
+        // Supervisor/Reporting
+        supervisor: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+
+        // Session Management
+        activeSessions: [{
+            sessionId: String,
+            deviceInfo: String,
+            ipAddress: String,
+            createdAt: Date,
+            lastActivity: Date,
+        }],
+        maxConcurrentSessions: {
+            type: Number,
+            default: 3,
+        },
+
+        // Permissions Override (Temporary)
+        temporaryPermissions: [{
+            permission: String,
+            grantedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            grantedAt: Date,
+            expiresAt: Date,
+            reason: String,
+        }],
+
+        // Created By tracking
+        createdBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
         },
     },
     {

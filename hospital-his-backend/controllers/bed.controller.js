@@ -19,6 +19,7 @@ exports.getAllBeds = asyncHandler(async (req, res, next) => {
     const beds = await Bed.find(query)
         .populate('ward', 'name')
         .populate('currentPatient', 'patientId firstName lastName')
+        .populate('currentAdmission', '_id admissionNumber')
         .sort({ bedNumber: 1 });
 
     res.status(200).json({

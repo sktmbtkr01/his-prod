@@ -160,7 +160,7 @@ exports.getMe = asyncHandler(async (req, res, next) => {
 // Helper function to get token and send response
 const sendTokenResponse = async (user, statusCode, res) => {
     // Create access token
-    const accessToken = jwt.sign({ id: user._id }, config.jwtSecret, {
+    const accessToken = jwt.sign({ id: user._id, role: user.role }, config.jwtSecret, {
         expiresIn: config.jwtExpire,
     });
 

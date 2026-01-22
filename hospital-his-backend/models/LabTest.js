@@ -57,6 +57,7 @@ const labTestSchema = new mongoose.Schema(
                 unit: { type: String },
                 normalRange: { type: String },
                 isAbnormal: { type: Boolean, default: false },
+                isCritical: { type: Boolean, default: false },
             },
         ],
         remarks: {

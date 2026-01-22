@@ -36,6 +36,8 @@ const labTestMasterSchema = new mongoose.Schema(
                 name: { type: String, required: true },
                 unit: { type: String },
                 normalRange: { type: String },
+                criticalLow: { type: Number },
+                criticalHigh: { type: Number },
                 method: { type: String },
             },
         ],

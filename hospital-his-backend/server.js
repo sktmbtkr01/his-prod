@@ -40,6 +40,15 @@ const aiRoutes = require('./routes/ai.routes');
 const adminRoutes = require('./routes/admin.routes');
 const notificationRoutes = require('./routes/notification.routes');
 const nursingRoutes = require('./routes/nursing.routes');
+const carePlanRoutes = require('./routes/careplan.routes');
+const nurseAssignmentRoutes = require('./routes/nurseAssignment.routes');
+const masterdataRoutes = require('./routes/masterdata.routes');
+const userManagementRoutes = require('./routes/userManagement.routes');
+const adminDashboardRoutes = require('./routes/adminDashboard.routes');
+const revenueAnomalyRoutes = require('./routes/revenueAnomaly.routes');
+const breakGlassRoutes = require('./routes/breakGlass.routes');
+const adminBreakGlassRoutes = require('./routes/adminBreakGlass.routes');
+const nursingRoutes = require('./routes/nursing.routes');
 
 // Initialize Express app
 const app = express();
@@ -145,6 +154,15 @@ app.use(`${API_PREFIX}/analytics`, analyticsRoutes);
 app.use(`${API_PREFIX}/ai`, aiRoutes);
 app.use(`${API_PREFIX}/admin`, adminRoutes);
 app.use(`${API_PREFIX}/notifications`, notificationRoutes);
+app.use(`${API_PREFIX}/nursing`, nursingRoutes);
+app.use(`${API_PREFIX}/care-plans`, carePlanRoutes);
+app.use(`${API_PREFIX}/nurse-assignments`, nurseAssignmentRoutes);
+app.use(`${API_PREFIX}/admin/master`, masterdataRoutes);
+app.use(`${API_PREFIX}/admin/users`, userManagementRoutes);
+app.use(`${API_PREFIX}/admin/dashboard`, adminDashboardRoutes);
+app.use(`${API_PREFIX}/admin/revenue-anomalies`, revenueAnomalyRoutes);
+app.use(`${API_PREFIX}/break-glass`, breakGlassRoutes);
+app.use(`${API_PREFIX}/admin/break-glass`, adminBreakGlassRoutes);
 app.use(`${API_PREFIX}/nursing`, nursingRoutes);
 
 // 404 handler for undefined routes

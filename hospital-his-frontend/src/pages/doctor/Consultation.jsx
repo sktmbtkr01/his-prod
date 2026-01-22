@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, User, Calendar, Activity, Save, Plus, Trash, Pill, FileText, FlaskConical } from 'lucide-react';
+import { ArrowLeft, User, Calendar, Activity, Save, Plus, Trash, Pill, FileText, FlaskConical, ClipboardList, Scan } from 'lucide-react';
 import axios from 'axios'; // We'll use axios directly for this complex form for now, or move to service later
+import CarePlanCreator from '../../components/doctor/CarePlanCreator';
 
 const API_RES_URL = 'http://localhost:5001/api/v1/';
 const getConfig = () => {
@@ -30,22 +31,48 @@ const Consultation = () => {
     const [availableTests, setAvailableTests] = useState([]);
     const [selectedTestId, setSelectedTestId] = useState('');
 
+    // Radiology Tests State
+    const [radiologyTests, setRadiologyTests] = useState([]);
+    const [availableRadiologyTests, setAvailableRadiologyTests] = useState([]);
+    const [selectedRadiologyTestId, setSelectedRadiologyTestId] = useState('');
+
     // History State (must be at top with other hooks!)
     const [showHistory, setShowHistory] = useState(false);
     const [patientHistory, setPatientHistory] = useState([]);
 
+    // Care Plan State (for IPD patients)
+    const [activeAdmission, setActiveAdmission] = useState(null);
+    const [showCarePlan, setShowCarePlan] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [appointmentRes, testsRes] = await Promise.all([
+                const [appointmentRes, testsRes, radiologyRes] = await Promise.all([
                     axios.get(`${API_RES_URL}opd/appointments/${appointmentId}`, getConfig()),
-                    axios.get(`${API_RES_URL}lab/tests`, getConfig())
+                    axios.get(`${API_RES_URL}lab/tests`, getConfig()),
+                    axios.get(`${API_RES_URL}radiology/tests`, getConfig())
                 ]);
                 setAppointment(appointmentRes.data.data);
                 setAvailableTests(testsRes.data.data || []);
+                setAvailableRadiologyTests(radiologyRes.data.data || []);
                 // Pre-fill if exists
                 if (appointmentRes.data.data.notes) setNotes(appointmentRes.data.data.notes);
                 if (appointmentRes.data.data.chiefComplaint) setSymptoms(appointmentRes.data.data.chiefComplaint);
+
+                // Check if patient has an active admission (IPD)
+                const patientId = appointmentRes.data.data.patient._id;
+                try {
+                    const admissionRes = await axios.get(
+                        `${API_RES_URL}ipd/admissions?patient=${patientId}&status=admitted`,
+                        getConfig()
+                    );
+                    if (admissionRes.data.data && admissionRes.data.data.length > 0) {
+                        setActiveAdmission(admissionRes.data.data[0]);
+                    }
+                } catch (admErr) {
+                    // No active admission - that's fine for OPD patients
+                    console.log('No active admission found');
+                }
             } catch (error) {
                 console.error("Error fetching data", error);
             } finally {
@@ -77,6 +104,18 @@ const Consultation = () => {
         setLabTests(labTests.filter(t => t._id !== testId));
     };
 
+    const addRadiologyTest = () => {
+        if (!selectedRadiologyTestId) return;
+        const test = availableRadiologyTests.find(t => t._id === selectedRadiologyTestId);
+        if (!test || radiologyTests.some(t => t._id === test._id)) return; // Prevent duplicates
+        setRadiologyTests([...radiologyTests, { _id: test._id, testName: test.testName, testCode: test.testCode, modality: test.modality }]);
+        setSelectedRadiologyTestId('');
+    };
+
+    const removeRadiologyTest = (testId) => {
+        setRadiologyTests(radiologyTests.filter(t => t._id !== testId));
+    };
+
     const handleFinish = async () => {
         try {
             // 1. Update Appointment Status, Notes, Diagnosis & Prescription
@@ -101,7 +140,24 @@ const Consultation = () => {
                 await Promise.all(labOrderPromises);
             }
 
-            alert('Consultation Completed! Prescription & Lab Orders Saved.');
+            // 3. Create Radiology Orders for each selected test
+            if (radiologyTests.length > 0) {
+                const radiologyOrderPromises = radiologyTests.map(test =>
+                    axios.post(`${API_RES_URL}radiology/orders`, {
+                        patient: appointment.patient._id,
+                        visit: appointmentId,
+                        visitModel: 'Appointment',
+                        test: test._id
+                    }, getConfig())
+                );
+                await Promise.all(radiologyOrderPromises);
+            }
+
+            const ordersSummary = [];
+            if (labTests.length > 0) ordersSummary.push(`${labTests.length} Lab Test(s)`);
+            if (radiologyTests.length > 0) ordersSummary.push(`${radiologyTests.length} Radiology Scan(s)`);
+
+            alert(`Consultation Completed! Prescription${ordersSummary.length > 0 ? ' & ' + ordersSummary.join(', ') : ''} Saved.`);
             navigate('/dashboard/opd-queue');
         } catch (error) {
             console.error("Error saving consultation", error);
@@ -489,6 +545,115 @@ const Consultation = () => {
                             )}
                         </div>
                     </motion.div>
+
+                    {/* Radiology Scans Order Section */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.25, type: "spring" }}
+                        className="bg-violet-50 p-8 rounded-2xl shadow-sm border border-violet-100 relative overflow-hidden"
+                    >
+                        {/* Radiology Watermark */}
+                        <div className="absolute top-4 right-4 text-violet-900/5 font-serif text-7xl leading-none select-none pointer-events-none">📷</div>
+
+                        <h3 className="font-bold text-violet-800 mb-6 flex items-center gap-2 text-xl relative z-10">
+                            <div className="p-2 bg-white rounded-lg shadow-sm text-violet-600">
+                                <Scan size={20} />
+                            </div>
+                            Radiology Scans
+                        </h3>
+
+                        {/* Test Selector */}
+                        <div className="flex gap-3 mb-6 relative z-10">
+                            <select
+                                className="flex-1 px-4 py-2.5 bg-white border border-violet-100 rounded-xl focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 outline-none text-slate-700"
+                                value={selectedRadiologyTestId}
+                                onChange={(e) => setSelectedRadiologyTestId(e.target.value)}
+                            >
+                                <option value="">Select a Radiology Scan...</option>
+                                {availableRadiologyTests.map((test) => (
+                                    <option key={test._id} value={test._id}>
+                                        {test.testName} ({test.modality}) - {test.testCode}
+                                    </option>
+                                ))}
+                            </select>
+                            <button
+                                onClick={addRadiologyTest}
+                                className="px-4 py-2.5 bg-violet-500 text-white rounded-xl hover:bg-violet-600 shadow-sm transition-all flex items-center gap-2 font-medium"
+                            >
+                                <Plus size={18} /> Add
+                            </button>
+                        </div>
+
+                        {/* Ordered Radiology Tests List */}
+                        <div className="space-y-3 relative z-10">
+                            {radiologyTests.map((test, idx) => (
+                                <motion.div
+                                    key={test._id}
+                                    layout
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="flex justify-between items-center p-4 bg-white rounded-xl border border-violet-50 shadow-sm"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-6 h-6 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold">
+                                            {idx + 1}
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-slate-800">{test.testName}</div>
+                                            <div className="text-xs text-gray-400">
+                                                <span className="font-mono">{test.testCode}</span>
+                                                {test.modality && <span className="ml-2 px-1.5 py-0.5 bg-violet-100 text-violet-600 rounded text-[10px] font-medium">{test.modality}</span>}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button onClick={() => removeRadiologyTest(test._id)} className="p-2 text-gray-300 hover:text-red-500 transition-colors">
+                                        <Trash size={18} />
+                                    </button>
+                                </motion.div>
+                            ))}
+                            {radiologyTests.length === 0 && (
+                                <div className="text-center py-8 opacity-50">
+                                    <Scan size={32} className="mx-auto text-violet-300 mb-2" />
+                                    <p className="text-violet-700 text-sm">No radiology scans ordered.</p>
+                                </div>
+                            )}
+                        </div>
+                    </motion.div>
+
+                    {/* Care Plan Section (Only for IPD Patients) */}
+                    {activeAdmission && (
+                        <CarePlanCreator
+                            patient={appointment.patient}
+                            admission={activeAdmission}
+                            onSuccess={() => {
+                                alert('Care Plan created! Nursing tasks have been generated.');
+                            }}
+                        />
+                    )}
+
+                    {/* IPD Notice for OPD Patients */}
+                    {!activeAdmission && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
+                            className="bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden"
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-gray-100 rounded-xl">
+                                    <ClipboardList size={24} className="text-gray-400" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-gray-600">Care Plans</h3>
+                                    <p className="text-sm text-gray-400">
+                                        Care plans can be created for admitted (IPD) patients only.
+                                        This is an outpatient consultation.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
                 </div>
             </div>
         </div>
