@@ -11,7 +11,11 @@ router.use(authenticate);
  * @route   GET /api/staff/doctors
  * @desc    Get all doctors (users with role 'doctor') for dropdowns
  */
-router.get('/doctors', authorize('admin', 'doctor', 'nurse', 'receptionist'), async (req, res) => {
+/**
+ * @route   GET /api/staff/doctors
+ * @desc    Get all doctors (users with role 'doctor') for dropdowns
+ */
+router.get('/doctors', authorize('admin', 'doctor', 'nurse', 'receptionist', 'head_nurse'), async (req, res) => {
     try {
         const doctors = await User.find({ role: 'doctor', isActive: true }).select('_id username email profile role');
         res.status(200).json({ success: true, data: doctors });
@@ -24,7 +28,7 @@ router.get('/doctors', authorize('admin', 'doctor', 'nurse', 'receptionist'), as
  * @route   GET /api/staff
  * @desc    Get all staff
  */
-router.get('/', authorize('admin', 'doctor', 'nurse', 'receptionist'), staffController.getAllStaff);
+router.get('/', authorize('admin', 'doctor', 'nurse', 'receptionist', 'head_nurse'), staffController.getAllStaff);
 
 /**
  * @route   POST /api/staff
@@ -54,13 +58,13 @@ router.delete('/:id', authorize('admin'), staffController.deleteStaff);
  * @route   POST /api/staff/attendance
  * @desc    Record attendance
  */
-router.post('/attendance', authorize('admin'), staffController.recordAttendance);
+router.post('/attendance', authorize('admin', 'head_nurse'), staffController.recordAttendance);
 
 /**
  * @route   GET /api/staff/attendance
  * @desc    Get attendance records
  */
-router.get('/attendance', authorize('admin'), staffController.getAttendance);
+router.get('/attendance', authorize('admin', 'head_nurse'), staffController.getAttendance);
 
 /**
  * @route   POST /api/staff/leaves

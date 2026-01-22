@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, Clock, CheckCircle, AlertCircle, User, TestTube, X, Check, Loader } from 'lucide-react';
+import { FlaskConical, Clock, CheckCircle, AlertCircle, AlertTriangle, User, TestTube, X, Check, Loader } from 'lucide-react';
 import labService from '../../services/lab.service';
 
 const Laboratory = () => {
@@ -57,7 +57,10 @@ const Laboratory = () => {
                 value: '',
                 unit: p.unit || '',
                 normalRange: p.normalRange || '',
-                isAbnormal: false
+                criticalLow: p.criticalLow,
+                criticalHigh: p.criticalHigh,
+                isAbnormal: false,
+                isCritical: false
             })));
             setRemarks('');
             setShowResultModal(true);
@@ -69,20 +72,50 @@ const Laboratory = () => {
     const handleResultChange = (index, value) => {
         const updated = [...resultData];
         updated[index].value = value;
-        // Auto-detect abnormal (simple check for now)
+
+        // Auto-detect status
         const range = updated[index].normalRange;
-        if (range && value) {
-            const parts = range.split('-').map(s => parseFloat(s.trim()));
-            if (parts.length === 2) {
-                const numVal = parseFloat(value);
-                updated[index].isAbnormal = numVal < parts[0] || numVal > parts[1];
+        const critLow = updated[index].criticalLow;
+        const critHigh = updated[index].criticalHigh;
+
+        if (value) {
+            const numVal = parseFloat(value);
+
+            // Check Critical
+            if ((critLow !== undefined && numVal < critLow) || (critHigh !== undefined && numVal > critHigh)) {
+                updated[index].isCritical = true;
+                updated[index].isAbnormal = true; // Critical is also abnormal
+            } else {
+                updated[index].isCritical = false;
+
+                // Check Abnormal (Standard)
+                if (range) {
+                    const parts = range.split('-').map(s => parseFloat(s.trim()));
+                    if (parts.length === 2) {
+                        updated[index].isAbnormal = numVal < parts[0] || numVal > parts[1];
+                    }
+                }
             }
+        } else {
+            updated[index].isCritical = false;
+            updated[index].isAbnormal = false;
         }
+
         setResultData(updated);
     };
 
     const handleSubmitResults = async () => {
         if (!selectedOrder) return;
+
+        // Check for critical values
+        const criticalCount = resultData.filter(r => r.isCritical).length;
+        if (criticalCount > 0) {
+            const confirm = window.confirm(
+                `⚠️ CRITICAL ALERT ⚠️\n\n${criticalCount} value(s) are in the CRITICAL RANGE.\nThis indicates a potentially life-threatening situation.\n\nAre you sure you want to save these results?`
+            );
+            if (!confirm) return;
+        }
+
         setSubmitting(true);
         try {
             await labService.enterResults(selectedOrder._id, resultData, remarks);
@@ -290,25 +323,46 @@ const Laboratory = () => {
                                         <p className="text-gray-500 text-sm">No parameters defined for this test. Please add manually.</p>
                                     ) : (
                                         resultData.map((param, idx) => (
-                                            <div key={idx} className={`grid grid-cols-12 gap-3 items-center p-3 rounded-lg border ${param.isAbnormal ? 'bg-red-50 border-red-200' : 'bg-gray-50 border-gray-100'}`}>
+                                            <div key={idx} className={`grid grid-cols-12 gap-3 items-center p-3 rounded-lg border transition-all duration-300 ${param.isCritical ? 'bg-red-100 border-red-300 shadow-[0_0_10px_rgba(239,68,68,0.3)]' :
+                                                    param.isAbnormal ? 'bg-amber-50 border-amber-200' :
+                                                        'bg-gray-50 border-gray-100'
+                                                }`}>
                                                 <div className="col-span-4">
-                                                    <div className="font-medium text-slate-700">{param.parameter}</div>
+                                                    <div className={`font-medium ${param.isCritical ? 'text-red-700 font-bold' : 'text-slate-700'}`}>
+                                                        {param.parameter}
+                                                    </div>
                                                     <div className="text-xs text-gray-400">Normal: {param.normalRange || 'N/A'}</div>
+                                                    {(param.criticalLow || param.criticalHigh) && (
+                                                        <div className="text-[10px] text-red-500 font-bold">
+                                                            Critical: {param.criticalLow ? `<${param.criticalLow}` : ''} {param.criticalHigh ? `>${param.criticalHigh}` : ''}
+                                                        </div>
+                                                    )}
                                                 </div>
                                                 <div className="col-span-5">
                                                     <input
                                                         type="text"
-                                                        className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none"
+                                                        className={`w-full px-3 py-2 border rounded-lg focus:ring-2 outline-none ${param.isCritical ? 'border-red-300 focus:ring-red-500/20 focus:border-red-500 text-red-700 font-bold' :
+                                                                'border-gray-200 focus:ring-purple-500/20 focus:border-purple-500'
+                                                            }`}
                                                         placeholder="Enter value"
                                                         value={param.value}
                                                         onChange={(e) => handleResultChange(idx, e.target.value)}
                                                     />
                                                 </div>
                                                 <div className="col-span-2 text-sm text-gray-500">{param.unit}</div>
-                                                <div className="col-span-1">
-                                                    {param.isAbnormal && (
-                                                        <span className="text-red-500"><AlertCircle size={18} /></span>
-                                                    )}
+                                                <div className="col-span-1 flex justify-center">
+                                                    {param.isCritical ? (
+                                                        <motion.div
+                                                            animate={{ scale: [1, 1.2, 1] }}
+                                                            transition={{ repeat: Infinity, duration: 1.5 }}
+                                                            className="text-red-600 bg-white rounded-full p-1 shadow-sm"
+                                                            title="Critical Value!"
+                                                        >
+                                                            <AlertTriangle size={20} fill="#fee2e2" />
+                                                        </motion.div>
+                                                    ) : param.isAbnormal ? (
+                                                        <span className="text-amber-500" title="Abnormal"><AlertCircle size={20} /></span>
+                                                    ) : null}
                                                 </div>
                                             </div>
                                         ))

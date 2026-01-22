@@ -5,6 +5,7 @@
 
 const ErrorResponse = require('../utils/errorResponse');
 const { USER_ROLES } = require('../config/constants');
+const { checkAdminPermission, isRouteBlockedForAdmin } = require('../config/permissions.config');
 
 /**
  * Authorize specific roles to access a route
@@ -182,4 +183,91 @@ exports.sameDepartment = (req, res, next) => {
     return next(
         new ErrorResponse('Not authorized to access this department', 403)
     );
+};
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ADMIN CLINICAL RESTRICTION MIDDLEWARE
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Deny Admin from performing clinical actions
+ * Apply this middleware to all clinical routes as a safety net
+ */
+exports.denyAdminClinical = (req, res, next) => {
+    if (!req.user) {
+        return next(new ErrorResponse('User not authenticated', 401));
+    }
+
+    if (req.user.role === USER_ROLES.ADMIN) {
+        // Check if this route is blocked for admin
+        if (isRouteBlockedForAdmin(req.originalUrl, req.method)) {
+            // Log attempted privilege escalation
+            console.warn(
+                `[RBAC] Admin attempted clinical action: ${req.method} ${req.originalUrl} by user ${req.user._id}`
+            );
+
+            return next(
+                new ErrorResponse(
+                    'Administrative users cannot perform clinical operations. This action has been logged.',
+                    403
+                )
+            );
+        }
+    }
+
+    next();
+};
+
+/**
+ * Check if user has a specific permission scope
+ * @param {String} scope - Required permission scope (e.g., 'clinical:emr:create')
+ */
+exports.requireScope = (scope) => {
+    return (req, res, next) => {
+        if (!req.user) {
+            return next(new ErrorResponse('User not authenticated', 401));
+        }
+
+        const userRole = req.user.role;
+
+        // For Admin, use the granular permission check
+        if (userRole === USER_ROLES.ADMIN) {
+            if (!checkAdminPermission(scope)) {
+                console.warn(
+                    `[RBAC] Admin denied scope '${scope}' - user ${req.user._id}`
+                );
+                return next(
+                    new ErrorResponse(
+                        `Admin role does not have permission for scope: ${scope}`,
+                        403
+                    )
+                );
+            }
+        }
+
+        // For other roles, check against role-based permissions
+        // (Existing hasPermission logic can be used)
+
+        next();
+    };
+};
+
+/**
+ * Audit all admin actions - logs every action to audit trail
+ */
+exports.auditAdminAction = (action, entity) => {
+    return async (req, res, next) => {
+        if (req.user && req.user.role === USER_ROLES.ADMIN) {
+            // Attach audit info to request for later logging
+            req.auditInfo = {
+                action,
+                entity,
+                adminId: req.user._id,
+                ip: req.ip,
+                userAgent: req.get('User-Agent'),
+                timestamp: new Date(),
+            };
+        }
+        next();
+    };
 };

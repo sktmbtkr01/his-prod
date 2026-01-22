@@ -20,17 +20,31 @@ const Login = () => {
         (state) => state.auth
     );
 
+    // Error handling effect
     useEffect(() => {
         if (isError) {
-            // toast.error(message); // Ideally use a toast library
+            // toast.error(message);
+            dispatch(reset());
         }
+    }, [isError, message, dispatch]);
 
+    // Success/Navigation effect
+    useEffect(() => {
         if (isSuccess || user) {
-            navigate('/dashboard');
+            if (user?.role === 'admin') {
+                navigate('/admin');
+            } else {
+                navigate('/dashboard');
+            }
         }
+    }, [user, isSuccess, navigate]);
 
-        dispatch(reset());
-    }, [user, isError, isSuccess, message, navigate, dispatch]);
+    // Cleanup effect
+    useEffect(() => {
+        return () => {
+            if (isSuccess) dispatch(reset());
+        };
+    }, [dispatch, isSuccess]);
 
     const onChange = (e) => {
         setFormData((prevState) => ({

@@ -111,3 +111,10 @@ Thumbs.db
 *.tmp
 *.temp
 *.bak
+# Logs
+logs/
+*.log
+
+# Node
+node_modules/
+
