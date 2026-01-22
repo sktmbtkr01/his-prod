@@ -60,4 +60,10 @@ router.post('/cases/:id/triage', authorize('doctor', 'nurse', 'admin'), emergenc
  */
 router.put('/cases/:id/status', authorize('doctor', 'nurse', 'admin'), emergencyController.updateStatus);
 
+/**
+ * @route   POST /api/emergency/cases/:id/vitals
+ * @desc    Update vitals for an emergency case
+ */
+router.post('/cases/:id/vitals', authorize('doctor', 'nurse', 'admin'), emergencyController.updateVitals);
+
 module.exports = router;

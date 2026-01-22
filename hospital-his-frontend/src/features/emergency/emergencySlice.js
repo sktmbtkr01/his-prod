@@ -129,6 +129,31 @@ export const updateCaseStatus = createAsyncThunk(
     }
 );
 
+// Update vitals
+export const updateCaseVitals = createAsyncThunk(
+    'emergency/updateVitals',
+    async ({ id, vitals }, thunkAPI) => {
+        try {
+            const result = await emergencyService.updateVitals(id, vitals);
+            thunkAPI.dispatch(setDowntimeMode(false));
+            return result;
+        } catch (error) {
+            const message =
+                (error.response && error.response.data && error.response.data.message) ||
+                error.message ||
+                error.toString();
+
+            if (!error.response || error.code === 'ERR_NETWORK') {
+                thunkAPI.dispatch(setDowntimeMode(true));
+                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_VITALS', id, data: vitals }));
+                return thunkAPI.rejectWithValue('Offline: Vitals update queued for sync');
+            }
+
+            return thunkAPI.rejectWithValue(message);
+        }
+    }
+);
+
 // Get case by ID
 export const fetchCaseById = createAsyncThunk(
     'emergency/fetchCaseById',
@@ -267,7 +292,10 @@ export const emergencySlice = createSlice({
             .addCase(createEmergencyCase.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.activeCases.unshift(action.payload);
+                const exists = state.activeCases.find(c => c._id === action.payload._id);
+                if (!exists) {
+                    state.activeCases.unshift(action.payload);
+                }
             })
             .addCase(createEmergencyCase.rejected, (state, action) => {
                 state.isLoading = false;
@@ -311,6 +339,27 @@ export const emergencySlice = createSlice({
                 }
             })
             .addCase(updateCaseStatus.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+
+            // Update vitals
+            .addCase(updateCaseVitals.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(updateCaseVitals.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                const index = state.activeCases.findIndex(c => c._id === action.payload._id);
+                if (index !== -1) {
+                    state.activeCases[index] = action.payload;
+                }
+                if (state.selectedCase && state.selectedCase._id === action.payload._id) {
+                    state.selectedCase = action.payload;
+                }
+            })
+            .addCase(updateCaseVitals.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
                 state.message = action.payload;

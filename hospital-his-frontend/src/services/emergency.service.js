@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/v1/';
+const API_BASE_URL = 'http://localhost:5001/api/v1/';
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -65,6 +65,13 @@ const getDashboardStats = async () => {
     return response.data.data;
 };
 
+// --- Vitals ---
+
+const updateVitals = async (id, vitalsData) => {
+    const response = await axios.post(API_BASE_URL + `emergency/cases/${id}/vitals`, vitalsData, getConfig());
+    return response.data.data;
+};
+
 const emergencyService = {
     getLiveBoard,
     createCase,
@@ -72,6 +79,7 @@ const emergencyService = {
     updateCase,
     updateTriage,
     updateStatus,
+    updateVitals,
     getQueue,
     getDashboardStats,
 };

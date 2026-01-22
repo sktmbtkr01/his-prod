@@ -1,6 +1,7 @@
 const Emergency = require('../models/Emergency');
 const asyncHandler = require('../utils/asyncHandler');
 const ErrorResponse = require('../utils/errorResponse');
+const Patient = require('../models/Patient');
 
 /**
  * @desc    Create emergency case
@@ -8,6 +9,51 @@ const ErrorResponse = require('../utils/errorResponse');
  */
 exports.createEmergencyCase = asyncHandler(async (req, res, next) => {
     req.body.createdBy = req.user.id;
+
+    // Handle Quick Registration (Create Patient if patient data is provided as object)
+    if (typeof req.body.patient === 'object' && req.body.patient !== null) {
+        const patientData = req.body.patient;
+
+        // Generate temporary UHID for emergency patient if not present 
+        // (Patient model likely has its own generation, but ensuring we satisfy requirements)
+        // Assuming Patient model handles validation and ID generation
+
+        // Create the patient first
+        // Capitalize gender to match Patient model enum ('Male', 'Female', 'Other')
+        const normalizedGender = patientData.gender ?
+            patientData.gender.charAt(0).toUpperCase() + patientData.gender.slice(1).toLowerCase() :
+            null;
+
+        const patient = await Patient.create({
+            firstName: patientData.firstName,
+            lastName: patientData.lastName,
+            dateOfBirth: patientData.dateOfBirth || (patientData.age ? new Date(new Date().setFullYear(new Date().getFullYear() - patientData.age)) : null),
+            gender: normalizedGender,
+            phone: patientData.contactNumber, // Mapping contactNumber to phone
+            email: patientData.email,
+            address: {
+                street: patientData.address || '',
+                city: '',
+                state: '',
+                pincode: '' // matched with Patient model
+            },
+            emergencyContact: {
+                name: '',
+                phone: '',
+                relationship: '' // matched with Patient model
+            },
+            bloodGroup: patientData.bloodGroup,
+            isEmergency: true
+        });
+
+        // Add email only if present to avoid validation error if it's required or unique (though it's not unique in schema, good practice)
+        if (patientData.email) {
+            patient.email = patientData.email;
+            await patient.save();
+        }
+
+        req.body.patient = patient._id;
+    }
 
     const emergencyCase = await Emergency.create(req.body);
     await emergencyCase.populate(['patient', 'assignedDoctor', 'assignedNurse']);
@@ -321,6 +367,27 @@ exports.updateStatus = asyncHandler(async (req, res, next) => {
             emergencyCase.disposition = 'discharge';
         } else if (status === Emergency.EMERGENCY_STATUS.ADMITTED) {
             emergencyCase.disposition = 'admit';
+
+            // Create Admission Request for IPD bed assignment
+            // This will appear in IPD "Pending Admission Requests" for reception to process
+            try {
+                const AdmissionRequest = require('../models/AdmissionRequest');
+
+                await AdmissionRequest.create({
+                    patient: emergencyCase.patient,
+                    doctor: emergencyCase.assignedDoctor || req.user.id,
+                    reason: emergencyCase.chiefComplaint || 'Emergency admission',
+                    priority: 'emergency',
+                    recommendedWardType: emergencyCase.triageLevel === 'critical' ? 'icu' : 'general',
+                    status: 'pending',
+                    notes: `Transferred from Emergency. Triage: ${emergencyCase.triageLevel}`
+                });
+                console.log(`[Emergency] Created admission request for patient ${emergencyCase.patient}`);
+            } catch (err) {
+                console.error('Failed to create admission request:', err);
+                // Don't block emergency update, but log error
+            }
+
         } else if (status === Emergency.EMERGENCY_STATUS.TRANSFERRED) {
             emergencyCase.disposition = 'transfer';
         }
@@ -342,6 +409,55 @@ exports.updateStatus = asyncHandler(async (req, res, next) => {
             caseId: emergencyCase._id,
             previousStatus,
             newStatus: status,
+            data: emergencyCase,
+        });
+    }
+
+    res.status(200).json({
+        success: true,
+        data: emergencyCase,
+    });
+});
+
+/**
+ * @desc    Update vitals for an emergency case
+ * @route   POST /api/emergency/cases/:id/vitals
+ */
+exports.updateVitals = asyncHandler(async (req, res, next) => {
+    const { bloodPressure, pulse, temperature, oxygenSaturation, respiratoryRate
+
+
+    } = req.body;
+
+    const emergencyCase = await Emergency.findById(req.params.id);
+
+    if (!emergencyCase) {
+        return next(new ErrorResponse('Emergency case not found', 404));
+    }
+
+    // Update vitals
+    emergencyCase.vitals = {
+        bloodPressure: bloodPressure || emergencyCase.vitals?.bloodPressure,
+        pulse: pulse || emergencyCase.vitals?.pulse,
+        temperature: temperature || emergencyCase.vitals?.temperature,
+        oxygenSaturation: oxygenSaturation || emergencyCase.vitals?.oxygenSaturation,
+        respiratoryRate: respiratoryRate || emergencyCase.vitals?.respiratoryRate,
+        recordedAt: new Date(),
+        recordedBy: req.user.id
+    };
+
+    await emergencyCase.save();
+
+    await emergencyCase.populate([
+        { path: 'patient', select: 'patientId firstName lastName phone' },
+        { path: 'assignedDoctor', select: 'profile.firstName profile.lastName' },
+    ]);
+
+    // Emit socket event for real-time update
+    const io = req.app.get('io');
+    if (io) {
+        io.to('emergency-room').emit('emergency:vitals', {
+            caseId: emergencyCase._id,
             data: emergencyCase,
         });
     }

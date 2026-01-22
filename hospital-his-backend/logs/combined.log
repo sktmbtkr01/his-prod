@@ -8719,3 +8719,793 @@ Error: User role 'nurse' is not authorized to access this route
 2026-01-22 12:32:54 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
 2026-01-22 12:33:20 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
 2026-01-22 12:41:17 [ERROR]: Error connecting to MongoDB: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+2026-01-22 17:22:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-22 17:22:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:22:15 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 17:22:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:22:15 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 17:22:15 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 17:22:15 [INFO]: 🔌 WebSocket enabled
+2026-01-22 17:22:15 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 17:22:15 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:24:41 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 17:24:41 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 17:24:41 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 17:24:41 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 17:37:43 [INFO]: Client connected: Zta0BLg6Xbl6gVKUAAAB
+2026-01-22 17:37:43 [INFO]: Socket Zta0BLg6Xbl6gVKUAAAB joined emergency room
+2026-01-22 17:37:45 [INFO]: Client disconnected: Zta0BLg6Xbl6gVKUAAAB
+2026-01-22 17:37:46 [INFO]: Client connected: -r5_w_4p1Haf16ByAAAD
+2026-01-22 17:37:46 [INFO]: Socket -r5_w_4p1Haf16ByAAAD joined emergency room
+2026-01-22 17:38:28 [INFO]: Client disconnected: -r5_w_4p1Haf16ByAAAD
+2026-01-22 17:38:28 [INFO]: Client connected: Txfo8JOlCnK_pfXpAAAG
+2026-01-22 17:38:28 [INFO]: Socket Txfo8JOlCnK_pfXpAAAG joined emergency room
+2026-01-22 17:38:34 [INFO]: Client disconnected: Txfo8JOlCnK_pfXpAAAG
+2026-01-22 17:38:42 [INFO]: Client connected: UagJ2C_j5AQGMHb9AAAJ
+2026-01-22 17:38:42 [INFO]: Socket UagJ2C_j5AQGMHb9AAAJ joined emergency room
+2026-01-22 17:41:13 [INFO]: Client disconnected: UagJ2C_j5AQGMHb9AAAJ
+2026-01-22 17:41:14 [INFO]: Client connected: oTuNUPYWGmPc3VszAAAM
+2026-01-22 17:41:14 [INFO]: Socket oTuNUPYWGmPc3VszAAAM joined emergency room
+2026-01-22 17:41:15 [INFO]: Client disconnected: oTuNUPYWGmPc3VszAAAM
+2026-01-22 17:41:15 [INFO]: Client connected: GMnAFmWm60mUSDsWAAAO
+2026-01-22 17:41:15 [INFO]: Socket GMnAFmWm60mUSDsWAAAO joined emergency room
+2026-01-22 17:41:34 [INFO]: Client disconnected: GMnAFmWm60mUSDsWAAAO
+2026-01-22 17:41:34 [INFO]: Client connected: JBZYuXTiUfBHmWcNAAAQ
+2026-01-22 17:41:34 [INFO]: Socket JBZYuXTiUfBHmWcNAAAQ joined emergency room
+2026-01-22 17:42:18 [INFO]: Client disconnected: JBZYuXTiUfBHmWcNAAAQ
+2026-01-22 17:42:30 [INFO]: Client connected: -8d5Obc-UjxPJNaNAAAT
+2026-01-22 17:42:30 [INFO]: Socket -8d5Obc-UjxPJNaNAAAT joined emergency room
+2026-01-22 17:44:49 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:52 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:52 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:52 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:52 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:53 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:53 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:53 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:44:53 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:45:01 [ERROR]: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: patient: Cast to ObjectId failed for value "{
+  firstName: 'yash',
+  lastName: 'ganatra',
+  age: '22',
+  dateOfBirth: '2000-11-11',
+  gender: 'male',
+  contactNumber: '4567890123'
+}" (type Object) at path "patient" because of "BSONError", emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1466:12)
+    at model.$set (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:1121:16)
+    at model.Document (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:167:12)
+    at model.Model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:123:12)
+    at new model (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:4755:15)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2917:18
+    at Array.map (<anonymous>)
+    at Function.create (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\model.js:2906:30)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.controller.js:12:43
+2026-01-22 17:46:46 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 17:46:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:46:46 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 17:46:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:46:46 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 17:46:46 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 17:46:46 [INFO]: 🔌 WebSocket enabled
+2026-01-22 17:46:46 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 17:46:46 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 17:46:48 [INFO]: Client connected: hWsJPgdmXfw0I0MwAAAB
+2026-01-22 17:46:49 [INFO]: Socket hWsJPgdmXfw0I0MwAAAB joined emergency room
+2026-01-22 17:47:10 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 17:47:13 [INFO]: Client disconnected: hWsJPgdmXfw0I0MwAAAB
+2026-01-22 17:47:13 [INFO]: Client connected: gIcxHzGVGmXo1aqGAAAE
+2026-01-22 17:47:13 [INFO]: Socket gIcxHzGVGmXo1aqGAAAE joined emergency room
+2026-01-22 18:01:31 [INFO]: Client disconnected: gIcxHzGVGmXo1aqGAAAE
+2026-01-22 18:01:32 [INFO]: Client connected: wk3Nh2M8hqoHx0QHAAAH
+2026-01-22 18:01:32 [INFO]: Socket wk3Nh2M8hqoHx0QHAAAH joined emergency room
+2026-01-22 18:04:05 [ERROR]: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:04:07 [ERROR]: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:04:07 [ERROR]: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `female` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:04:56 [ERROR]: Emergency validation failed: emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:06:29 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 18:06:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:06:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:06:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:06:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:06:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:06:29 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:06:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:06:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:06:29 [INFO]: Client connected: L33agAO6RN4SdetcAAAB
+2026-01-22 18:06:29 [INFO]: Socket L33agAO6RN4SdetcAAAB joined emergency room
+2026-01-22 18:07:07 [INFO]: Client disconnected: L33agAO6RN4SdetcAAAB
+2026-01-22 18:07:09 [INFO]: Client connected: tdwfoI0HZsYpqHPaAAAE
+2026-01-22 18:07:09 [INFO]: Socket tdwfoI0HZsYpqHPaAAAE joined emergency room
+2026-01-22 18:07:35 [ERROR]: Emergency validation failed: emergencyNumber: Path `emergencyNumber` is required.
+ValidationError: Emergency validation failed: emergencyNumber: Path `emergencyNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:08:49 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 18:08:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:08:49 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:08:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:08:49 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:08:49 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:08:49 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:08:49 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:08:49 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:08:49 [INFO]: Client connected: Yl3bTmaaFqUCBvmEAAAB
+2026-01-22 18:08:49 [INFO]: Socket Yl3bTmaaFqUCBvmEAAAB joined emergency room
+2026-01-22 18:11:51 [INFO]: Client disconnected: Yl3bTmaaFqUCBvmEAAAB
+2026-01-22 18:11:52 [INFO]: Client connected: ZWHy_cM3_7W1eTcCAAAD
+2026-01-22 18:11:52 [INFO]: Socket ZWHy_cM3_7W1eTcCAAAD joined emergency room
+2026-01-22 18:12:51 [INFO]: Client disconnected: ZWHy_cM3_7W1eTcCAAAD
+2026-01-22 18:12:54 [INFO]: Client connected: VUaPSAWMPBpKbS8hAAAG
+2026-01-22 18:12:54 [INFO]: Socket VUaPSAWMPBpKbS8hAAAG joined emergency room
+2026-01-22 18:12:57 [INFO]: Client disconnected: VUaPSAWMPBpKbS8hAAAG
+2026-01-22 18:13:14 [INFO]: Client connected: Zg89tIQ6HpvTTSh3AAAJ
+2026-01-22 18:13:14 [INFO]: Socket Zg89tIQ6HpvTTSh3AAAJ joined emergency room
+2026-01-22 18:13:23 [INFO]: Client disconnected: Zg89tIQ6HpvTTSh3AAAJ
+2026-01-22 18:13:38 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:13:38 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:13:40 [INFO]: Client connected: uIyRU0PGQEPMRsd5AAAM
+2026-01-22 18:13:40 [INFO]: Socket uIyRU0PGQEPMRsd5AAAM joined emergency room
+2026-01-22 18:14:02 [INFO]: Client disconnected: uIyRU0PGQEPMRsd5AAAM
+2026-01-22 18:14:15 [INFO]: Client connected: a_DKbAcEYWk-59l4AAAP
+2026-01-22 18:14:15 [INFO]: Socket a_DKbAcEYWk-59l4AAAP joined emergency room
+2026-01-22 18:15:59 [INFO]: Client disconnected: a_DKbAcEYWk-59l4AAAP
+2026-01-22 18:16:00 [INFO]: Client connected: ghtsw5oD7WBpPZcRAAAR
+2026-01-22 18:16:00 [INFO]: Socket ghtsw5oD7WBpPZcRAAAR joined emergency room
+2026-01-22 18:16:36 [INFO]: Client disconnected: ghtsw5oD7WBpPZcRAAAR
+2026-01-22 18:16:38 [INFO]: Client connected: Sup-6PaSobgVo6dOAAAU
+2026-01-22 18:16:38 [INFO]: Socket Sup-6PaSobgVo6dOAAAU joined emergency room
+2026-01-22 18:17:34 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:17:36 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:17:46 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:17:48 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:17:55 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:20:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-22 18:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:20:34 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:20:34 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:20:34 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:20:34 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:20:34 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:20:35 [INFO]: Client connected: LtCsZ64VRFh8GPsJAAAB
+2026-01-22 18:20:36 [INFO]: Socket LtCsZ64VRFh8GPsJAAAB joined emergency room
+2026-01-22 18:20:57 [INFO]: Client disconnected: LtCsZ64VRFh8GPsJAAAB
+2026-01-22 18:20:57 [INFO]: Client connected: B_URt2ZcdiA30UaKAAAD
+2026-01-22 18:20:57 [INFO]: Socket B_URt2ZcdiA30UaKAAAD joined emergency room
+2026-01-22 18:21:44 [INFO]: Client disconnected: B_URt2ZcdiA30UaKAAAD
+2026-01-22 18:21:45 [INFO]: Client connected: l1qWrhvMwg12DVQwAAAF
+2026-01-22 18:21:45 [INFO]: Socket l1qWrhvMwg12DVQwAAAF joined emergency room
+2026-01-22 18:22:15 [INFO]: Client disconnected: l1qWrhvMwg12DVQwAAAF
+2026-01-22 18:22:16 [INFO]: Client connected: dzp17Jt_QHe12H1wAAAH
+2026-01-22 18:22:16 [INFO]: Socket dzp17Jt_QHe12H1wAAAH joined emergency room
+2026-01-22 18:23:36 [INFO]: Client disconnected: dzp17Jt_QHe12H1wAAAH
+2026-01-22 18:23:39 [INFO]: Client connected: pvrEaAr7o1kFj-TeAAAK
+2026-01-22 18:23:39 [INFO]: Socket pvrEaAr7o1kFj-TeAAAK joined emergency room
+2026-01-22 18:24:13 [INFO]: Client disconnected: pvrEaAr7o1kFj-TeAAAK
+2026-01-22 18:24:28 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:24:28 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:24:30 [INFO]: Client connected: YEgw6QyF0PpNFBXeAAAN
+2026-01-22 18:24:30 [INFO]: Socket YEgw6QyF0PpNFBXeAAAN joined emergency room
+2026-01-22 18:25:06 [INFO]: Client disconnected: YEgw6QyF0PpNFBXeAAAN
+2026-01-22 18:25:18 [INFO]: Client connected: 6VLSzArcYeQM3PeOAAAQ
+2026-01-22 18:25:18 [INFO]: Socket 6VLSzArcYeQM3PeOAAAQ joined emergency room
+2026-01-22 18:25:37 [INFO]: Client disconnected: 6VLSzArcYeQM3PeOAAAQ
+2026-01-22 18:25:48 [INFO]: Client connected: LtzHZcsvm1XNXUGLAAAT
+2026-01-22 18:25:48 [INFO]: Socket LtzHZcsvm1XNXUGLAAAT joined emergency room
+2026-01-22 18:26:51 [INFO]: Client disconnected: LtzHZcsvm1XNXUGLAAAT
+2026-01-22 18:27:31 [INFO]: Client connected: Ci6S9uqNmwIY8hueAAAW
+2026-01-22 18:27:31 [INFO]: Socket Ci6S9uqNmwIY8hueAAAW joined emergency room
+2026-01-22 18:28:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 18:28:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:28:23 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:28:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:28:23 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:28:23 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:28:23 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:28:23 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:28:23 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:28:24 [INFO]: Client connected: gsvLhnXNBdcNT-3wAAAB
+2026-01-22 18:28:25 [INFO]: Socket gsvLhnXNBdcNT-3wAAAB joined emergency room
+2026-01-22 18:28:58 [INFO]: Client disconnected: gsvLhnXNBdcNT-3wAAAB
+2026-01-22 18:29:09 [INFO]: Client connected: N11zbtLtx46npG0wAAAE
+2026-01-22 18:29:09 [INFO]: Socket N11zbtLtx46npG0wAAAE joined emergency room
+2026-01-22 18:30:09 [INFO]: Client disconnected: N11zbtLtx46npG0wAAAE
+2026-01-22 18:30:18 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:30:18 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:30:20 [INFO]: Client connected: rjqxR-6RaErC4BqfAAAH
+2026-01-22 18:30:20 [INFO]: Socket rjqxR-6RaErC4BqfAAAH joined emergency room
+2026-01-22 18:33:28 [INFO]: Client disconnected: rjqxR-6RaErC4BqfAAAH
+2026-01-22 18:33:29 [INFO]: Client connected: 44NbQUnIVI-UDrs8AAAK
+2026-01-22 18:33:29 [INFO]: Socket 44NbQUnIVI-UDrs8AAAK joined emergency room
+2026-01-22 18:33:58 [INFO]: Client disconnected: 44NbQUnIVI-UDrs8AAAK
+2026-01-22 18:34:00 [INFO]: Client connected: 7B5vQ7-8nor-dJiQAAAN
+2026-01-22 18:34:00 [INFO]: Socket 7B5vQ7-8nor-dJiQAAAN joined emergency room
+2026-01-22 18:34:13 [INFO]: Client disconnected: 7B5vQ7-8nor-dJiQAAAN
+2026-01-22 18:34:14 [INFO]: Client connected: 1YPeV7ciuaQvOGfHAAAQ
+2026-01-22 18:34:14 [INFO]: Socket 1YPeV7ciuaQvOGfHAAAQ joined emergency room
+2026-01-22 18:34:52 [INFO]: Client disconnected: 1YPeV7ciuaQvOGfHAAAQ
+2026-01-22 18:35:01 [INFO]: Client connected: Mblp3UMVjXs0fPo-AAAT
+2026-01-22 18:35:01 [INFO]: Socket Mblp3UMVjXs0fPo-AAAT joined emergency room
+2026-01-22 18:35:19 [INFO]: Client disconnected: Mblp3UMVjXs0fPo-AAAT
+2026-01-22 18:38:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-22 18:38:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:38:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:38:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:38:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:38:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:38:45 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:38:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:38:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:43:58 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:43:58 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:43:58 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:43:58 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:43:59 [INFO]: Client connected: wkEyONpquTqU81SCAAAC
+2026-01-22 18:43:59 [INFO]: Socket wkEyONpquTqU81SCAAAC joined emergency room
+2026-01-22 18:45:09 [ERROR]: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+ValidationError: Patient validation failed: gender: `male` is not a valid enum value for path `gender`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-22 18:48:44 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-22 18:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:48:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:48:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:48:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:48:44 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:48:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:48:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:48:44 [INFO]: Client connected: dLZ8U-9v3-kdwGo3AAAB
+2026-01-22 18:48:44 [INFO]: Socket dLZ8U-9v3-kdwGo3AAAB joined emergency room
+2026-01-22 18:50:05 [INFO]: Client disconnected: dLZ8U-9v3-kdwGo3AAAB
+2026-01-22 18:50:19 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:50:19 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:50:28 [INFO]: Client connected: Q09Zq2l3mbNHi8e-AAAE
+2026-01-22 18:50:28 [INFO]: Socket Q09Zq2l3mbNHi8e-AAAE joined emergency room
+2026-01-22 18:50:46 [INFO]: Client disconnected: Q09Zq2l3mbNHi8e-AAAE
+2026-01-22 18:51:15 [INFO]: Client connected: XmHOymaMyW6u4tKhAAAH
+2026-01-22 18:51:15 [INFO]: Socket XmHOymaMyW6u4tKhAAAH joined emergency room
+2026-01-22 18:51:32 [INFO]: Client disconnected: XmHOymaMyW6u4tKhAAAH
+2026-01-22 18:54:33 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-22 18:54:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:54:33 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-22 18:54:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:54:33 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-22 18:54:33 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-22 18:54:33 [INFO]: 🔌 WebSocket enabled
+2026-01-22 18:54:33 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-22 18:54:33 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-22 18:55:09 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-22 18:55:19 [INFO]: Client connected: D2GjXKzU5_rHa_TQAAAC
+2026-01-22 18:55:19 [INFO]: Socket D2GjXKzU5_rHa_TQAAAC joined emergency room
+2026-01-22 18:55:22 [INFO]: Client disconnected: D2GjXKzU5_rHa_TQAAAC
+2026-01-22 18:55:59 [INFO]: Client connected: oU66hw6QJ2alzjxbAAAF
+2026-01-22 18:55:59 [INFO]: Socket oU66hw6QJ2alzjxbAAAF joined emergency room
+2026-01-22 18:56:44 [INFO]: Client disconnected: oU66hw6QJ2alzjxbAAAF
+2026-01-22 18:56:52 [INFO]: Client connected: zO4S9GAlH74xKdBRAAAI
+2026-01-22 18:56:52 [INFO]: Socket zO4S9GAlH74xKdBRAAAI joined emergency room
+2026-01-22 18:56:54 [INFO]: Client disconnected: zO4S9GAlH74xKdBRAAAI
+2026-01-22 18:57:16 [INFO]: Client connected: MWeZkn3IecvVJxrRAAAL
+2026-01-22 18:57:16 [INFO]: Socket MWeZkn3IecvVJxrRAAAL joined emergency room
+2026-01-22 18:57:17 [INFO]: Client disconnected: MWeZkn3IecvVJxrRAAAL
+2026-01-22 18:57:56 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:57:56 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:57:56 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:57:56 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-22 18:57:59 [INFO]: Client connected: s8nOtwhdbTySNzuDAAAO
+2026-01-22 18:57:59 [INFO]: Socket s8nOtwhdbTySNzuDAAAO joined emergency room
+2026-01-22 18:58:53 [INFO]: Client disconnected: s8nOtwhdbTySNzuDAAAO
+2026-01-22 19:15:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-22 21:03:55 [INFO]: MongoDB reconnected

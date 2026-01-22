@@ -13,6 +13,7 @@ import EmergencyQueue from './EmergencyQueue';
 import EmergencyTriage from './EmergencyTriage';
 import EmergencyTreatment from './EmergencyTreatment';
 import DowntimeMode from './DowntimeMode';
+import EmergencyRegistration from './EmergencyRegistration';
 
 const TRIAGE_COLORS = {
     critical: { bg: 'bg-red-600', text: 'text-white', label: 'Critical' },
@@ -41,6 +42,7 @@ const EmergencyDashboard = () => {
     const [socket, setSocket] = useState(null);
     const [showTriageModal, setShowTriageModal] = useState(false);
     const [showTreatmentModal, setShowTreatmentModal] = useState(false);
+    const [showRegistrationModal, setShowRegistrationModal] = useState(false);
     const [currentTime, setCurrentTime] = useState(new Date());
 
     // Update current time every minute for waiting time display
@@ -57,7 +59,7 @@ const EmergencyDashboard = () => {
 
     // Socket connection
     useEffect(() => {
-        const socketInstance = io('http://localhost:5000', {
+        const socketInstance = io('http://localhost:5001', {
             withCredentials: true,
         });
 
@@ -130,6 +132,13 @@ const EmergencyDashboard = () => {
                         <p className="text-red-200">Live ER Board</p>
                     </div>
                     <div className="flex items-center gap-6">
+                        <button
+                            onClick={() => setShowRegistrationModal(true)}
+                            className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold shadow-sm hover:bg-red-50 transition-colors flex items-center gap-2"
+                        >
+                            <span>+</span> Register Patient
+                        </button>
+
                         {dashboardStats && (
                             <div className="flex gap-4 text-sm">
                                 <div className="bg-red-700 px-3 py-1 rounded">
@@ -140,7 +149,7 @@ const EmergencyDashboard = () => {
                                 </div>
                             </div>
                         )}
-                        <div className="text-sm">
+                        <div className="text-sm border-l border-red-500 pl-4">
                             {currentTime.toLocaleTimeString()}
                         </div>
                     </div>
@@ -243,18 +252,20 @@ const EmergencyDashboard = () => {
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm">
                                                 <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
-                                                    <button
-                                                        onClick={() => handleChangeTriage(emergencyCase)}
-                                                        className="text-blue-600 hover:text-blue-900 font-medium"
-                                                    >
-                                                        Triage
-                                                    </button>
-                                                    {emergencyCase.status !== 'in-treatment' && (
+                                                    {['doctor', 'nurse'].includes(user?.role) && (
+                                                        <button
+                                                            onClick={() => handleChangeTriage(emergencyCase)}
+                                                            className="text-blue-600 hover:text-blue-900 font-medium"
+                                                        >
+                                                            Triage
+                                                        </button>
+                                                    )}
+                                                    {['doctor', 'nurse'].includes(user?.role) && (
                                                         <button
                                                             onClick={() => handleStartTreatment(emergencyCase)}
                                                             className="text-green-600 hover:text-green-900 font-medium"
                                                         >
-                                                            Treat
+                                                            {emergencyCase.status === 'in-treatment' ? 'Manage' : 'Treat'}
                                                         </button>
                                                     )}
                                                 </div>
@@ -276,11 +287,17 @@ const EmergencyDashboard = () => {
                 />
             )}
 
-            {/* Treatment Modal */}
             {showTreatmentModal && selectedCase && (
                 <EmergencyTreatment
                     emergencyCase={selectedCase}
                     onClose={() => setShowTreatmentModal(false)}
+                />
+            )}
+
+            {/* Registration Modal */}
+            {showRegistrationModal && (
+                <EmergencyRegistration
+                    onClose={() => setShowRegistrationModal(false)}
                 />
             )}
         </div>

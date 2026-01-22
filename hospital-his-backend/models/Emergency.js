@@ -27,7 +27,6 @@ const emergencySchema = new mongoose.Schema(
         emergencyNumber: {
             type: String,
             unique: true,
-            required: true,
         },
         patient: {
             type: mongoose.Schema.Types.ObjectId,
