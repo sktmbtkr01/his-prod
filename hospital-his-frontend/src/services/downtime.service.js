@@ -174,9 +174,11 @@ export const getPendingCount = async () => {
  */
 export const syncWithServer = async (emergencyService) => {
     const pendingActions = await getQueuedActions();
+    console.log(`[DowntimeSync] Found ${pendingActions.length} pending actions`);
     const results = { success: 0, failed: 0, errors: [] };
 
     for (const action of pendingActions) {
+        console.log(`[DowntimeSync] Processing action: ${action.type}`, action);
         try {
             switch (action.type) {
                 case 'CREATE_CASE':
@@ -189,12 +191,14 @@ export const syncWithServer = async (emergencyService) => {
                     await emergencyService.updateStatus(action.caseId, action.data.status);
                     break;
                 default:
-                    console.warn('Unknown action type:', action.type);
+                    console.warn('[DowntimeSync] Unknown action type:', action.type);
             }
 
+            console.log(`[DowntimeSync] Action ID ${action.id} synced successfully`);
             await markActionSynced(action.id);
             results.success++;
         } catch (error) {
+            console.error(`[DowntimeSync] Failed to sync action ID ${action.id}:`, error);
             results.failed++;
             results.errors.push({
                 actionId: action.id,

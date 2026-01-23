@@ -9736,3 +9736,691 @@ Error: Item validation failed: Stock record not found
 Error: Item validation failed: Stock record not found
     at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\inventoryManager.controller.js:661:25
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:45:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 13:46:50 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 13:46:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:46:50 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 13:46:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:46:50 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 13:46:50 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 13:46:50 [INFO]: 🔌 WebSocket enabled
+2026-01-23 13:46:50 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 13:46:50 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:46:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 13:46:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:46:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 13:46:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:46:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 13:46:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 13:46:54 [INFO]: 🔌 WebSocket enabled
+2026-01-23 13:46:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 13:46:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 13:47:23 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 13:49:00 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 13:49:34 [INFO]: Client connected: CRfghPAM0_onUQrHAAAC
+2026-01-23 13:49:34 [INFO]: Socket CRfghPAM0_onUQrHAAAC joined emergency room
+2026-01-23 13:49:42 [INFO]: Client disconnected: CRfghPAM0_onUQrHAAAC
+2026-01-23 13:51:28 [INFO]: Client connected: 7fUznuQQf2nNAe9JAAAF
+2026-01-23 13:51:28 [INFO]: Socket 7fUznuQQf2nNAe9JAAAF joined emergency room
+2026-01-23 13:51:32 [INFO]: Client disconnected: 7fUznuQQf2nNAe9JAAAF
+2026-01-23 13:51:45 [INFO]: Client connected: G2LJFP5Kh-pRqcdFAAAI
+2026-01-23 13:51:45 [INFO]: Socket G2LJFP5Kh-pRqcdFAAAI joined emergency room
+2026-01-23 13:52:47 [INFO]: Client disconnected: G2LJFP5Kh-pRqcdFAAAI
+2026-01-23 13:53:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:53:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:53:16 [INFO]: Client connected: vNiiRTxlj6iF6I11AAAL
+2026-01-23 13:53:16 [INFO]: Socket vNiiRTxlj6iF6I11AAAL joined emergency room
+2026-01-23 13:53:49 [INFO]: Client disconnected: vNiiRTxlj6iF6I11AAAL
+2026-01-23 13:54:10 [INFO]: Client connected: SLd_3KuCiMTMD6jmAAAO
+2026-01-23 13:54:10 [INFO]: Socket SLd_3KuCiMTMD6jmAAAO joined emergency room
+2026-01-23 13:54:55 [ERROR]: Trauma Level 2 bundle not found
+Error: Trauma Level 2 bundle not found
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:55:20 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:55:23 [ERROR]: Trauma Level 3 bundle not found
+Error: Trauma Level 3 bundle not found
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 13:55:27 [INFO]: Client disconnected: SLd_3KuCiMTMD6jmAAAO
+2026-01-23 13:55:30 [INFO]: Client connected: DoHUwBdkrf6OV1GuAAAR
+2026-01-23 13:55:31 [INFO]: Socket DoHUwBdkrf6OV1GuAAAR joined emergency room
+2026-01-23 14:00:53 [INFO]: Client disconnected: DoHUwBdkrf6OV1GuAAAR
+2026-01-23 14:01:03 [INFO]: Client connected: d80p9kApw14_9V5aAAAU
+2026-01-23 14:01:03 [INFO]: Socket d80p9kApw14_9V5aAAAU joined emergency room
+2026-01-23 14:05:48 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:05:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:05:48 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:05:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:05:48 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:05:48 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:05:48 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:05:48 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:05:48 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:05:48 [INFO]: Client connected: PzTz-S5B4RiJzIqgAAAB
+2026-01-23 14:05:48 [INFO]: Socket PzTz-S5B4RiJzIqgAAAB joined emergency room
+2026-01-23 14:06:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:06:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:06:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:06:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:06:19 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:06:19 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:06:19 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:06:19 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:06:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:06:19 [INFO]: Client connected: CXsUSTz_Som5gTAEAAAB
+2026-01-23 14:06:20 [INFO]: Socket CXsUSTz_Som5gTAEAAAB joined emergency room
+2026-01-23 14:07:06 [INFO]: Client disconnected: CXsUSTz_Som5gTAEAAAB
+2026-01-23 14:07:06 [INFO]: Client connected: IIfqxezfGEYUUAhPAAAD
+2026-01-23 14:07:07 [INFO]: Socket IIfqxezfGEYUUAhPAAAD joined emergency room
+2026-01-23 14:07:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:07:08 [INFO]: Client disconnected: IIfqxezfGEYUUAhPAAAD
+2026-01-23 14:07:09 [INFO]: Client connected: HLbARWLefI5r7Mv3AAAF
+2026-01-23 14:07:09 [INFO]: Socket HLbARWLefI5r7Mv3AAAF joined emergency room
+2026-01-23 14:11:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 14:11:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:11:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:11:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:11:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:11:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:11:55 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:11:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:11:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:11:58 [INFO]: Client connected: oY5WvlUf2ECYtM0vAAAB
+2026-01-23 14:11:59 [INFO]: Socket oY5WvlUf2ECYtM0vAAAB joined emergency room
+2026-01-23 14:12:08 [INFO]: Client disconnected: oY5WvlUf2ECYtM0vAAAB
+2026-01-23 14:12:09 [INFO]: Client connected: EkNDppiP-Dl-Z3D3AAAE
+2026-01-23 14:12:09 [INFO]: Socket EkNDppiP-Dl-Z3D3AAAE joined emergency room
+2026-01-23 14:12:14 [INFO]: Client disconnected: EkNDppiP-Dl-Z3D3AAAE
+2026-01-23 14:12:33 [INFO]: Client connected: vk-JoC0NByt6YRzMAAAH
+2026-01-23 14:12:33 [INFO]: Socket vk-JoC0NByt6YRzMAAAH joined emergency room
+2026-01-23 14:13:26 [INFO]: Client disconnected: vk-JoC0NByt6YRzMAAAH
+2026-01-23 14:13:43 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 14:13:43 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 14:13:47 [INFO]: Client connected: 8Ur3mOY_AAoyH23pAAAK
+2026-01-23 14:13:47 [INFO]: Socket 8Ur3mOY_AAoyH23pAAAK joined emergency room
+2026-01-23 14:14:24 [INFO]: Client disconnected: 8Ur3mOY_AAoyH23pAAAK
+2026-01-23 14:14:36 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 14:14:55 [INFO]: Client connected: CKY6a3TZoD8CQSTHAAAN
+2026-01-23 14:14:55 [INFO]: Socket CKY6a3TZoD8CQSTHAAAN joined emergency room
+2026-01-23 14:15:02 [INFO]: Client disconnected: CKY6a3TZoD8CQSTHAAAN
+2026-01-23 14:16:02 [INFO]: Client connected: -dyJCIb7sQTLnLOnAAAQ
+2026-01-23 14:16:02 [INFO]: Socket -dyJCIb7sQTLnLOnAAAQ joined emergency room
+2026-01-23 14:16:05 [INFO]: Client disconnected: -dyJCIb7sQTLnLOnAAAQ
+2026-01-23 14:17:23 [INFO]: Client connected: O2mca6PCEfmyqCPaAAAT
+2026-01-23 14:17:23 [INFO]: Socket O2mca6PCEfmyqCPaAAAT joined emergency room
+2026-01-23 14:18:03 [INFO]: Client disconnected: O2mca6PCEfmyqCPaAAAT
+2026-01-23 14:18:04 [INFO]: Client connected: pNcTBN4UBAbZix3KAAAW
+2026-01-23 14:18:04 [INFO]: Socket pNcTBN4UBAbZix3KAAAW joined emergency room
+2026-01-23 14:18:27 [ERROR]: includedMedications is not defined
+ReferenceError: includedMedications is not defined
+    at Object.applyOrderSet (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\emergency.orderSet.service.js:79:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:79:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 14:18:48 [ERROR]: includedMedications is not defined
+ReferenceError: includedMedications is not defined
+    at Object.applyOrderSet (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\emergency.orderSet.service.js:79:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:79:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 14:20:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:20:34 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:20:34 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:20:34 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:20:34 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:20:34 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:20:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:20:34 [INFO]: Client connected: jUDwBZei-OeAYS2QAAAB
+2026-01-23 14:20:34 [INFO]: Socket jUDwBZei-OeAYS2QAAAB joined emergency room
+2026-01-23 14:20:52 [INFO]: Client disconnected: jUDwBZei-OeAYS2QAAAB
+2026-01-23 14:20:53 [INFO]: Client connected: NTsgicW6T_IOviwwAAAE
+2026-01-23 14:20:53 [INFO]: Socket NTsgicW6T_IOviwwAAAE joined emergency room
+2026-01-23 14:21:13 [ERROR]: orderSet is not defined
+ReferenceError: orderSet is not defined
+    at Object.applyOrderSet (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\emergency.orderSet.service.js:111:25)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:79:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 14:22:21 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:22:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:22:21 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:22:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:22:21 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:22:21 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:22:21 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:22:21 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:22:21 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:22:21 [INFO]: Client connected: I-a4WaDM3LVfeiugAAAB
+2026-01-23 14:22:22 [INFO]: Socket I-a4WaDM3LVfeiugAAAB joined emergency room
+2026-01-23 14:23:24 [INFO]: Client disconnected: I-a4WaDM3LVfeiugAAAB
+2026-01-23 14:23:25 [INFO]: Client connected: 5oXKNwHG4AFWt4HGAAAE
+2026-01-23 14:23:25 [INFO]: Socket 5oXKNwHG4AFWt4HGAAAE joined emergency room
+2026-01-23 14:25:05 [INFO]: Client disconnected: 5oXKNwHG4AFWt4HGAAAE
+2026-01-23 14:27:34 [INFO]: Client connected: 2ZjFg4MZ1H_NIaMcAAAH
+2026-01-23 14:27:34 [INFO]: Socket 2ZjFg4MZ1H_NIaMcAAAH joined emergency room
+2026-01-23 14:29:23 [INFO]: Client disconnected: 2ZjFg4MZ1H_NIaMcAAAH
+2026-01-23 14:29:24 [INFO]: Client connected: iopEOxKiQjzPVv0lAAAK
+2026-01-23 14:29:24 [INFO]: Socket iopEOxKiQjzPVv0lAAAK joined emergency room
+2026-01-23 14:30:14 [INFO]: Client disconnected: iopEOxKiQjzPVv0lAAAK
+2026-01-23 14:30:28 [INFO]: Client connected: 9T_AhdCHv1XweHeGAAAN
+2026-01-23 14:30:28 [INFO]: Socket 9T_AhdCHv1XweHeGAAAN joined emergency room
+2026-01-23 14:30:54 [INFO]: Client disconnected: 9T_AhdCHv1XweHeGAAAN
+2026-01-23 14:30:54 [INFO]: Client connected: Lvcd1oQ08AEra0i3AAAQ
+2026-01-23 14:30:54 [INFO]: Socket Lvcd1oQ08AEra0i3AAAQ joined emergency room
+2026-01-23 14:30:56 [INFO]: Client disconnected: Lvcd1oQ08AEra0i3AAAQ
+2026-01-23 14:31:07 [INFO]: Client connected: ALEk8guNdj5r44hHAAAT
+2026-01-23 14:31:07 [INFO]: Socket ALEk8guNdj5r44hHAAAT joined emergency room
+2026-01-23 14:31:28 [INFO]: Client disconnected: ALEk8guNdj5r44hHAAAT
+2026-01-23 14:31:48 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-23 14:31:49 [INFO]: MongoDB reconnected
+2026-01-23 14:32:05 [INFO]: Client connected: wL1iJn7Cv0Yd8Y4MAAAW
+2026-01-23 14:32:05 [INFO]: Socket wL1iJn7Cv0Yd8Y4MAAAW joined emergency room
+2026-01-23 14:32:13 [INFO]: Client disconnected: wL1iJn7Cv0Yd8Y4MAAAW
+2026-01-23 14:32:30 [INFO]: Client connected: zBIaAjMtIXwsU6l7AAAZ
+2026-01-23 14:32:30 [INFO]: Socket zBIaAjMtIXwsU6l7AAAZ joined emergency room
+2026-01-23 14:32:31 [INFO]: Client disconnected: zBIaAjMtIXwsU6l7AAAZ
+2026-01-23 14:32:35 [INFO]: Client connected: HiUIRlUv6wpdgz-PAAAc
+2026-01-23 14:32:35 [INFO]: Socket HiUIRlUv6wpdgz-PAAAc joined emergency room
+2026-01-23 14:33:01 [ERROR]: Surgery validation failed: admission: Admission is required, surgeryNumber: Path `surgeryNumber` is required.
+ValidationError: Surgery validation failed: admission: Admission is required, surgeryNumber: Path `surgeryNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-23 14:33:08 [ERROR]: Surgery validation failed: admission: Admission is required, surgeryNumber: Path `surgeryNumber` is required.
+ValidationError: Surgery validation failed: admission: Admission is required, surgeryNumber: Path `surgeryNumber` is required.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-23 14:35:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:35:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:16 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:35:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:16 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:35:16 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:35:16 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:35:16 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:35:16 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:17 [INFO]: Client connected: LUccuGoJ6C-I2bGPAAAB
+2026-01-23 14:35:17 [INFO]: Socket LUccuGoJ6C-I2bGPAAAB joined emergency room
+2026-01-23 14:35:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:35:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:35:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:35:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:35:38 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:35:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:35:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:35:38 [INFO]: Client connected: PcnjxjP9HjDPraPkAAAB
+2026-01-23 14:35:38 [INFO]: Socket PcnjxjP9HjDPraPkAAAB joined emergency room
+2026-01-23 14:36:02 [INFO]: Client disconnected: PcnjxjP9HjDPraPkAAAB
+2026-01-23 14:37:06 [INFO]: Client connected: Sr_5DV6FIOjummsrAAAE
+2026-01-23 14:37:06 [INFO]: Socket Sr_5DV6FIOjummsrAAAE joined emergency room
+2026-01-23 14:37:44 [INFO]: Client disconnected: Sr_5DV6FIOjummsrAAAE
+2026-01-23 14:37:51 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 14:37:59 [INFO]: Client connected: CQS6XV1bD-rkcd3kAAAH
+2026-01-23 14:37:59 [INFO]: Socket CQS6XV1bD-rkcd3kAAAH joined emergency room
+2026-01-23 14:38:28 [INFO]: Client disconnected: CQS6XV1bD-rkcd3kAAAH
+2026-01-23 14:38:30 [INFO]: Client connected: 3oCXIxzme1haHMOwAAAK
+2026-01-23 14:38:30 [INFO]: Socket 3oCXIxzme1haHMOwAAAK joined emergency room
+2026-01-23 14:39:05 [INFO]: Client disconnected: 3oCXIxzme1haHMOwAAAK
+2026-01-23 14:44:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:44:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:44:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:44:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:44:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:44:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:44:03 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:44:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:44:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:44:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:44:58 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:44:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:44:58 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:44:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:44:58 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:44:58 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:44:58 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:44:58 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:44:58 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:45:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:47:15 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:48:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 14:48:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:48:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 14:48:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:48:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 14:48:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 14:48:12 [INFO]: 🔌 WebSocket enabled
+2026-01-23 14:48:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 14:48:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 14:49:24 [INFO]: Client connected: u6CWXUWvPEiwKooiAAAC
+2026-01-23 14:49:24 [INFO]: Socket u6CWXUWvPEiwKooiAAAC joined emergency room
+2026-01-23 14:49:53 [INFO]: Client disconnected: u6CWXUWvPEiwKooiAAAC
+2026-01-23 14:50:05 [INFO]: Client connected: LXjrGFb20xEmRgw5AAAF
+2026-01-23 14:50:05 [INFO]: Socket LXjrGFb20xEmRgw5AAAF joined emergency room
+2026-01-23 14:50:40 [INFO]: Client disconnected: LXjrGFb20xEmRgw5AAAF
+2026-01-23 14:51:09 [INFO]: Client connected: nVaej-C44GW9_sOBAAAI
+2026-01-23 14:51:09 [INFO]: Socket nVaej-C44GW9_sOBAAAI joined emergency room
+2026-01-23 14:51:12 [INFO]: Client disconnected: nVaej-C44GW9_sOBAAAI
+2026-01-23 14:51:32 [ERROR]: Cannot read properties of null (reading '_id')
+TypeError: Cannot read properties of null (reading '_id')
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:72
+    at Array.map (<anonymous>)
+    at methods.<computed> (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\array\methods\index.js:1027:24)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-23 14:51:38 [ERROR]: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+CastError: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+    at ObjectId.cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PharmacySafetyService.getBatchesFEFO (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\pharmacy.safety.service.js:175:25)
+2026-01-23 14:51:38 [ERROR]: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+CastError: Cast to ObjectId failed for value "null" (type string) at path "medicine" for model "PharmacyInventory"
+    at ObjectId.cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schema\objectid.js:250:11)
+    at SchemaType.applySetters (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1219:12)
+    at SchemaType.castForQuery (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1633:15)
+    at cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\cast.js:389:32)
+    at Query.cast (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4927:12)
+    at Query._castConditions (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2237:10)
+    at model.Query._find (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:2263:8)
+    at model.Query.exec (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\query.js:4447:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PharmacySafetyService.getBatchesFEFO (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\pharmacy.safety.service.js:175:25)
+2026-01-23 14:54:27 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-23 14:54:37 [INFO]: MongoDB reconnected
+2026-01-23 14:54:58 [ERROR]: Cannot read properties of null (reading '_id')
+TypeError: Cannot read properties of null (reading '_id')
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:72
+    at Array.map (<anonymous>)
+    at methods.<computed> (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\array\methods\index.js:1027:24)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-23 14:58:16 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 14:58:44 [INFO]: Client connected: gt7go9lRMI8z2ChTAAAL
+2026-01-23 14:58:44 [INFO]: Socket gt7go9lRMI8z2ChTAAAL joined emergency room
+2026-01-23 14:59:14 [INFO]: Client disconnected: gt7go9lRMI8z2ChTAAAL
+2026-01-23 14:59:30 [INFO]: Client connected: f5TS7ucHp5OSq640AAAO
+2026-01-23 14:59:30 [INFO]: Socket f5TS7ucHp5OSq640AAAO joined emergency room
+2026-01-23 15:00:14 [INFO]: Client disconnected: f5TS7ucHp5OSq640AAAO
+2026-01-23 15:01:07 [ERROR]: DrugInteraction.findInteractionsForMedicines is not a function
+TypeError: DrugInteraction.findInteractionsForMedicines is not a function
+    at DrugInteractionService.checkInteractions (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:46:56)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:121:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-23 15:01:10 [ERROR]: Cannot read properties of null (reading '_id')
+TypeError: Cannot read properties of null (reading '_id')
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:72
+    at Array.map (<anonymous>)
+    at methods.<computed> (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\array\methods\index.js:1027:24)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:120:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-23 15:01:13 [ERROR]: DrugInteraction.findInteractionsForMedicines is not a function
+TypeError: DrugInteraction.findInteractionsForMedicines is not a function
+    at DrugInteractionService.checkInteractions (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:46:56)
+    at DrugInteractionService.validatePrescriptionSafety (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\services\drugInteraction.service.js:121:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\pharmacy.controller.js:218:20
+2026-01-23 15:01:29 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 15:06:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:06:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:06:40 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:06:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:06:40 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:06:40 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:06:40 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:06:40 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:06:40 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:06:53 [INFO]: Client connected: omKOEiNL0Q-G2RIgAAAC
+2026-01-23 15:06:53 [INFO]: Socket omKOEiNL0Q-G2RIgAAAC joined emergency room
+2026-01-23 15:07:43 [INFO]: Client disconnected: omKOEiNL0Q-G2RIgAAAC
+2026-01-23 15:08:07 [INFO]: Client connected: aZ-GjMOGR61BuINPAAAF
+2026-01-23 15:08:07 [INFO]: Socket aZ-GjMOGR61BuINPAAAF joined emergency room
+2026-01-23 15:09:22 [INFO]: Client disconnected: aZ-GjMOGR61BuINPAAAF
+2026-01-23 15:13:29 [INFO]: Client connected: iqxTUUskLeQGgdQpAAAI
+2026-01-23 15:13:29 [INFO]: Socket iqxTUUskLeQGgdQpAAAI joined emergency room
+2026-01-23 15:14:18 [INFO]: Client disconnected: iqxTUUskLeQGgdQpAAAI
+2026-01-23 15:14:19 [INFO]: Client connected: 6AM9woOOSkguZfVoAAAL
+2026-01-23 15:14:19 [INFO]: Socket 6AM9woOOSkguZfVoAAAL joined emergency room
+2026-01-23 15:14:29 [INFO]: Client disconnected: 6AM9woOOSkguZfVoAAAL
+2026-01-23 15:15:00 [INFO]: Client connected: D9U0LIPAMj0yyDIoAAAO
+2026-01-23 15:15:00 [INFO]: Socket D9U0LIPAMj0yyDIoAAAO joined emergency room
+2026-01-23 15:16:17 [INFO]: Client disconnected: D9U0LIPAMj0yyDIoAAAO
+2026-01-23 15:16:18 [INFO]: Client connected: DNhwRe2_J3Os2kPtAAAR
+2026-01-23 15:16:18 [INFO]: Socket DNhwRe2_J3Os2kPtAAAR joined emergency room
+2026-01-23 15:16:33 [INFO]: Client disconnected: DNhwRe2_J3Os2kPtAAAR
+2026-01-23 15:16:34 [INFO]: Client connected: LyctFHYN5XwKEjmtAAAU
+2026-01-23 15:16:34 [INFO]: Socket LyctFHYN5XwKEjmtAAAU joined emergency room
+2026-01-23 15:17:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:17:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:17:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:17:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:17:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:17:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:17:55 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:17:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:17:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:17:56 [INFO]: Client connected: 6B0t9sBJk22_H8g5AAAB
+2026-01-23 15:17:56 [INFO]: Socket 6B0t9sBJk22_H8g5AAAB joined emergency room
+2026-01-23 15:18:31 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 15:18:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:18:31 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:18:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:18:31 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:18:31 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:18:31 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:18:31 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:18:31 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:18:31 [INFO]: Client connected: GbLcnIYFnBiVYBcFAAAB
+2026-01-23 15:18:31 [INFO]: Socket GbLcnIYFnBiVYBcFAAAB joined emergency room
+2026-01-23 15:20:23 [INFO]: Client disconnected: GbLcnIYFnBiVYBcFAAAB
+2026-01-23 15:20:24 [INFO]: Client connected: Y1YapnFytJ7BklJJAAAE
+2026-01-23 15:20:24 [INFO]: Socket Y1YapnFytJ7BklJJAAAE joined emergency room
+2026-01-23 15:20:33 [INFO]: Client disconnected: Y1YapnFytJ7BklJJAAAE
+2026-01-23 15:20:34 [INFO]: Client connected: Adahgp6GSEqrdcG6AAAH
+2026-01-23 15:20:34 [INFO]: Socket Adahgp6GSEqrdcG6AAAH joined emergency room
+2026-01-23 15:20:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:20:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:20:59 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:20:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:20:59 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:20:59 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:20:59 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:20:59 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:20:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:20:59 [INFO]: Client connected: 04pP9TAjvYdLkA07AAAB
+2026-01-23 15:20:59 [INFO]: Socket 04pP9TAjvYdLkA07AAAB joined emergency room
+2026-01-23 15:22:40 [INFO]: Client disconnected: 04pP9TAjvYdLkA07AAAB
+2026-01-23 15:22:41 [INFO]: Client connected: 0AQGY93Og6S7ro9-AAAE
+2026-01-23 15:22:41 [INFO]: Socket 0AQGY93Og6S7ro9-AAAE joined emergency room
+2026-01-23 15:25:55 [INFO]: Client disconnected: 0AQGY93Og6S7ro9-AAAE
+2026-01-23 15:25:55 [INFO]: Client connected: JlUtA8AbCn86RLDRAAAG
+2026-01-23 15:25:55 [INFO]: Socket JlUtA8AbCn86RLDRAAAG joined emergency room
+2026-01-23 15:25:56 [INFO]: Client disconnected: JlUtA8AbCn86RLDRAAAG
+2026-01-23 15:25:57 [INFO]: Client connected: RfIVD5_C2Ar_xp5sAAAI
+2026-01-23 15:25:57 [INFO]: Socket RfIVD5_C2Ar_xp5sAAAI joined emergency room
+2026-01-23 15:25:58 [INFO]: Client disconnected: RfIVD5_C2Ar_xp5sAAAI
+2026-01-23 15:25:59 [INFO]: Client connected: lNEdVsukp7bnKZTmAAAK
+2026-01-23 15:25:59 [INFO]: Socket lNEdVsukp7bnKZTmAAAK joined emergency room
+2026-01-23 15:26:44 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:26:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:26:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:26:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:26:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:26:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:26:44 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:26:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:26:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:26:47 [INFO]: Client connected: cTfRStJ9-w1ff4y8AAAB
+2026-01-23 15:26:47 [INFO]: Socket cTfRStJ9-w1ff4y8AAAB joined emergency room
+2026-01-23 15:26:55 [INFO]: Client disconnected: cTfRStJ9-w1ff4y8AAAB
+2026-01-23 15:26:56 [INFO]: Client connected: qBYf3TklLHIf6wheAAAE
+2026-01-23 15:26:56 [INFO]: Socket qBYf3TklLHIf6wheAAAE joined emergency room
+2026-01-23 15:28:27 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:28:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:28:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:28:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:28:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:28:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:28:27 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:28:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:28:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:28:27 [INFO]: Client connected: VzKvyaXfDUFtkB-AAAAB
+2026-01-23 15:28:27 [INFO]: Socket VzKvyaXfDUFtkB-AAAAB joined emergency room
+2026-01-23 15:29:36 [INFO]: Client disconnected: VzKvyaXfDUFtkB-AAAAB
+2026-01-23 15:29:37 [INFO]: Client connected: 0iXbyYfc2uAE0UPdAAAD
+2026-01-23 15:29:37 [INFO]: Socket 0iXbyYfc2uAE0UPdAAAD joined emergency room
+2026-01-23 15:30:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:30:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:30:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:30:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:30:43 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:30:43 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:30:43 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:30:43 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:30:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:30:47 [INFO]: Client connected: -k64x6DSThfjVwNGAAAB
+2026-01-23 15:30:47 [INFO]: Socket -k64x6DSThfjVwNGAAAB joined emergency room
+2026-01-23 15:34:02 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:34:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:34:02 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:34:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:34:02 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:34:02 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:34:02 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:34:02 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:34:02 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:34:02 [INFO]: Client connected: QYzGD73_K3slLDRpAAAB
+2026-01-23 15:34:02 [INFO]: Socket QYzGD73_K3slLDRpAAAB joined emergency room
+2026-01-23 15:34:16 [INFO]: Client disconnected: QYzGD73_K3slLDRpAAAB
+2026-01-23 15:34:17 [INFO]: Client connected: _uDltwrRiDCxp-biAAAE
+2026-01-23 15:34:17 [INFO]: Socket _uDltwrRiDCxp-biAAAE joined emergency room
+2026-01-23 15:35:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-23 15:35:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:35:08 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:35:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:35:08 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:35:08 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:35:08 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:35:08 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:35:08 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:35:09 [INFO]: Client connected: Vk-_IZaU3j8WacxjAAAB
+2026-01-23 15:35:09 [INFO]: Socket Vk-_IZaU3j8WacxjAAAB joined emergency room
+2026-01-23 15:36:21 [INFO]: Client disconnected: Vk-_IZaU3j8WacxjAAAB
+2026-01-23 15:37:20 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 15:37:20 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:46:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 15:37:24 [INFO]: Client connected: z0TOFEAzLxUwjRwEAAAE
+2026-01-23 15:37:24 [INFO]: Socket z0TOFEAzLxUwjRwEAAAE joined emergency room
+2026-01-23 15:38:37 [INFO]: Client disconnected: z0TOFEAzLxUwjRwEAAAE
+2026-01-23 15:38:56 [INFO]: Client connected: PCuOTYwqvShuDEXrAAAH
+2026-01-23 15:38:56 [INFO]: Socket PCuOTYwqvShuDEXrAAAH joined emergency room
+2026-01-23 15:38:57 [INFO]: Client disconnected: PCuOTYwqvShuDEXrAAAH
+2026-01-23 15:39:15 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-23 15:40:50 [INFO]: Client connected: nfSPHx2pfR6RZTZpAAAK
+2026-01-23 15:40:50 [INFO]: Socket nfSPHx2pfR6RZTZpAAAK joined emergency room
+2026-01-23 15:41:34 [INFO]: Client disconnected: nfSPHx2pfR6RZTZpAAAK
+2026-01-23 15:42:30 [INFO]: Client connected: VJidj_umi8_k1xr2AAAN
+2026-01-23 15:42:30 [INFO]: Socket VJidj_umi8_k1xr2AAAN joined emergency room
+2026-01-23 15:45:31 [INFO]: Client disconnected: VJidj_umi8_k1xr2AAAN
+2026-01-23 15:46:26 [ERROR]: E11000 duplicate key error collection: test.inventoryitems index: itemCode_1 dup key: { itemCode: "INV-001" }
+MongoServerError: E11000 duplicate key error collection: test.inventoryitems index: itemCode_1 dup key: { itemCode: "INV-001" }
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\insert.js:50:33
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-23 15:48:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:48:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:48:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:48:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:48:25 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:48:25 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:48:25 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:48:25 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:48:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:49:32 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:49:56 [INFO]: Client connected: IypNpk2du9dBi85HAAAC
+2026-01-23 15:49:56 [INFO]: Socket IypNpk2du9dBi85HAAAC joined emergency room
+2026-01-23 15:50:20 [ERROR]: Emergency validation failed: emergencyTag: `obstetric` is not a valid enum value for path `emergencyTag`.
+ValidationError: Emergency validation failed: emergencyTag: `obstetric` is not a valid enum value for path `emergencyTag`.
+    at Document.invalidate (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+2026-01-23 15:51:19 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:51:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:51:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:51:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:51:19 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:51:19 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:51:19 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:51:19 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:51:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:51:19 [INFO]: Client connected: Jyil7jApUA5bkx_MAAAB
+2026-01-23 15:51:19 [INFO]: Socket Jyil7jApUA5bkx_MAAAB joined emergency room
+2026-01-23 15:53:26 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 15:53:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:53:26 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:53:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:53:26 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:53:26 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:53:26 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:53:26 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:53:26 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:53:26 [INFO]: Client connected: 4loF0Zyyv1KpIrLHAAAB
+2026-01-23 15:53:26 [INFO]: Socket 4loF0Zyyv1KpIrLHAAAB joined emergency room
+2026-01-23 15:53:40 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:53:44 [INFO]: Client disconnected: 4loF0Zyyv1KpIrLHAAAB
+2026-01-23 15:54:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-23 15:54:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:54:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 15:54:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:54:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 15:54:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 15:54:45 [INFO]: 🔌 WebSocket enabled
+2026-01-23 15:54:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 15:54:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 15:54:45 [INFO]: Client connected: h92BOKGvfixBApVIAAAB
+2026-01-23 15:54:45 [INFO]: Socket h92BOKGvfixBApVIAAAB joined emergency room
+2026-01-23 15:54:59 [INFO]: Client disconnected: h92BOKGvfixBApVIAAAB
+2026-01-23 15:55:00 [INFO]: Client connected: p8o2ervZDLe-N54EAAAE
+2026-01-23 15:55:00 [INFO]: Socket p8o2ervZDLe-N54EAAAE joined emergency room
+2026-01-23 15:55:39 [INFO]: Client disconnected: p8o2ervZDLe-N54EAAAE
+2026-01-23 15:55:42 [INFO]: Client connected: b96Jh2XIit95RGyBAAAH
+2026-01-23 15:55:42 [INFO]: Socket b96Jh2XIit95RGyBAAAH joined emergency room
+2026-01-23 15:56:12 [INFO]: Client disconnected: b96Jh2XIit95RGyBAAAH
+2026-01-23 15:57:20 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-23 15:57:23 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-23 15:59:04 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)

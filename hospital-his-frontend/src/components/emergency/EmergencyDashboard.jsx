@@ -22,6 +22,15 @@ const TRIAGE_COLORS = {
     'non-urgent': { bg: 'bg-green-500', text: 'text-white', label: 'Non-Urgent' },
 };
 
+const EMERGENCY_TAG_STYLES = {
+    cardiac: 'bg-red-100 text-red-800 border-red-200',
+    stroke: 'bg-blue-100 text-blue-800 border-blue-200',
+    trauma: 'bg-orange-100 text-orange-800 border-orange-200',
+    sepsis: 'bg-purple-100 text-purple-800 border-purple-200',
+    respiratory: 'bg-teal-100 text-teal-800 border-teal-200',
+    other: 'bg-gray-100 text-gray-800 border-gray-200',
+};
+
 const STATUS_LABELS = {
     registered: 'Registered',
     triage: 'Triage',
@@ -70,14 +79,17 @@ const EmergencyDashboard = () => {
 
         socketInstance.on('emergency:new', (data) => {
             dispatch(handleNewCase(data));
+            dispatch(fetchDashboardStats());
         });
 
         socketInstance.on('emergency:triage', (data) => {
             dispatch(handleTriageUpdate(data));
+            dispatch(fetchDashboardStats());
         });
 
         socketInstance.on('emergency:status', (data) => {
             dispatch(handleStatusUpdate(data));
+            dispatch(fetchDashboardStats());
         });
 
         setSocket(socketInstance);
@@ -105,8 +117,9 @@ const EmergencyDashboard = () => {
         const start = new Date(arrivalTime);
         const end = treatmentStartTime ? new Date(treatmentStartTime) : currentTime;
         const diffMs = end - start;
-        const hours = Math.floor(diffMs / (1000 * 60 * 60));
-        const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+        const safeDiff = Math.max(0, diffMs);
+        const hours = Math.floor(safeDiff / (1000 * 60 * 60));
+        const minutes = Math.floor((safeDiff % (1000 * 60 * 60)) / (1000 * 60));
         return hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
     };
 
@@ -238,6 +251,23 @@ const EmergencyDashboard = () => {
                                                 <div className="text-sm text-gray-900 max-w-xs truncate">
                                                     {emergencyCase.chiefComplaint}
                                                 </div>
+                                                <div className="flex gap-1 mt-1">
+                                                    {emergencyCase.emergencyTag && (
+                                                        <span className={`text-xs px-2 py-0.5 rounded border ${EMERGENCY_TAG_STYLES[emergencyCase.emergencyTag] || EMERGENCY_TAG_STYLES.other}`}>
+                                                            {emergencyCase.emergencyTag.toUpperCase()}
+                                                        </span>
+                                                    )}
+                                                    {emergencyCase.appliedBundles?.length > 0 && (
+                                                        <span className="text-xs px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200" title="Order Set Bundle Applied">
+                                                            ⚡ BUNDLE
+                                                        </span>
+                                                    )}
+                                                    {emergencyCase.readyForDoctor && (
+                                                        <span className="text-xs px-2 py-0.5 rounded bg-green-100 text-green-800 border border-green-200" title="Marked Ready for Doctor">
+                                                            👨‍⚕️ READY
+                                                        </span>
+                                                    )}
+                                                </div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className={`text-sm font-semibold ${emergencyCase.waitingTimeMs > 30 * 60 * 1000 ? 'text-red-600' : 'text-gray-900'
@@ -291,6 +321,10 @@ const EmergencyDashboard = () => {
                 <EmergencyTreatment
                     emergencyCase={selectedCase}
                     onClose={() => setShowTreatmentModal(false)}
+                    onRefresh={() => {
+                        dispatch(fetchLiveBoard());
+                        // Keep modal open unless status changed to discharge/admit
+                    }}
                 />
             )}
 

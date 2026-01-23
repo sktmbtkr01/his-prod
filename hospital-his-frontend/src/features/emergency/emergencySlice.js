@@ -95,7 +95,7 @@ export const updateCaseTriage = createAsyncThunk(
 
             if (!error.response || error.code === 'ERR_NETWORK') {
                 thunkAPI.dispatch(setDowntimeMode(true));
-                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_TRIAGE', id, data: { triageLevel, reason } }));
+                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_TRIAGE', caseId: id, data: { triageLevel, reason } }));
                 return thunkAPI.rejectWithValue('Offline: Triage update queued for sync');
             }
 
@@ -120,7 +120,7 @@ export const updateCaseStatus = createAsyncThunk(
 
             if (!error.response || error.code === 'ERR_NETWORK') {
                 thunkAPI.dispatch(setDowntimeMode(true));
-                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_STATUS', id, data: { status } }));
+                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_STATUS', caseId: id, data: { status } }));
                 return thunkAPI.rejectWithValue('Offline: Status update queued for sync');
             }
 
@@ -145,7 +145,7 @@ export const updateCaseVitals = createAsyncThunk(
 
             if (!error.response || error.code === 'ERR_NETWORK') {
                 thunkAPI.dispatch(setDowntimeMode(true));
-                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_VITALS', id, data: vitals }));
+                thunkAPI.dispatch(queueOfflineAction({ type: 'UPDATE_VITALS', caseId: id, data: vitals }));
                 return thunkAPI.rejectWithValue('Offline: Vitals update queued for sync');
             }
 

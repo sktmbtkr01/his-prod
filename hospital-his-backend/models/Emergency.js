@@ -22,6 +22,19 @@ const TRIAGE_LEVELS = {
     NON_URGENT: 'non-urgent',
 };
 
+const EMERGENCY_TAGS = {
+    CARDIAC: 'cardiac',
+    STROKE: 'stroke',
+    TRAUMA: 'trauma',
+    OBSTETRIC: 'obstetric',
+};
+
+const TRAUMA_LEVELS = {
+    LEVEL_1: 1,  // Critical - Full trauma team activation
+    LEVEL_2: 2,  // Serious - Modified trauma response
+    LEVEL_3: 3,  // Moderate - Standard ER care with trauma focus
+};
+
 const emergencySchema = new mongoose.Schema(
     {
         emergencyNumber: {
@@ -119,6 +132,68 @@ const emergencySchema = new mongoose.Schema(
                 trim: true,
             },
         }],
+
+        // Emergency Order Sets Enhancement Fields
+        emergencyTag: {
+            type: String,
+            enum: Object.values(EMERGENCY_TAGS),
+        },
+        traumaLevel: {
+            type: Number,
+            enum: Object.values(TRAUMA_LEVELS),
+        },
+
+        // Applied bundles (references to EmergencyOrderApplication)
+        appliedBundles: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'EmergencyOrderApplication',
+        }],
+
+        // Nursing notes for nurse-specific documentation
+        nursingNotes: [{
+            note: {
+                type: String,
+                required: true,
+                trim: true,
+            },
+            recordedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            recordedAt: {
+                type: Date,
+                default: Date.now,
+            },
+        }],
+
+        // Nurse marks patient ready for doctor
+        readyForDoctor: {
+            type: Boolean,
+            default: false,
+        },
+        readyForDoctorAt: {
+            type: Date,
+        },
+        readyForDoctorBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+
+        // Disposition details for ICU/OT transfers
+        dispositionDetails: {
+            targetWard: String,
+            surgeryId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Surgery',
+            },
+            transferNotes: String,
+            processedAt: Date,
+            processedBy: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+        },
+
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
@@ -159,5 +234,7 @@ emergencySchema.pre('save', async function (next) {
 Emergency = mongoose.model('Emergency', emergencySchema);
 Emergency.EMERGENCY_STATUS = EMERGENCY_STATUS;
 Emergency.TRIAGE_LEVELS = TRIAGE_LEVELS;
+Emergency.EMERGENCY_TAGS = EMERGENCY_TAGS;
+Emergency.TRAUMA_LEVELS = TRAUMA_LEVELS;
 
 module.exports = Emergency;
