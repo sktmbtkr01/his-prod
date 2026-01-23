@@ -1,7 +1,7 @@
 const Billing = require('../models/Billing');
 const BillingItem = require('../models/BillingItem');
 const Tariff = require('../models/Tariff');
-const { PAYMENT_STATUS } = require('../config/constants');
+const { PAYMENT_STATUS, CLINICAL_CODING_STATUS } = require('../config/constants');
 
 /**
  * Billing Service
@@ -93,6 +93,70 @@ class BillingService {
         bill.paymentStatus = this.getPaymentStatus(bill.paidAmount, totals.grandTotal);
 
         return bill.save();
+    }
+
+    /**
+     * Update bill with validation
+     */
+    async updateBill(billId, updateData, user) {
+        const bill = await Billing.findById(billId);
+        if (!bill) throw new Error('Bill not found');
+
+        // Check if bill is locked
+        if (bill.isLocked) {
+            // Only admins can edit finalized bills
+            if (!user || user.role !== 'admin') {
+                throw new Error('Cannot update a finalized bill. Admin access required.');
+            }
+
+            // Flag this as a post-finalization edit in audit trail
+            bill.auditTrail.push({
+                action: 'post_finalization_edit',
+                performedBy: user._id || user.id,
+                performedAt: new Date(),
+                details: {
+                    changes: Object.keys(updateData).join(', '),
+                    note: 'Admin override on finalized bill'
+                }
+            });
+        }
+
+        // Handle Item Updates
+        if (updateData.items) {
+            const existingItemsMap = new Map(bill.items.map(i => [i._id.toString(), i]));
+
+            for (const newItem of updateData.items) {
+                // If existing item is being updated
+                if (newItem._id && existingItemsMap.has(newItem._id)) {
+                    const existing = existingItemsMap.get(newItem._id);
+
+                    // Prevent editing system-generated items' financials
+                    if (existing.isSystemGenerated) {
+                        const rateChanged = Math.abs(Number(existing.rate) - Number(newItem.rate)) > 0.01;
+                        // const amountChanged = Math.abs(Number(existing.amount) - Number(newItem.amount)) > 0.01; 
+                        // Amount is calculated from rate*qty, so checking rate is key. 
+                        // Use original description just in case
+
+                        if (rateChanged) {
+                            throw new Error(`Cannot manually edit rate of system-generated item: ${existing.description}`);
+                        }
+                    }
+                }
+            }
+
+            bill.items = updateData.items;
+            const totals = this.calculateTotals(bill.items);
+            Object.assign(bill, totals);
+            bill.balanceAmount = totals.grandTotal - bill.paidAmount;
+        }
+
+        // Handle other fields generically if needed, or specific fields
+        if (updateData.paymentResponsibility) {
+            bill.paymentResponsibility = updateData.paymentResponsibility;
+        }
+
+        await bill.save();
+        return bill;
     }
 
     /**
@@ -365,10 +429,27 @@ class BillingService {
     /**
      * Finalize bill (lock it)
      */
+    /**
+     * Finalize bill (lock it)
+     */
     async finalizeBill(billId, userId) {
         const bill = await Billing.findById(billId);
         if (!bill) throw new Error('Bill not found');
         if (bill.isLocked) throw new Error('Bill is already finalized');
+
+        // Check for Clinical Coding Status
+        if (bill.visit) {
+            const ClinicalCodingRecord = require('../models/ClinicalCodingRecord');
+            const codingRecord = await ClinicalCodingRecord.findOne({
+                encounter: bill.visit
+            });
+
+            if (codingRecord && codingRecord.status !== CLINICAL_CODING_STATUS.APPROVED) {
+                // Formatting the status for better readability in error message
+                const statusLabel = codingRecord.status.replace(/-/g, ' ').toUpperCase();
+                throw new Error(`Cannot finalize bill: Clinical coding is ${statusLabel}. It must be APPROVED.`);
+            }
+        }
 
         bill.status = 'finalized';
         bill.isLocked = true;

@@ -107,7 +107,7 @@ exports.updateAppointment = asyncHandler(async (req, res, next) => {
     if (req.body.status === 'completed') {
         try {
             const { addItemToBill } = require('../services/billing.internal.service');
-            
+
             // Ensure appointment has patient and doctor data
             if (!appointment.patient || !appointment.doctor) {
                 throw new Error('Appointment patient or doctor is missing');
@@ -139,18 +139,18 @@ exports.updateAppointment = asyncHandler(async (req, res, next) => {
 
                 for (const medItem of req.body.prescription) {
                     fs.appendFileSync('debug_opd.log', `[${new Date().toISOString()}] Processing med: ${medItem.name}\n`);
-                    
+
                     // Validate required fields
                     const dosage = (medItem.dosage || '').trim();
                     const frequency = (medItem.frequency || '').trim();
                     const duration = (medItem.duration || '').trim();
-                    
+
                     if (!dosage || !frequency || !duration) {
                         fs.appendFileSync('debug_opd.log', `[${new Date().toISOString()}] Missing required fields for ${medItem.name}: dosage=${dosage}, frequency=${frequency}, duration=${duration}\n`);
                         console.warn(`[OPD] Missing required fields for medicine: ${medItem.name}`);
                         continue; // Skip this medicine
                     }
-                    
+
                     // Look up medicine by name (case insensitive regex)
                     let medicine = await Medicine.findOne({
                         $or: [
@@ -201,6 +201,22 @@ exports.updateAppointment = asyncHandler(async (req, res, next) => {
             }
         } else {
             fs.appendFileSync('debug_opd.log', `[${new Date().toISOString()}] No prescription body found or empty array\n`);
+        }
+
+        // AUTO-CREATE CLINICAL CODING RECORD
+        try {
+            const { createCodingForEncounter } = require('../services/clinicalCoding.service');
+            await createCodingForEncounter({
+                patient: appointment.patient._id,
+                encounter: appointment._id,
+                encounterModel: 'Appointment',
+                encounterType: 'opd',
+                finalizingDoctor: appointment.doctor._id || req.user.id,
+                createdBy: req.user.id
+            });
+            console.log(`[OPD] Clinical coding record created for visit ${appointment._id}`);
+        } catch (err) {
+            console.error('[OPD] Failed to create clinical coding record:', err.message);
         }
     }
 

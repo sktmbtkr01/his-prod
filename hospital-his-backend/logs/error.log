@@ -4371,3 +4371,135 @@ Error: User role 'doctor' is not authorized to access this route
     at param (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
     at Function.process_params (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
     at next (D:\HIS Quasar 4 - Copy\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-01-23 16:37:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:37:24 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:45:05 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:50:50 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:50:52 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:50:53 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:51:21 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:51:26 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 16:53:41 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 16:53:57 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 16:54:40 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 17:17:27 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:17:27 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:17:46 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:17:46 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:22:27 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:27:44 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:27:44 [ERROR]: User not found
+Error: User not found
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:39:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 17:40:22 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-23 18:07:32 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:33 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:34 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:35 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:35 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:35 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:35 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:35 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:37 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:37 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:43 [ERROR]: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is AWAITING CODING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18
+2026-01-23 18:07:49 [ERROR]: Cannot finalize bill: Clinical coding is PENDING. It must be APPROVED.
+Error: Cannot finalize bill: Clinical coding is PENDING. It must be APPROVED.
+    at BillingService.finalizeBill (C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\services\billing.service.js:450:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\shrav\OneDrive\Desktop\HIS2\HIS_Quasar\hospital-his-backend\controllers\billing.controller.js:213:18

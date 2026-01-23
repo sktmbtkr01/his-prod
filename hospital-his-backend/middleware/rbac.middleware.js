@@ -115,6 +115,9 @@ exports.hasPermission = (permission) => {
                 'view_payment',
                 'create_payment',
                 'view_patient',
+                'view_coding',
+                'create_coding',
+                'edit_coding',
             ],
             [USER_ROLES.INSURANCE]: [
                 'view_insurance',
@@ -157,6 +160,26 @@ exports.hasPermission = (permission) => {
                 'create_recall',
                 'block_batch',
                 'view_inventory_audit',
+            ],
+            [USER_ROLES.CODER]: [
+                'view_patient',
+                'view_emr',
+                'view_coding',
+                'create_coding',
+                'edit_coding',
+                'submit_coding',
+                'view_billing',
+            ],
+            [USER_ROLES.SENIOR_CODER]: [
+                'view_patient',
+                'view_emr',
+                'view_coding',
+                'create_coding',
+                'edit_coding',
+                'submit_coding',
+                'approve_coding',
+                'return_coding',
+                'view_billing',
             ],
         };
 

@@ -61,6 +61,11 @@ import {
   PlaceholderPage
 } from './pages/inventory';
 
+// Clinical Coding Imports
+import CodingDashboard from './pages/coding/CodingDashboard';
+import CodingQueue from './pages/coding/CodingQueue';
+import ProcedureCodes from './pages/coding/ProcedureCodes';
+
 function App() {
   return (
     <Provider store={store}>
@@ -95,6 +100,12 @@ function App() {
             <Route path="emergency" element={<Emergency />} />
             <Route path="doctor-rounds" element={<DoctorRounds />} />
             <Route path="duty-roster" element={<NurseDutyRoster />} />
+
+            {/* Clinical Coding Routes */}
+            <Route path="coding" element={<CodingDashboard />} />
+            <Route path="coding/queue" element={<CodingQueue />} />
+            <Route path="coding/review" element={<CodingQueue />} /> {/* Reusing Queue with filter logic if needed, or create ReviewQueue */}
+            <Route path="coding/procedure-codes" element={<ProcedureCodes />} />
           </Route>
 
           {/* Admin Routes */}

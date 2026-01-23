@@ -169,7 +169,9 @@ exports.updateAdmission = asyncHandler(async (req, res, next) => {
  * @route   POST /api/ipd/admissions/:id/discharge
  */
 exports.dischargePatient = asyncHandler(async (req, res, next) => {
-    const admission = await Admission.findById(req.params.id);
+    const admission = await Admission.findById(req.params.id)
+        .populate('patient')
+        .populate('doctor');
 
     if (!admission) {
         return next(new ErrorResponse('Admission not found', 404));
@@ -186,6 +188,22 @@ exports.dischargePatient = asyncHandler(async (req, res, next) => {
             currentPatient: null,
             currentAdmission: null,
         });
+    }
+
+    // AUTO-CREATE CLINICAL CODING RECORD
+    try {
+        const { createCodingForEncounter } = require('../services/clinicalCoding.service');
+        await createCodingForEncounter({
+            patient: admission.patient._id,
+            encounter: admission._id,
+            encounterModel: 'Admission',
+            encounterType: 'ipd',
+            finalizingDoctor: admission.doctor?._id || req.user.id,
+            createdBy: req.user.id
+        });
+        console.log(`[IPD] Clinical coding record created for admission ${admission.admissionNumber}`);
+    } catch (err) {
+        console.error('[IPD] Failed to create clinical coding record:', err.message);
     }
 
     res.status(200).json({

@@ -49,3 +49,29 @@ ValidationError: Prescription validation failed: prescriptionNumber: Path `presc
 [2026-01-22T08:22:50.388Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
 [2026-01-22T08:22:50.388Z] Creating Prescription with 1 items
 [2026-01-22T08:22:50.416Z] Created Rx ID: 6971de5a28ba3e478d8f1af9
+[2026-01-23T11:03:27.695Z] Start creating prescription for 697355345286fcccab85a490
+[2026-01-23T11:03:27.700Z] Processing med: Paracetamol 500mg
+[2026-01-23T11:03:27.734Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-23T11:03:27.734Z] Creating Prescription with 1 items
+[2026-01-23T11:03:27.805Z] Created Rx ID: 6973557f5286fcccab85a56b
+[2026-01-23T11:18:11.453Z] Start creating prescription for 697358b23a02a0a7954ac161
+[2026-01-23T11:18:11.455Z] Processing med: Paracetamol 500mg
+[2026-01-23T11:18:11.489Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-23T11:18:11.490Z] Creating Prescription with 1 items
+[2026-01-23T11:18:11.580Z] Created Rx ID: 697358f348baa2d80d431e88
+[2026-01-23T11:20:17.801Z] Start creating prescription for 697358b23a02a0a7954ac161
+[2026-01-23T11:20:17.803Z] Processing med: Paracetamol 500mg
+[2026-01-23T11:20:17.904Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-23T11:20:17.905Z] Creating Prescription with 1 items
+[2026-01-23T11:20:18.108Z] Created Rx ID: 6973597148baa2d80d431ec8
+[2026-01-23T12:36:59.029Z] Start creating prescription for 69736adeda1ae7211a590277
+[2026-01-23T12:36:59.050Z] Processing med: Paracetamol 500mg
+[2026-01-23T12:36:59.131Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-23T12:36:59.132Z] Creating Prescription with 1 items
+[2026-01-23T12:36:59.335Z] Created Rx ID: 69736b6bda1ae7211a59039e
+[2026-01-23T12:37:00.428Z] Start creating prescription for 69736adeda1ae7211a590277
+[2026-01-23T12:37:00.429Z] Processing med: Paracetamol 500mg
+[2026-01-23T12:37:00.523Z] Found med: Paracetamol 500mg (6970e6e5ae32f124038cbfef)
+[2026-01-23T12:37:00.524Z] Creating Prescription with 1 items
+[2026-01-23T12:37:00.668Z] Created Rx ID: 69736b6cda1ae7211a5903cc
+[2026-01-23T12:46:53.591Z] No prescription body found or empty array

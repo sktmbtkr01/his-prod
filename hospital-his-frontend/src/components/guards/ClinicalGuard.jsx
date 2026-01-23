@@ -41,10 +41,10 @@ const ClinicalGuard = ({ children }) => {
 
     const role = getUserRole();
 
-    // If Admin tries to access clinical routes, redirect to Admin Portal
-    if (role === 'admin') {
-        return <Navigate to="/admin" replace />;
-    }
+    // For now, allow admin to access clinical routes for testing functionality
+    // if (role === 'admin') {
+    //     return <Navigate to="/admin" replace />;
+    // }
 
     // Allow all other roles (doctor, nurse, etc.)
     return children;

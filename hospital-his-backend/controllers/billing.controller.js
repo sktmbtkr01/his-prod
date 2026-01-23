@@ -72,14 +72,7 @@ exports.getBillById = asyncHandler(async (req, res, next) => {
  * @route   PUT /api/billing/bills/:id
  */
 exports.updateBill = asyncHandler(async (req, res, next) => {
-    const bill = await Billing.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-        runValidators: true,
-    });
-
-    if (!bill) {
-        return next(new ErrorResponse('Bill not found', 404));
-    }
+    const bill = await billingService.updateBill(req.params.id, req.body, req.user);
 
     res.status(200).json({
         success: true,

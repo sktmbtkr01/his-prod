@@ -111,4 +111,6 @@ exports.RESOURCE_TYPES = {
     INSURANCE: 'insurance',
     INVENTORY: 'inventory',
     MEDICINE: 'medicine',
+    CLINICAL_CODING: 'clinical_coding',
+    PROCEDURE_CODE: 'procedure_code',
 };

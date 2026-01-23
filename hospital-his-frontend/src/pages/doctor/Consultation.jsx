@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, User, Calendar, Activity, Save, Plus, Trash, Pill, FileText, FlaskConical, ClipboardList, Scan } from 'lucide-react';
 import axios from 'axios'; // We'll use axios directly for this complex form for now, or move to service later
 import CarePlanCreator from '../../components/doctor/CarePlanCreator';
+import ClinicalCodingTab from '../../components/clinical/ClinicalCodingTab';
 
 const API_RES_URL = 'http://localhost:5001/api/v1/';
 const getConfig = () => {
@@ -119,7 +120,7 @@ const Consultation = () => {
     const handleFinish = async () => {
         try {
             // 1. Update Appointment Status, Notes, Diagnosis & Prescription
-            await axios.put(`${API_RES_URL}opd/appointments/${appointmentId}`, {
+            const response = await axios.put(`${API_RES_URL}opd/appointments/${appointmentId}`, {
                 status: 'completed',
                 notes: notes,
                 diagnosis: diagnosis,
@@ -157,8 +158,10 @@ const Consultation = () => {
             if (labTests.length > 0) ordersSummary.push(`${labTests.length} Lab Test(s)`);
             if (radiologyTests.length > 0) ordersSummary.push(`${radiologyTests.length} Radiology Scan(s)`);
 
-            alert(`Consultation Completed! Prescription${ordersSummary.length > 0 ? ' & ' + ordersSummary.join(', ') : ''} Saved.`);
-            navigate('/dashboard/opd-queue');
+            alert(`Consultation Completed! Prescription${ordersSummary.length > 0 ? ' & ' + ordersSummary.join(', ') : ''} Saved.\n\nClinical Coding tab is now available below.`);
+
+            // Refresh appointment state to show Clinical Coding tab
+            setAppointment(response.data.data);
         } catch (error) {
             console.error("Error saving consultation", error);
             alert("Failed to save consultation");
@@ -652,6 +655,22 @@ const Consultation = () => {
                                     </p>
                                 </div>
                             </div>
+                        </motion.div>
+                    )}
+
+                    {/* Clinical Coding Section - Displays for completed encounters */}
+                    {appointment.status === 'completed' && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.35, type: "spring" }}
+                        >
+                            <ClinicalCodingTab
+                                encounterId={appointmentId}
+                                encounterModel="Appointment"
+                                encounterType="opd"
+                                encounterData={appointment}
+                            />
                         </motion.div>
                     )}
                 </div>

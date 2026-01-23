@@ -17,6 +17,8 @@ const USER_ROLES = {
     COMPLIANCE: 'compliance',
     HEAD_NURSE: 'head_nurse',
     INVENTORY_MANAGER: 'inventory_manager',
+    CODER: 'coder',
+    SENIOR_CODER: 'senior_coder',
 };
 
 // Appointment Status
@@ -270,6 +272,15 @@ const MAR_HOLD_REASONS = {
     OTHER: 'other',
 };
 
+// Clinical Coding Status (Workflow-driven)
+const CLINICAL_CODING_STATUS = {
+    AWAITING_CODING: 'awaiting-coding',      // Initial state after encounter finalized
+    IN_PROGRESS: 'in-progress',              // Coder has started working
+    PENDING_REVIEW: 'pending-review',        // Coder submitted for review
+    APPROVED: 'approved',                    // Senior coder/admin approved
+    RETURNED: 'returned',                    // Returned for correction with reason
+};
+
 module.exports = {
     USER_ROLES,
     APPOINTMENT_STATUS,
@@ -303,4 +314,6 @@ module.exports = {
     RECALL_STATUS,
     RECALL_CLASS,
     MAR_HOLD_REASONS,
+    // Clinical Coding constants
+    CLINICAL_CODING_STATUS,
 };

@@ -5,7 +5,8 @@ import {
     LayoutDashboard, Users, Calendar, Stethoscope,
     FlaskConical, Pill, FileText, Settings,
     Menu, X, Activity, ShieldCheck, Database,
-    Banknote, ScanLine, Siren, Scissors, ClipboardList, BedDouble, Ambulance
+    Banknote, ScanLine, Siren, Scissors, ClipboardList, BedDouble, Ambulance,
+    FileCode, CheckSquare
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -115,6 +116,34 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             path: '/dashboard/insurance',
             icon: <ShieldCheck size={20} />,
             roles: ['insurance', 'billing']
+        },
+
+        // -------------------------------------------------------------------------
+        // CLINICAL CODING (Coder Roles)
+        // -------------------------------------------------------------------------
+        {
+            title: 'Coding Dashboard',
+            path: '/dashboard/coding',
+            icon: <LayoutDashboard size={20} />,
+            roles: ['coder', 'senior_coder']
+        },
+        {
+            title: 'Coding Queue',
+            path: '/dashboard/coding/queue',
+            icon: <FileCode size={20} />,
+            roles: ['coder', 'senior_coder']
+        },
+        {
+            title: 'Pending Review',
+            path: '/dashboard/coding/review',
+            icon: <CheckSquare size={20} />,
+            roles: ['senior_coder']
+        },
+        {
+            title: 'Procedure Codes',
+            path: '/dashboard/coding/procedure-codes',
+            icon: <Database size={20} />,
+            roles: ['coder', 'senior_coder', 'admin']
         },
 
         // -------------------------------------------------------------------------

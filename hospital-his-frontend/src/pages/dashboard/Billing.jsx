@@ -193,7 +193,7 @@ const Billing = () => {
             setSelectedBill(null);
             fetchDashboardData();
         } catch (error) {
-            toast.error('Failed to finalize bill');
+            toast.error(error.response?.data?.message || 'Failed to finalize bill');
         }
     };
 
