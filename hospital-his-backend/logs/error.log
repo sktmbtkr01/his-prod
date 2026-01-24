@@ -4835,3 +4835,9 @@ Error: User role 'nurse' is not authorized to access this route
     at next (/Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
     at /Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:46:9
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-23 23:24:27 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-23 23:24:29 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21

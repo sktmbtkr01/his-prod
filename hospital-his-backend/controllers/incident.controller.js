@@ -22,20 +22,23 @@ const isAdminOrCompliance = (user) => {
  * @access  All authenticated staff
  */
 exports.createIncident = asyncHandler(async (req, res, next) => {
-    const { department } = req.body;
+    // Always use department from logged-in user
+    const userDepartment = req.user.department;
+    if (!userDepartment) {
+        return next(new ErrorResponse('User is not assigned to any department', 400));
+    }
 
     // Find department head for auto-assignment
     let assignedTo = null;
-    if (department) {
-        const dept = await Department.findById(department).populate('head');
-        if (dept && dept.head) {
-            assignedTo = dept.head._id;
-        }
+    const dept = await Department.findById(userDepartment).populate('head');
+    if (dept && dept.head) {
+        assignedTo = dept.head._id;
     }
 
     // Build incident data
     const incidentData = {
         ...req.body,
+        department: userDepartment, // enforce department from user
         reporterId: req.user._id,
         status: INCIDENT_REPORT_STATUS.SUBMITTED,
         assignedTo,
@@ -64,16 +67,25 @@ exports.createIncident = asyncHandler(async (req, res, next) => {
 /**
  * @desc    Get all incident reports (RBAC-aware)
  * @route   GET /api/incidents
- * @access  Staff: own reports only | Dept Head: department reports | Admin: all
+ * @access  Staff: own reports only | Dept Head/Head Nurse: department reports | Compliance: all harm incidents | Admin: all
  */
 exports.getAllIncidents = asyncHandler(async (req, res, next) => {
-    const { status, department, myReports, departmentReports } = req.query;
+    const { status, department, myReports, departmentReports, harmOnly } = req.query;
     const user = req.user;
 
     let query = {};
 
-    // Admin/Compliance can see all
-    if (isAdminOrCompliance(user)) {
+    // Admin can see all
+    if (user.role === USER_ROLES.ADMIN) {
+        if (status) query.status = status;
+        if (department) query.department = department;
+    }
+    // Compliance can see all, but primarily focuses on harm incidents
+    else if (user.role === USER_ROLES.COMPLIANCE) {
+        // If harmOnly flag is set, filter to harm incidents only
+        if (harmOnly === 'true') {
+            query.wasHarm = true;
+        }
         if (status) query.status = status;
         if (department) query.department = department;
     }
@@ -82,11 +94,14 @@ exports.getAllIncidents = asyncHandler(async (req, res, next) => {
         query.reporterId = user._id;
         if (status) query.status = status;
     }
-    // departmentReports=true: for department heads only
+    // departmentReports=true: for department heads OR head_nurse
     else if (departmentReports === 'true' && user.department) {
         const userDeptId = user.department._id || user.department;
         const isHead = await isDepartmentHead(user._id, userDeptId);
-        if (isHead) {
+        const isHeadNurse = user.role === USER_ROLES.HEAD_NURSE;
+
+        if (isHead || isHeadNurse) {
+            // Department heads and head nurses can see all incidents in their department
             query.$or = [
                 { department: userDeptId },
                 { assignedTo: user._id }
@@ -119,7 +134,7 @@ exports.getAllIncidents = asyncHandler(async (req, res, next) => {
 /**
  * @desc    Get incident report by ID (RBAC-aware)
  * @route   GET /api/incidents/:id
- * @access  Reporter, Assigned Dept Head, or Admin
+ * @access  Reporter, Assigned Dept Head, Head Nurse, or Admin/Compliance
  */
 exports.getIncidentById = asyncHandler(async (req, res, next) => {
     const incident = await IncidentReport.findById(req.params.id)
@@ -133,23 +148,30 @@ exports.getIncidentById = asyncHandler(async (req, res, next) => {
     }
 
     const user = req.user;
+    const userDeptId = user.department?._id?.toString() || user.department?.toString();
+    const incidentDeptId = incident.department?._id?.toString();
+
     const isReporter = incident.reporterId._id.toString() === user._id.toString();
     const isAssignee = incident.assignedTo && incident.assignedTo._id.toString() === user._id.toString();
     const isDeptHead = incident.department?.head?.toString() === user._id.toString();
+    const isHeadNurse = user.role === USER_ROLES.HEAD_NURSE && userDeptId === incidentDeptId;
     const isAdminUser = isAdminOrCompliance(user);
 
-    // RBAC: only reporter, assignee, dept head, or admin can view
-    if (!isReporter && !isAssignee && !isDeptHead && !isAdminUser) {
+    // RBAC: only reporter, assignee, dept head, head nurse (same dept), or admin/compliance can view
+    if (!isReporter && !isAssignee && !isDeptHead && !isHeadNurse && !isAdminUser) {
         return next(new ErrorResponse('Not authorized to view this incident', 403));
     }
+
+    // Determine management permissions
+    const canManage = isAssignee || isDeptHead || isHeadNurse || isAdminUser;
 
     res.status(200).json({
         success: true,
         data: incident,
         permissions: {
-            canChangeStatus: isAssignee || isDeptHead || isAdminUser,
+            canChangeStatus: canManage,
             canReassign: isAdminUser,
-            canAddNotes: isAssignee || isDeptHead || isAdminUser,
+            canAddNotes: canManage,
         },
     });
 });
@@ -157,7 +179,7 @@ exports.getIncidentById = asyncHandler(async (req, res, next) => {
 /**
  * @desc    Update incident status
  * @route   PUT /api/incidents/:id/status
- * @access  Assigned Dept Head or Admin only
+ * @access  Assigned Dept Head, Head Nurse, or Admin only
  */
 exports.updateIncidentStatus = asyncHandler(async (req, res, next) => {
     const { status, reviewNotes } = req.body;
@@ -169,11 +191,15 @@ exports.updateIncidentStatus = asyncHandler(async (req, res, next) => {
     }
 
     const user = req.user;
+    const userDeptId = user.department?._id?.toString() || user.department?.toString();
+    const incidentDeptId = incident.department?._id?.toString();
+
     const isAssignee = incident.assignedTo && incident.assignedTo.toString() === user._id.toString();
     const isDeptHead = incident.department?.head?.toString() === user._id.toString();
+    const isHeadNurse = user.role === USER_ROLES.HEAD_NURSE && userDeptId === incidentDeptId;
     const isAdminUser = isAdminOrCompliance(user);
 
-    if (!isAssignee && !isDeptHead && !isAdminUser) {
+    if (!isAssignee && !isDeptHead && !isHeadNurse && !isAdminUser) {
         return next(new ErrorResponse('Not authorized to change status', 403));
     }
 

@@ -11268,3 +11268,77 @@ Error: User role 'nurse' is not authorized to access this route
 2026-01-23 22:50:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
 2026-01-23 22:50:56 [INFO]: ═══════════════════════════════════════════════════════════════
 2026-01-23 22:55:44 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-23 23:15:28 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 23:15:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:15:28 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 23:15:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:15:28 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 23:15:28 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 23:15:28 [INFO]: 🔌 WebSocket enabled
+2026-01-23 23:15:28 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 23:15:28 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:23:54 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-23 23:23:56 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-23 23:23:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:23:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-23 23:23:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:23:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-23 23:23:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-23 23:23:56 [INFO]: 🔌 WebSocket enabled
+2026-01-23 23:23:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-23 23:23:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-23 23:24:27 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-23 23:24:29 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS_3/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 01:14:45 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 01:14:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 01:14:45 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 01:14:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 01:14:45 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 01:14:45 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 01:14:45 [INFO]: 🔌 WebSocket enabled
+2026-01-24 01:14:45 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 01:14:45 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 01:20:41 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-24 01:20:44 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-24 01:20:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 01:20:44 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 01:20:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 01:20:44 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 01:20:44 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 01:20:44 [INFO]: 🔌 WebSocket enabled
+2026-01-24 01:20:44 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 01:20:44 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:43:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 10:43:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:43:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 10:43:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:43:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 10:43:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 10:43:54 [INFO]: 🔌 WebSocket enabled
+2026-01-24 10:43:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 10:43:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:44:03 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-24 10:44:43 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 10:44:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:44:43 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 10:44:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:44:43 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 10:44:43 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 10:44:43 [INFO]: 🔌 WebSocket enabled
+2026-01-24 10:44:43 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 10:44:43 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:51:28 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-24 10:51:37 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 10:51:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:51:37 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 10:51:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 10:51:37 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 10:51:37 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 10:51:37 [INFO]: 🔌 WebSocket enabled
+2026-01-24 10:51:37 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 10:51:37 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 11:10:39 [WARN]: MongoDB disconnected. Attempting to reconnect...

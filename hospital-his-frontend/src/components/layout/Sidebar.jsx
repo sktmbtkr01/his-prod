@@ -121,19 +121,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             title: 'Report Incident',
             path: '/dashboard/report-incident',
             icon: <AlertCircle size={20} />,
-            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'radiologist', 'billing', 'head_nurse', 'insurance', 'coder', 'senior_coder']
+            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'radiologist', 'billing', 'head_nurse', 'insurance', 'coder', 'senior_coder', 'compliance']
         },
         {
             title: 'My Reports',
             path: '/dashboard/my-incidents',
             icon: <FileText size={20} />,
-            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'radiologist', 'billing', 'head_nurse', 'insurance', 'coder', 'senior_coder']
+            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'radiologist', 'billing', 'head_nurse', 'insurance', 'coder', 'senior_coder', 'compliance']
         },
         {
-            title: 'Department Reports',
+            title: 'Incident Review Queue',
             path: '/dashboard/department-incidents',
             icon: <Database size={20} />,
-            roles: ['doctor', 'nurse', 'receptionist', 'pharmacist', 'lab_tech', 'radiologist', 'billing', 'head_nurse', 'insurance', 'coder', 'senior_coder']
+            roles: ['head_nurse', 'compliance', 'admin']
         },
 
         // -------------------------------------------------------------------------

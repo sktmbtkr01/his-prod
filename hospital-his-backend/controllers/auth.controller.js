@@ -173,6 +173,9 @@ const sendTokenResponse = async (user, statusCode, res) => {
     user.refreshToken = refreshToken;
     await user.save();
 
+    // Populate department to include full department info
+    await user.populate('department', '_id name departmentCode');
+
     res.status(statusCode).json({
         success: true,
         accessToken,
@@ -183,6 +186,7 @@ const sendTokenResponse = async (user, statusCode, res) => {
             email: user.email,
             role: user.role,
             profile: user.profile,
+            department: user.department, // Include populated department
         },
     });
 };
