@@ -32,6 +32,13 @@ router.use(authorize('admin'));
  */
 router.get('/dashboard', adminController.getDashboard);
 
+/**
+ * @route   GET /api/admin/governance-dashboard
+ * @desc    Get comprehensive governance dashboard with all analytics
+ * @access  Admin only
+ */
+router.get('/governance-dashboard', adminController.getGovernanceDashboard);
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // CONFIG ROUTES - User Management
 // ═══════════════════════════════════════════════════════════════════════════════

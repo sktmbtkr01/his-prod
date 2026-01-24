@@ -523,4 +523,20 @@ exports.getDashboard = asyncHandler(async (req, res, next) => {
     });
 });
 
+/**
+ * @desc    Get comprehensive governance dashboard with all analytics
+ * @route   GET /api/admin/governance-dashboard
+ * @access  Admin only
+ */
+exports.getGovernanceDashboard = asyncHandler(async (req, res, next) => {
+    const governanceAnalytics = require('../services/adminGovernanceAnalytics.service');
+
+    const dashboardData = await governanceAnalytics.getGovernanceDashboard();
+
+    res.status(200).json({
+        success: true,
+        data: dashboardData,
+    });
+});
+
 module.exports = exports;

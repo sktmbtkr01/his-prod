@@ -838,3 +838,224 @@ Error: listen EADDRINUSE: address already in use :::5001
     at Server.listen (node:net:2102:7)
     at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:27:42 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:28:00 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:28:18 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:49:08 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:49:09 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:49:26 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:49:26 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:54:34 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:54:34 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:54:34 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:56:03 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:56:03 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:56:04 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 21:15:39 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 21:15:39 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 21:15:39 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 21:15:39 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\server.js:240:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

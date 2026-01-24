@@ -5177,3 +5177,32 @@ Error: Payment amount (100) exceeds balance (0)
 2026-01-24 20:20:08 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
 2026-01-24 20:20:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
 2026-01-24 20:20:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:27:42 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:28:00 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:28:18 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:39:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:39:28 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:39:43 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:24:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 20:49:08 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:49:09 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:49:26 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:49:26 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:54:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:54:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:54:34 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:56:03 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:56:03 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 20:56:04 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 21:15:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 21:15:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 21:15:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 21:15:39 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
