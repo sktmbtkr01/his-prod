@@ -5294,3 +5294,224 @@ Error: Not authorized to access this route
 2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
 2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
 2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 18:28:40 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:28:40 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 18:30:07 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:30:07 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 18:31:44 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:31:44 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 18:34:41 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:34:41 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 18:41:09 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:41:09 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 18:45:21 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 18:45:21 [ERROR]: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+Error: Extraction failed: Model initialization failed: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 19:39:37 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 19:39:37 [ERROR]: Extraction failed: name 'parse_date_of_birth' is not defined
+Error: Extraction failed: name 'parse_date_of_birth' is not defined
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 19:40:28 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 19:40:28 [ERROR]: Extraction failed: name 'parse_date_of_birth' is not defined
+Error: Extraction failed: name 'parse_date_of_birth' is not defined
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 19:40:51 [ERROR]: AI OCR Service Error: Request failed with status code 500
+2026-01-24 19:40:51 [ERROR]: Extraction failed: name 'parse_date_of_birth' is not defined
+Error: Extraction failed: name 'parse_date_of_birth' is not defined
+    at D:\HIS_Quasar5\HIS_Quasar\hospital-his-backend\controllers\patient.controller.js:46:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-24 15:57:42 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 18:05:43 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 18:23:36 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 18:23:37 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 18:24:28 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:27:34 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:29:37 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:29:40 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:29:43 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:30:36 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:41:05 [ERROR]: User role 'doctor' is not authorized to access this route
+Error: User role 'doctor' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-24 18:52:23 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 18:52:28 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 19:00:37 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 19:00:40 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 19:00:43 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-24 19:02:03 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:02:15 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:27:28 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:27:30 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:27:31 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:28:19 [ERROR]: No text available for summarization. Please upload a PDF with readable text.
+Error: No text available for summarization. Please upload a PDF with readable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:398:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:30:52 [ERROR]: PDF text extraction failed: PDF contains no extractable text
+Error: PDF text extraction failed: PDF contains no extractable text
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:410:25
+2026-01-24 19:30:54 [ERROR]: PDF text extraction failed: PDF contains no extractable text
+Error: PDF text extraction failed: PDF contains no extractable text
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:410:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:31:00 [ERROR]: PDF text extraction failed: PDF contains no extractable text
+Error: PDF text extraction failed: PDF contains no extractable text
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:410:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 19:32:14 [ERROR]: PDF text extraction failed: PDF contains no extractable text
+Error: PDF text extraction failed: PDF contains no extractable text
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:410:25
+2026-01-24 19:39:29 [ERROR]: PDF text extraction failed: This PDF appears to be a scanned image and OCR failed. Please upload a PDF with selectable text.
+Error: PDF text extraction failed: This PDF appears to be a scanned image and OCR failed. Please upload a PDF with selectable text.
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/controllers/lab.controller.js:410:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-25 00:47:02 [ERROR]: E11000 duplicate key error collection: test.appointments index: appointmentNumber_1 dup key: { appointmentNumber: "APT202601240001" }
+MongoServerError: E11000 duplicate key error collection: test.appointments index: appointmentNumber_1 dup key: { appointmentNumber: "APT202601240001" }
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\insert.js:50:33
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-25 00:48:18 [ERROR]: E11000 duplicate key error collection: test.appointments index: appointmentNumber_1 dup key: { appointmentNumber: "APT202601240001" }
+MongoServerError: E11000 duplicate key error collection: test.appointments index: appointmentNumber_1 dup key: { appointmentNumber: "APT202601240001" }
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\insert.js:50:33
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\node_modules\mongodb\lib\operations\command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-01-25 00:58:13 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 00:58:20 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 01:00:24 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 01:00:29 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 01:00:38 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21

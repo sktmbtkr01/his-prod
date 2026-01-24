@@ -87,6 +87,17 @@ const patientSchema = new mongoose.Schema(
                 default: 'For identification assistance only. Not government authentication.',
             },
         },
+        // Government ID proof fields (added for ID scanning feature)
+        maskedAadhaar: {
+            type: String,
+            trim: true,
+            // Format: XXXX XXXX 1234 (last 4 digits only)
+        },
+        idProofImagePath: {
+            type: String,
+            trim: true,
+            // Path to the masked ID card image
+        },
     },
     {
         timestamps: true,
