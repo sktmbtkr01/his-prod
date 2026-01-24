@@ -1,0 +1,180 @@
+/**
+ * MedicineAutocomplete Styles
+ * Premium dropdown with smooth animations
+ */
+
+.medicine-autocomplete {
+    position: relative;
+    width: 100%;
+}
+
+/* Input Wrapper */
+.medicine-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.medicine-input-icon {
+    position: absolute;
+    left: 10px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.medicine-input {
+    width: 100%;
+    padding: 10px 36px 10px 36px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+    transition: all 0.2s;
+    color: #1e293b;
+}
+
+.medicine-input:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.medicine-input.valid {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+.medicine-input:disabled {
+    background: #f1f5f9;
+    cursor: not-allowed;
+}
+
+.medicine-input::placeholder {
+    color: #94a3b8;
+}
+
+.medicine-valid-icon {
+    position: absolute;
+    right: 10px;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown */
+.medicine-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 1000;
+    animation: dropdownSlide 0.15s ease-out;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Medicine Option */
+.medicine-option {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.medicine-option:last-child {
+    border-bottom: none;
+}
+
+.medicine-option:hover,
+.medicine-option.selected {
+    background: #f0fdf4;
+}
+
+.medicine-option.selected {
+    background: #d1fae5;
+}
+
+.medicine-option-name {
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.medicine-option-category {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Highlight matching text */
+.medicine-highlight {
+    background: #fef08a;
+    color: #1e293b;
+    font-weight: 600;
+    padding: 0 1px;
+    border-radius: 2px;
+}
+
+/* No Results / Error */
+.medicine-no-results,
+.medicine-error {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.medicine-error {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+/* Loading Spinner */
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Scrollbar */
+.medicine-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.medicine-dropdown::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.medicine-dropdown::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.medicine-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

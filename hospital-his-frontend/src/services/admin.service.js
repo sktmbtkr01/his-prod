@@ -43,6 +43,11 @@ export const getRevenueMetrics = async () => {
     return response.data;
 };
 
+export const getGovernanceDashboard = async () => {
+    const response = await api.get('/admin/governance-dashboard');
+    return response.data;
+};
+
 export const getBedOccupancy = async () => {
     const response = await api.get('/admin/dashboard/beds');
     return response.data;
@@ -362,6 +367,7 @@ export default {
     getDashboard,
     getDashboardKPIs,
     getRevenueMetrics,
+    getGovernanceDashboard,
     getBedOccupancy,
     getERMetrics,
     getIncidentMetrics,

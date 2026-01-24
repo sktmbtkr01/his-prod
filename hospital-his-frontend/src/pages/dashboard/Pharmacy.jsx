@@ -255,6 +255,7 @@ const Pharmacy = () => {
 
     // Record payment
     const handleRecordPayment = async () => {
+        if (processingPayment) return; // Prevent double clicks
         if (!paymentModalData || !paymentAmount || parseFloat(paymentAmount) <= 0) {
             toast.error('Enter a valid amount');
             return;
@@ -278,6 +279,15 @@ const Pharmacy = () => {
         } finally {
             setProcessingPayment(false);
         }
+    };
+
+    // Close payment modal and reset state
+    const closePaymentModal = () => {
+        setPaymentModalData(null);
+        setPaymentSuccess(false);
+        setPaymentAmount('');
+        setPaymentRef('');
+        setPaymentMode('cash');
     };
 
     const filteredQueue = queue.filter(item => {
@@ -694,7 +704,7 @@ const Pharmacy = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-                            onClick={() => setPaymentModalData(null)}
+                            onClick={closePaymentModal}
                         />
                         <motion.div
                             initial={{ scale: 0.95, opacity: 0 }}
@@ -703,93 +713,143 @@ const Pharmacy = () => {
                             className="relative bg-white rounded-2xl shadow-xl w-full max-w-md p-6"
                         >
                             <button
-                                onClick={() => setPaymentModalData(null)}
+                                onClick={closePaymentModal}
                                 className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg"
                             >
                                 <X size={20} />
                             </button>
 
-                            <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                <Banknote size={24} className="text-emerald-500" />
-                                Collect Payment
-                            </h3>
-
-                            <div className="p-4 bg-emerald-50 rounded-xl mb-4 border border-emerald-100">
-                                <div className="flex justify-between items-center mb-2">
-                                    <span className="text-sm text-emerald-700 font-medium">Bill Number</span>
-                                    <span className="font-mono font-bold text-emerald-800">{paymentModalData.billNumber}</span>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-sm text-emerald-700 font-medium">Total Amount</span>
-                                    <span className="text-xl font-bold text-emerald-800">₹{paymentModalData.grandTotal}</span>
-                                </div>
-                            </div>
-
-                            <div className="space-y-4">
-                                <div>
-                                    <label className="text-sm font-medium text-slate-700 block mb-1">Payment Amount</label>
-                                    <div className="relative">
-                                        <span className="absolute left-3 top-2.5 text-gray-500 font-bold">₹</span>
-                                        <input
-                                            type="number"
-                                            value={paymentAmount}
-                                            onChange={(e) => setPaymentAmount(e.target.value)}
-                                            max={paymentModalData.balanceAmount}
-                                            className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 font-bold text-lg"
-                                        />
+                            {paymentSuccess ? (
+                                /* Success View */
+                                <div className="text-center py-6">
+                                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                                        <CheckCircle size={32} />
                                     </div>
-                                    <p className="text-xs text-gray-400 mt-1 text-right">
-                                        Balance Due: ₹{paymentModalData.balanceAmount}
-                                    </p>
-                                </div>
+                                    <h3 className="text-xl font-bold text-slate-800 mb-2">Payment Successful!</h3>
+                                    <p className="text-gray-500 mb-6">Receipt generated for Pharmacy Bill</p>
 
-                                <div>
-                                    <label className="text-sm font-medium text-slate-700 block mb-1">Payment Mode</label>
-                                    <div className="flex gap-2">
-                                        {['cash', 'card', 'upi'].map((mode) => (
-                                            <button
-                                                key={mode}
-                                                onClick={() => setPaymentMode(mode)}
-                                                className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium capitalize transition-colors flex items-center justify-center gap-2 ${paymentMode === mode
-                                                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-200'
-                                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                                    }`}
-                                            >
-                                                {mode === 'card' && <CreditCard size={14} />}
-                                                {mode}
-                                            </button>
-                                        ))}
+                                    <div className="bg-gray-50 p-4 rounded-xl text-left mb-6 border border-gray-100">
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Bill Number</span>
+                                            <span className="font-mono font-bold text-slate-700">{paymentModalData.billNumber}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Amount Paid</span>
+                                            <span className="font-bold text-emerald-600">₹{parseFloat(paymentAmount).toFixed(2)}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Payment Mode</span>
+                                            <span className="capitalize font-medium text-slate-700">{paymentMode}</span>
+                                        </div>
+                                        {paymentRef && (
+                                            <div className="flex justify-between">
+                                                <span className="text-sm text-gray-500">Reference</span>
+                                                <span className="font-mono text-sm text-slate-700">{paymentRef}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="flex gap-3">
+                                        <button
+                                            onClick={() => window.print()}
+                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50 flex items-center justify-center gap-2"
+                                        >
+                                            <Receipt size={18} /> Print Receipt
+                                        </button>
+                                        <button
+                                            onClick={closePaymentModal}
+                                            className="flex-1 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 shadow-lg shadow-emerald-200"
+                                        >
+                                            Done
+                                        </button>
                                     </div>
                                 </div>
+                            ) : (
+                                /* Payment Form */
+                                <>
+                                    <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                        <Banknote size={24} className="text-emerald-500" />
+                                        Collect Payment
+                                    </h3>
 
-                                <div>
-                                    <label className="text-sm font-medium text-slate-700 block mb-1">Reference / Transaction ID</label>
-                                    <input
-                                        type="text"
-                                        value={paymentRef}
-                                        onChange={(e) => setPaymentRef(e.target.value)}
-                                        className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
-                                        placeholder="Optional..."
-                                    />
-                                </div>
-                            </div>
+                                    <div className="p-4 bg-emerald-50 rounded-xl mb-4 border border-emerald-100">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-sm text-emerald-700 font-medium">Bill Number</span>
+                                            <span className="font-mono font-bold text-emerald-800">{paymentModalData.billNumber}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm text-emerald-700 font-medium">Total Amount</span>
+                                            <span className="text-xl font-bold text-emerald-800">₹{paymentModalData.grandTotal}</span>
+                                        </div>
+                                    </div>
 
-                            <div className="flex gap-3 mt-6">
-                                <button
-                                    onClick={() => setPaymentModalData(null)}
-                                    className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50"
-                                >
-                                    Later
-                                </button>
-                                <button
-                                    onClick={handleRecordPayment}
-                                    disabled={processingPayment || !paymentAmount}
-                                    className="flex-1 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 disabled:opacity-50"
-                                >
-                                    {processingPayment ? <Loader2 size={18} className="animate-spin" /> : <Receipt size={18} />}
-                                    {processingPayment ? 'Processing...' : 'Generate Receipt'}
-                                </button>
-                            </div>
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Amount</label>
+                                            <div className="relative">
+                                                <span className="absolute left-3 top-2.5 text-gray-500 font-bold">₹</span>
+                                                <input
+                                                    type="number"
+                                                    value={paymentAmount}
+                                                    onChange={(e) => setPaymentAmount(e.target.value)}
+                                                    max={paymentModalData.balanceAmount}
+                                                    className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 font-bold text-lg"
+                                                />
+                                            </div>
+                                            <p className="text-xs text-gray-400 mt-1 text-right">
+                                                Balance Due: ₹{paymentModalData.balanceAmount}
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Mode</label>
+                                            <div className="flex gap-2">
+                                                {['cash', 'card', 'upi'].map((mode) => (
+                                                    <button
+                                                        key={mode}
+                                                        onClick={() => setPaymentMode(mode)}
+                                                        className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium capitalize transition-colors flex items-center justify-center gap-2 ${paymentMode === mode
+                                                            ? 'bg-emerald-600 text-white shadow-md shadow-emerald-200'
+                                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                            }`}
+                                                    >
+                                                        {mode === 'card' && <CreditCard size={14} />}
+                                                        {mode}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Reference / Transaction ID</label>
+                                            <input
+                                                type="text"
+                                                value={paymentRef}
+                                                onChange={(e) => setPaymentRef(e.target.value)}
+                                                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                                                placeholder="Optional..."
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-3 mt-6">
+                                        <button
+                                            onClick={closePaymentModal}
+                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50"
+                                        >
+                                            Later
+                                        </button>
+                                        <button
+                                            onClick={handleRecordPayment}
+                                            disabled={processingPayment || !paymentAmount}
+                                            className="flex-1 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 disabled:opacity-50"
+                                        >
+                                            {processingPayment ? <Loader2 size={18} className="animate-spin" /> : <Receipt size={18} />}
+                                            {processingPayment ? 'Processing...' : 'Generate Receipt'}
+                                        </button>
+                                    </div>
+                                </>
+                            )}
                         </motion.div>
                     </div>
                 )}

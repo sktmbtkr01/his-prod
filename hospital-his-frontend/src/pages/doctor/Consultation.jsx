@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, User, Calendar, Activity, Save, Plus, Trash, Pill, FileText, FlaskConical, ClipboardList, Scan } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, User, Calendar, Activity, Save, Plus, Trash, Pill, FileText, FlaskConical, ClipboardList, Scan, PenTool, Keyboard, Sparkles } from 'lucide-react';
 import axios from 'axios'; // We'll use axios directly for this complex form for now, or move to service later
 import CarePlanCreator from '../../components/doctor/CarePlanCreator';
 import ClinicalCodingTab from '../../components/clinical/ClinicalCodingTab';
+import HandwritingCanvas from '../../components/doctor/HandwritingCanvas';
+import MedicineAutocomplete from '../../components/prescription/MedicineAutocomplete';
 import systemSettingsService from '../../services/systemSettings.service';
 
 const API_RES_URL = 'http://localhost:5001/api/v1/';
@@ -25,9 +27,13 @@ const Consultation = () => {
     const [symptoms, setSymptoms] = useState('');
     const [notes, setNotes] = useState('');
 
+    // Handwriting Input Mode State
+    const [inputMode, setInputMode] = useState('type'); // 'type' or 'write'
+    const [isAiAssisted, setIsAiAssisted] = useState(false);
+
     // Prescription State
     const [medicines, setMedicines] = useState([]);
-    const [newMed, setNewMed] = useState({ name: '', dosage: '', frequency: '1-0-1', duration: '5 days' });
+    const [newMed, setNewMed] = useState({ name: '', medicineId: '', dosage: '', frequency: '1-0-1', duration: '5 days', quantity: 10 });
 
     // Lab Tests State
     const [labTests, setLabTests] = useState([]);
@@ -95,9 +101,12 @@ const Consultation = () => {
     }, [appointmentId]);
 
     const addMedicine = () => {
-        if (!newMed.name) return;
+        if (!newMed.name || !newMed.medicineId) {
+            alert('Please select a medicine from the dropdown');
+            return;
+        }
         setMedicines([...medicines, { ...newMed, id: Date.now() }]);
-        setNewMed({ name: '', dosage: '', frequency: '1-0-1', duration: '5 days' });
+        setNewMed({ name: '', medicineId: '', dosage: '', frequency: '1-0-1', duration: '5 days', quantity: 10 });
     };
 
     const removeMedicine = (id) => {
@@ -136,10 +145,32 @@ const Consultation = () => {
                 notes: notes,
                 diagnosis: diagnosis,
                 chiefComplaint: symptoms,
-                prescription: medicines.map(({ id, ...rest }) => rest)
+                prescription: medicines.map(({ id, medicineId, ...rest }) => rest)
             }, getConfig());
 
-            // 2. Create Lab Orders for each selected test
+            // 2. Create Prescription document for Pharmacy (only if medicines exist)
+            if (medicines.length > 0) {
+                const prescriptionMedicines = medicines
+                    .filter(m => m.medicineId) // Only include medicines with valid IDs
+                    .map(m => ({
+                        medicine: m.medicineId,
+                        dosage: m.dosage || '1 tablet',
+                        frequency: m.frequency || '1-0-1',
+                        duration: m.duration || '5 days',
+                        quantity: parseInt(m.quantity) || 10
+                    }));
+
+                if (prescriptionMedicines.length > 0) {
+                    await axios.post(`${API_RES_URL}prescriptions`, {
+                        patient: appointment.patient._id,
+                        visit: appointmentId,
+                        visitModel: 'Appointment',
+                        medicines: prescriptionMedicines
+                    }, getConfig());
+                }
+            }
+
+            // 3. Create Lab Orders for each selected test
             if (labTests.length > 0) {
                 const labOrderPromises = labTests.map(test =>
                     axios.post(`${API_RES_URL}lab/orders`, {
@@ -152,7 +183,7 @@ const Consultation = () => {
                 await Promise.all(labOrderPromises);
             }
 
-            // 3. Create Radiology Orders for each selected test
+            // 4. Create Radiology Orders for each selected test
             if (radiologyTests.length > 0) {
                 const radiologyOrderPromises = radiologyTests.map(test =>
                     axios.post(`${API_RES_URL}radiology/orders`, {
@@ -166,17 +197,18 @@ const Consultation = () => {
             }
 
             const ordersSummary = [];
+            if (medicines.length > 0) ordersSummary.push(`${medicines.length} Medicine(s)`);
             if (labTests.length > 0) ordersSummary.push(`${labTests.length} Lab Test(s)`);
             if (radiologyTests.length > 0) ordersSummary.push(`${radiologyTests.length} Radiology Scan(s)`);
 
             const codingMessage = clinicalCodingEnabled ? '\n\nClinical Coding tab is now available below.' : '';
-            alert(`Consultation Completed! Prescription${ordersSummary.length > 0 ? ' & ' + ordersSummary.join(', ') : ''} Saved.${codingMessage}`);
+            alert(`Consultation Completed! ${ordersSummary.length > 0 ? ordersSummary.join(', ') : 'Notes'} Saved.${codingMessage}`);
 
             // Refresh appointment state to show Clinical Coding tab
             setAppointment(response.data.data);
         } catch (error) {
             console.error("Error saving consultation", error);
-            alert("Failed to save consultation");
+            alert("Failed to save consultation: " + (error.response?.data?.error || error.message));
         }
     };
 
@@ -335,52 +367,136 @@ const Consultation = () => {
                 {/* Right Column: Clinical Notes & Rx */}
                 <div className="lg:col-span-2 space-y-6">
 
-                    {/* Clinical Notes - Medical Pad Design */}
+                    {/* Clinical Notes - Medical Pad Design with Write/Type Toggle */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5, type: "spring" }}
-                        className="bg-cyan-50 p-8 rounded-2xl shadow-sm border border-cyan-100 relative overflow-hidden"
-                        style={{
+                        className={`p-8 rounded-2xl shadow-sm border relative overflow-hidden ${inputMode === 'write'
+                            ? 'bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200'
+                            : 'bg-cyan-50 border-cyan-100'
+                            }`}
+                        style={inputMode === 'type' ? {
                             backgroundImage: 'linear-gradient(#14b8a61a 1px, transparent 1px)',
                             backgroundSize: '100% 32px'
-                        }}
+                        } : {}}
                     >
                         {/* Header Stripe */}
-                        <div className="absolute top-0 left-0 w-2 h-full bg-primary/20"></div>
+                        <div className={`absolute top-0 left-0 w-2 h-full ${inputMode === 'write' ? 'bg-emerald-300' : 'bg-primary/20'}`}></div>
 
                         <div className="relative z-10 pl-6">
-                            <h3 className="font-bold text-teal-800 mb-6 flex items-center gap-2 text-xl">
-                                <div className="p-2 bg-white rounded-lg shadow-sm text-primary">
-                                    <FileText size={20} />
-                                </div>
-                                Clinical Notes
-                            </h3>
+                            {/* Header with Mode Toggle */}
+                            <div className="flex items-center justify-between mb-6">
+                                <h3 className="font-bold text-teal-800 flex items-center gap-2 text-xl">
+                                    <div className="p-2 bg-white rounded-lg shadow-sm text-primary">
+                                        <FileText size={20} />
+                                    </div>
+                                    Clinical Notes
+                                    {isAiAssisted && (
+                                        <span className="ml-2 flex items-center gap-1 text-xs font-medium text-emerald-600 bg-emerald-100 px-2 py-1 rounded-full">
+                                            <Sparkles size={12} />
+                                            AI-Assisted
+                                        </span>
+                                    )}
+                                </h3>
 
-                            <div className="space-y-8">
-                                <div className="relative">
-                                    <label className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">Symptoms & Complaints</label>
-                                    <textarea
-                                        className="w-full bg-transparent border-none focus:ring-0 p-0 text-slate-700 text-lg leading-8 resize-none font-medium placeholder-teal-800/20"
-                                        style={{ lineHeight: '32px' }}
-                                        rows="3"
-                                        value={symptoms}
-                                        onChange={(e) => setSymptoms(e.target.value)}
-                                        placeholder="Patient reports fever, headache..."
-                                    ></textarea>
-                                </div>
-
-                                <div className="relative">
-                                    <label className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">Final Diagnosis</label>
-                                    <input
-                                        className="w-full bg-transparent border-none focus:ring-0 p-0 text-slate-800 text-xl leading-8 font-bold placeholder-teal-800/20"
-                                        style={{ lineHeight: '32px' }}
-                                        value={diagnosis}
-                                        onChange={(e) => setDiagnosis(e.target.value)}
-                                        placeholder="Brief Diagnosis..."
-                                    />
+                                {/* Write/Type Mode Toggle */}
+                                <div className="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+                                    <button
+                                        onClick={() => setInputMode('type')}
+                                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${inputMode === 'type'
+                                            ? 'bg-teal-500 text-white shadow-sm'
+                                            : 'text-gray-600 hover:bg-gray-100'
+                                            }`}
+                                    >
+                                        <Keyboard size={14} />
+                                        Type
+                                    </button>
+                                    <button
+                                        onClick={() => setInputMode('write')}
+                                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all ${inputMode === 'write'
+                                            ? 'bg-emerald-500 text-white shadow-sm'
+                                            : 'text-gray-600 hover:bg-gray-100'
+                                            }`}
+                                    >
+                                        <PenTool size={14} />
+                                        Write
+                                    </button>
                                 </div>
                             </div>
+
+                            {/* Conditional Rendering: Type Mode or Write Mode */}
+                            <AnimatePresence mode="wait">
+                                {inputMode === 'type' ? (
+                                    <motion.div
+                                        key="type-mode"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: 20 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="space-y-8"
+                                    >
+                                        <div className="relative">
+                                            <label className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">
+                                                Symptoms & Complaints
+                                                {isAiAssisted && symptoms && (
+                                                    <span className="ml-2 text-emerald-500 font-normal normal-case">(AI transcribed - please verify)</span>
+                                                )}
+                                            </label>
+                                            <textarea
+                                                className="w-full bg-transparent border-none focus:ring-0 p-0 text-slate-700 text-lg leading-8 resize-none font-medium placeholder-teal-800/20"
+                                                style={{ lineHeight: '32px' }}
+                                                rows="3"
+                                                value={symptoms}
+                                                onChange={(e) => {
+                                                    setSymptoms(e.target.value);
+                                                    if (isAiAssisted) setIsAiAssisted(false);
+                                                }}
+                                                placeholder="Patient reports fever, headache..."
+                                            ></textarea>
+                                        </div>
+
+                                        <div className="relative">
+                                            <label className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-1 block">
+                                                Final Diagnosis
+                                                {isAiAssisted && diagnosis && (
+                                                    <span className="ml-2 text-emerald-500 font-normal normal-case">(AI transcribed - please verify)</span>
+                                                )}
+                                            </label>
+                                            <input
+                                                className="w-full bg-transparent border-none focus:ring-0 p-0 text-slate-800 text-xl leading-8 font-bold placeholder-teal-800/20"
+                                                style={{ lineHeight: '32px' }}
+                                                value={diagnosis}
+                                                onChange={(e) => {
+                                                    setDiagnosis(e.target.value);
+                                                    if (isAiAssisted) setIsAiAssisted(false);
+                                                }}
+                                                placeholder="Brief Diagnosis..."
+                                            />
+                                        </div>
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="write-mode"
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <HandwritingCanvas
+                                            onConvert={(result) => {
+                                                if (result.symptoms) setSymptoms(result.symptoms);
+                                                if (result.diagnosis) setDiagnosis(result.diagnosis);
+                                                setIsAiAssisted(true);
+                                                setInputMode('type'); // Switch to type mode to show results
+                                            }}
+                                            onModeChange={(mode) => setInputMode(mode)}
+                                            initialSymptoms={symptoms}
+                                            initialDiagnosis={diagnosis}
+                                        />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </motion.div>
 
@@ -402,13 +518,16 @@ const Consultation = () => {
                         </h3>
 
                         {/* Rx Input */}
-                        <div className="grid grid-cols-12 gap-3 mb-6 items-center bg-white p-2 rounded-xl shadow-xs border border-emerald-100 relative z-10">
-                            <div className="col-span-4">
-                                <input
-                                    placeholder="Medicine Name"
-                                    className="w-full bg-transparent border-none focus:ring-0 px-3 py-2 text-slate-700 font-medium placeholder-gray-400"
+                        <div className="grid grid-cols-12 gap-2 mb-6 items-center bg-white p-2 rounded-xl shadow-xs border border-emerald-100 relative z-10">
+                            <div className="col-span-3">
+                                <MedicineAutocomplete
                                     value={newMed.name}
-                                    onChange={(e) => setNewMed({ ...newMed, name: e.target.value })}
+                                    onChange={(name, medicine) => setNewMed({
+                                        ...newMed,
+                                        name,
+                                        medicineId: medicine?._id || ''
+                                    })}
+                                    placeholder="Search medicine..."
                                 />
                             </div>
                             <div className="col-span-2 border-l border-gray-100">
@@ -419,9 +538,9 @@ const Consultation = () => {
                                     onChange={(e) => setNewMed({ ...newMed, dosage: e.target.value })}
                                 />
                             </div>
-                            <div className="col-span-3 border-l border-gray-100">
+                            <div className="col-span-2 border-l border-gray-100">
                                 <select
-                                    className="w-full bg-transparent border-none focus:ring-0 px-2 py-2 text-slate-700"
+                                    className="w-full bg-transparent border-none focus:ring-0 px-2 py-2 text-slate-700 text-sm"
                                     value={newMed.frequency}
                                     onChange={(e) => setNewMed({ ...newMed, frequency: e.target.value })}
                                 >
@@ -434,10 +553,20 @@ const Consultation = () => {
                             </div>
                             <div className="col-span-2 border-l border-gray-100">
                                 <input
-                                    placeholder="Dur."
-                                    className="w-full bg-transparent border-none focus:ring-0 px-3 py-2 text-slate-700 placeholder-gray-400"
+                                    placeholder="Duration"
+                                    className="w-full bg-transparent border-none focus:ring-0 px-2 py-2 text-slate-700 placeholder-gray-400 text-sm"
                                     value={newMed.duration}
                                     onChange={(e) => setNewMed({ ...newMed, duration: e.target.value })}
+                                />
+                            </div>
+                            <div className="col-span-2 border-l border-gray-100">
+                                <input
+                                    type="number"
+                                    min="1"
+                                    placeholder="Qty"
+                                    className="w-full bg-transparent border-none focus:ring-0 px-2 py-2 text-slate-700 placeholder-gray-400 text-sm"
+                                    value={newMed.quantity}
+                                    onChange={(e) => setNewMed({ ...newMed, quantity: e.target.value })}
                                 />
                             </div>
                             <div className="col-span-1 flex justify-center">

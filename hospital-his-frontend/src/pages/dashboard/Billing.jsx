@@ -871,6 +871,80 @@ const BillDetailsModal = ({
                         </div>
                     </div>
 
+                    {/* Department-wise Payment Breakdown */}
+                    {bill.departmentPayments && (bill.departmentPayments.pharmacy?.total > 0 || bill.departmentPayments.laboratory?.total > 0 || bill.departmentPayments.radiology?.total > 0) && (
+                        <div className="mb-6 border border-gray-200 rounded-lg overflow-hidden">
+                            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                                <h4 className="font-bold text-gray-700 text-sm">Department-wise Breakdown</h4>
+                            </div>
+                            <div className="divide-y divide-gray-100">
+                                {/* Pharmacy */}
+                                {bill.departmentPayments.pharmacy?.total > 0 && (
+                                    <div className="flex items-center justify-between px-4 py-3">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                                <span className="text-emerald-600 text-xs font-bold">Rx</span>
+                                            </div>
+                                            <div>
+                                                <p className="font-medium text-gray-800">Pharmacy</p>
+                                                <p className="text-xs text-gray-500">₹{bill.departmentPayments.pharmacy.paid} / ₹{bill.departmentPayments.pharmacy.total}</p>
+                                            </div>
+                                        </div>
+                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${bill.departmentPayments.pharmacy.status === 'paid' ? 'bg-green-100 text-green-700' :
+                                                bill.departmentPayments.pharmacy.status === 'partial' ? 'bg-yellow-100 text-yellow-700' :
+                                                    'bg-red-100 text-red-700'
+                                            }`}>
+                                            {bill.departmentPayments.pharmacy.status === 'paid' ? '✓ PAID' :
+                                                bill.departmentPayments.pharmacy.status === 'partial' ? 'PARTIAL' : 'UNPAID'}
+                                        </span>
+                                    </div>
+                                )}
+                                {/* Laboratory */}
+                                {bill.departmentPayments.laboratory?.total > 0 && (
+                                    <div className="flex items-center justify-between px-4 py-3">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                                <span className="text-purple-600 text-xs font-bold">Lab</span>
+                                            </div>
+                                            <div>
+                                                <p className="font-medium text-gray-800">Laboratory</p>
+                                                <p className="text-xs text-gray-500">₹{bill.departmentPayments.laboratory.paid} / ₹{bill.departmentPayments.laboratory.total}</p>
+                                            </div>
+                                        </div>
+                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${bill.departmentPayments.laboratory.status === 'paid' ? 'bg-green-100 text-green-700' :
+                                                bill.departmentPayments.laboratory.status === 'partial' ? 'bg-yellow-100 text-yellow-700' :
+                                                    'bg-red-100 text-red-700'
+                                            }`}>
+                                            {bill.departmentPayments.laboratory.status === 'paid' ? '✓ PAID' :
+                                                bill.departmentPayments.laboratory.status === 'partial' ? 'PARTIAL' : 'UNPAID'}
+                                        </span>
+                                    </div>
+                                )}
+                                {/* Radiology */}
+                                {bill.departmentPayments.radiology?.total > 0 && (
+                                    <div className="flex items-center justify-between px-4 py-3">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <span className="text-blue-600 text-xs font-bold">Rad</span>
+                                            </div>
+                                            <div>
+                                                <p className="font-medium text-gray-800">Radiology</p>
+                                                <p className="text-xs text-gray-500">₹{bill.departmentPayments.radiology.paid} / ₹{bill.departmentPayments.radiology.total}</p>
+                                            </div>
+                                        </div>
+                                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${bill.departmentPayments.radiology.status === 'paid' ? 'bg-green-100 text-green-700' :
+                                                bill.departmentPayments.radiology.status === 'partial' ? 'bg-yellow-100 text-yellow-700' :
+                                                    'bg-red-100 text-red-700'
+                                            }`}>
+                                            {bill.departmentPayments.radiology.status === 'paid' ? '✓ PAID' :
+                                                bill.departmentPayments.radiology.status === 'partial' ? 'PARTIAL' : 'UNPAID'}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
                     {/* Payment Responsibility Section */}
                     {showResponsibilitySetup && (
                         <div className="border-t pt-4">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, Clock, CheckCircle, AlertCircle, AlertTriangle, User, TestTube, X, Check, Loader, Receipt, Loader2 } from 'lucide-react';
+import { FlaskConical, Clock, CheckCircle, AlertCircle, AlertTriangle, User, TestTube, X, Check, Loader, Receipt, Loader2, Banknote, CreditCard } from 'lucide-react';
 import labService from '../../services/lab.service';
 import departmentBillingService from '../../services/departmentBilling.service';
 import toast from 'react-hot-toast';
@@ -22,6 +22,14 @@ const Laboratory = () => {
     const [unbilledOrders, setUnbilledOrders] = useState([]);
     const [selectedForBilling, setSelectedForBilling] = useState([]);
     const [generatingBill, setGeneratingBill] = useState(false);
+
+    // Payment state
+    const [paymentModalData, setPaymentModalData] = useState(null);
+    const [paymentAmount, setPaymentAmount] = useState('');
+    const [paymentMode, setPaymentMode] = useState('cash');
+    const [paymentRef, setPaymentRef] = useState('');
+    const [processingPayment, setProcessingPayment] = useState(false);
+    const [paymentSuccess, setPaymentSuccess] = useState(false);
 
     useEffect(() => {
         fetchData();
@@ -173,7 +181,13 @@ const Laboratory = () => {
                 patientId
             );
 
-            toast.success(`Bill ${result.data?.billNumber} generated successfully!`);
+            const bill = result.data;
+            toast.success(`Bill ${bill.billNumber} generated successfully!`);
+
+            // Open payment modal immediately
+            setPaymentModalData(bill);
+            setPaymentAmount(bill.balanceAmount.toString());
+
             setSelectedForBilling([]);
             fetchUnbilledOrders();
         } catch (error) {
@@ -181,6 +195,41 @@ const Laboratory = () => {
         } finally {
             setGeneratingBill(false);
         }
+    };
+
+    // Record payment
+    const handleRecordPayment = async () => {
+        if (processingPayment) return;
+        if (!paymentModalData || !paymentAmount || parseFloat(paymentAmount) <= 0) {
+            toast.error('Enter a valid amount');
+            return;
+        }
+
+        setProcessingPayment(true);
+        try {
+            await departmentBillingService.recordPayment(
+                paymentModalData._id,
+                parseFloat(paymentAmount),
+                paymentMode,
+                paymentRef
+            );
+
+            toast.success('Payment recorded & Receipt generated');
+            setPaymentSuccess(true);
+            fetchUnbilledOrders();
+        } catch (error) {
+            toast.error(error.response?.data?.error || 'Payment failed');
+        } finally {
+            setProcessingPayment(false);
+        }
+    };
+
+    const closePaymentModal = () => {
+        setPaymentModalData(null);
+        setPaymentSuccess(false);
+        setPaymentAmount('');
+        setPaymentRef('');
+        setPaymentMode('cash');
     };
 
     const handleUploadPdf = async () => {
@@ -554,8 +603,8 @@ const Laboratory = () => {
                                                     );
                                                 }}
                                                 className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-colors ${isSelected
-                                                        ? 'bg-purple-50 border-purple-200'
-                                                        : 'bg-white border-gray-100 hover:bg-gray-50'
+                                                    ? 'bg-purple-50 border-purple-200'
+                                                    : 'bg-white border-gray-100 hover:bg-gray-50'
                                                     }`}
                                             >
                                                 <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${isSelected ? 'bg-purple-500 border-purple-500' : 'border-gray-300'
@@ -617,6 +666,164 @@ const Laboratory = () => {
                     )}
                 </div>
             )}
+
+            {/* Payment Modal */}
+            <AnimatePresence>
+                {paymentModalData && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+                            onClick={closePaymentModal}
+                        />
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            className="relative bg-white rounded-2xl shadow-xl w-full max-w-md p-6"
+                        >
+                            <button
+                                onClick={closePaymentModal}
+                                className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-lg"
+                            >
+                                <X size={20} />
+                            </button>
+
+                            {paymentSuccess ? (
+                                <div className="text-center py-6">
+                                    <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-600">
+                                        <CheckCircle size={32} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-800 mb-2">Payment Successful!</h3>
+                                    <p className="text-gray-500 mb-6">Receipt generated for Laboratory Bill</p>
+
+                                    <div className="bg-gray-50 p-4 rounded-xl text-left mb-6 border border-gray-100">
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Bill Number</span>
+                                            <span className="font-mono font-bold text-slate-700">{paymentModalData.billNumber}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Amount Paid</span>
+                                            <span className="font-bold text-purple-600">₹{parseFloat(paymentAmount).toFixed(2)}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-500">Payment Mode</span>
+                                            <span className="capitalize font-medium text-slate-700">{paymentMode}</span>
+                                        </div>
+                                        {paymentRef && (
+                                            <div className="flex justify-between">
+                                                <span className="text-sm text-gray-500">Reference</span>
+                                                <span className="font-mono text-sm text-slate-700">{paymentRef}</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className="flex gap-3">
+                                        <button
+                                            onClick={() => window.print()}
+                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50 flex items-center justify-center gap-2"
+                                        >
+                                            <Receipt size={18} /> Print Receipt
+                                        </button>
+                                        <button
+                                            onClick={closePaymentModal}
+                                            className="flex-1 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 shadow-lg shadow-purple-200"
+                                        >
+                                            Done
+                                        </button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <>
+                                    <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                        <Banknote size={24} className="text-purple-500" />
+                                        Collect Payment
+                                    </h3>
+
+                                    <div className="p-4 bg-purple-50 rounded-xl mb-4 border border-purple-100">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-sm text-purple-700 font-medium">Bill Number</span>
+                                            <span className="font-mono font-bold text-purple-800">{paymentModalData.billNumber}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm text-purple-700 font-medium">Total Amount</span>
+                                            <span className="text-xl font-bold text-purple-800">₹{paymentModalData.grandTotal}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Amount</label>
+                                            <div className="relative">
+                                                <span className="absolute left-3 top-2.5 text-gray-500 font-bold">₹</span>
+                                                <input
+                                                    type="number"
+                                                    value={paymentAmount}
+                                                    onChange={(e) => setPaymentAmount(e.target.value)}
+                                                    max={paymentModalData.balanceAmount}
+                                                    className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 font-bold text-lg"
+                                                />
+                                            </div>
+                                            <p className="text-xs text-gray-400 mt-1 text-right">
+                                                Balance Due: ₹{paymentModalData.balanceAmount}
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Payment Mode</label>
+                                            <div className="flex gap-2">
+                                                {['cash', 'card', 'upi'].map((mode) => (
+                                                    <button
+                                                        key={mode}
+                                                        onClick={() => setPaymentMode(mode)}
+                                                        className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium capitalize transition-colors flex items-center justify-center gap-2 ${paymentMode === mode
+                                                            ? 'bg-purple-600 text-white shadow-md shadow-purple-200'
+                                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                                            }`}
+                                                    >
+                                                        {mode === 'card' && <CreditCard size={14} />}
+                                                        {mode}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-medium text-slate-700 block mb-1">Reference / Transaction ID</label>
+                                            <input
+                                                type="text"
+                                                value={paymentRef}
+                                                onChange={(e) => setPaymentRef(e.target.value)}
+                                                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500"
+                                                placeholder="Optional..."
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-3 mt-6">
+                                        <button
+                                            onClick={closePaymentModal}
+                                            className="flex-1 py-3 border border-gray-200 rounded-xl font-medium text-gray-600 hover:bg-gray-50"
+                                        >
+                                            Later
+                                        </button>
+                                        <button
+                                            onClick={handleRecordPayment}
+                                            disabled={processingPayment || !paymentAmount}
+                                            className="flex-1 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 shadow-lg shadow-purple-200 flex items-center justify-center gap-2 disabled:opacity-50"
+                                        >
+                                            {processingPayment ? <Loader2 size={18} className="animate-spin" /> : <Receipt size={18} />}
+                                            {processingPayment ? 'Processing...' : 'Generate Receipt'}
+                                        </button>
+                                    </div>
+                                </>
+                            )}
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

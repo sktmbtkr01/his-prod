@@ -5,6 +5,7 @@ import { Activity, Users, DollarSign, Calendar, TrendingUp } from 'lucide-react'
 import { motion } from 'framer-motion';
 import ReceptionistDashboard from './ReceptionistDashboard';
 import ClinicalDashboard from './ClinicalDashboard';
+import AdminGovernanceDashboard from '../admin/AdminGovernanceDashboard';
 
 const StatCard = ({ title, value, subtext, icon: Icon, color }) => (
     <motion.div
@@ -57,59 +58,9 @@ const Dashboard = () => {
             return <ClinicalDashboard />;
         }
 
-        // Admin View
+        // Admin View - Use comprehensive Governance Dashboard
         if (user?.role === 'admin') {
-            if (isLoading) {
-                return (
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 animate-pulse">
-                        {[1, 2, 3, 4].map(i => (
-                            <div key={i} className="h-40 bg-gray-200 rounded-2xl"></div>
-                        ))}
-                    </div>
-                );
-            }
-
-            if (isError) {
-                return <div className="text-red-500 p-4 bg-red-50 rounded-lg">Error loading dashboard: {message}</div>;
-            }
-
-            if (!data) return null;
-
-            return (
-                <>
-                    <h1 className="text-2xl font-bold text-slate-800 mb-6">Executive Overview</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <StatCard
-                            title="OPD Patients (Today)"
-                            value={data.opdToday}
-                            subtext="vs yesterday"
-                            icon={Users}
-                            color="bg-blue-500"
-                        />
-                        <StatCard
-                            title="IPD Admissions"
-                            value={data.ipdCurrent}
-                            subtext="Currently admitted"
-                            icon={Activity}
-                            color="bg-purple-500"
-                        />
-                        <StatCard
-                            title="Revenue (Today)"
-                            value={`₹${data.revenueToday?.toLocaleString()}`}
-                            subtext="vs yesterday"
-                            icon={DollarSign}
-                            color="bg-emerald-500"
-                        />
-                        <StatCard
-                            title="Revenue (Month)"
-                            value={`₹${data.revenueMonth?.toLocaleString()}`}
-                            subtext="vs last month"
-                            icon={Calendar}
-                            color="bg-amber-500"
-                        />
-                    </div>
-                </>
-            );
+            return <AdminGovernanceDashboard />;
         }
 
         // Pharmacist View
