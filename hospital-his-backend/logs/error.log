@@ -5219,3 +5219,78 @@ Error: Invalid credentials
 2026-01-24 21:22:42 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
 2026-01-24 21:23:01 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
 2026-01-24 21:23:20 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 21:35:35 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001
+2026-01-24 22:20:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:13 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:20 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:22 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net

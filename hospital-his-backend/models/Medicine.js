@@ -1,102 +1,110 @@
-const mongoose = require('mongoose');
-
 /**
- * Medicine Model
- * Represents the medicine master catalog
+ * Medicine Master Model
+ * Stores all medicines available for prescription
  */
+
+const mongoose = require('mongoose');
 
 const medicineSchema = new mongoose.Schema(
     {
-        medicineCode: {
-            type: String,
-            unique: true,
-            required: [true, 'Medicine code is required'],
-            trim: true,
-        },
         name: {
             type: String,
             required: [true, 'Medicine name is required'],
             trim: true,
+            unique: true
         },
         genericName: {
             type: String,
-            trim: true,
-        },
-        brand: {
-            type: String,
-            trim: true,
-        },
-        manufacturer: {
-            type: String,
-            trim: true,
+            trim: true
         },
         category: {
             type: String,
-            required: [true, 'Category is required'],
-            trim: true,
-        },
-        form: {
-            type: String,
-            enum: ['tablet', 'capsule', 'syrup', 'injection', 'cream', 'ointment', 'drops', 'inhaler', 'powder', 'suspension', 'other'],
-            required: [true, 'Form is required'],
+            enum: [
+                'Analgesic',
+                'Antibiotic',
+                'Antacid',
+                'Antidiabetic',
+                'Antihypertensive',
+                'Antihistamine',
+                'Antiviral',
+                'Antifungal',
+                'Antipyretic',
+                'Anti-inflammatory',
+                'Bronchodilator',
+                'Cardiac',
+                'Diuretic',
+                'Gastrointestinal',
+                'Hormonal',
+                'Immunosuppressant',
+                'Laxative',
+                'Muscle Relaxant',
+                'Neurological',
+                'Nutritional',
+                'Ophthalmic',
+                'Psychiatric',
+                'Respiratory',
+                'Sedative',
+                'Steroid',
+                'Vitamin',
+                'Other'
+            ],
+            default: 'Other'
         },
         strength: {
             type: String,
-            trim: true,
+            trim: true
         },
-        unit: {
+        form: {
             type: String,
-            trim: true,
+            enum: ['Tablet', 'Capsule', 'Syrup', 'Injection', 'Cream', 'Ointment', 'Drops', 'Inhaler', 'Powder', 'Gel', 'Patch', 'Suspension', 'Other'],
+            default: 'Tablet'
         },
-        packSize: {
-            type: Number,
-            default: 1,
-        },
-        mrp: {
-            type: Number,
-            required: [true, 'MRP is required'],
-            min: [0, 'MRP cannot be negative'],
-        },
-        sellingPrice: {
-            type: Number,
-            required: [true, 'Selling price is required'],
-            min: [0, 'Selling price cannot be negative'],
-        },
-        reorderLevel: {
-            type: Number,
-            default: 10,
-        },
-        schedule: {
+        manufacturer: {
             type: String,
-            enum: ['H', 'H1', 'X', 'G', 'OTC'],
-        },
-        storageConditions: {
-            type: String,
-            trim: true,
-        },
-        contraindications: {
-            type: String,
-            trim: true,
-        },
-        sideEffects: {
-            type: String,
-            trim: true,
+            trim: true
         },
         isActive: {
             type: Boolean,
-            default: true,
+            default: true
         },
+        requiresPrescription: {
+            type: Boolean,
+            default: true
+        },
+        notes: {
+            type: String,
+            trim: true
+        }
     },
     {
-        timestamps: true,
+        timestamps: true
     }
 );
 
-// Indexes
-medicineSchema.index({ medicineCode: 1 });
-medicineSchema.index({ name: 'text', genericName: 'text' });
+// Indexes for fast search
+medicineSchema.index({ name: 'text' });
+medicineSchema.index({ name: 1 });
 medicineSchema.index({ category: 1 });
 medicineSchema.index({ isActive: 1 });
+
+// Static method for prefix search
+medicineSchema.statics.searchByPrefix = async function (query, limit = 15) {
+    if (!query || query.length < 1) {
+        return this.find({ isActive: true })
+            .select('name category strength form')
+            .limit(limit)
+            .sort({ name: 1 });
+    }
+
+    const regex = new RegExp(`^${query}`, 'i');
+    return this.find({
+        name: regex,
+        isActive: true
+    })
+        .select('name category strength form')
+        .limit(limit)
+        .sort({ name: 1 });
+};
 
 const Medicine = mongoose.model('Medicine', medicineSchema);
 

@@ -56,6 +56,7 @@ const incidentRoutes = require('./routes/incident.routes');
 const systemSettingsRoutes = require('./routes/systemSettings.routes');
 const departmentBillingRoutes = require('./routes/departmentBilling.routes');
 const handwritingOcrRoutes = require('./routes/handwritingOcr.routes');
+const medicineRoutes = require('./routes/medicine.routes');
 
 // Initialize Express app
 const app = express();
@@ -177,6 +178,7 @@ app.use(`${API_PREFIX}/incidents`, incidentRoutes);
 app.use(`${API_PREFIX}/system-settings`, systemSettingsRoutes);
 app.use(`${API_PREFIX}/department-billing`, departmentBillingRoutes);
 app.use(`${API_PREFIX}/ocr`, handwritingOcrRoutes);
+app.use(`${API_PREFIX}/medicines`, medicineRoutes);
 app.use(`${API_PREFIX}/nursing`, nursingRoutes);
 
 // 404 handler for undefined routes

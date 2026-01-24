@@ -12941,3 +12941,173 @@ Error: Invalid credentials
 2026-01-24 21:22:42 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
 2026-01-24 21:23:01 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
 2026-01-24 21:23:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 21:23:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 21:23:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 21:23:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 21:23:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 21:23:35 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 21:23:35 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 21:23:35 [INFO]: 🔌 WebSocket enabled
+2026-01-24 21:23:35 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 21:23:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 21:24:26 [INFO]: Client connected: UZ0DfTB0yGOFh8hSAAAC
+2026-01-24 21:24:26 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-24 21:24:26 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=3
+2026-01-24 21:24:26 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-24 21:24:26 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=3
+2026-01-24 21:24:29 [INFO]: Client disconnected: UZ0DfTB0yGOFh8hSAAAC
+2026-01-24 21:35:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 22:20:04 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-24 22:20:57 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:17 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:21:47 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:21:52 [INFO]: Client connected: l_B45tnVJ6VdWJhmAAAF
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+2026-01-24 22:22:07 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:13 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:20 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:22 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at C:\Users\shrav\OneDrive\Desktop\HIS 3\HIS_Quasar\hospital-his-backend\middleware\auth.middleware.js:48:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:27 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:22:28 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.cluster2.fs2fnzl.mongodb.net
+2026-01-24 22:26:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-24 22:26:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:26:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:26:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:26:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:26:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:26:13 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:26:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:26:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:28:29 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 22:28:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:28:29 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:28:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:28:29 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:28:29 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:28:29 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:28:29 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:28:29 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:30 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 22:29:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:30 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:29:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:30 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:29:30 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:29:30 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:29:30 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:29:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:47 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 22:29:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:47 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:29:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:29:47 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:29:47 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:29:47 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:29:47 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:29:47 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:04 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 22:30:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:04 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:30:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:04 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:30:04 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:30:04 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:30:04 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:30:04 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:17 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-24 22:30:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:30:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:30:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:30:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:30:17 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:30:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:30:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:32:54 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-24 22:32:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:32:54 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:32:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:32:54 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:32:54 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:32:54 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:32:54 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:32:54 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:33:12 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-24 22:33:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:33:12 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-24 22:33:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:33:12 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-24 22:33:12 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-24 22:33:12 [INFO]: 🔌 WebSocket enabled
+2026-01-24 22:33:12 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-24 22:33:12 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-24 22:33:29 [INFO]: Client connected: 2qWd8o-PaJ_e2qs2AAAC
+2026-01-24 22:33:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-24 22:33:30 [INFO]: [ClinicalDashboard] Response: appointments=4, labs=20, critical=4
+2026-01-24 22:33:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-24 22:33:30 [INFO]: [ClinicalDashboard] Response: appointments=4, labs=20, critical=4
+2026-01-24 22:33:33 [INFO]: Client disconnected: 2qWd8o-PaJ_e2qs2AAAC
