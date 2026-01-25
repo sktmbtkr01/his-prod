@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, Eye, X, FileText, Bot, Loader, AlertTriangle, CheckCircle, RefreshCw } from 'lucide-react';
+import { FlaskConical, Eye, X, FileText, Bot, Loader, AlertTriangle, CheckCircle, RefreshCw, Shield } from 'lucide-react';
 import labService from '../../services/lab.service';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+
+const API_URL = 'http://localhost:5001/api/v1/';
+const getConfig = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return { headers: { Authorization: `Bearer ${user?.token}` } };
+};
 
 /**
  * DoctorLabTests - Doctor page to view completed lab tests with PDF + AI Summary
@@ -15,6 +23,10 @@ const DoctorLabTests = () => {
     const [aiSummary, setAiSummary] = useState(null);
     const [summaryLoading, setSummaryLoading] = useState(false);
     const [summaryError, setSummaryError] = useState(null);
+    // Risk Level State
+    const [selectedRiskLevel, setSelectedRiskLevel] = useState('NORMAL');
+    const [riskLoading, setRiskLoading] = useState(false);
+    const [savedRiskLevel, setSavedRiskLevel] = useState(null); // Shows confirmation
 
     useEffect(() => {
         fetchCompletedTests();
@@ -84,6 +96,31 @@ const DoctorLabTests = () => {
         setSelectedTest(null);
         setAiSummary(null);
         setSummaryError(null);
+        setSelectedRiskLevel('NORMAL');
+        setSavedRiskLevel(null);
+    };
+
+    // Set Lab Risk Level for the appointment
+    const handleSetRiskLevel = async () => {
+        if (!selectedTest?.visit) {
+            toast.error('No appointment linked to this test');
+            return;
+        }
+        setRiskLoading(true);
+        try {
+            const response = await axios.put(
+                `${API_URL}opd/appointments/${selectedTest.visit}/lab-risk`,
+                { riskLevel: selectedRiskLevel },
+                getConfig()
+            );
+            setSavedRiskLevel(selectedRiskLevel);
+            toast.success(`Lab risk level set to ${selectedRiskLevel} (Score: ${response.data.data.finalRiskScore})`);
+        } catch (err) {
+            console.error('Error setting risk level:', err);
+            toast.error(err.response?.data?.error || 'Failed to set risk level');
+        } finally {
+            setRiskLoading(false);
+        }
     };
 
     const getPdfUrl = () => {
@@ -446,6 +483,46 @@ const DoctorLabTests = () => {
                                             )}
                                         </div>
                                     )}
+                                </div>
+
+                                {/* Lab Risk Level Section */}
+                                <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                    <h3 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
+                                        <Shield size={18} className="text-purple-500" /> Set Lab Risk Level
+                                        {savedRiskLevel && (
+                                            <span className="ml-auto text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full flex items-center gap-1">
+                                                <CheckCircle size={12} /> Saved: {savedRiskLevel}
+                                            </span>
+                                        )}
+                                    </h3>
+                                    <p className="text-sm text-gray-500 mb-3">
+                                        Based on lab results, select the patient's risk level. This will update their OPD risk score.
+                                    </p>
+                                    <div className="flex items-center gap-3">
+                                        <select
+                                            value={selectedRiskLevel}
+                                            onChange={(e) => { setSelectedRiskLevel(e.target.value); setSavedRiskLevel(null); }}
+                                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-200 focus:border-purple-500"
+                                        >
+                                            <option value="NORMAL">Normal (+0)</option>
+                                            <option value="MILD">Mild (+1)</option>
+                                            <option value="MODERATE">Moderate (+2)</option>
+                                            <option value="SEVERE">Severe (+3)</option>
+                                            <option value="CRITICAL">Critical (+4)</option>
+                                        </select>
+                                        <button
+                                            onClick={handleSetRiskLevel}
+                                            disabled={riskLoading || selectedRiskLevel === savedRiskLevel}
+                                            className={`px-5 py-2 rounded-lg font-medium flex items-center gap-2 ${selectedRiskLevel === savedRiskLevel
+                                                    ? 'bg-green-100 text-green-700 cursor-default'
+                                                    : 'bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50'
+                                                }`}
+                                        >
+                                            {riskLoading ? <Loader size={16} className="animate-spin" /> :
+                                                selectedRiskLevel === savedRiskLevel ? <CheckCircle size={16} /> : <Shield size={16} />}
+                                            {riskLoading ? 'Setting...' : selectedRiskLevel === savedRiskLevel ? 'Saved!' : 'Set Risk Level'}
+                                        </button>
+                                    </div>
                                 </div>
 
                                 {/* Actions */}

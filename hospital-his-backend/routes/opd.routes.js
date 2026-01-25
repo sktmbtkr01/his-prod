@@ -54,4 +54,46 @@ router.get('/queue', opdController.getOPDQueue);
  */
 router.get('/dashboard', opdController.getDashboard);
 
+/**
+ * @route   POST /api/opd/appointments/:id/vitals
+ * @desc    Record vitals for OPD appointment (Nurse only)
+ */
+router.post('/appointments/:id/vitals', authorize('nurse', 'head_nurse'), opdController.recordVitals);
+
+/**
+ * @route   GET /api/opd/appointments/:id/vitals
+ * @desc    Get vitals for OPD appointment
+ */
+router.get('/appointments/:id/vitals', opdController.getVitals);
+
+/**
+ * @route   PUT /api/opd/appointments/:id/lab-risk
+ * @desc    Set lab risk level (Doctor only)
+ */
+router.put('/appointments/:id/lab-risk', authorize('doctor'), opdController.setLabRiskLevel);
+
+/**
+ * @route   PUT /api/opd/appointments/:id/radiology-risk
+ * @desc    Set radiology risk level (Doctor only)
+ */
+router.put('/appointments/:id/radiology-risk', authorize('doctor'), opdController.setRadiologyRiskLevel);
+
+/**
+ * @route   GET /api/opd/appointments/:id/risk-score
+ * @desc    Get current risk score (Doctor only)
+ */
+router.get('/appointments/:id/risk-score', authorize('doctor'), opdController.getRiskScore);
+
+/**
+ * @route   GET /api/opd/appointments/:id/risk-history
+ * @desc    Get risk score history (Doctor only)
+ */
+router.get('/appointments/:id/risk-history', authorize('doctor'), opdController.getRiskHistory);
+
+/**
+ * @route   GET /api/opd/patients/:id/risk-history
+ * @desc    Get risk score history for Patient (all encounters)
+ */
+router.get('/patients/:id/risk-history', authorize('doctor'), opdController.getPatientRiskHistory);
+
 module.exports = router;

@@ -1,10 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const emrController = require('../controllers/emr.controller');
+const emrComprehensiveController = require('../controllers/emr.comprehensive.controller');
 const { authenticate } = require('../middleware/auth.middleware');
 const { authorize } = require('../middleware/rbac.middleware');
 
 router.use(authenticate);
+
+/**
+ * @route   GET /api/emr/comprehensive/:patientId
+ * @desc    Get comprehensive EMR (all medical history) for a patient
+ * @access  Doctor only
+ */
+router.get('/comprehensive/:patientId', authorize('doctor'), emrComprehensiveController.getComprehensiveEMR);
 
 /**
  * @route   POST /api/emr

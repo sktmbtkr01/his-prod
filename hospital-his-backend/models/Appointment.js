@@ -65,6 +65,42 @@ const appointmentSchema = new mongoose.Schema(
             frequency: String,
             duration: String,
         }],
+        // OPD Risk Score Fields
+        news2Points: {
+            type: Number,
+            default: 0,
+        },
+        labRiskLevel: {
+            type: String,
+            enum: ['NORMAL', 'MILD', 'MODERATE', 'SEVERE', 'CRITICAL'],
+            default: 'NORMAL',
+        },
+        radiologyRiskLevel: {
+            type: String,
+            enum: ['NORMAL', 'MILD', 'MODERATE', 'SEVERE', 'CRITICAL'],
+            default: 'NORMAL',
+        },
+        labDelta: {
+            type: Number,
+            default: 0,
+            min: 0,
+            max: 4,
+        },
+        radiologyDelta: {
+            type: Number,
+            default: 0,
+            min: 0,
+            max: 4,
+        },
+        finalRiskScore: {
+            type: Number,
+            default: 0,
+        },
+        riskCategory: {
+            type: String,
+            enum: ['LOW', 'MEDIUM', 'HIGH'],
+            default: 'LOW',
+        },
         createdBy: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',

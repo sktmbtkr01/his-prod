@@ -146,3 +146,24 @@ ValidationError: Prescription validation failed: prescriptionNumber: Path `presc
 [2026-01-24T14:12:54.348Z] No valid medicines found to create Rx
 [2026-01-24T19:28:54.770Z] No prescription body found or empty array
 [2026-01-24T19:30:14.775Z] No prescription body found or empty array
+[2026-01-25T00:36:23.044Z] Start creating prescription for 6975649e8007fe774cef5da3
+[2026-01-25T00:36:23.049Z] Processing med: Cetirizine 10mg
+[2026-01-25T00:36:23.060Z] Found med: Cetirizine 10mg (6970e6e5ae32f124038cbff3)
+[2026-01-25T00:36:23.060Z] Creating Prescription with 1 items
+[2026-01-25T00:36:23.094Z] Created Rx ID: 697565878007fe774cef602b
+[2026-01-25T00:57:07.134Z] Start creating prescription for 69756967a9ccb3535c5407ff
+[2026-01-25T00:57:07.137Z] Processing med: Aspirin
+[2026-01-25T00:57:07.150Z] Found med: Aspirin (69733bf34bf795b2634ef9d3)
+[2026-01-25T00:57:07.150Z] Creating Prescription with 1 items
+[2026-01-25T00:57:07.173Z] Created Rx ID: 69756a63a9ccb3535c540a24
+[2026-01-25T00:57:17.068Z] Start creating prescription for 69756967a9ccb3535c5407ff
+[2026-01-25T00:57:17.069Z] Processing med: Aspirin
+[2026-01-25T00:57:17.077Z] Found med: Aspirin (69733bf34bf795b2634ef9d3)
+[2026-01-25T00:57:17.078Z] Creating Prescription with 1 items
+[2026-01-25T00:57:17.098Z] Created Rx ID: 69756a6da9ccb3535c540a5d
+[2026-01-25T01:17:01.294Z] Start creating prescription for 69756e934563c68af8bfa2a5
+[2026-01-25T01:17:01.296Z] Processing med: Cetirizine 10mg
+[2026-01-25T01:17:01.296Z] Missing required fields for Cetirizine 10mg: dosage=, frequency=1-0-1, duration=5 days
+[2026-01-25T01:17:01.297Z] No valid medicines found to create Rx
+[2026-01-25T01:35:17.706Z] No prescription body found or empty array
+[2026-01-25T01:41:42.728Z] No prescription body found or empty array

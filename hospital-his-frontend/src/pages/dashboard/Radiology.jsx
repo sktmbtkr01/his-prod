@@ -5,7 +5,7 @@ import departmentBillingService from '../../services/departmentBilling.service';
 import {
     Scan, Clock, CheckCircle, AlertCircle,
     Calendar, FileText, Eye, Plus, X,
-    Activity, Image, Search, Filter, Receipt, Banknote, CreditCard, Loader2, Check
+    Activity, Image, Search, Filter, Receipt, Banknote, CreditCard, Loader2, Check, Upload
 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import toast from 'react-hot-toast';
@@ -28,7 +28,454 @@ const MODALITY_CONFIG = {
     pet: { label: 'PET Scan', color: '#F59E0B' },
     mammography: { label: 'Mammography', color: '#EF4444' },
     fluoroscopy: { label: 'Fluoroscopy', color: '#06B6D4' },
+    ecg: { label: 'ECG', color: '#14B8A6' },
+    echo: { label: 'Echo', color: '#0EA5E9' },
     other: { label: 'Other', color: '#6B7280' },
+};
+
+// Determine scan category from test name
+const getScanCategory = (testName) => {
+    if (!testName) return null;
+    const name = testName.toLowerCase();
+    if (name.includes('x-ray') || name.includes('xray')) return 'xray';
+    if (name.includes('ultrasound') || name.includes('usg')) return 'ultrasound';
+    if (name.includes('obstetric')) return 'obstetric';
+    if (name.includes('ct ') || name.includes('ct scan')) return 'ct';
+    if (name.includes('mri')) return 'mri';
+    if (name.includes('ecg') || name.includes('echo') || name.includes('electrocardiogram')) return 'ecg';
+    return null;
+};
+
+// Report Entry Modal Component
+const ReportEntryModal = ({ order, onClose, onSubmit }) => {
+    const [formData, setFormData] = useState({
+        findings: '',
+        impression: '',
+        recommendations: '',
+        scanImage: null,
+        // X-Ray fields
+        xrayViewType: '',
+        xrayBodyPartConfirmation: '',
+        // Ultrasound fields
+        ultrasoundPreparation: '',
+        ultrasoundIndication: '',
+        gestationalAge: '',
+        // CT fields
+        contrastUsed: false,
+        contrastType: '',
+        contrastDose: '',
+        allergyHistory: false,
+        // MRI fields
+        metalImplantCheck: false,
+        claustrophobia: false,
+        sedationRequired: false,
+        // ECG/Echo fields
+        measurementNotes: '',
+        reportSummary: '',
+    });
+    const [uploading, setUploading] = useState(false);
+    const [uploadedFileName, setUploadedFileName] = useState('');
+
+    const scanCategory = getScanCategory(order.test?.testName);
+    const isObstetric = order.test?.testName?.toLowerCase().includes('obstetric');
+
+    const handleChange = (e) => {
+        const { name, value, type, checked, files } = e.target;
+        if (type === 'file') {
+            setFormData(prev => ({ ...prev, [name]: files[0] }));
+            setUploadedFileName(files[0]?.name || '');
+        } else if (type === 'checkbox') {
+            setFormData(prev => ({ ...prev, [name]: checked }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Build the report data
+        const reportData = {
+            findings: formData.findings,
+            impression: formData.impression,
+            recommendations: formData.recommendations,
+        };
+
+        // Add scan-specific fields based on category
+        if (scanCategory === 'xray') {
+            reportData.xrayViewType = formData.xrayViewType;
+            reportData.xrayBodyPartConfirmation = formData.xrayBodyPartConfirmation;
+        } else if (scanCategory === 'ultrasound' || scanCategory === 'obstetric') {
+            reportData.ultrasoundPreparation = formData.ultrasoundPreparation;
+            reportData.ultrasoundIndication = formData.ultrasoundIndication;
+            if (isObstetric && formData.gestationalAge) {
+                reportData.gestationalAge = parseInt(formData.gestationalAge);
+            }
+        } else if (scanCategory === 'ct') {
+            reportData.contrastUsed = formData.contrastUsed;
+            if (formData.contrastUsed) {
+                reportData.contrastType = formData.contrastType;
+                reportData.contrastDose = formData.contrastDose;
+            }
+            reportData.allergyHistory = formData.allergyHistory;
+        } else if (scanCategory === 'mri') {
+            reportData.metalImplantCheck = formData.metalImplantCheck;
+            reportData.claustrophobia = formData.claustrophobia;
+            reportData.sedationRequired = formData.sedationRequired;
+        } else if (scanCategory === 'ecg') {
+            reportData.measurementNotes = formData.measurementNotes;
+            reportData.reportSummary = formData.reportSummary;
+        }
+
+        // Handle file upload if present
+        if (formData.scanImage) {
+            setUploading(true);
+            try {
+                const uploadFormData = new FormData();
+                uploadFormData.append('scanImage', formData.scanImage);
+
+                // Upload to backend
+                const user = JSON.parse(localStorage.getItem('user'));
+                const response = await fetch(`http://localhost:5001/api/v1/radiology/upload-scan/${order._id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${user?.token}`
+                    },
+                    body: uploadFormData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    reportData.scanImage = result.data?.scanImage;
+                }
+            } catch (error) {
+                console.error('Upload failed:', error);
+                toast.error('Failed to upload scan image');
+            } finally {
+                setUploading(false);
+            }
+        }
+
+        onSubmit(order._id, reportData);
+    };
+
+    return (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-y-auto py-4">
+            <div className="bg-white rounded-xl p-6 w-full max-w-2xl shadow-2xl m-4 max-h-[90vh] overflow-y-auto">
+                <div className="flex justify-between items-center mb-4 sticky top-0 bg-white pb-2">
+                    <h3 className="text-lg font-bold text-gray-800">Enter Radiology Report</h3>
+                    <button onClick={onClose}>
+                        <X size={20} className="text-gray-400 hover:text-gray-600" />
+                    </button>
+                </div>
+
+                <div className="mb-4 p-3 bg-slate-50 rounded-lg">
+                    <p className="text-sm text-gray-600">
+                        <span className="font-medium">{order.test?.testName}</span> for{' '}
+                        <span className="font-medium">{order.patient?.firstName} {order.patient?.lastName}</span>
+                    </p>
+                    {scanCategory && (
+                        <span className="inline-block mt-2 px-2 py-0.5 text-xs font-medium rounded"
+                            style={{ backgroundColor: MODALITY_CONFIG[scanCategory]?.color + '20', color: MODALITY_CONFIG[scanCategory]?.color }}>
+                            {MODALITY_CONFIG[scanCategory]?.label || scanCategory.toUpperCase()}
+                        </span>
+                    )}
+                </div>
+
+                <form onSubmit={handleSubmit}>
+                    <div className="space-y-4">
+                        {/* Common: File Upload */}
+                        <div className="p-4 border-2 border-dashed border-gray-200 rounded-lg hover:border-primary/50 transition-colors">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <Upload size={16} className="inline mr-1" /> Upload Scan Image/Report
+                            </label>
+                            <input
+                                type="file"
+                                name="scanImage"
+                                accept="image/*,.pdf,.dcm"
+                                onChange={handleChange}
+                                className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+                            />
+                            {uploadedFileName && (
+                                <p className="mt-2 text-sm text-green-600">Selected: {uploadedFileName}</p>
+                            )}
+                        </div>
+
+                        {/* X-Ray Specific Fields */}
+                        {scanCategory === 'xray' && (
+                            <div className="p-4 bg-blue-50 rounded-lg space-y-3">
+                                <h4 className="font-medium text-blue-800 text-sm">X-Ray Specific</h4>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">View Type</label>
+                                        <select
+                                            name="xrayViewType"
+                                            value={formData.xrayViewType}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        >
+                                            <option value="">Select View</option>
+                                            <option value="PA">PA (Posteroanterior)</option>
+                                            <option value="AP">AP (Anteroposterior)</option>
+                                            <option value="Lateral">Lateral</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Body Part Confirmation</label>
+                                        <input
+                                            type="text"
+                                            name="xrayBodyPartConfirmation"
+                                            value={formData.xrayBodyPartConfirmation}
+                                            onChange={handleChange}
+                                            placeholder="e.g., Chest, Left Hand"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Ultrasound Specific Fields */}
+                        {(scanCategory === 'ultrasound' || scanCategory === 'obstetric') && (
+                            <div className="p-4 bg-green-50 rounded-lg space-y-3">
+                                <h4 className="font-medium text-green-800 text-sm">Ultrasound Specific</h4>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Preparation</label>
+                                        <select
+                                            name="ultrasoundPreparation"
+                                            value={formData.ultrasoundPreparation}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        >
+                                            <option value="">Select Preparation</option>
+                                            <option value="Fasting">Fasting</option>
+                                            <option value="Full Bladder">Full Bladder</option>
+                                            <option value="None">None</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Indication/Reason</label>
+                                        <input
+                                            type="text"
+                                            name="ultrasoundIndication"
+                                            value={formData.ultrasoundIndication}
+                                            onChange={handleChange}
+                                            placeholder="Clinical indication"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        />
+                                    </div>
+                                </div>
+                                {isObstetric && (
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">Gestational Age (weeks)</label>
+                                        <input
+                                            type="number"
+                                            name="gestationalAge"
+                                            value={formData.gestationalAge}
+                                            onChange={handleChange}
+                                            min="1"
+                                            max="45"
+                                            placeholder="Enter weeks"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* CT Scan Specific Fields */}
+                        {scanCategory === 'ct' && (
+                            <div className="p-4 bg-purple-50 rounded-lg space-y-3">
+                                <h4 className="font-medium text-purple-800 text-sm">CT Scan Specific</h4>
+                                <div className="flex items-center gap-6">
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            name="contrastUsed"
+                                            checked={formData.contrastUsed}
+                                            onChange={handleChange}
+                                            className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                        />
+                                        <span className="text-sm text-gray-700">Contrast Used?</span>
+                                    </label>
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            name="allergyHistory"
+                                            checked={formData.allergyHistory}
+                                            onChange={handleChange}
+                                            className="w-4 h-4 rounded border-gray-300 text-red-500 focus:ring-red-500"
+                                        />
+                                        <span className="text-sm text-gray-700">Allergy History</span>
+                                    </label>
+                                </div>
+                                {formData.contrastUsed && (
+                                    <div className="grid grid-cols-2 gap-3 mt-2">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Contrast Type</label>
+                                            <input
+                                                type="text"
+                                                name="contrastType"
+                                                value={formData.contrastType}
+                                                onChange={handleChange}
+                                                placeholder="e.g., Iodinated"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">Contrast Dose</label>
+                                            <input
+                                                type="text"
+                                                name="contrastDose"
+                                                value={formData.contrastDose}
+                                                onChange={handleChange}
+                                                placeholder="e.g., 100ml"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* MRI Specific Fields */}
+                        {scanCategory === 'mri' && (
+                            <div className="p-4 bg-pink-50 rounded-lg space-y-3">
+                                <h4 className="font-medium text-pink-800 text-sm">MRI Specific</h4>
+                                <div className="flex flex-wrap items-center gap-6">
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            name="metalImplantCheck"
+                                            checked={formData.metalImplantCheck}
+                                            onChange={handleChange}
+                                            className="w-4 h-4 rounded border-gray-300 text-red-500 focus:ring-red-500"
+                                        />
+                                        <span className="text-sm text-gray-700">Metal Implant Present</span>
+                                    </label>
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            name="claustrophobia"
+                                            checked={formData.claustrophobia}
+                                            onChange={handleChange}
+                                            className="w-4 h-4 rounded border-gray-300 text-yellow-500 focus:ring-yellow-500"
+                                        />
+                                        <span className="text-sm text-gray-700">Claustrophobia</span>
+                                    </label>
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            name="sedationRequired"
+                                            checked={formData.sedationRequired}
+                                            onChange={handleChange}
+                                            className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                        />
+                                        <span className="text-sm text-gray-700">Sedation Required</span>
+                                    </label>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* ECG/Echo Specific Fields */}
+                        {scanCategory === 'ecg' && (
+                            <div className="p-4 bg-teal-50 rounded-lg space-y-3">
+                                <h4 className="font-medium text-teal-800 text-sm">ECG/Echo Specific</h4>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Measurement Notes</label>
+                                    <textarea
+                                        name="measurementNotes"
+                                        rows="3"
+                                        value={formData.measurementNotes}
+                                        onChange={handleChange}
+                                        placeholder="Enter detailed measurements..."
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                    ></textarea>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Report Summary</label>
+                                    <textarea
+                                        name="reportSummary"
+                                        rows="2"
+                                        value={formData.reportSummary}
+                                        onChange={handleChange}
+                                        placeholder="Brief summary..."
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Common: Findings */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Findings *</label>
+                            <textarea
+                                name="findings"
+                                rows="4"
+                                required
+                                value={formData.findings}
+                                onChange={handleChange}
+                                placeholder="Enter detailed findings..."
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                            ></textarea>
+                        </div>
+
+                        {/* Common: Impression */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Impression *</label>
+                            <textarea
+                                name="impression"
+                                rows="3"
+                                required
+                                value={formData.impression}
+                                onChange={handleChange}
+                                placeholder="Enter clinical impression..."
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                            ></textarea>
+                        </div>
+
+                        {/* Common: Recommendations */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Recommendations</label>
+                            <textarea
+                                name="recommendations"
+                                rows="2"
+                                value={formData.recommendations}
+                                onChange={handleChange}
+                                placeholder="Any follow-up recommendations..."
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div className="mt-6 flex justify-end gap-3 sticky bottom-0 bg-white pt-4 border-t">
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            disabled={uploading}
+                            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 flex items-center gap-2"
+                        >
+                            {uploading ? (
+                                <>
+                                    <Loader2 size={16} className="animate-spin" />
+                                    Uploading...
+                                </>
+                            ) : (
+                                'Submit Report'
+                            )}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 };
 
 const Radiology = () => {
@@ -699,72 +1146,11 @@ const Radiology = () => {
 
             {/* Report Entry Modal */}
             {showReportModal && selectedOrder && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-y-auto py-8">
-                    <div className="bg-white rounded-xl p-6 w-full max-w-2xl shadow-2xl m-4">
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-lg font-bold text-gray-800">Enter Radiology Report</h3>
-                            <button onClick={() => { setShowReportModal(false); setSelectedOrder(null); }}>
-                                <X size={20} className="text-gray-400 hover:text-gray-600" />
-                            </button>
-                        </div>
-                        <div className="mb-4 p-3 bg-slate-50 rounded-lg">
-                            <p className="text-sm text-gray-600">
-                                <span className="font-medium">{selectedOrder.test?.testName}</span> for{' '}
-                                <span className="font-medium">{selectedOrder.patient?.firstName} {selectedOrder.patient?.lastName}</span>
-                            </p>
-                        </div>
-                        <form onSubmit={(e) => {
-                            e.preventDefault();
-                            const formData = new FormData(e.target);
-                            handleReportSubmit(selectedOrder._id, {
-                                findings: formData.get('findings'),
-                                impression: formData.get('impression'),
-                                recommendations: formData.get('recommendations'),
-                            });
-                        }}>
-                            <div className="space-y-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Findings *</label>
-                                    <textarea
-                                        name="findings"
-                                        rows="4"
-                                        required
-                                        placeholder="Enter detailed findings..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                    ></textarea>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Impression *</label>
-                                    <textarea
-                                        name="impression"
-                                        rows="3"
-                                        required
-                                        placeholder="Enter clinical impression..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                    ></textarea>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Recommendations</label>
-                                    <textarea
-                                        name="recommendations"
-                                        rows="2"
-                                        placeholder="Any follow-up recommendations..."
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                                    ></textarea>
-                                </div>
-                            </div>
-                            <div className="mt-6 flex justify-end gap-3">
-                                <button type="button" onClick={() => { setShowReportModal(false); setSelectedOrder(null); }}
-                                    className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
-                                    Cancel
-                                </button>
-                                <button type="submit" className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
-                                    Submit Report
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                <ReportEntryModal
+                    order={selectedOrder}
+                    onClose={() => { setShowReportModal(false); setSelectedOrder(null); }}
+                    onSubmit={handleReportSubmit}
+                />
             )}
 
             {/* Payment Modal */}

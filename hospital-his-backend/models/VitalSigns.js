@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 /**
  * Vital Signs Model
  * Structured vital sign recordings with threshold-based alerts
+ * Supports both OPD (appointments) and IPD (admissions)
  */
 
 const vitalSignsSchema = new mongoose.Schema(
@@ -16,10 +17,40 @@ const vitalSignsSchema = new mongoose.Schema(
             ref: 'Patient',
             required: [true, 'Patient is required'],
         },
+        // Encounter type: OPD or IPD
+        encounterType: {
+            type: String,
+            enum: ['opd', 'ipd'],
+            default: 'ipd',
+        },
+        // IPD admission (required for IPD)
         admission: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Admission',
-            required: [true, 'Admission is required'],
+        },
+        // OPD appointment (required for OPD)
+        appointment: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Appointment',
+        },
+        // NEWS2 specific fields
+        supplementalOxygen: {
+            type: Boolean,
+            default: false,
+        },
+        avpuScore: {
+            type: String,
+            enum: ['alert', 'voice', 'pain', 'unresponsive', 'new_confusion'],
+            default: 'alert',
+        },
+        news2Score: {
+            type: Number,
+            default: 0,
+        },
+        news2RiskLevel: {
+            type: String,
+            enum: ['low', 'low_medium', 'medium', 'high'],
+            default: 'low',
         },
         // Vital sign readings
         bloodPressure: {

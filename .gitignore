@@ -1,0 +1,35 @@
+# =======================
+# Node.js
+# =======================
+node_modules/
+hospital-his-frontend/node_modules/
+hospital-his-backend/node_modules/
+hospital-his-backend/uploads/lab-reports/*.pdf
+hospital-his-backend/uploads/radiology-scans/
+hospital-his-backend/uploads/
+
+# =======================
+# Python Virtual Envs
+# =======================
+venv/
+ocr_venv/
+ml_venv/
+his-id-ocr/ocr_venv/
+hospital-his-ml/ml_venv/
+
+# =======================
+# Python Cache
+# =======================
+__pycache__/
+*.pyc
+
+# =======================
+# Environment files
+# =======================
+.env
+
+# =======================
+# OS / Editor junk
+# =======================
+.DS_Store
+.vscode/

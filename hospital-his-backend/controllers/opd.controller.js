@@ -369,3 +369,302 @@ exports.getDashboard = asyncHandler(async (req, res, next) => {
         },
     });
 });
+
+/**
+ * Calculate NEWS2 score from vitals
+ */
+const calculateNEWS2 = (vitals) => {
+    let score = 0;
+
+    // Respiratory Rate
+    const respRate = vitals.respiratoryRate?.rate;
+    if (respRate) {
+        if (respRate <= 8) score += 3;
+        else if (respRate >= 9 && respRate <= 11) score += 1;
+        else if (respRate >= 12 && respRate <= 20) score += 0;
+        else if (respRate >= 21 && respRate <= 24) score += 2;
+        else if (respRate >= 25) score += 3;
+    }
+
+    // SpO2 (Oxygen Saturation)
+    const spo2 = vitals.oxygenSaturation?.value;
+    if (spo2) {
+        if (spo2 <= 91) score += 3;
+        else if (spo2 >= 92 && spo2 <= 93) score += 2;
+        else if (spo2 >= 94 && spo2 <= 95) score += 1;
+        else if (spo2 >= 96) score += 0;
+    }
+
+    // Supplemental Oxygen
+    if (vitals.supplementalOxygen === true) score += 2;
+
+    // Systolic BP
+    const systolic = vitals.bloodPressure?.systolic;
+    if (systolic) {
+        if (systolic <= 90) score += 3;
+        else if (systolic >= 91 && systolic <= 100) score += 2;
+        else if (systolic >= 101 && systolic <= 110) score += 1;
+        else if (systolic >= 111 && systolic <= 219) score += 0;
+        else if (systolic >= 220) score += 3;
+    }
+
+    // Heart Rate / Pulse
+    const pulse = vitals.pulse?.rate;
+    if (pulse) {
+        if (pulse <= 40) score += 3;
+        else if (pulse >= 41 && pulse <= 50) score += 1;
+        else if (pulse >= 51 && pulse <= 90) score += 0;
+        else if (pulse >= 91 && pulse <= 110) score += 1;
+        else if (pulse >= 111 && pulse <= 130) score += 2;
+        else if (pulse >= 131) score += 3;
+    }
+
+    // Temperature (Celsius)
+    const temp = vitals.temperature?.value;
+    if (temp) {
+        if (temp <= 35.0) score += 3;
+        else if (temp >= 35.1 && temp <= 36.0) score += 1;
+        else if (temp >= 36.1 && temp <= 38.0) score += 0;
+        else if (temp >= 38.1 && temp <= 39.0) score += 1;
+        else if (temp >= 39.1) score += 2;
+    }
+
+    // AVPU (Level of Consciousness)
+    const avpu = vitals.avpuScore;
+    if (avpu && avpu !== 'alert') score += 3;
+
+    // Determine risk level
+    let riskLevel = 'low';
+    if (score >= 7 || (respRate && (respRate <= 8 || respRate >= 25)) ||
+        (spo2 && spo2 <= 91) || (systolic && (systolic <= 90 || systolic >= 220)) ||
+        (pulse && (pulse <= 40 || pulse >= 131)) || (temp && temp <= 35.0) ||
+        (avpu && avpu !== 'alert')) {
+        riskLevel = 'high';
+    } else if (score >= 5 && score <= 6) {
+        riskLevel = 'medium';
+    } else if (score >= 1 && score <= 4) {
+        riskLevel = 'low_medium';
+    }
+
+    return { score, riskLevel };
+};
+
+/**
+ * @desc    Record vitals for OPD appointment (Nurse only)
+ * @route   POST /api/opd/appointments/:id/vitals
+ */
+const VitalSigns = require('../models/VitalSigns');
+const riskScoreService = require('../services/riskScore.service');
+const mongoose = require('mongoose');
+
+exports.recordVitals = asyncHandler(async (req, res, next) => {
+    const appointment = await Appointment.findById(req.params.id).populate('patient');
+
+    if (!appointment) {
+        return next(new ErrorResponse('Appointment not found', 404));
+    }
+
+    // Check if vitals already exist for this appointment - no updates allowed
+    const existingVitals = await VitalSigns.findOne({ appointment: appointment._id });
+    if (existingVitals) {
+        return next(new ErrorResponse('Vitals already recorded for this appointment. Cannot update.', 400));
+    }
+
+    // Build vitals data
+    const vitalsData = {
+        patient: appointment.patient._id,
+        encounterType: 'opd',
+        appointment: appointment._id,
+        recordedBy: req.user.id,
+        recordedAt: new Date(),
+        bloodPressure: {
+            systolic: req.body.systolicBP,
+            diastolic: req.body.diastolicBP,
+        },
+        pulse: {
+            rate: req.body.heartRate,
+        },
+        temperature: {
+            value: req.body.temperature,
+            unit: 'celsius',
+        },
+        respiratoryRate: {
+            rate: req.body.respiratoryRate,
+        },
+        oxygenSaturation: {
+            value: req.body.spo2,
+            onOxygen: req.body.supplementalOxygen || false,
+        },
+        supplementalOxygen: req.body.supplementalOxygen || false,
+        avpuScore: req.body.avpuScore || 'alert',
+        consciousness: req.body.avpuScore === 'new_confusion' ? 'confused' : req.body.avpuScore || 'alert',
+    };
+
+    // Calculate NEWS2 score
+    const news2Result = calculateNEWS2(vitalsData);
+    vitalsData.news2Score = news2Result.score;
+    vitalsData.news2RiskLevel = news2Result.riskLevel;
+
+    console.log('📊 [VITALS] NEWS2 calculated:', news2Result);
+    console.log('📊 [VITALS] Appointment ID:', appointment._id);
+
+    // Create new vital record (no updates)
+    const vitalRecord = await VitalSigns.create(vitalsData);
+    console.log('📊 [VITALS] Vital record created:', vitalRecord._id);
+
+    // Update appointment risk score with NEWS2 points and log to history
+    try {
+        console.log('📊 [VITALS] Calling riskScoreService.updateRiskScore...');
+        const updatedAppointment = await riskScoreService.updateRiskScore(
+            appointment._id,
+            'VITALS',
+            { news2Points: news2Result.score },
+            req.user.id
+        );
+        console.log('📊 [VITALS] Risk score updated successfully. Final score:', updatedAppointment.finalRiskScore);
+    } catch (riskErr) {
+        console.error('❌ [VITALS] Error updating risk score:', riskErr);
+    }
+
+    res.status(200).json({
+        success: true,
+        data: vitalRecord,
+    });
+});
+
+/**
+ * @desc    Get vitals for OPD appointment
+ * @route   GET /api/opd/appointments/:id/vitals
+ */
+exports.getVitals = asyncHandler(async (req, res, next) => {
+    const vitals = await VitalSigns.findOne({ appointment: req.params.id })
+        .populate('recordedBy', 'profile.firstName profile.lastName');
+
+    if (!vitals) {
+        return res.status(200).json({
+            success: true,
+            data: null,
+            message: 'No vitals recorded for this appointment',
+        });
+    }
+
+    res.status(200).json({
+        success: true,
+        data: vitals,
+    });
+});
+
+/**
+ * @desc    Set lab risk level for OPD appointment (Doctor only)
+ * @route   PUT /api/opd/appointments/:id/lab-risk
+ */
+exports.setLabRiskLevel = asyncHandler(async (req, res, next) => {
+    const { riskLevel } = req.body;
+
+    const validLevels = ['NORMAL', 'MILD', 'MODERATE', 'SEVERE', 'CRITICAL'];
+    if (!validLevels.includes(riskLevel)) {
+        return next(new ErrorResponse('Invalid risk level', 400));
+    }
+
+    const appointment = await riskScoreService.updateRiskScore(
+        req.params.id,
+        'LAB_RISK',
+        { riskLevel },
+        req.user.id
+    );
+
+    res.status(200).json({
+        success: true,
+        data: {
+            labRiskLevel: appointment.labRiskLevel,
+            labDelta: appointment.labDelta,
+            finalRiskScore: appointment.finalRiskScore,
+            riskCategory: appointment.riskCategory,
+        },
+    });
+});
+
+/**
+ * @desc    Set radiology risk level for OPD appointment (Doctor only)
+ * @route   PUT /api/opd/appointments/:id/radiology-risk
+ */
+exports.setRadiologyRiskLevel = asyncHandler(async (req, res, next) => {
+    const { riskLevel } = req.body;
+
+    const validLevels = ['NORMAL', 'MILD', 'MODERATE', 'SEVERE', 'CRITICAL'];
+    if (!validLevels.includes(riskLevel)) {
+        return next(new ErrorResponse('Invalid risk level', 400));
+    }
+
+    const appointment = await riskScoreService.updateRiskScore(
+        req.params.id,
+        'RADIOLOGY_RISK',
+        { riskLevel },
+        req.user.id
+    );
+
+    res.status(200).json({
+        success: true,
+        data: {
+            radiologyRiskLevel: appointment.radiologyRiskLevel,
+            radiologyDelta: appointment.radiologyDelta,
+            finalRiskScore: appointment.finalRiskScore,
+            riskCategory: appointment.riskCategory,
+        },
+    });
+});
+
+/**
+ * @desc    Get risk score history for OPD appointment (Doctor only)
+ * @route   GET /api/opd/appointments/:id/risk-history
+ */
+exports.getRiskHistory = asyncHandler(async (req, res, next) => {
+    console.log('🔍 [OPD CONTROLLER] getRiskHistory calling for ID:', req.params.id);
+
+    // Debug: Check if any history exists at all for this ID
+    const rawCount = await mongoose.model('RiskScoreHistory').countDocuments({ encounter: req.params.id });
+    console.log('🔍 [OPD CONTROLLER] Raw count of history documents:', rawCount);
+
+    const history = await riskScoreService.getRiskScoreHistory(req.params.id);
+    console.log('🔍 [OPD CONTROLLER] Service returned items:', history.length);
+
+    res.status(200).json({
+        success: true,
+        count: history.length,
+        data: history,
+    });
+});
+
+/**
+ * @desc    Get risk score history for Patient (all encounters)
+ * @route   GET /api/opd/patients/:id/risk-history
+ */
+exports.getPatientRiskHistory = asyncHandler(async (req, res, next) => {
+    console.log('🔍 [OPD CONTROLLER] getPatientRiskHistory calling for Patient ID:', req.params.id);
+    const history = await riskScoreService.getPatientRiskHistory(req.params.id);
+    console.log('🔍 [OPD CONTROLLER] Found patient history items:', history.length);
+
+    res.status(200).json({
+        success: true,
+        count: history.length,
+        data: history,
+    });
+});
+
+/**
+ * @desc    Get current risk score for OPD appointment (Doctor only)
+ * @route   GET /api/opd/appointments/:id/risk-score
+ */
+exports.getRiskScore = asyncHandler(async (req, res, next) => {
+    const appointment = await Appointment.findById(req.params.id)
+        .select('news2Points labRiskLevel radiologyRiskLevel labDelta radiologyDelta finalRiskScore riskCategory');
+
+    if (!appointment) {
+        return next(new ErrorResponse('Appointment not found', 404));
+    }
+
+    res.status(200).json({
+        success: true,
+        data: appointment,
+    });
+});

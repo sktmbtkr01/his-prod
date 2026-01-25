@@ -53,6 +53,9 @@ const Consultation = () => {
     const [activeAdmission, setActiveAdmission] = useState(null);
     const [showCarePlan, setShowCarePlan] = useState(false);
 
+    // Vitals State (fetched from nurse entry)
+    const [vitals, setVitals] = useState(null);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -90,6 +93,19 @@ const Consultation = () => {
                 } catch (admErr) {
                     // No active admission - that's fine for OPD patients
                     console.log('No active admission found');
+                }
+
+                // Fetch vitals for this appointment
+                try {
+                    const vitalsRes = await axios.get(
+                        `${API_RES_URL}opd/appointments/${appointmentId}/vitals`,
+                        getConfig()
+                    );
+                    if (vitalsRes.data.data) {
+                        setVitals(vitalsRes.data.data);
+                    }
+                } catch (vitalsErr) {
+                    console.log('No vitals recorded for this appointment');
                 }
             } catch (error) {
                 console.error("Error fetching data", error);
@@ -338,29 +354,85 @@ const Consultation = () => {
                         </div>
                     </div>
 
-                    {/* Vitals (Static for now) */}
+                    {/* Vitals - Real data from Nurse Entry */}
                     <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
                         <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
                             <Activity size={18} className="text-primary" /> Vitals
                         </h3>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="p-3 bg-slate-50 rounded-lg">
-                                <div className="text-xs text-gray-400 uppercase">BP</div>
-                                <div className="font-bold text-slate-700">120/80</div>
+                        {vitals ? (
+                            <>
+                                {/* NEWS2 Score Badge */}
+                                <div className="mb-4 p-3 rounded-xl border" style={{
+                                    backgroundColor: vitals.news2RiskLevel === 'high' ? '#fef2f2' :
+                                        vitals.news2RiskLevel === 'medium' ? '#fffbeb' :
+                                            vitals.news2RiskLevel === 'low_medium' ? '#fefce8' : '#f0fdf4',
+                                    borderColor: vitals.news2RiskLevel === 'high' ? '#fecaca' :
+                                        vitals.news2RiskLevel === 'medium' ? '#fde68a' :
+                                            vitals.news2RiskLevel === 'low_medium' ? '#fef08a' : '#bbf7d0'
+                                }}>
+                                    <div className="text-xs uppercase font-bold mb-1" style={{
+                                        color: vitals.news2RiskLevel === 'high' ? '#dc2626' :
+                                            vitals.news2RiskLevel === 'medium' ? '#d97706' :
+                                                vitals.news2RiskLevel === 'low_medium' ? '#ca8a04' : '#16a34a'
+                                    }}>
+                                        Patient Health Score (NEWS2)
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-3xl font-bold" style={{
+                                            color: vitals.news2RiskLevel === 'high' ? '#dc2626' :
+                                                vitals.news2RiskLevel === 'medium' ? '#d97706' :
+                                                    vitals.news2RiskLevel === 'low_medium' ? '#ca8a04' : '#16a34a'
+                                        }}>
+                                            {vitals.news2Score}
+                                        </span>
+                                        <span className="text-sm font-medium capitalize" style={{
+                                            color: vitals.news2RiskLevel === 'high' ? '#dc2626' :
+                                                vitals.news2RiskLevel === 'medium' ? '#d97706' :
+                                                    vitals.news2RiskLevel === 'low_medium' ? '#ca8a04' : '#16a34a'
+                                        }}>
+                                            {vitals.news2RiskLevel?.replace('_', '-')} Risk
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-3">
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">BP</div>
+                                        <div className="font-bold text-slate-700">
+                                            {vitals.bloodPressure?.systolic || '--'}/{vitals.bloodPressure?.diastolic || '--'}
+                                        </div>
+                                    </div>
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">Heart Rate</div>
+                                        <div className="font-bold text-slate-700">{vitals.pulse?.rate || '--'} bpm</div>
+                                    </div>
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">Temp</div>
+                                        <div className="font-bold text-slate-700">{vitals.temperature?.value || '--'}°C</div>
+                                    </div>
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">SpO₂</div>
+                                        <div className="font-bold text-slate-700">
+                                            {vitals.oxygenSaturation?.value || '--'}%
+                                            {vitals.supplementalOxygen && <span className="text-xs text-blue-500 ml-1">(O₂)</span>}
+                                        </div>
+                                    </div>
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">Resp Rate</div>
+                                        <div className="font-bold text-slate-700">{vitals.respiratoryRate?.rate || '--'}/min</div>
+                                    </div>
+                                    <div className="p-3 bg-slate-50 rounded-lg">
+                                        <div className="text-xs text-gray-400 uppercase">Consciousness</div>
+                                        <div className="font-bold text-slate-700 capitalize">{vitals.avpuScore?.replace('_', ' ') || 'Alert'}</div>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="text-center py-6 text-gray-400">
+                                <Activity size={32} className="mx-auto mb-2 opacity-30" />
+                                <p className="text-sm">No vitals recorded by nurse</p>
                             </div>
-                            <div className="p-3 bg-slate-50 rounded-lg">
-                                <div className="text-xs text-gray-400 uppercase">Heart Rate</div>
-                                <div className="font-bold text-slate-700">72 bpm</div>
-                            </div>
-                            <div className="p-3 bg-slate-50 rounded-lg">
-                                <div className="text-xs text-gray-400 uppercase">Temp</div>
-                                <div className="font-bold text-slate-700">98.6°F</div>
-                            </div>
-                            <div className="p-3 bg-slate-50 rounded-lg">
-                                <div className="text-xs text-gray-400 uppercase">SpO2</div>
-                                <div className="font-bold text-slate-700">98%</div>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
 

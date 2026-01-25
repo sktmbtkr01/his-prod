@@ -3,6 +3,37 @@ const router = express.Router();
 const radiologyController = require('../controllers/radiology.controller');
 const { authenticate } = require('../middleware/auth.middleware');
 const { authorize } = require('../middleware/rbac.middleware');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+
+// Configure multer for scan image uploads
+const scanStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        const dir = 'uploads/radiology-scans';
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+        cb(null, dir);
+    },
+    filename: function (req, file, cb) {
+        cb(null, `scan-${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`);
+    }
+});
+
+const uploadScan = multer({
+    storage: scanStorage,
+    limits: { fileSize: 50 * 1024 * 1024 }, // 50MB limit
+    fileFilter: function (req, file, cb) {
+        const allowedTypes = /jpeg|jpg|png|gif|pdf|dcm/;
+        const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = allowedTypes.test(file.mimetype) || file.mimetype === 'application/dicom';
+        if (extname || mimetype) {
+            return cb(null, true);
+        }
+        cb(new Error('Only image, PDF, and DICOM files are allowed'));
+    }
+});
 
 router.use(authenticate);
 
@@ -43,6 +74,12 @@ router.post('/orders/:id/schedule', authorize('radiologist', 'receptionist'), ra
 router.post('/orders/:id/enter-report', authorize('radiologist'), radiologyController.enterReport);
 
 /**
+ * @route   POST /api/radiology/upload-scan/:id
+ * @desc    Upload scan image for radiology order
+ */
+router.post('/upload-scan/:id', authorize('radiologist'), uploadScan.single('scanImage'), radiologyController.uploadScanImage);
+
+/**
  * @route   GET /api/radiology/queue
  * @desc    Get radiology work queue
  */
@@ -59,5 +96,17 @@ router.get('/dashboard', authorize('radiologist', 'admin', 'doctor'), radiologyC
  * @desc    Get available radiology tests (master)
  */
 router.get('/tests', radiologyController.getRadiologyTests);
+
+/**
+ * @route   GET /api/radiology/doctor/results
+ * @desc    Get completed radiology results (Doctor only)
+ */
+router.get('/doctor/results', authorize('doctor'), radiologyController.getCompletedResults);
+
+/**
+ * @route   GET /api/radiology/doctor/results/:id
+ * @desc    Get single radiology result by ID (Doctor only)
+ */
+router.get('/doctor/results/:id', authorize('doctor'), radiologyController.getResultById);
 
 module.exports = router;

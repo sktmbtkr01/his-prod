@@ -69,6 +69,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             roles: ['doctor', 'nurse', 'receptionist', 'head_nurse']
         },
         {
+            title: 'Nurse Vitals Entry',
+            path: '/dashboard/nurse-opd-queue',
+            icon: <Activity size={20} />,
+            roles: ['nurse', 'head_nurse']
+        },
+        {
             title: 'Bed Management',
             path: '/dashboard/bed-management',
             icon: <BedDouble size={20} />,
@@ -120,6 +126,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             title: 'Lab Test Results',
             path: '/dashboard/doctor-lab-tests',
             icon: <FlaskConical size={20} />,
+            roles: ['doctor']
+        },
+        {
+            title: 'Radiology Test Results',
+            path: '/dashboard/doctor-radiology-tests',
+            icon: <ScanLine size={20} />,
             roles: ['doctor']
         },
         {

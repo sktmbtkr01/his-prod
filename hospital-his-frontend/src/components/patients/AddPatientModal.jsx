@@ -33,7 +33,6 @@ const AddPatientModal = ({ isOpen, onClose }) => {
         }
     };
     const [formData, setFormData] = useState(initialFormData);
-    const [idCaptureStatus, setIdCaptureStatus] = useState('idle'); // 'idle', 'captured', 'uploading'
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -82,8 +81,6 @@ const AddPatientModal = ({ isOpen, onClose }) => {
             setTimeout(() => {
                 setStep('form');
                 setFormData(initialFormData);
-                setIdCaptureStatus('idle');
-                stopCamera();
                 onClose();
             }, 2500);
         } catch (error) {
@@ -94,7 +91,6 @@ const AddPatientModal = ({ isOpen, onClose }) => {
 
     // Cleanup on close
     const handleClose = () => {
-        stopCamera();
         onClose();
     };
 
@@ -244,109 +240,25 @@ const AddPatientModal = ({ isOpen, onClose }) => {
                                             <div>
                                                 <h4 className="font-semibold text-slate-700">ID Verification</h4>
                                                 <p className="text-xs text-gray-500 mt-0.5">
-                                                    📋 For identification assistance only. Not government authentication.
+                                                    📋 Use "Scan ID" button above to capture and verify patient identity.
                                                 </p>
                                             </div>
-                                            {idCaptureStatus === 'captured' && (
+                                            {formData.maskedAadhaar && (
                                                 <span className="flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
-                                                    <CheckCircle size={12} /> Captured
+                                                    <Check size={12} /> Verified
                                                 </span>
                                             )}
                                         </div>
 
-                                        {/* Camera / Upload Area */}
-                                        {idCaptureStatus === 'idle' && !isCameraActive && (
-                                            <div className="flex gap-3">
-                                                <button
-                                                    type="button"
-                                                    onClick={startCamera}
-                                                    className="flex-1 flex items-center justify-center gap-2 p-4 bg-white border-2 border-dashed border-gray-200 rounded-xl hover:border-primary hover:bg-primary/5 transition-all text-gray-600 hover:text-primary"
-                                                >
-                                                    <Camera size={20} />
-                                                    <span className="font-medium">Use Camera</span>
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    onClick={() => fileInputRef.current?.click()}
-                                                    className="flex-1 flex items-center justify-center gap-2 p-4 bg-white border-2 border-dashed border-gray-200 rounded-xl hover:border-primary hover:bg-primary/5 transition-all text-gray-600 hover:text-primary"
-                                                >
-                                                    <Upload size={20} />
-                                                    <span className="font-medium">Upload Image</span>
-                                                </button>
-                                                <input
-                                                    ref={fileInputRef}
-                                                    type="file"
-                                                    accept="image/*"
-                                                    onChange={handleFileUpload}
-                                                    className="hidden"
-                                                />
-                                            </div>
+                                        {!formData.maskedAadhaar && (
+                                            <p className="text-sm text-gray-500 text-center py-4">
+                                                Click the <strong>"Scan ID"</strong> button in the header to scan and verify patient ID.
+                                            </p>
                                         )}
-
-                                        {/* Camera View */}
-                                        {isCameraActive && (
-                                            <div className="relative">
-                                                <video
-                                                    ref={videoRef}
-                                                    autoPlay
-                                                    playsInline
-                                                    className="w-full rounded-lg bg-black"
-                                                />
-                                                <div className="flex gap-2 mt-3">
-                                                    <button
-                                                        type="button"
-                                                        onClick={captureImage}
-                                                        className="flex-1 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark flex items-center justify-center gap-2"
-                                                    >
-                                                        <Camera size={18} /> Capture ID
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        onClick={stopCamera}
-                                                        className="px-4 py-2.5 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200"
-                                                    >
-                                                        Cancel
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Preview Captured Image */}
-                                        {idCaptureStatus === 'captured' && formData.idDocument.imageData && (
-                                            <div className="relative">
-                                                <img
-                                                    src={formData.idDocument.imageData}
-                                                    alt="Captured ID"
-                                                    className="w-full max-h-48 object-contain rounded-lg border border-gray-200 bg-white"
-                                                />
-                                                <div className="flex gap-2 mt-3">
-                                                    <button
-                                                        type="button"
-                                                        onClick={resetIdCapture}
-                                                        className="flex-1 py-2 bg-amber-50 text-amber-600 rounded-lg font-medium hover:bg-amber-100 flex items-center justify-center gap-2"
-                                                    >
-                                                        <RefreshCw size={16} /> Retake / Re-upload
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        onClick={handleOptOut}
-                                                        className="px-4 py-2 bg-red-50 text-red-500 rounded-lg hover:bg-red-100 text-sm"
-                                                    >
-                                                        Remove
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Opt-out option */}
-                                        <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
-                                            <AlertCircle size={12} />
-                                            <span>Patient can opt out of ID capture at any time.</span>
-                                        </div>
                                     </div>
                                 </div>
 
-                                <canvas ref={canvasRef} className="hidden" />
+
 
                                 <div className="pt-4 flex justify-end gap-3 border-t border-gray-100">
                                     <button type="button" onClick={handleClose} className="px-5 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium">Cancel</button>

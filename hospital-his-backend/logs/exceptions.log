@@ -1599,3 +1599,16 @@ Error: listen EADDRINUSE: address already in use :::5001
     at Server.listen (node:net:2102:7)
     at startServer (/Users/khush/Desktop/Hackathons/Quasar/HIS 4/HIS_Quasar/hospital-his-backend/server.js:238:20)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-01-25 05:32:08 [ERROR]: uncaughtException: listen EADDRINUSE: address already in use :::5001
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/server.js:246:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at startServer (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/server.js:246:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

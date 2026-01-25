@@ -21,9 +21,12 @@ import BedManagement from './pages/dashboard/BedManagement';
 import Emergency from './pages/dashboard/Emergency';
 import DoctorRounds from './pages/doctor/DoctorRounds';
 import DoctorLabTests from './pages/doctor/DoctorLabTests';
+import DoctorRadiologyTests from './pages/doctor/DoctorRadiologyTests';
 import LabReportView from './pages/doctor/LabReportView';
 import LabReportsList from './pages/doctor/LabReportsList';
+import PatientEMR from './pages/doctor/PatientEMR';
 import NurseDutyRoster from './pages/nursing/NurseDutyRoster';
+import NurseOPDQueue from './pages/nurse/NurseOPDQueue';
 import Admin from './pages/dashboard/Admin';
 import ReportIncident from './pages/dashboard/ReportIncident';
 import MyIncidents from './pages/dashboard/MyIncidents';
@@ -110,13 +113,16 @@ function App() {
             <Route path="emergency" element={<Emergency />} />
             <Route path="doctor-rounds" element={<DoctorRounds />} />
             <Route path="doctor-lab-tests" element={<DoctorLabTests />} />
+            <Route path="doctor-radiology-tests" element={<DoctorRadiologyTests />} />
             <Route path="duty-roster" element={<NurseDutyRoster />} />
+            <Route path="nurse-opd-queue" element={<NurseOPDQueue />} />
             <Route path="report-incident" element={<ReportIncident />} />
             <Route path="my-incidents" element={<MyIncidents />} />
             <Route path="department-incidents" element={<DepartmentIncidents />} />
             <Route path="incidents/:id" element={<IncidentDetail />} />
             <Route path="lab-reports" element={<LabReportsList />} />
             <Route path="lab-reports/:reportId" element={<LabReportView />} />
+            <Route path="emr/:patientId" element={<PatientEMR />} />
 
             {/* Clinical Coding Routes */}
             <Route path="coding" element={<CodingDashboard />} />

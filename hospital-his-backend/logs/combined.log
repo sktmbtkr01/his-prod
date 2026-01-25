@@ -13739,3 +13739,761 @@ Error: Invalid credentials
 2026-01-25 01:00:38 [ERROR]: Invalid credentials
 Error: Invalid credentials
     at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 03:00:27 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 03:00:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:00:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:00:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:00:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:00:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:00:27 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:00:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:00:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:00:49 [INFO]: Client connected: js1R5imkQFwEqKylAAAC
+2026-01-25 03:00:49 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:00:49 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:00:49 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:00:49 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:01:00 [INFO]: Client disconnected: js1R5imkQFwEqKylAAAC
+2026-01-25 03:01:02 [INFO]: Client connected: ufI81NAJHq32QxLdAAAF
+2026-01-25 03:01:02 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:01:02 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:01:02 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:01:02 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:01:09 [INFO]: Client disconnected: ufI81NAJHq32QxLdAAAF
+2026-01-25 03:03:38 [INFO]: Client connected: g7p9KK36mhmkySQ9AAAI
+2026-01-25 03:03:38 [INFO]: Socket g7p9KK36mhmkySQ9AAAI joined emergency room
+2026-01-25 03:03:38 [INFO]: Client disconnected: g7p9KK36mhmkySQ9AAAI
+2026-01-25 03:03:58 [INFO]: Client connected: fyHpOf-YdXCo5ue_AAAL
+2026-01-25 03:03:58 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:03:58 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:03:58 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:03:58 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:03:59 [INFO]: Client disconnected: fyHpOf-YdXCo5ue_AAAL
+2026-01-25 03:04:09 [INFO]: Client connected: GSyKE9CawSBn6JS2AAAO
+2026-01-25 03:04:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:04:09 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:04:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:04:09 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:04:18 [INFO]: Client disconnected: GSyKE9CawSBn6JS2AAAO
+2026-01-25 03:05:35 [INFO]: Client connected: OYMH16ftOyG1ftfTAAAR
+2026-01-25 03:05:35 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 03:05:35 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 03:05:35 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 03:05:35 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 03:05:37 [INFO]: Client disconnected: OYMH16ftOyG1ftfTAAAR
+2026-01-25 03:09:43 [INFO]: Client connected: hMZWsiA463Fo5NcMAAAU
+2026-01-25 03:09:43 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:09:44 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:09:44 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:09:44 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:09:52 [INFO]: Client disconnected: hMZWsiA463Fo5NcMAAAU
+2026-01-25 03:10:10 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 03:10:13 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 03:10:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:10:13 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:10:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:10:13 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:10:13 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:10:13 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:10:13 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:10:13 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:18:19 [INFO]: Client connected: 316e9OGC2-rTsVRDAAAC
+2026-01-25 03:18:19 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:18:20 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:18:20 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:18:20 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:18:20 [INFO]: Client disconnected: 316e9OGC2-rTsVRDAAAC
+2026-01-25 03:31:32 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 03:34:35 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-25 03:34:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:34:35 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:34:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:34:35 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:34:35 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:34:35 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:34:35 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:34:35 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:34:44 [INFO]: Client connected: J7-2kaJvsfXZa9Q5AAAC
+2026-01-25 03:34:44 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:34:45 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:34:45 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:34:45 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:34:46 [INFO]: Client disconnected: J7-2kaJvsfXZa9Q5AAAC
+2026-01-25 03:34:54 [INFO]: Client connected: V35ZpLYggFGGvhwLAAAF
+2026-01-25 03:34:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:34:54 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:34:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:34:54 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:34:56 [INFO]: Client disconnected: V35ZpLYggFGGvhwLAAAF
+2026-01-25 03:37:59 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:48:21
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/utils/asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:328:13)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+2026-01-25 03:37:59 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:48:21
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/utils/asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:328:13)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+2026-01-25 03:38:05 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 03:39:09 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 03:39:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:39:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:39:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:39:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:39:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:39:09 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:39:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:39:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:39:16 [INFO]: Client connected: P0g7E6RoFqZ3N5y8AAAC
+2026-01-25 03:39:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:39:16 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:39:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:39:16 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:39:18 [INFO]: Client disconnected: P0g7E6RoFqZ3N5y8AAAC
+2026-01-25 03:42:52 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 03:44:27 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 03:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:44:27 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:44:27 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:44:27 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:44:27 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:44:27 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:44:27 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:44:33 [INFO]: Client connected: wZ6xlWf2g1QvypBbAAAC
+2026-01-25 03:44:33 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:44:33 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:44:33 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:44:33 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:44:35 [INFO]: Client disconnected: wZ6xlWf2g1QvypBbAAAC
+2026-01-25 03:47:29 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 03:52:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 03:52:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:52:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 03:52:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:52:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 03:52:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 03:52:03 [INFO]: 🔌 WebSocket enabled
+2026-01-25 03:52:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 03:52:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 03:52:42 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 03:55:11 [INFO]: Client connected: cW3GCu8OkHsBdy_NAAAC
+2026-01-25 03:55:11 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:55:11 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:55:11 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:55:11 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:55:13 [INFO]: Client disconnected: cW3GCu8OkHsBdy_NAAAC
+2026-01-25 03:58:08 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 03:58:12 [INFO]: Client connected: zxtIdOcFDCjxbwKIAAAF
+2026-01-25 03:58:12 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:58:12 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:58:13 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:58:13 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 03:59:12 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 03:59:13 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 04:00:12 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 04:00:13 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 04:00:17 [INFO]: Client disconnected: zxtIdOcFDCjxbwKIAAAF
+2026-01-25 04:14:22 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 04:14:25 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 04:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:14:25 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 04:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:14:25 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 04:14:25 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 04:14:25 [INFO]: 🔌 WebSocket enabled
+2026-01-25 04:14:25 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 04:14:25 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:29:46 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 04:31:05 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 04:31:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:31:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 04:31:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:31:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 04:31:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 04:31:05 [INFO]: 🔌 WebSocket enabled
+2026-01-25 04:31:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 04:31:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:31:27 [INFO]: Client connected: zRnZ6KLxNZkgkBGmAAAC
+2026-01-25 04:31:27 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:27 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 04:31:27 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:27 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:27 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:36 [INFO]: Client disconnected: zRnZ6KLxNZkgkBGmAAAC
+2026-01-25 04:31:38 [INFO]: Client connected: _PXzrs8eTzmWqhgDAAAF
+2026-01-25 04:31:38 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:38 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 04:31:38 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:38 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:38 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:40 [INFO]: Client disconnected: _PXzrs8eTzmWqhgDAAAF
+2026-01-25 04:31:41 [INFO]: Client connected: yWczqBA1Omh6opJwAAAI
+2026-01-25 04:31:41 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 04:31:41 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:41 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:41 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:31:41 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:31:48 [INFO]: Client disconnected: yWczqBA1Omh6opJwAAAI
+2026-01-25 04:32:11 [INFO]: Client connected: BJ0gJpX3TBYLUiWfAAAL
+2026-01-25 04:32:11 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 04:32:11 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:32:11 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:32:11 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:32:11 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:32:14 [INFO]: Client disconnected: BJ0gJpX3TBYLUiWfAAAL
+2026-01-25 04:34:17 [INFO]: Client connected: E31cFmQw4qvXoi39AAAO
+2026-01-25 04:34:17 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 04:34:17 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:34:17 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:34:17 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 04:34:17 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 40
+2026-01-25 04:34:20 [INFO]: Client disconnected: E31cFmQw4qvXoi39AAAO
+2026-01-25 04:35:10 [INFO]: [PatientRegistration] New patient registered: PAT000041 - Arthur Morgan
+2026-01-25 04:35:48 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:35:48 [INFO]: Client connected: fpnk0XhKvKsIO739AAAR
+2026-01-25 04:35:48 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:35:48 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:35:48 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:35:49 [INFO]: Client disconnected: fpnk0XhKvKsIO739AAAR
+2026-01-25 04:36:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:05 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:05 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:22 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:22 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:37:49 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 04:57:34 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 04:57:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:57:34 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 04:57:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:57:34 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 04:57:34 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 04:57:34 [INFO]: 🔌 WebSocket enabled
+2026-01-25 04:57:34 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 04:57:34 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 04:57:54 [INFO]: Client connected: 0jTvzPAERHL8fUrsAAAC
+2026-01-25 04:57:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:57:54 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:57:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:57:55 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:57:57 [INFO]: Client disconnected: 0jTvzPAERHL8fUrsAAAC
+2026-01-25 04:58:10 [INFO]: Client connected: C3pkPYDoj1EOTc00AAAF
+2026-01-25 04:58:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:10 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:10 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:12 [INFO]: Client disconnected: C3pkPYDoj1EOTc00AAAF
+2026-01-25 04:58:20 [INFO]: Client connected: xyuujyeBNFzj9y2dAAAI
+2026-01-25 04:58:20 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:20 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:20 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:20 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:21 [INFO]: Client disconnected: xyuujyeBNFzj9y2dAAAI
+2026-01-25 04:58:23 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:23 [INFO]: Client connected: J-ZsCrITjwiYwzLGAAAL
+2026-01-25 04:58:23 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:23 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:23 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:25 [INFO]: Client disconnected: J-ZsCrITjwiYwzLGAAAL
+2026-01-25 04:58:29 [INFO]: Client connected: _v5Z70LBJQ-_K64kAAAO
+2026-01-25 04:58:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:29 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:29 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:30 [INFO]: Client disconnected: _v5Z70LBJQ-_K64kAAAO
+2026-01-25 04:58:34 [INFO]: Client connected: r5Q7hx3JbD1O-SGsAAAR
+2026-01-25 04:58:34 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:34 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:34 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:34 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:35 [INFO]: Client disconnected: r5Q7hx3JbD1O-SGsAAAR
+2026-01-25 04:58:59 [INFO]: Client connected: RXLSAs7v2xn3YpJFAAAU
+2026-01-25 04:58:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:59 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:58:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:58:59 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:59:01 [INFO]: Client disconnected: RXLSAs7v2xn3YpJFAAAU
+2026-01-25 04:59:05 [INFO]: Client connected: SXdda8kz-NikhoJPAAAX
+2026-01-25 04:59:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:59:05 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:59:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:59:05 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:59:06 [INFO]: Client disconnected: SXdda8kz-NikhoJPAAAX
+2026-01-25 04:59:29 [INFO]: Client connected: ARXFqPtU0F247YCIAAAa
+2026-01-25 04:59:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:59:30 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:59:30 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 04:59:30 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 04:59:39 [INFO]: Client disconnected: ARXFqPtU0F247YCIAAAa
+2026-01-25 05:02:36 [INFO]: Client connected: TrYO7DCJ_jP6Q-UWAAAd
+2026-01-25 05:02:36 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:02:36 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:02:36 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:02:36 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:02:38 [INFO]: Client disconnected: TrYO7DCJ_jP6Q-UWAAAd
+2026-01-25 05:02:56 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 05:03:00 [INFO]: Client connected: AuxTbw6TqR0cP1OZAAAg
+2026-01-25 05:03:00 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 05:03:00 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 05:03:00 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 05:03:00 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 05:03:21 [INFO]: Client disconnected: AuxTbw6TqR0cP1OZAAAg
+2026-01-25 05:04:10 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 05:04:10 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 05:04:24 [INFO]: Client connected: gE7C958_4XDiBGe7AAAj
+2026-01-25 05:04:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:04:24 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:04:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:04:24 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:04:25 [INFO]: Client disconnected: gE7C958_4XDiBGe7AAAj
+2026-01-25 05:10:32 [INFO]: Client connected: F5eUAAkz5VfJ-8ttAAAm
+2026-01-25 05:10:32 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 05:10:32 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 05:10:32 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 05:10:32 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 05:10:34 [INFO]: Client disconnected: F5eUAAkz5VfJ-8ttAAAm
+2026-01-25 05:10:52 [INFO]: Client connected: 1V18pSz9862Gzc7VAAAp
+2026-01-25 05:10:52 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:10:52 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:10:52 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:10:52 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:10:57 [INFO]: Client disconnected: 1V18pSz9862Gzc7VAAAp
+2026-01-25 05:10:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:10:59 [INFO]: Client connected: yGwEp2x2VcN1RLxVAAAs
+2026-01-25 05:10:59 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:10:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:10:59 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:11:00 [INFO]: Client disconnected: yGwEp2x2VcN1RLxVAAAs
+2026-01-25 05:11:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:11:05 [INFO]: Client connected: nge3cyeDra4A9hvXAAAv
+2026-01-25 05:11:05 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:11:05 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:11:06 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:11:06 [INFO]: Client disconnected: nge3cyeDra4A9hvXAAAv
+2026-01-25 05:30:10 [INFO]: Client connected: jVDyCBTPS4u8-UElAAAy
+2026-01-25 05:30:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:30:10 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:30:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:30:10 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:30:11 [INFO]: Client disconnected: jVDyCBTPS4u8-UElAAAy
+2026-01-25 05:32:08 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 05:32:12 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 05:32:24 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 05:32:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:32:24 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 05:32:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:32:24 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 05:32:24 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 05:32:24 [INFO]: 🔌 WebSocket enabled
+2026-01-25 05:32:24 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 05:32:24 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:32:31 [INFO]: Client connected: QZDU29l323mIdAG_AAAC
+2026-01-25 05:32:31 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:32:31 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:32:31 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:32:31 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:32:33 [INFO]: Client disconnected: QZDU29l323mIdAG_AAAC
+2026-01-25 05:49:27 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 05:55:38 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 05:55:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:55:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 05:55:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:55:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 05:55:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 05:55:38 [INFO]: 🔌 WebSocket enabled
+2026-01-25 05:55:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 05:55:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 05:55:53 [INFO]: Client connected: JO8PGqPow18huSrWAAAC
+2026-01-25 05:55:53 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:55:53 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:55:53 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 05:55:53 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 05:55:55 [INFO]: Client disconnected: JO8PGqPow18huSrWAAAC
+2026-01-25 05:56:56 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 05:56:56 [INFO]: Client connected: wVsxqROxbQSQ6UmFAAAF
+2026-01-25 05:56:56 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 05:56:56 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 41
+2026-01-25 05:56:57 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 05:56:57 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 41
+2026-01-25 05:57:19 [INFO]: Client disconnected: wVsxqROxbQSQ6UmFAAAF
+2026-01-25 05:58:49 [INFO]: Client connected: u-tWkJnkzKrKv36ZAAAI
+2026-01-25 05:58:49 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 05:58:49 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 05:58:49 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 41
+2026-01-25 05:58:49 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 05:58:49 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 41
+2026-01-25 05:58:51 [INFO]: Client disconnected: u-tWkJnkzKrKv36ZAAAI
+2026-01-25 06:02:04 [INFO]: [PatientRegistration] New patient registered: PAT000042 - Dave Jacobs
+2026-01-25 06:03:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:03:24 [INFO]: Client connected: mq55wmhAI3rqf4R_AAAL
+2026-01-25 06:03:24 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:03:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:03:24 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:03:32 [INFO]: Client disconnected: mq55wmhAI3rqf4R_AAAL
+2026-01-25 06:04:28 [INFO]: Client connected: 9gFe2S7lpjsnp5OPAAAO
+2026-01-25 06:04:28 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:04:29 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:04:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:04:29 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:04:30 [INFO]: Client disconnected: 9gFe2S7lpjsnp5OPAAAO
+2026-01-25 06:09:37 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:09:37 [INFO]: Client connected: dWQfU2fyCYwBT6tiAAAR
+2026-01-25 06:09:37 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:09:37 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:09:37 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:09:40 [INFO]: Client disconnected: dWQfU2fyCYwBT6tiAAAR
+2026-01-25 06:12:50 [INFO]: Client connected: mihCknJuG0CZp7z5AAAU
+2026-01-25 06:12:50 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:12:50 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:12:50 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:12:50 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:12:50 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:12:55 [INFO]: Client disconnected: mihCknJuG0CZp7z5AAAU
+2026-01-25 06:22:17 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 06:22:20 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-01.fs2fnzl.mongodb.net
+2026-01-25 06:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:22:20 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 06:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:22:20 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 06:22:20 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 06:22:20 [INFO]: 🔌 WebSocket enabled
+2026-01-25 06:22:20 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 06:22:20 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:22:28 [INFO]: Client connected: i4zOr-cS6JLW5P8zAAAC
+2026-01-25 06:22:28 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:22:28 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:22:28 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:22:28 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:22:28 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:22:32 [INFO]: Client disconnected: i4zOr-cS6JLW5P8zAAAC
+2026-01-25 06:23:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:23:09 [INFO]: Client connected: kj7BclLM__jgeYlTAAAF
+2026-01-25 06:23:09 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:23:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:23:09 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:23:10 [INFO]: Client disconnected: kj7BclLM__jgeYlTAAAF
+2026-01-25 06:24:16 [INFO]: Client connected: KL0H1SAS5N7X4lz_AAAI
+2026-01-25 06:24:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:24:16 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:24:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:24:16 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:24:18 [INFO]: Client disconnected: KL0H1SAS5N7X4lz_AAAI
+2026-01-25 06:27:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:27:29 [INFO]: Client connected: v3b-obGOJHWBHqazAAAL
+2026-01-25 06:27:29 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:27:29 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:27:30 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:27:31 [INFO]: Client disconnected: v3b-obGOJHWBHqazAAAL
+2026-01-25 06:29:43 [INFO]: Client connected: uj3hue-E_A_6YAH8AAAO
+2026-01-25 06:29:43 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:29:43 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:29:43 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:29:43 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:29:51 [INFO]: Client disconnected: uj3hue-E_A_6YAH8AAAO
+2026-01-25 06:31:21 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:31:21 [INFO]: Client connected: Rsk6r_Gen5eaQEBiAAAR
+2026-01-25 06:31:21 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:31:21 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:31:22 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:31:22 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:31:27 [INFO]: Client disconnected: Rsk6r_Gen5eaQEBiAAAR
+2026-01-25 06:32:55 [INFO]: Client connected: ndf-GZ8eAMjsTkV4AAAU
+2026-01-25 06:32:55 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:32:55 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:32:55 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:32:55 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:32:59 [INFO]: Client disconnected: ndf-GZ8eAMjsTkV4AAAU
+2026-01-25 06:34:24 [INFO]: Client connected: HorzhG634g_XKEbcAAAX
+2026-01-25 06:34:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:34:24 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:34:24 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:34:24 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:34:25 [INFO]: Client disconnected: HorzhG634g_XKEbcAAAX
+2026-01-25 06:34:59 [INFO]: Client connected: oW4hvYXRHguQ6pr4AAAa
+2026-01-25 06:34:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:34:59 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:34:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:34:59 [INFO]: [ClinicalDashboard] Response: appointments=2, labs=20, critical=5
+2026-01-25 06:35:05 [INFO]: Client disconnected: oW4hvYXRHguQ6pr4AAAa
+2026-01-25 06:39:44 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 06:41:59 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 06:41:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:41:59 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 06:41:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:41:59 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 06:41:59 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 06:41:59 [INFO]: 🔌 WebSocket enabled
+2026-01-25 06:41:59 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 06:41:59 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:42:07 [INFO]: Client connected: Xa0h6Dll0CETIwnBAAAC
+2026-01-25 06:42:07 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:42:07 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:42:07 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:42:07 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:42:10 [INFO]: Client disconnected: Xa0h6Dll0CETIwnBAAAC
+2026-01-25 06:42:26 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:42:26 [INFO]: Client connected: g6wAf_n2wWuqSF2jAAAF
+2026-01-25 06:42:26 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:42:26 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:42:26 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:42:26 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:42:28 [INFO]: Client disconnected: g6wAf_n2wWuqSF2jAAAF
+2026-01-25 06:43:19 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:43:19 [INFO]: Client connected: gU4gB691lPAfDj1dAAAI
+2026-01-25 06:43:19 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:43:19 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:43:19 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:43:21 [INFO]: Client disconnected: gU4gB691lPAfDj1dAAAI
+2026-01-25 06:43:42 [INFO]: Client connected: aj2p4zCq1pv6adJ6AAAL
+2026-01-25 06:43:42 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:43:42 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:43:42 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:43:42 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:43:42 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 43
+2026-01-25 06:43:43 [INFO]: Client disconnected: aj2p4zCq1pv6adJ6AAAL
+2026-01-25 06:44:17 [INFO]: [PatientRegistration] New patient registered: PAT000044 - Brad Pitt
+2026-01-25 06:45:09 [INFO]: Client connected: sGe4TfZhcPujZ-qCAAAO
+2026-01-25 06:45:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:45:09 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:45:09 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 06:45:09 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 06:45:10 [INFO]: Client disconnected: sGe4TfZhcPujZ-qCAAAO
+2026-01-25 06:46:01 [INFO]: Client connected: _M-BShoaC6oQtaIsAAAR
+2026-01-25 06:46:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:46:01 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:46:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:46:01 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:46:03 [INFO]: Client disconnected: _M-BShoaC6oQtaIsAAAR
+2026-01-25 06:49:06 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:49:06 [INFO]: Client connected: lk1OhvAQaUyl7NS7AAAU
+2026-01-25 06:49:06 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:49:06 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:49:06 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:49:08 [INFO]: Client disconnected: lk1OhvAQaUyl7NS7AAAU
+2026-01-25 06:50:55 [INFO]: Client connected: 2SGBndGgYllvSst5AAAX
+2026-01-25 06:50:55 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:50:55 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:50:55 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 44
+2026-01-25 06:50:55 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:50:55 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 44
+2026-01-25 06:51:01 [INFO]: Client disconnected: 2SGBndGgYllvSst5AAAX
+2026-01-25 06:51:34 [INFO]: Client connected: FgrNcP9uU50oauYtAAAa
+2026-01-25 06:51:34 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:51:34 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:51:34 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:51:34 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:51:35 [INFO]: Client disconnected: FgrNcP9uU50oauYtAAAa
+2026-01-25 06:55:37 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 06:57:03 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 06:57:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:57:03 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 06:57:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:57:03 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 06:57:03 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 06:57:03 [INFO]: 🔌 WebSocket enabled
+2026-01-25 06:57:03 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 06:57:03 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 06:57:12 [INFO]: Client connected: pTxCeWAQGvw0DypoAAAC
+2026-01-25 06:57:12 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:57:13 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:57:13 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 06:57:13 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 06:57:17 [INFO]: Client disconnected: pTxCeWAQGvw0DypoAAAC
+2026-01-25 06:58:46 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:58:46 [INFO]: Client connected: dwHW6cJd9G_A7sEhAAAF
+2026-01-25 06:58:46 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 06:58:46 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 44
+2026-01-25 06:58:46 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 06:58:46 [INFO]: [ReceptionistDashboard] Registrations today: 3, Total patients: 44
+2026-01-25 06:58:49 [INFO]: Client disconnected: dwHW6cJd9G_A7sEhAAAF
+2026-01-25 06:59:40 [INFO]: [PatientRegistration] New patient registered: PAT000045 - Mark Jones
+2026-01-25 07:00:19 [INFO]: Client connected: HqHTbGVYcsaq0lt6AAAI
+2026-01-25 07:00:19 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 07:00:19 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 07:00:19 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 07:00:19 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 07:00:20 [INFO]: Client disconnected: HqHTbGVYcsaq0lt6AAAI
+2026-01-25 07:00:21 [INFO]: Client connected: 7-Ij0je3tad8bEJhAAAL
+2026-01-25 07:00:21 [INFO]: Socket 7-Ij0je3tad8bEJhAAAL joined emergency room
+2026-01-25 07:00:22 [INFO]: Client disconnected: 7-Ij0je3tad8bEJhAAAL
+2026-01-25 07:00:54 [INFO]: Client connected: 4CMUE9qlGkm4ag8uAAAO
+2026-01-25 07:00:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:00:54 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:00:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:00:54 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:01:02 [INFO]: Client disconnected: 4CMUE9qlGkm4ag8uAAAO
+2026-01-25 07:02:52 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 07:03:55 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-02.fs2fnzl.mongodb.net
+2026-01-25 07:03:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:03:55 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 07:03:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:03:55 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 07:03:55 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 07:03:55 [INFO]: 🔌 WebSocket enabled
+2026-01-25 07:03:55 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 07:03:55 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:06:02 [WARN]: MongoDB disconnected. Attempting to reconnect...
+2026-01-25 07:08:39 [INFO]: MongoDB Connected: ac-3nlnfep-shard-00-00.fs2fnzl.mongodb.net
+2026-01-25 07:08:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:08:39 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-01-25 07:08:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:08:39 [INFO]: 🚀 Server running in development mode on port 5001
+2026-01-25 07:08:39 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-01-25 07:08:39 [INFO]: 🔌 WebSocket enabled
+2026-01-25 07:08:39 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-01-25 07:08:39 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-01-25 07:09:00 [INFO]: Client connected: tev9Olr0FhovdyMPAAAC
+2026-01-25 07:09:00 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:09:00 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:09:00 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:09:00 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:09:02 [INFO]: Client disconnected: tev9Olr0FhovdyMPAAAC
+2026-01-25 07:09:32 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 07:09:32 [INFO]: Client connected: TghxQlhzB9yEUh1AAAAF
+2026-01-25 07:09:32 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 07:09:32 [INFO]: [ReceptionistDashboard] Registrations today: 4, Total patients: 45
+2026-01-25 07:09:32 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 07:09:33 [INFO]: [ReceptionistDashboard] Registrations today: 4, Total patients: 45
+2026-01-25 07:09:35 [INFO]: Client disconnected: TghxQlhzB9yEUh1AAAAF
+2026-01-25 07:10:07 [INFO]: Client connected: ffgce8BGJcmUQANgAAAI
+2026-01-25 07:10:07 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 07:10:07 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 07:10:07 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a8
+2026-01-25 07:10:07 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-01-25 07:10:08 [INFO]: Client disconnected: ffgce8BGJcmUQANgAAAI
+2026-01-25 07:10:44 [INFO]: Client connected: xvR_PJd_jSi2M_6mAAAL
+2026-01-25 07:10:44 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:10:44 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:10:44 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:10:44 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=5
+2026-01-25 07:10:50 [INFO]: Client disconnected: xvR_PJd_jSi2M_6mAAAL
+2026-01-25 07:14:21 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:14:21 [INFO]: Client connected: -4fSpPLNxG9agAK_AAAO
+2026-01-25 07:14:21 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=6
+2026-01-25 07:14:21 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:14:22 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=6
+2026-01-25 07:14:26 [INFO]: Client disconnected: -4fSpPLNxG9agAK_AAAO
+2026-01-25 07:15:23 [INFO]: Client connected: 1MHIYq44KZ_lncUxAAAR
+2026-01-25 07:15:23 [INFO]: User 6970e6e6ae32f124038cc0aa joined personal room
+2026-01-25 07:15:23 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 07:15:23 [INFO]: [ReceptionistDashboard] Registrations today: 4, Total patients: 45
+2026-01-25 07:15:23 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-01-25T00:00:00.000Z to 2026-01-26T00:00:00.000Z
+2026-01-25 07:15:23 [INFO]: [ReceptionistDashboard] Registrations today: 4, Total patients: 45
+2026-01-25 07:15:25 [INFO]: Client disconnected: 1MHIYq44KZ_lncUxAAAR
+2026-01-25 07:15:54 [INFO]: Client connected: Eti8Ha6n3Ec9QtVWAAAU
+2026-01-25 07:15:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:15:54 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=6
+2026-01-25 07:15:54 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
+2026-01-25 07:15:54 [INFO]: [ClinicalDashboard] Response: appointments=3, labs=20, critical=6
+2026-01-25 07:15:56 [INFO]: Client disconnected: Eti8Ha6n3Ec9QtVWAAAU
+2026-01-25 07:16:36 [WARN]: MongoDB disconnected. Attempting to reconnect...

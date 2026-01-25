@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getQueue, resetOPD } from '../../features/opd/opdSlice';
 import { motion } from 'framer-motion';
-import { User, Clock, CheckCircle, Activity, ChevronRight, Filter } from 'lucide-react';
+import { User, Clock, CheckCircle, Activity, ChevronRight, Filter, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const OPDQueue = () => {
@@ -57,8 +57,8 @@ const OPDQueue = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
                         className={`relative p-6 rounded-2xl border transition-all ${index === 0
-                                ? 'bg-white border-primary shadow-lg shadow-primary/10 scale-[1.02]' // Active Patient
-                                : 'bg-white border-gray-100 shadow-sm opacity-80 hover:opacity-100 hover:shadow-md'
+                            ? 'bg-white border-primary shadow-lg shadow-primary/10 scale-[1.02]' // Active Patient
+                            : 'bg-white border-gray-100 shadow-sm opacity-80 hover:opacity-100 hover:shadow-md'
                             }`}
                     >
                         {index === 0 && (
@@ -89,16 +89,26 @@ const OPDQueue = () => {
                                 </div>
                             </div>
 
-                            <button
-                                onClick={() => handleConsultationStart(appointment._id)}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all ${index === 0
+                            <div className="flex items-center gap-2">
+                                <button
+                                    onClick={() => navigate(`/dashboard/emr/${appointment.patient._id}`)}
+                                    className="flex items-center gap-2 px-4 py-3 rounded-xl font-bold transition-all bg-slate-100 text-slate-700 hover:bg-slate-200"
+                                    title="View Patient EMR"
+                                >
+                                    <FileText size={18} />
+                                    EMR
+                                </button>
+                                <button
+                                    onClick={() => handleConsultationStart(appointment._id)}
+                                    className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all ${index === 0
                                         ? 'bg-primary text-white hover:bg-primary-dark shadow-md'
                                         : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
-                                    }`}
-                            >
-                                {index === 0 ? 'Start Consultation' : 'View Details'}
-                                <ChevronRight size={18} />
-                            </button>
+                                        }`}
+                                >
+                                    {index === 0 ? 'Start Consultation' : 'View Details'}
+                                    <ChevronRight size={18} />
+                                </button>
+                            </div>
                         </div>
                     </motion.div>
                 )) : (

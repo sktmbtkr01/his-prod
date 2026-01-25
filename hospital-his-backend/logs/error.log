@@ -5515,3 +5515,133 @@ Error: Invalid credentials
 2026-01-25 01:00:38 [ERROR]: Invalid credentials
 Error: Invalid credentials
     at D:\HIS_Quasar_Final\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-01-25 03:37:59 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:48:21
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/utils/asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:328:13)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+2026-01-25 03:37:59 [ERROR]: Not authorized to access this route
+Error: Not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/auth.middleware.js:48:21
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/utils/asyncHandler.js:7:21
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:328:13)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:286:9
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+    at router.handle (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+2026-01-25 03:52:42 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 03:58:08 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 04:36:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:03 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:05 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:05 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:22 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 04:36:22 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 05:02:56 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/controllers/auth.controller.js:36:21
+2026-01-25 05:04:10 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 05:04:10 [ERROR]: User role 'nurse' is not authorized to access this route
+Error: User role 'nurse' is not authorized to access this route
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/middleware/rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:376:14)
+    at router.process_params (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:421:3)
+    at next (/Users/khush/Desktop/Hackathons/Quasar/HIS 5/HIS_Quasar/hospital-his-backend/node_modules/express/lib/router/index.js:280:10)
+2026-01-25 05:32:08 [ERROR]: Uncaught Exception: listen EADDRINUSE: address already in use :::5001

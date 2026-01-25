@@ -69,6 +69,59 @@ const radiologySchema = new mongoose.Schema(
         reportUrl: {
             type: String,
         },
+        // Uploaded scan image/report
+        scanImage: {
+            type: String,
+        },
+        // X-Ray specific fields
+        xrayViewType: {
+            type: String,
+            enum: ['PA', 'AP', 'Lateral'],
+        },
+        xrayBodyPartConfirmation: {
+            type: String,
+        },
+        // Ultrasound specific fields
+        ultrasoundPreparation: {
+            type: String,
+            enum: ['Fasting', 'Full Bladder', 'None'],
+        },
+        ultrasoundIndication: {
+            type: String,
+        },
+        gestationalAge: {
+            type: Number, // weeks
+        },
+        // CT Scan specific fields
+        contrastUsed: {
+            type: Boolean,
+        },
+        contrastType: {
+            type: String,
+        },
+        contrastDose: {
+            type: String,
+        },
+        allergyHistory: {
+            type: Boolean,
+        },
+        // MRI specific fields
+        metalImplantCheck: {
+            type: Boolean,
+        },
+        claustrophobia: {
+            type: Boolean,
+        },
+        sedationRequired: {
+            type: Boolean,
+        },
+        // ECG/Echo specific fields
+        measurementNotes: {
+            type: String,
+        },
+        reportSummary: {
+            type: String,
+        },
         isBilled: {
             type: Boolean,
             default: false,
