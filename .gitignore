@@ -4,8 +4,6 @@
 node_modules/
 hospital-his-frontend/node_modules/
 hospital-his-backend/node_modules/
-hospital-his-backend/uploads/lab-reports/*.pdf
-hospital-his-backend/uploads/radiology-scans/
 hospital-his-backend/uploads/
 
 # =======================
