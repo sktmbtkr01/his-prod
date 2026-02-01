@@ -17,7 +17,36 @@ torch_ok = check_import("torch")
 transformers_ok = check_import("transformers")
 
 if pkg_ok and transformers_ok:
-    print("\n--- Testing Tokenizer Loading ---")
+
+print("\n--- Checking Tesseract OCR ---")
+import os
+from pathlib import Path
+
+tesseract_paths = [
+    r'C:\Program Files\Tesseract-OCR\tesseract.exe',
+    r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
+    # Add potential user path if needed
+]
+
+found_tesseract = False
+for path in tesseract_paths:
+    if os.path.exists(path):
+        print(f"[OK] Tesseract found at: {path}")
+        found_tesseract = True
+        break
+
+if not found_tesseract:
+    # Check PATH
+    import shutil
+    if shutil.which("tesseract"):
+        print("[OK] Tesseract found in system PATH")
+        found_tesseract = True
+    else:
+        print("[MISSING] Tesseract executable not found!")
+        print("Please install Tesseract-OCR from: https://github.com/UB-Mannheim/tesseract/wiki")
+
+print("\n--- Testing Tokenizer Loading ---")
+if pkg_ok and transformers_ok:
     try:
         from transformers import DonutProcessor
         print("Success: Transformers imported.")

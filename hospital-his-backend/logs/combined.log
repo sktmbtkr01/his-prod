@@ -16198,3 +16198,313 @@ Error: AI summary failed: LLM API failed: User not found.
 2026-01-27 02:31:59 [INFO]: [ClinicalDashboard] Fetching stats for doctor 6970e6e6ae32f124038cc0a6
 2026-01-27 02:32:00 [INFO]: [ClinicalDashboard] Response: appointments=1, labs=20, critical=9
 2026-01-27 02:32:01 [INFO]: Client disconnected: pixHqhPLKkzcMtpGAAAC
+2026-02-01 15:46:23 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.his-prod.mq4vb9k.mongodb.net
+2026-02-01 15:52:10 [ERROR]: Error connecting to MongoDB: Server selection timed out after 30000 ms
+2026-02-01 16:03:30 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:03:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:03:30 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:03:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:03:30 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:03:30 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:03:30 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:03:30 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:03:30 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:05:32 [INFO]: Client connected: seZ4RGlz14iyqdwmAAAC
+2026-02-01 16:05:32 [INFO]: User 697f2bc98682c275b402e852 joined personal room
+2026-02-01 16:05:32 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:05:32 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 0
+2026-02-01 16:05:32 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:05:32 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 0
+2026-02-01 16:05:34 [INFO]: Client disconnected: seZ4RGlz14iyqdwmAAAC
+2026-02-01 16:05:35 [INFO]: Client connected: vYxL-ei0zl2b9ahAAAAF
+2026-02-01 16:05:35 [INFO]: Socket vYxL-ei0zl2b9ahAAAAF joined emergency room
+2026-02-01 16:05:36 [INFO]: Client disconnected: vYxL-ei0zl2b9ahAAAAF
+2026-02-01 16:05:42 [INFO]: Client connected: 0LXzvBifkOCbinuUAAAI
+2026-02-01 16:05:42 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:05:42 [INFO]: User 697f2bc98682c275b402e852 joined personal room
+2026-02-01 16:05:42 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 0
+2026-02-01 16:05:42 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:05:42 [INFO]: [ReceptionistDashboard] Registrations today: 0, Total patients: 0
+2026-02-01 16:05:44 [INFO]: Client disconnected: 0LXzvBifkOCbinuUAAAI
+2026-02-01 16:06:28 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.50.42.jpeg
+2026-02-01 16:06:29 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:07:02 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.50.42.jpeg
+2026-02-01 16:07:02 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:07:19 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.51.11.jpeg
+2026-02-01 16:07:20 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:07:53 [INFO]: [PatientRegistration] New patient registered: PAT000001 - Saket Ambatkar
+2026-02-01 16:08:25 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-01 16:08:25 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-01 16:08:30 [INFO]: Client connected: jzRJAdT90LjTUo2JAAAL
+2026-02-01 16:08:30 [INFO]: Socket jzRJAdT90LjTUo2JAAAL joined emergency room
+2026-02-01 16:08:30 [INFO]: Client disconnected: jzRJAdT90LjTUo2JAAAL
+2026-02-01 16:08:31 [INFO]: Client connected: HWZhhlFPj-stXi7zAAAO
+2026-02-01 16:08:31 [INFO]: Socket HWZhhlFPj-stXi7zAAAO joined emergency room
+2026-02-01 16:09:05 [INFO]: Client disconnected: HWZhhlFPj-stXi7zAAAO
+2026-02-01 16:09:10 [INFO]: Client connected: dNNJKcytuiJJfh17AAAR
+2026-02-01 16:09:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:09:10 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-02-01 16:09:10 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:09:10 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=0, critical=0
+2026-02-01 16:09:12 [INFO]: Client disconnected: dNNJKcytuiJJfh17AAAR
+2026-02-01 16:09:15 [INFO]: Client connected: zn8YHYsQJE-NqRpLAAAU
+2026-02-01 16:09:15 [INFO]: Socket zn8YHYsQJE-NqRpLAAAU joined emergency room
+2026-02-01 16:09:33 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:48 [INFO]: Client disconnected: zn8YHYsQJE-NqRpLAAAU
+2026-02-01 16:11:11 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:26 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:11:26 [INFO]: Client connected: aAFPx9jnkz8G9ugjAAAX
+2026-02-01 16:11:26 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:11:26 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:11:26 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:11:28 [INFO]: Client disconnected: aAFPx9jnkz8G9ugjAAAX
+2026-02-01 16:11:32 [ERROR]: AI summary failed: LLM API failed: User not found.
+Error: AI summary failed: LLM API failed: User not found.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:11:40 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:11:40 [INFO]: Client connected: VRKGZTnxJAoTyTEHAAAa
+2026-02-01 16:11:40 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:11:40 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:11:40 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:11:42 [INFO]: Client disconnected: VRKGZTnxJAoTyTEHAAAa
+2026-02-01 16:17:18 [INFO]: Client connected: fj7CMbPMHY1VRmSpAAAd
+2026-02-01 16:17:18 [INFO]: Socket fj7CMbPMHY1VRmSpAAAd joined emergency room
+2026-02-01 16:17:19 [INFO]: Client disconnected: fj7CMbPMHY1VRmSpAAAd
+2026-02-01 16:17:56 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:17:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:17:56 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:17:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:17:56 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:17:56 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:17:56 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:17:56 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:17:56 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:19:02 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:19:02 [INFO]: Client connected: ZIOCIvM1MOUAVq6uAAAC
+2026-02-01 16:19:02 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:19:02 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:19:02 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:19:03 [INFO]: Client disconnected: ZIOCIvM1MOUAVq6uAAAC
+2026-02-01 16:19:13 [INFO]: Client connected: a29u4mnfoNgsgSiGAAAF
+2026-02-01 16:19:13 [INFO]: User 697f2bc98682c275b402e852 joined personal room
+2026-02-01 16:19:13 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:19:13 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:19:13 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:19:14 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:19:14 [INFO]: Client disconnected: a29u4mnfoNgsgSiGAAAF
+2026-02-01 16:19:20 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.50.42.jpeg
+2026-02-01 16:19:21 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:19:26 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.51.11.jpeg
+2026-02-01 16:19:27 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:20:09 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:20:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:20:09 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:20:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:20:09 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:20:09 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:20:09 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:20:09 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:20:09 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:21:05 [INFO]: Client connected: 4s2F3CVN-gJrUzmHAAAC
+2026-02-01 16:21:05 [INFO]: User 697f2bc98682c275b402e852 joined personal room
+2026-02-01 16:21:05 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:21:05 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:21:05 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:21:05 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:21:06 [INFO]: Client disconnected: 4s2F3CVN-gJrUzmHAAAC
+2026-02-01 16:21:12 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.50.42.jpeg
+2026-02-01 16:21:12 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:21:22 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:21:22 [INFO]: Client connected: pz2Se2G-kcygiqWYAAAF
+2026-02-01 16:21:22 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:21:22 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:21:22 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:21:23 [INFO]: Client disconnected: pz2Se2G-kcygiqWYAAAF
+2026-02-01 16:21:26 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:22:54 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:24:20 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-01 16:24:21 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-01 16:24:42 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:24:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:24:42 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:24:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:24:42 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:24:42 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:24:42 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:24:42 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:24:42 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:28:17 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:28:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:28:17 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:28:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:28:17 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:28:17 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:28:17 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:28:17 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:28:17 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:28:23 [INFO]: Client connected: h7mqGyB0eXTfmeSxAAAC
+2026-02-01 16:28:23 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:28:23 [INFO]: User 697f2bc98682c275b402e852 joined personal room
+2026-02-01 16:28:23 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:28:24 [INFO]: [ReceptionistDashboard] Fetching stats for date range: 2026-02-01T00:00:00.000Z to 2026-02-02T00:00:00.000Z
+2026-02-01 16:28:24 [INFO]: [ReceptionistDashboard] Registrations today: 2, Total patients: 2
+2026-02-01 16:28:24 [INFO]: Client disconnected: h7mqGyB0eXTfmeSxAAAC
+2026-02-01 16:28:30 [INFO]: AI OCR Service: Sending image for extraction - WhatsApp Image 2026-01-24 at 19.50.42.jpeg
+2026-02-01 16:28:33 [INFO]: AI OCR Service: Extraction successful - Confidence: low
+2026-02-01 16:28:43 [INFO]: [PatientRegistration] New patient registered: PAT000003 - Khush Sameer Thakkar
+2026-02-01 16:29:01 [INFO]: Client connected: 1DoaSrEW6PP0PzMzAAAF
+2026-02-01 16:29:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:29:01 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:29:01 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:29:01 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:29:02 [INFO]: Client disconnected: 1DoaSrEW6PP0PzMzAAAF
+2026-02-01 16:29:06 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:19 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:30:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:30:19 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:30:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:30:19 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:30:19 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:30:19 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:30:19 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:30:19 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:30:35 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:37 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:42 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:31:38 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:31:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:31:38 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:31:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:31:38 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:31:38 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:31:38 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:31:38 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:31:38 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:32:05 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:32:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:32:05 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:32:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:32:05 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:32:05 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:32:05 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:32:05 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:32:05 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:35:01 [INFO]: MongoDB Connected: ac-sw7c5k8-shard-00-00.mq4vb9k.mongodb.net
+2026-02-01 16:35:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:35:01 [INFO]:        HOSPITAL INFORMATION SYSTEM (HIS) BACKEND SERVER        
+2026-02-01 16:35:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:35:01 [INFO]: 🚀 Server running in development mode on port 5001
+2026-02-01 16:35:01 [INFO]: 📡 API Base URL: http://localhost:5001/api/v1
+2026-02-01 16:35:01 [INFO]: 🔌 WebSocket enabled
+2026-02-01 16:35:01 [INFO]: 📋 Health check: http://localhost:5001/api/health
+2026-02-01 16:35:01 [INFO]: ═══════════════════════════════════════════════════════════════
+2026-02-01 16:35:13 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:35:16 [INFO]: Client connected: OyHhkwV-J2dVxDmzAAAC
+2026-02-01 16:35:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:35:16 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0
+2026-02-01 16:35:16 [INFO]: [ClinicalDashboard] Fetching stats for doctor 697f2bc98682c275b402e84e
+2026-02-01 16:35:16 [INFO]: [ClinicalDashboard] Response: appointments=0, labs=1, critical=0

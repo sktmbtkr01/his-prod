@@ -6553,3 +6553,125 @@ Error: Not authorized to access this route
 Error: AI summary failed: LLM API failed: User not found.
     at C:\Users\yashd\OneDrive\Desktop\HIS_Quasar_Final2\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-02-01 15:46:23 [ERROR]: Error connecting to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.his-prod.mq4vb9k.mongodb.net
+2026-02-01 15:52:10 [ERROR]: Error connecting to MongoDB: Server selection timed out after 30000 ms
+2026-02-01 16:08:25 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-01 16:08:25 [ERROR]: User role 'receptionist' is not authorized to access this route
+Error: User role 'receptionist' is not authorized to access this route
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\middleware\rbac.middleware.js:22:17
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:376:14)
+    at router.process_params (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\express\lib\router\index.js:280:10)
+2026-02-01 16:09:33 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:09:34 [ERROR]: Trauma Level 1 bundle not found
+Error: Trauma Level 1 bundle not found
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\emergency.orderSet.controller.js:43:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:11:11 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:12 [ERROR]: LabTest validation failed: results.0.value: Path `value` is required.
+ValidationError: LabTest validation failed: results.0.value: Path `value` is required.
+    at Document.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3221:32)
+    at Subdocument.invalidate (C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\types\subdocument.js:229:12)
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\document.js:3014:17
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\node_modules\mongoose\lib\schematype.js:1368:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+2026-02-01 16:11:32 [ERROR]: AI summary failed: LLM API failed: User not found.
+Error: AI summary failed: LLM API failed: User not found.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:21:26 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:22:54 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:24:20 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-01 16:24:21 [ERROR]: Invalid credentials
+Error: Invalid credentials
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\auth.controller.js:36:21
+2026-02-01 16:29:06 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:35 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:37 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:30:42 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-01 16:35:13 [ERROR]: AI summary failed: All LLM services failed to generate summary.
+Error: AI summary failed: All LLM services failed to generate summary.
+    at C:\Users\SAKET\Desktop\his-prod\HIS_Quasar\hospital-his-backend\controllers\lab.controller.js:456:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

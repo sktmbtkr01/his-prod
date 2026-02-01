@@ -1,129 +1,138 @@
 /**
  * LLM Client Service - Lab Report Summarization
  * Uses OpenRouter API with configurable model
+ * Fallback: Google Gemini API
  */
 
 const axios = require('axios');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 // OpenRouter Configuration
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'google/gemma-3-27b-it:free';
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
+// Google Gemini Configuration (Fallback)
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const genAI = GOOGLE_API_KEY ? new GoogleGenerativeAI(GOOGLE_API_KEY) : null;
+
 /**
- * Summarize a lab report using OpenRouter LLM
+ * Summarize a lab report using OpenRouter LLM (with Gemini Fallback)
  * @param {string} extractedText - Raw text extracted from the PDF
  * @returns {Promise<Object>} - Structured summary JSON
  */
 const summarizeLabReport = async (extractedText) => {
-    if (!OPENROUTER_API_KEY) {
-        console.warn('[LLM] OPENROUTER_API_KEY not configured, returning mock summary');
-        return getMockSummary();
-    }
-
     try {
-        const prompt = `You are a clinical lab report analyzer helping physicians quickly understand lab results.
+        console.log(`[LLM] Attempting summary with OpenRouter (${OPENROUTER_MODEL})...`);
+        return await summarizeWithOpenRouter(extractedText);
+    } catch (openRouterError) {
+        console.warn(`[LLM] OpenRouter failed: ${openRouterError.message}. Attempting fallback to Gemini...`);
 
-LAB DATA:
-${extractedText}
-
-Note: The data above may include manually entered lab values (with NORMAL/ABNORMAL/CRITICAL flags) and/or text extracted from a PDF report. Analyze all available information.
-
-INSTRUCTIONS:
-- Write a clear, concise summary in PARAGRAPH format
-- Use bullet points only when listing multiple abnormal values
-- Start with an overall assessment paragraph
-- Highlight critical/abnormal findings with clinical significance
-- Mention normal results briefly
-- End with clinical recommendations if applicable
-
-RESPOND IN THIS EXACT JSON FORMAT (no markdown, just raw JSON):
-{
-    "summary": "A 2-3 paragraph clinical summary of the lab report. First paragraph: Overall assessment and key findings. Second paragraph: Details on any abnormal values and their clinical significance. Third paragraph (if needed): Recommendations or observations.",
-    "abnormalValues": [
-        {"parameter": "Parameter Name", "value": "Measured Value", "significance": "Brief clinical significance"}
-    ],
-    "overallStatus": "normal|attention_needed|critical",
-    "clinicalRecommendation": "Any suggested follow-up or clinical action",
-    "disclaimer": "AI-generated summary. Not a diagnosis. Doctor must verify."
-}`;
-
-        const response = await axios.post(
-            OPENROUTER_BASE_URL,
-            {
-                model: OPENROUTER_MODEL,
-                messages: [
-                    {
-                        role: 'user',
-                        content: prompt,
-                    },
-                ],
-                temperature: 0.3,
-                max_tokens: 2000,
-            },
-            {
-                headers: {
-                    'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-                    'Content-Type': 'application/json',
-                    'HTTP-Referer': 'http://localhost:5001',
-                    'X-Title': 'Hospital HIS Lab Report Summarizer',
-                },
+        if (genAI) {
+            try {
+                return await summarizeWithGemini(extractedText);
+            } catch (geminiError) {
+                console.error(`[LLM] Gemini fallback failed: ${geminiError.message}`);
+                throw new Error('All LLM services failed to generate summary.');
             }
-        );
-
-        const content = response.data.choices?.[0]?.message?.content;
-
-        if (!content) {
-            throw new Error('Empty response from LLM');
+        } else {
+            console.warn('[LLM] No Google API Key for fallback. Returning validation error.');
+            throw new Error('AI Service unavailable (OpenRouter failed and Google Key missing).');
         }
-
-        // Parse JSON from response (handle potential markdown wrapping)
-        let jsonStr = content.trim();
-        if (jsonStr.startsWith('```json')) {
-            jsonStr = jsonStr.slice(7);
-        }
-        if (jsonStr.startsWith('```')) {
-            jsonStr = jsonStr.slice(3);
-        }
-        if (jsonStr.endsWith('```')) {
-            jsonStr = jsonStr.slice(0, -3);
-        }
-        jsonStr = jsonStr.trim();
-
-        const summary = JSON.parse(jsonStr);
-        summary.generatedAt = new Date().toISOString();
-        summary.model = OPENROUTER_MODEL;
-
-        console.log(`[LLM] Summary generated successfully using ${OPENROUTER_MODEL}`);
-        return summary;
-
-    } catch (error) {
-        console.error('[LLM] OpenRouter API error:', error.response?.data || error.message);
-
-        // Return error info for debugging
-        throw new Error(`LLM API failed: ${error.response?.data?.error?.message || error.message}`);
     }
 };
 
 /**
- * Fallback mock summary when API is not configured
+ * OpenRouter Implementation
  */
-const getMockSummary = () => ({
-    keyFindings: [
+const summarizeWithOpenRouter = async (extractedText) => {
+    if (!OPENROUTER_API_KEY) throw new Error('OpenRouter API Key missing');
+
+    const prompt = getPrompt(extractedText);
+
+    const response = await axios.post(
+        OPENROUTER_BASE_URL,
         {
-            parameter: "Hemoglobin",
-            value: "14.2 g/dL",
-            referenceRange: "12.0-17.5 g/dL",
-            status: "normal",
+            model: OPENROUTER_MODEL,
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0.3,
+            max_tokens: 2000,
+            response_format: { type: "json_object" } // Hints for JSON
         },
+        {
+            headers: {
+                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+                'Content-Type': 'application/json',
+                'HTTP-Referer': 'http://localhost:5001',
+                'X-Title': 'Hospital HIS Lab Report Summarizer',
+            },
+        }
+    );
+
+    const content = response.data.choices?.[0]?.message?.content;
+    if (!content) throw new Error('Empty response from OpenRouter');
+
+    return parseResponse(content, OPENROUTER_MODEL);
+};
+
+/**
+ * Gemini Implementation (Fallback)
+ */
+const summarizeWithGemini = async (extractedText) => {
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown formatting.";
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+
+    return parseResponse(text, "gemini-1.5-pro");
+};
+
+/**
+ * Helper: Parse JSON from LLM response
+ */
+const parseResponse = (content, modelName) => {
+    let jsonStr = content.trim();
+    // Remove markdown code blocks if present
+    if (jsonStr.startsWith('```json')) jsonStr = jsonStr.slice(7);
+    if (jsonStr.startsWith('```')) jsonStr = jsonStr.slice(3);
+    if (jsonStr.endsWith('```')) jsonStr = jsonStr.slice(0, -3);
+
+    try {
+        const summary = JSON.parse(jsonStr.trim());
+        summary.generatedAt = new Date().toISOString();
+        summary.model = modelName;
+        console.log(`[LLM] Summary generated successfully using ${modelName}`);
+        return summary;
+    } catch (e) {
+        console.error("[LLM] Failed to parse JSON response:", jsonStr);
+        throw new Error("Invalid JSON response from AI");
+    }
+};
+
+/**
+ * Helper: Construct Prompt
+ */
+const getPrompt = (text) => `You are a clinical lab report analyzer helping physicians.
+LAB DATA:
+${text}
+
+INSTRUCTIONS:
+- Write a clear, concise summary in PARAGRAPH format.
+- Highlight critical/abnormal findings.
+- End with clinical recommendations if applicable.
+
+RESPOND IN THIS EXACT JSON FORMAT:
+{
+    "summary": "2-3 paragraph clinical summary...",
+    "abnormalValues": [
+        {"parameter": "Name", "value": "Value", "significance": "Significance"}
     ],
-    abnormalValues: [],
-    normalResults: ["All parameters within normal limits (mock data)"],
-    clinicalNotes: "API key not configured. This is mock data.",
-    disclaimer: "AI-generated summary. Not a diagnosis. Doctor must verify.",
-    generatedAt: new Date().toISOString(),
-    model: "mock",
-});
+    "overallStatus": "normal|attention_needed|critical",
+    "clinicalRecommendation": "Follow-up action...",
+    "disclaimer": "AI-generated summary. Not a diagnosis."
+}`;
 
 module.exports = {
     summarizeLabReport,
