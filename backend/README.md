@@ -1,4 +1,14 @@
-# HIS Backend README
+---
+title: His Prod Backend
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+app_port: 7860
+---
+
+# HIS Backend
 # Deployment on Hugging Face Spaces
 
 ## Structure
