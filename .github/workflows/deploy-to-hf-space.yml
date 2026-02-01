@@ -34,12 +34,14 @@ jobs:
           
           # Initialize a new git repo for the backend
           rm -rf .git
-          git init
+          git init -b main
           git remote add space https://${HF_USERNAME}:${HF_TOKEN}@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME}
           
-          # Add all files and push
+          # Add all files and commit
           git add .
           git commit -m "Auto-deploy from GitHub: $(date +'%Y-%m-%d %H:%M:%S')"
+          
+          # Push to HF Space (force push to overwrite)
           git push space main --force
           
           echo "✅ Successfully deployed to Hugging Face Space!"
