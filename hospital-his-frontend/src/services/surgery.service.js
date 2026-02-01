@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/surgery';
+const SURGERY_URL = `${API_URL}/surgery`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -13,51 +14,51 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     getDashboard: async () => {
-        const response = await axios.get(`${API_URL}/dashboard`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/dashboard`, getConfig());
         return response.data;
     },
 
     scheduleSurgery: async (data) => {
-        const response = await axios.post(`${API_URL}/schedule`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedule`, data, getConfig());
         return response.data;
     },
 
     getAllSchedules: async (params) => {
         const config = getConfig();
         config.params = params;
-        const response = await axios.get(`${API_URL}/schedules`, config);
+        const response = await axios.get(`${SURGERY_URL}/schedules`, config);
         return response.data;
     },
 
     getScheduleById: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}`, getConfig());
         return response.data;
     },
 
     updateSchedule: async (id, data) => {
-        const response = await axios.put(`${API_URL}/schedules/${id}`, data, getConfig());
+        const response = await axios.put(`${SURGERY_URL}/schedules/${id}`, data, getConfig());
         return response.data;
     },
 
     getOTRoster: async (date) => {
         const config = getConfig();
         if (date) config.params = { date };
-        const response = await axios.get(`${API_URL}/ot-roster`, config);
+        const response = await axios.get(`${SURGERY_URL}/ot-roster`, config);
         return response.data;
     },
 
     startSurgery: async (id) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/start`, {}, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/start`, {}, getConfig());
         return response.data;
     },
 
     completeSurgery: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/complete`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/complete`, data, getConfig());
         return response.data;
     },
 
     cancelSurgery: async (id, reason) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/cancel`, { reason }, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/cancel`, { reason }, getConfig());
         return response.data;
     },
 
@@ -66,12 +67,12 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     addPreOpAssessment: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/pre-op-assessment`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/pre-op-assessment`, data, getConfig());
         return response.data;
     },
 
     getPreOpAssessment: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/pre-op-assessment`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/pre-op-assessment`, getConfig());
         return response.data;
     },
 
@@ -80,22 +81,22 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     updateWHOSignIn: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/who-checklist/sign-in`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/who-checklist/sign-in`, data, getConfig());
         return response.data;
     },
 
     updateWHOTimeOut: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/who-checklist/time-out`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/who-checklist/time-out`, data, getConfig());
         return response.data;
     },
 
     updateWHOSignOut: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/who-checklist/sign-out`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/who-checklist/sign-out`, data, getConfig());
         return response.data;
     },
 
     getWHOChecklist: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/who-checklist`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/who-checklist`, getConfig());
         return response.data;
     },
 
@@ -104,22 +105,22 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     addAnesthesiaRecord: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/anesthesia-record`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/anesthesia-record`, data, getConfig());
         return response.data;
     },
 
     addAnesthesiaVitals: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/anesthesia-record/vitals`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/anesthesia-record/vitals`, data, getConfig());
         return response.data;
     },
 
     addAnesthesiaDrug: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/anesthesia-record/drug`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/anesthesia-record/drug`, data, getConfig());
         return response.data;
     },
 
     getAnesthesiaRecord: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/anesthesia-record`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/anesthesia-record`, getConfig());
         return response.data;
     },
 
@@ -128,12 +129,12 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     addImplantConsumable: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/implants-consumables`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/implants-consumables`, data, getConfig());
         return response.data;
     },
 
     getImplantsConsumables: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/implants-consumables`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/implants-consumables`, getConfig());
         return response.data;
     },
 
@@ -142,12 +143,12 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     addIntraOpNote: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/intra-op-notes`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/intra-op-notes`, data, getConfig());
         return response.data;
     },
 
     getIntraOpNotes: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/intra-op-notes`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/intra-op-notes`, getConfig());
         return response.data;
     },
 
@@ -156,18 +157,18 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     addPostOpOrder: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/post-op-orders`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/post-op-orders`, data, getConfig());
         return response.data;
     },
 
     getPostOpOrders: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/post-op-orders`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/post-op-orders`, getConfig());
         return response.data;
     },
 
     updatePostOpOrderStatus: async (surgeryId, orderIndex, status) => {
         const response = await axios.put(
-            `${API_URL}/schedules/${surgeryId}/post-op-orders/${orderIndex}`,
+            `${SURGERY_URL}/schedules/${surgeryId}/post-op-orders/${orderIndex}`,
             { status },
             getConfig()
         );
@@ -179,12 +180,12 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     updateInfectionControl: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/infection-control`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/infection-control`, data, getConfig());
         return response.data;
     },
 
     getInfectionControl: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/infection-control`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/infection-control`, getConfig());
         return response.data;
     },
 
@@ -193,12 +194,12 @@ const surgeryService = {
     // ═══════════════════════════════════════════════════════════════════════════════
 
     generateOTBilling: async (id, data) => {
-        const response = await axios.post(`${API_URL}/schedules/${id}/generate-billing`, data, getConfig());
+        const response = await axios.post(`${SURGERY_URL}/schedules/${id}/generate-billing`, data, getConfig());
         return response.data;
     },
 
     getOTBilling: async (id) => {
-        const response = await axios.get(`${API_URL}/schedules/${id}/billing`, getConfig());
+        const response = await axios.get(`${SURGERY_URL}/schedules/${id}/billing`, getConfig());
         return response.data;
     },
 };

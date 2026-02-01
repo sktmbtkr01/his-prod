@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/staff';
+const STAFF_URL = `${API_URL}/staff`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -11,17 +12,17 @@ const staffService = {
     getAllStaff: async (params) => {
         const config = getConfig();
         config.params = params;
-        const response = await axios.get(API_URL, config);
+        const response = await axios.get(STAFF_URL, config);
         return response.data;
     },
 
     getDoctors: async () => {
-        const response = await axios.get(`${API_URL}/doctors`, getConfig());
+        const response = await axios.get(`${STAFF_URL}/doctors`, getConfig());
         return response.data;
     },
 
     getStaffById: async (id) => {
-        const response = await axios.get(`${API_URL}/${id}`, getConfig());
+        const response = await axios.get(`${STAFF_URL}/${id}`, getConfig());
         return response.data;
     }
 };

@@ -21,8 +21,7 @@ import {
 import axios from 'axios';
 import CarePlanCreator from '../../components/doctor/CarePlanCreator';
 import * as carePlanService from '../../services/careplan.service';
-
-const API_URL = 'http://localhost:5001/api/v1';
+import { API_URL } from '../../config/api';
 
 const getAuthHeaders = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -315,33 +314,30 @@ const DoctorRounds = () => {
                                     <div className="flex border-b border-gray-100">
                                         <button
                                             onClick={() => setActiveTab('careplans')}
-                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
-                                                activeTab === 'careplans'
+                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${activeTab === 'careplans'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
                                                     : 'text-gray-600 hover:text-gray-800'
-                                            }`}
+                                                }`}
                                         >
                                             <ClipboardList className="w-5 h-5" />
                                             Care Plans
                                         </button>
                                         <button
                                             onClick={() => setActiveTab('vitals')}
-                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
-                                                activeTab === 'vitals'
+                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${activeTab === 'vitals'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
                                                     : 'text-gray-600 hover:text-gray-800'
-                                            }`}
+                                                }`}
                                         >
                                             <Activity className="w-5 h-5" />
                                             Vitals ({vitals.length})
                                         </button>
                                         <button
                                             onClick={() => setActiveTab('notes')}
-                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${
-                                                activeTab === 'notes'
+                                            className={`px-6 py-4 font-medium flex items-center gap-2 transition-colors ${activeTab === 'notes'
                                                     ? 'text-indigo-600 border-b-2 border-indigo-600'
                                                     : 'text-gray-600 hover:text-gray-800'
-                                            }`}
+                                                }`}
                                         >
                                             <FileText className="w-5 h-5" />
                                             Nursing Notes ({nursingNotes.length})
@@ -367,20 +363,18 @@ const DoctorRounds = () => {
                                                     <div
                                                         key={plan._id}
                                                         onClick={() => setSelectedCarePlan(plan)}
-                                                        className={`p-6 cursor-pointer hover:bg-gray-50 transition-colors ${
-                                                            selectedCarePlan?._id === plan._id ? 'bg-indigo-50' : ''
-                                                        }`}
+                                                        className={`p-6 cursor-pointer hover:bg-gray-50 transition-colors ${selectedCarePlan?._id === plan._id ? 'bg-indigo-50' : ''
+                                                            }`}
                                                     >
                                                         <div className="flex items-start justify-between">
                                                             <div>
                                                                 <h4 className="font-semibold text-gray-800">{plan.title}</h4>
                                                                 <p className="text-sm text-gray-600 mt-1">{plan.description}</p>
                                                                 <div className="flex items-center gap-4 mt-3">
-                                                                    <span className={`text-xs px-2 py-1 rounded-full ${
-                                                                        plan.status === 'active'
+                                                                    <span className={`text-xs px-2 py-1 rounded-full ${plan.status === 'active'
                                                                             ? 'bg-green-100 text-green-700'
                                                                             : 'bg-gray-100 text-gray-600'
-                                                                    }`}>
+                                                                        }`}>
                                                                         {plan.status}
                                                                     </span>
                                                                     <span className="text-xs text-gray-500">
@@ -497,41 +491,41 @@ const DoctorRounds = () => {
                                             )}
                                         </div>
                                     )}
-                                <div>
-                                    {carePlans.length === 0 ? (
-                                        <div className="p-8 text-center text-gray-500">
-                                            <button
-                                                onClick={() => setShowCarePlanCreator(true)}
-                                                className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-600 rounded-lg hover:bg-indigo-200 transition-colors"
-                                            >
-                                                Create First Care Plan
-                                            </button>
-                                        </div>
-                                    ) : (
-                                        carePlans.map((plan) => (
-                                            <div key={plan._id} className="p-4">
-                                                <div className="flex items-start justify-between mb-3">
-                                                    <div>
-                                                        <h4 className="font-semibold text-gray-800">{plan.title}</h4>
-                                                        <div className="flex items-center gap-2 mt-1">
-                                                            <span className={`px-2 py-0.5 rounded text-xs font-medium ${getStatusColor(plan.status)}`}>
-                                                                {plan.status}
-                                                            </span>
-                                                            <span className="text-xs text-gray-400">
-                                                                Created: {new Date(plan.createdAt).toLocaleDateString()}
-                                                            </span>
+                                    <div>
+                                        {carePlans.length === 0 ? (
+                                            <div className="p-8 text-center text-gray-500">
+                                                <button
+                                                    onClick={() => setShowCarePlanCreator(true)}
+                                                    className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-600 rounded-lg hover:bg-indigo-200 transition-colors"
+                                                >
+                                                    Create First Care Plan
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            carePlans.map((plan) => (
+                                                <div key={plan._id} className="p-4">
+                                                    <div className="flex items-start justify-between mb-3">
+                                                        <div>
+                                                            <h4 className="font-semibold text-gray-800">{plan.title}</h4>
+                                                            <div className="flex items-center gap-2 mt-1">
+                                                                <span className={`px-2 py-0.5 rounded text-xs font-medium ${getStatusColor(plan.status)}`}>
+                                                                    {plan.status}
+                                                                </span>
+                                                                <span className="text-xs text-gray-400">
+                                                                    Created: {new Date(plan.createdAt).toLocaleDateString()}
+                                                                </span>
+                                                            </div>
                                                         </div>
+                                                        <button
+                                                            onClick={() => setSelectedCarePlan(selectedCarePlan?._id === plan._id ? null : plan)}
+                                                            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                                                        >
+                                                            <Eye className="w-4 h-4 text-gray-400" />
+                                                        </button>
                                                     </div>
-                                                    <button
-                                                        onClick={() => setSelectedCarePlan(selectedCarePlan?._id === plan._id ? null : plan)}
-                                                        className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                                                    >
-                                                        <Eye className="w-4 h-4 text-gray-400" />
-                                                    </button>
-                                                </div>
 
-                                                {/* Expanded Care Plan Details */}
-                                                <AnimatePresence>
+                                                    {/* Expanded Care Plan Details */}
+                                                    <AnimatePresence>
                                                         {selectedCarePlan?._id === plan._id && (
                                                             <motion.div
                                                                 initial={{ opacity: 0, height: 0 }}
@@ -549,7 +543,7 @@ const DoctorRounds = () => {
                                                                         {plan.goals?.map((goal, idx) => (
                                                                             <div key={idx} className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                                                                                 <div className={`w-2 h-2 rounded-full ${goal.status === 'achieved' ? 'bg-green-500' :
-                                                                                        goal.status === 'active' ? 'bg-blue-500' : 'bg-gray-300'
+                                                                                    goal.status === 'active' ? 'bg-blue-500' : 'bg-gray-300'
                                                                                     }`} />
                                                                                 <span className="text-sm text-gray-700 flex-1">{goal.description}</span>
                                                                                 <span className={`px-2 py-0.5 rounded text-xs ${getPriorityColor(goal.priority)}`}>

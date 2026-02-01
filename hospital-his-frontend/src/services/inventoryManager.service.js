@@ -5,8 +5,8 @@
  */
 
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1';
 const BASE_URL = `${API_URL}/inventory-manager`;
 
 // Create axios instance with auth header

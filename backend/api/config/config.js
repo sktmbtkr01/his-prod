@@ -18,9 +18,10 @@ const config = {
     jwtExpire: process.env.JWT_EXPIRE || '7d',
     jwtRefreshExpire: process.env.JWT_REFRESH_EXPIRE || '30d',
 
-    // ML Services URLs
-    mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5001',
-    mlPredictServiceUrl: process.env.ML_PREDICT_SERVICE_URL || 'http://localhost:5002',
+    // ML Services URLs (internal container ports)
+    mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5002',
+    mlPredictServiceUrl: process.env.ML_PREDICT_SERVICE_URL || 'http://localhost:5003',
+    ocrServiceUrl: process.env.OCR_SERVICE_URL || 'http://localhost:8000',
 
     // Email/SMTP Configuration
     smtp: {

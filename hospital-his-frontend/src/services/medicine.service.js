@@ -4,8 +4,9 @@
  */
 
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/medicines';
+const MEDICINE_URL = `${API_URL}/medicines`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -23,7 +24,7 @@ const getConfig = () => {
  */
 export const searchMedicines = async (query, limit = 15) => {
     const response = await axios.get(
-        `${API_URL}/search`,
+        `${MEDICINE_URL}/search`,
         {
             params: { q: query, limit },
             ...getConfig()
@@ -39,7 +40,7 @@ export const getMedicines = async (page = 1, limit = 50, category = null) => {
     const params = { page, limit };
     if (category) params.category = category;
 
-    const response = await axios.get(API_URL, {
+    const response = await axios.get(MEDICINE_URL, {
         params,
         ...getConfig()
     });
@@ -50,7 +51,7 @@ export const getMedicines = async (page = 1, limit = 50, category = null) => {
  * Get medicine by ID
  */
 export const getMedicineById = async (id) => {
-    const response = await axios.get(`${API_URL}/${id}`, getConfig());
+    const response = await axios.get(`${MEDICINE_URL}/${id}`, getConfig());
     return response.data;
 };
 
@@ -58,7 +59,7 @@ export const getMedicineById = async (id) => {
  * Get all medicine categories
  */
 export const getMedicineCategories = async () => {
-    const response = await axios.get(`${API_URL}/meta/categories`, getConfig());
+    const response = await axios.get(`${MEDICINE_URL}/meta/categories`, getConfig());
     return response.data;
 };
 

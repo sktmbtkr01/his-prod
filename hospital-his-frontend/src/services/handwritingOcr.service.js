@@ -4,8 +4,9 @@
  */
 
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/ocr';
+const OCR_URL = `${API_URL}/ocr`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -24,7 +25,7 @@ const getConfig = () => {
  */
 export const convertHandwriting = async (imageData, section = 'combined') => {
     const response = await axios.post(
-        `${API_URL}/handwriting`,
+        `${OCR_URL}/handwriting`,
         { imageData, section },
         getConfig()
     );
@@ -37,7 +38,7 @@ export const convertHandwriting = async (imageData, section = 'combined') => {
  */
 export const convertSectionedHandwriting = async (canvasData) => {
     const response = await axios.post(
-        `${API_URL}/handwriting/sectioned`,
+        `${OCR_URL}/handwriting/sectioned`,
         canvasData,
         getConfig()
     );
@@ -48,7 +49,7 @@ export const convertSectionedHandwriting = async (canvasData) => {
  * Check OCR service health
  */
 export const checkOcrHealth = async () => {
-    const response = await axios.get(`${API_URL}/health`, getConfig());
+    const response = await axios.get(`${OCR_URL}/health`, getConfig());
     return response.data;
 };
 

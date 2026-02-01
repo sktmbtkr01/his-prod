@@ -19,8 +19,7 @@ import {
     TrendingUp
 } from 'lucide-react';
 import RiskScoreChart from '../../components/charts/RiskScoreChart';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1';
+import { API_URL } from '../../config/api';
 
 const PatientEMR = () => {
     const { patientId } = useParams();
@@ -435,7 +434,7 @@ const PatientEMR = () => {
                                     })()}
                                     {lt.reportPdf && (
                                         <a
-                                            href={`http://localhost:5001/${lt.reportPdf}`}
+                                            href={`${API_URL.replace('/api/v1', '')}/${lt.reportPdf}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-1 mt-2 text-primary text-sm hover:underline"

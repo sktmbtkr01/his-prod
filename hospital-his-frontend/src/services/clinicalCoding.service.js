@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/clinical-coding';
+const CLINICAL_CODING_URL = `${API_URL}/clinical-coding`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -14,27 +15,27 @@ const getConfig = () => {
 const getProcedureCodes = async (params = {}) => {
     const config = getConfig();
     config.params = params;
-    const response = await axios.get(`${API_URL}/procedure-codes`, config);
+    const response = await axios.get(`${CLINICAL_CODING_URL}/procedure-codes`, config);
     return response.data;
 };
 
 const getProcedureCodeById = async (id) => {
-    const response = await axios.get(`${API_URL}/procedure-codes/${id}`, getConfig());
+    const response = await axios.get(`${CLINICAL_CODING_URL}/procedure-codes/${id}`, getConfig());
     return response.data;
 };
 
 const createProcedureCode = async (data) => {
-    const response = await axios.post(`${API_URL}/procedure-codes`, data, getConfig());
+    const response = await axios.post(`${CLINICAL_CODING_URL}/procedure-codes`, data, getConfig());
     return response.data;
 };
 
 const updateProcedureCode = async (id, data) => {
-    const response = await axios.put(`${API_URL}/procedure-codes/${id}`, data, getConfig());
+    const response = await axios.put(`${CLINICAL_CODING_URL}/procedure-codes/${id}`, data, getConfig());
     return response.data;
 };
 
 const deleteProcedureCode = async (id) => {
-    const response = await axios.delete(`${API_URL}/procedure-codes/${id}`, getConfig());
+    const response = await axios.delete(`${CLINICAL_CODING_URL}/procedure-codes/${id}`, getConfig());
     return response.data;
 };
 
@@ -43,43 +44,43 @@ const deleteProcedureCode = async (id) => {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const getDashboard = async () => {
-    const response = await axios.get(`${API_URL}/dashboard`, getConfig());
+    const response = await axios.get(`${CLINICAL_CODING_URL}/dashboard`, getConfig());
     return response.data;
 };
 
 const getPendingReview = async (params = {}) => {
     const config = getConfig();
     config.params = params;
-    const response = await axios.get(`${API_URL}/pending-review`, config);
+    const response = await axios.get(`${CLINICAL_CODING_URL}/pending-review`, config);
     return response.data;
 };
 
 const getCodingRecords = async (params = {}) => {
     const config = getConfig();
     config.params = params;
-    const response = await axios.get(`${API_URL}/records`, config);
+    const response = await axios.get(`${CLINICAL_CODING_URL}/records`, config);
     return response.data;
 };
 
 const getCodingRecordById = async (id) => {
-    const response = await axios.get(`${API_URL}/records/${id}`, getConfig());
+    const response = await axios.get(`${CLINICAL_CODING_URL}/records/${id}`, getConfig());
     return response.data;
 };
 
 const getCodingByEncounter = async (encounterId, encounterModel) => {
     const config = getConfig();
     config.params = { encounterModel };
-    const response = await axios.get(`${API_URL}/encounter/${encounterId}`, config);
+    const response = await axios.get(`${CLINICAL_CODING_URL}/encounter/${encounterId}`, config);
     return response.data;
 };
 
 const getTransitions = async (recordId) => {
-    const response = await axios.get(`${API_URL}/records/${recordId}/transitions`, getConfig());
+    const response = await axios.get(`${CLINICAL_CODING_URL}/records/${recordId}/transitions`, getConfig());
     return response.data;
 };
 
 const getRecordAudit = async (recordId) => {
-    const response = await axios.get(`${API_URL}/records/${recordId}/audit`, getConfig());
+    const response = await axios.get(`${CLINICAL_CODING_URL}/records/${recordId}/audit`, getConfig());
     return response.data;
 };
 
@@ -88,13 +89,13 @@ const getRecordAudit = async (recordId) => {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const updateCodingRecord = async (id, data) => {
-    const response = await axios.put(`${API_URL}/records/${id}`, data, getConfig());
+    const response = await axios.put(`${CLINICAL_CODING_URL}/records/${id}`, data, getConfig());
     return response.data;
 };
 
 const addCodesToRecord = async (recordId, codes) => {
     const response = await axios.post(
-        `${API_URL}/records/${recordId}/codes`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/codes`,
         { codes },
         getConfig()
     );
@@ -103,7 +104,7 @@ const addCodesToRecord = async (recordId, codes) => {
 
 const removeCodeFromRecord = async (recordId, codeId) => {
     const response = await axios.delete(
-        `${API_URL}/records/${recordId}/codes/${codeId}`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/codes/${codeId}`,
         getConfig()
     );
     return response.data;
@@ -118,7 +119,7 @@ const removeCodeFromRecord = async (recordId, codeId) => {
  */
 const startCoding = async (recordId) => {
     const response = await axios.post(
-        `${API_URL}/records/${recordId}/start`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/start`,
         {},
         getConfig()
     );
@@ -130,7 +131,7 @@ const startCoding = async (recordId) => {
  */
 const submitForReview = async (recordId) => {
     const response = await axios.post(
-        `${API_URL}/records/${recordId}/submit`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/submit`,
         {},
         getConfig()
     );
@@ -143,7 +144,7 @@ const submitForReview = async (recordId) => {
  */
 const approveCoding = async (recordId) => {
     const response = await axios.post(
-        `${API_URL}/records/${recordId}/approve`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/approve`,
         {},
         getConfig()
     );
@@ -158,7 +159,7 @@ const approveCoding = async (recordId) => {
  */
 const returnForCorrection = async (recordId, reason) => {
     const response = await axios.post(
-        `${API_URL}/records/${recordId}/return`,
+        `${CLINICAL_CODING_URL}/records/${recordId}/return`,
         { reason },
         getConfig()
     );

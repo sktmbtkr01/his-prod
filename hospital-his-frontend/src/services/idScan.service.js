@@ -6,8 +6,9 @@
  */
 
 import axios from 'axios';
+import { API_URL, OCR_BASE_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/patients/';
+const PATIENTS_URL = `${API_URL}/patients/`;
 
 /**
  * Get authorization config from localStorage
@@ -42,7 +43,7 @@ const scanIdCard = async (imageFile) => {
 
     try {
         const response = await axios.post(
-            `${API_URL}scan-id`,
+            `${PATIENTS_URL}scan-id`,
             formData,
             getConfig()
         );
@@ -77,7 +78,7 @@ const scanIdCard = async (imageFile) => {
  */
 const checkServiceAvailability = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/health', {
+        const response = await axios.get(`${OCR_BASE_URL}/health`, {
             timeout: 3000
         });
         return response.data.status === 'healthy';

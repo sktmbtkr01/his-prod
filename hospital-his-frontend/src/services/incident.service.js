@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/incidents';
+const INCIDENTS_URL = `${API_URL}/incidents`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -11,7 +12,7 @@ const getConfig = () => {
  * Create a new incident report
  */
 const createIncident = async (incidentData) => {
-    const response = await axios.post(API_URL, incidentData, getConfig());
+    const response = await axios.post(INCIDENTS_URL, incidentData, getConfig());
     return response.data;
 };
 
@@ -21,7 +22,7 @@ const createIncident = async (incidentData) => {
 const getAllIncidents = async (params = {}) => {
     const config = getConfig();
     config.params = params;
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(INCIDENTS_URL, config);
     return response.data;
 };
 
@@ -29,7 +30,7 @@ const getAllIncidents = async (params = {}) => {
  * Get incident report by ID
  */
 const getIncidentById = async (id) => {
-    const response = await axios.get(`${API_URL}/${id}`, getConfig());
+    const response = await axios.get(`${INCIDENTS_URL}/${id}`, getConfig());
     return response.data;
 };
 
@@ -39,7 +40,7 @@ const getIncidentById = async (id) => {
 const getMyIncidents = async () => {
     const config = getConfig();
     config.params = { myReports: 'true' };
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(INCIDENTS_URL, config);
     return response.data;
 };
 
@@ -49,7 +50,7 @@ const getMyIncidents = async () => {
 const getDepartmentIncidents = async () => {
     const config = getConfig();
     config.params = { departmentReports: 'true' };
-    const response = await axios.get(API_URL, config);
+    const response = await axios.get(INCIDENTS_URL, config);
     return response.data;
 };
 
@@ -57,7 +58,7 @@ const getDepartmentIncidents = async () => {
  * Update incident status
  */
 const updateStatus = async (id, status, reviewNotes) => {
-    const response = await axios.put(`${API_URL}/${id}/status`, { status, reviewNotes }, getConfig());
+    const response = await axios.put(`${INCIDENTS_URL}/${id}/status`, { status, reviewNotes }, getConfig());
     return response.data;
 };
 
@@ -65,7 +66,7 @@ const updateStatus = async (id, status, reviewNotes) => {
  * Reassign incident to another user (Admin only)
  */
 const reassignIncident = async (id, assignedTo) => {
-    const response = await axios.put(`${API_URL}/${id}/assign`, { assignedTo }, getConfig());
+    const response = await axios.put(`${INCIDENTS_URL}/${id}/assign`, { assignedTo }, getConfig());
     return response.data;
 };
 
@@ -73,7 +74,7 @@ const reassignIncident = async (id, assignedTo) => {
  * Add review notes
  */
 const addReviewNotes = async (id, reviewNotes) => {
-    const response = await axios.put(`${API_URL}/${id}/notes`, { reviewNotes }, getConfig());
+    const response = await axios.put(`${INCIDENTS_URL}/${id}/notes`, { reviewNotes }, getConfig());
     return response.data;
 };
 

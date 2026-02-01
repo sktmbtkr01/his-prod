@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import io from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
+import { SOCKET_URL } from '../../config/api';
 
-const SOCKET_URL = 'http://localhost:5001';
 const POLLING_INTERVAL = 30000; // 30 seconds
 
 // Custom CountUp Component for animated numbers

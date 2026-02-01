@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { Activity, TrendingUp, Shield } from 'lucide-react';
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5001/api/v1/';
+import { API_URL } from '../../config/api';
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     return { headers: { Authorization: `Bearer ${user?.token}` } };

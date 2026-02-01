@@ -1,13 +1,18 @@
 """
-Flask API for Predictive Analytics ML Service
+FastAPI API for Predictive Analytics ML Service
 Provides endpoints for OPD, bed occupancy, and lab workload predictions
 """
 
 import os
 import sys
 from datetime import datetime
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from typing import Optional, List
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
 # Add parent directory to path for shared imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -17,18 +22,6 @@ from config import Config
 from opd_predictor import get_opd_predictor
 from bed_predictor import get_bed_predictor
 from lab_predictor import get_lab_predictor
-
-# Initialize Flask app
-app = Flask(__name__)
-
-# Configure CORS
-CORS(app, resources={
-    r"/ml/*": {
-        "origins": "*",
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
 
 # Setup logging
 logger = setup_logging('predictive_analytics_api')
@@ -51,12 +44,65 @@ def init_components():
             logger.error(f"Error initializing components: {e}")
 
 
+# Lifespan context manager for startup/shutdown
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: Initialize components
+    logger.info(f"Starting Predictive Analytics Service on port {Config.UVICORN_PORT}")
+    try:
+        init_components()
+    except Exception as e:
+        logger.warning(f"Component initialization failed (will retry on first request): {e}")
+    yield
+    # Shutdown: Cleanup if needed
+    logger.info("Shutting down Predictive Analytics Service")
+
+
+# Create FastAPI app
+app = FastAPI(
+    title="Predictive Analytics ML Service",
+    description="API for OPD, bed occupancy, and lab workload predictions",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+)
+
+
+# ============================================================
+# Pydantic Models for Request/Response
+# ============================================================
+
+class OPDPredictRequest(BaseModel):
+    hours: int = 24
+
+
+class BedPredictRequest(BaseModel):
+    days: int = 7
+
+
+class LabPredictRequest(BaseModel):
+    hours: int = 24
+
+
+class TrainModelsRequest(BaseModel):
+    models: List[str] = ["opd", "bed", "lab"]
+    force: bool = False
+
+
 # ============================================================
 # Health Check Endpoint
 # ============================================================
 
-@app.route('/ml/predict/health', methods=['GET'])
-def health_check():
+@app.get('/ml/predict/health')
+async def health_check():
     """
     Health check endpoint
     GET /ml/predict/health
@@ -79,7 +125,7 @@ def health_check():
         bed = get_bed_predictor()
         lab = get_lab_predictor()
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'service': 'predictive-analytics',
             'status': 'healthy',
             'timestamp': datetime.now().isoformat(),
@@ -91,21 +137,21 @@ def health_check():
                 'lab_model': 'trained' if lab.model.is_trained else 'not_trained'
             },
             'config': {
-                'port': Config.FLASK_PORT
+                'port': Config.UVICORN_PORT
             }
         }, message='Service is healthy'))
         
     except Exception as e:
         logger.error(f"Health check failed: {e}")
-        return jsonify(error_response(str(e), 'HEALTH_CHECK_FAILED')), 500
+        return JSONResponse(content=error_response(str(e), 'HEALTH_CHECK_FAILED'), status_code=500)
 
 
 # ============================================================
 # OPD Prediction Endpoints
 # ============================================================
 
-@app.route('/ml/predict/opd', methods=['POST'])
-def predict_opd():
+@app.post('/ml/predict/opd')
+async def predict_opd(request: OPDPredictRequest):
     """
     Predict OPD rush hours
     POST /ml/predict/opd
@@ -118,34 +164,31 @@ def predict_opd():
     try:
         init_components()
         
-        data = request.get_json() or {}
-        hours = data.get('hours', 24)
-        
         predictor = get_opd_predictor()
         
         if not predictor.model.is_trained:
             # Try to train first
             train_result = predictor.train()
             if not train_result.get('success') and not predictor.model.is_trained:
-                return jsonify(error_response(
-                    'Model not trained. Please train first.',
-                    'MODEL_NOT_TRAINED'
-                )), 400
+                return JSONResponse(
+                    content=error_response('Model not trained. Please train first.', 'MODEL_NOT_TRAINED'),
+                    status_code=400
+                )
         
-        result = predictor.predict(hours=hours)
+        result = predictor.predict(hours=request.hours)
         
         if result.get('success'):
-            return jsonify(success_response(result))
+            return JSONResponse(content=success_response(result))
         else:
-            return jsonify(error_response(result.get('error', 'Prediction failed'))), 500
+            return JSONResponse(content=error_response(result.get('error', 'Prediction failed')), status_code=500)
         
     except Exception as e:
         logger.error(f"OPD prediction error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/predict/opd/rush-hours', methods=['GET'])
-def get_opd_rush_hours():
+@app.get('/ml/predict/opd/rush-hours')
+async def get_opd_rush_hours():
     """
     Get OPD rush hour summary by day
     GET /ml/predict/opd/rush-hours
@@ -157,21 +200,21 @@ def get_opd_rush_hours():
         result = predictor.get_rush_hour_summary()
         
         if 'error' in result:
-            return jsonify(error_response(result['error'])), 500
+            return JSONResponse(content=error_response(result['error']), status_code=500)
         
-        return jsonify(success_response(result))
+        return JSONResponse(content=success_response(result))
         
     except Exception as e:
         logger.error(f"Rush hours error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Bed Occupancy Prediction Endpoints
 # ============================================================
 
-@app.route('/ml/predict/beds', methods=['POST'])
-def predict_beds():
+@app.post('/ml/predict/beds')
+async def predict_beds(request: BedPredictRequest):
     """
     Predict bed occupancy
     POST /ml/predict/beds
@@ -184,33 +227,30 @@ def predict_beds():
     try:
         init_components()
         
-        data = request.get_json() or {}
-        days = data.get('days', 7)
-        
         predictor = get_bed_predictor()
         
         if not predictor.model.is_trained:
             train_result = predictor.train()
             if not train_result.get('success') and not predictor.model.is_trained:
-                return jsonify(error_response(
-                    'Model not trained. Please train first.',
-                    'MODEL_NOT_TRAINED'
-                )), 400
+                return JSONResponse(
+                    content=error_response('Model not trained. Please train first.', 'MODEL_NOT_TRAINED'),
+                    status_code=400
+                )
         
-        result = predictor.predict(days=days)
+        result = predictor.predict(days=request.days)
         
         if result.get('success'):
-            return jsonify(success_response(result))
+            return JSONResponse(content=success_response(result))
         else:
-            return jsonify(error_response(result.get('error', 'Prediction failed'))), 500
+            return JSONResponse(content=error_response(result.get('error', 'Prediction failed')), status_code=500)
         
     except Exception as e:
         logger.error(f"Bed prediction error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/predict/beds/status', methods=['GET'])
-def get_bed_status():
+@app.get('/ml/predict/beds/status')
+async def get_bed_status():
     """
     Get current bed occupancy status
     GET /ml/predict/beds/status
@@ -222,21 +262,21 @@ def get_bed_status():
         result = predictor.get_current_status()
         
         if 'error' in result:
-            return jsonify(error_response(result['error'])), 500
+            return JSONResponse(content=error_response(result['error']), status_code=500)
         
-        return jsonify(success_response(result))
+        return JSONResponse(content=success_response(result))
         
     except Exception as e:
         logger.error(f"Bed status error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Lab Workload Prediction Endpoints
 # ============================================================
 
-@app.route('/ml/predict/lab', methods=['POST'])
-def predict_lab():
+@app.post('/ml/predict/lab')
+async def predict_lab(request: LabPredictRequest):
     """
     Predict lab workload
     POST /ml/predict/lab
@@ -249,33 +289,30 @@ def predict_lab():
     try:
         init_components()
         
-        data = request.get_json() or {}
-        hours = data.get('hours', 24)
-        
         predictor = get_lab_predictor()
         
         if not predictor.model.is_trained:
             train_result = predictor.train()
             if not train_result.get('success') and not predictor.model.is_trained:
-                return jsonify(error_response(
-                    'Model not trained. Please train first.',
-                    'MODEL_NOT_TRAINED'
-                )), 400
+                return JSONResponse(
+                    content=error_response('Model not trained. Please train first.', 'MODEL_NOT_TRAINED'),
+                    status_code=400
+                )
         
-        result = predictor.predict(hours=hours)
+        result = predictor.predict(hours=request.hours)
         
         if result.get('success'):
-            return jsonify(success_response(result))
+            return JSONResponse(content=success_response(result))
         else:
-            return jsonify(error_response(result.get('error', 'Prediction failed'))), 500
+            return JSONResponse(content=error_response(result.get('error', 'Prediction failed')), status_code=500)
         
     except Exception as e:
         logger.error(f"Lab prediction error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/predict/lab/breakdown', methods=['GET'])
-def get_lab_breakdown():
+@app.get('/ml/predict/lab/breakdown')
+async def get_lab_breakdown(days: int = Query(default=7)):
     """
     Get lab workload breakdown by test type
     GET /ml/predict/lab/breakdown?days=7
@@ -283,27 +320,25 @@ def get_lab_breakdown():
     try:
         init_components()
         
-        days = int(request.args.get('days', 7))
-        
         predictor = get_lab_predictor()
         result = predictor.get_workload_by_test_type(days=days)
         
         if 'error' in result:
-            return jsonify(error_response(result['error'])), 500
+            return JSONResponse(content=error_response(result['error']), status_code=500)
         
-        return jsonify(success_response(result))
+        return JSONResponse(content=success_response(result))
         
     except Exception as e:
         logger.error(f"Lab breakdown error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Training Endpoints
 # ============================================================
 
-@app.route('/ml/predict/train', methods=['POST'])
-def train_models():
+@app.post('/ml/predict/train')
+async def train_models(request: TrainModelsRequest):
     """
     Train all prediction models
     POST /ml/predict/train
@@ -317,42 +352,38 @@ def train_models():
     try:
         init_components()
         
-        data = request.get_json() or {}
-        models = data.get('models', ['opd', 'bed', 'lab'])
-        force = data.get('force', False)
-        
         results = {}
         
-        if 'opd' in models:
+        if 'opd' in request.models:
             logger.info("Training OPD model...")
             predictor = get_opd_predictor()
-            results['opd'] = predictor.train(force=force)
+            results['opd'] = predictor.train(force=request.force)
         
-        if 'bed' in models:
+        if 'bed' in request.models:
             logger.info("Training Bed model...")
             predictor = get_bed_predictor()
-            results['bed'] = predictor.train(force=force)
+            results['bed'] = predictor.train(force=request.force)
         
-        if 'lab' in models:
+        if 'lab' in request.models:
             logger.info("Training Lab model...")
             predictor = get_lab_predictor()
-            results['lab'] = predictor.train(force=force)
+            results['lab'] = predictor.train(force=request.force)
         
         # Check if all succeeded
         all_success = all(r.get('success', False) for r in results.values())
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'all_success': all_success,
             'results': results
         }, message='Training complete'))
         
     except Exception as e:
         logger.error(f"Training error: {e}")
-        return jsonify(error_response(str(e), 'TRAINING_FAILED')), 500
+        return JSONResponse(content=error_response(str(e), 'TRAINING_FAILED'), status_code=500)
 
 
-@app.route('/ml/predict/train/status', methods=['GET'])
-def get_training_status():
+@app.get('/ml/predict/train/status')
+async def get_training_status():
     """
     Get training status for all models
     GET /ml/predict/train/status
@@ -364,7 +395,7 @@ def get_training_status():
         bed = get_bed_predictor()
         lab = get_lab_predictor()
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'opd': opd.get_model_info(),
             'bed': bed.get_model_info(),
             'lab': lab.get_model_info()
@@ -372,15 +403,15 @@ def get_training_status():
         
     except Exception as e:
         logger.error(f"Status error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Combined Predictions Endpoint
 # ============================================================
 
-@app.route('/ml/predictions', methods=['GET'])
-def get_all_predictions():
+@app.get('/ml/predictions')
+async def get_all_predictions():
     """
     Get predictions from all models
     GET /ml/predictions
@@ -411,34 +442,34 @@ def get_all_predictions():
         else:
             results['lab'] = {'error': 'Model not trained'}
         
-        return jsonify(success_response(results))
+        return JSONResponse(content=success_response(results))
         
     except Exception as e:
         logger.error(f"Predictions error: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Error Handlers
 # ============================================================
 
-@app.errorhandler(404)
-def not_found(error):
+@app.exception_handler(404)
+async def not_found_handler(request, exc):
     """Handle 404 errors"""
-    return jsonify(error_response('Endpoint not found', 'NOT_FOUND')), 404
+    return JSONResponse(content=error_response('Endpoint not found', 'NOT_FOUND'), status_code=404)
 
 
-@app.errorhandler(500)
-def internal_error(error):
+@app.exception_handler(500)
+async def internal_error_handler(request, exc):
     """Handle 500 errors"""
-    return jsonify(error_response('Internal server error', 'INTERNAL_ERROR')), 500
+    return JSONResponse(content=error_response('Internal server error', 'INTERNAL_ERROR'), status_code=500)
 
 
-@app.errorhandler(Exception)
-def handle_exception(error):
+@app.exception_handler(Exception)
+async def generic_exception_handler(request, exc):
     """Handle uncaught exceptions"""
-    logger.error(f"Unhandled exception: {error}")
-    return jsonify(error_response(str(error), 'UNHANDLED_ERROR')), 500
+    logger.error(f"Unhandled exception: {exc}")
+    return JSONResponse(content=error_response(str(exc), 'UNHANDLED_ERROR'), status_code=500)
 
 
 # ============================================================
@@ -446,17 +477,10 @@ def handle_exception(error):
 # ============================================================
 
 if __name__ == '__main__':
-    logger.info(f"Starting Predictive Analytics Service on port {Config.FLASK_PORT}")
-    
-    # Initialize components on startup
-    try:
-        init_components()
-    except Exception as e:
-        logger.warning(f"Component initialization failed (will retry on first request): {e}")
-    
-    # Run Flask app
-    app.run(
-        host=Config.FLASK_HOST,
-        port=Config.FLASK_PORT,
-        debug=Config.FLASK_DEBUG
+    import uvicorn
+    uvicorn.run(
+        "app:app",
+        host=Config.UVICORN_HOST,
+        port=Config.UVICORN_PORT,
+        reload=Config.UVICORN_RELOAD
     )

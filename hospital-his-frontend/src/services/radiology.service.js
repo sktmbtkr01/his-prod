@@ -4,11 +4,10 @@
  */
 
 import axios from 'axios';
-
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1';
+import { API_URL } from '../config/api';
 
 const api = axios.create({
-    baseURL: API_BASE,
+    baseURL: API_URL,
 });
 
 api.interceptors.request.use((config) => {

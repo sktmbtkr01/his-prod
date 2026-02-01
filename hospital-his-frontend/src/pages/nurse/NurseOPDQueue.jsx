@@ -6,8 +6,9 @@ import { User, Clock, CheckCircle, Activity, FileText, Heart, X, AlertTriangle, 
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { API_URL } from '../../config/api';
 
-const API_RES_URL = 'http://localhost:5001/api/v1/';
+const API_RES_URL = `${API_URL}/`;
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     return { headers: { Authorization: `Bearer ${user?.token}` } };

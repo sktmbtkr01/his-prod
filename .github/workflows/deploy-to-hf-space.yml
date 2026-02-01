@@ -1,0 +1,45 @@
+name: Deploy Backend to Hugging Face Space
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Setup Git for HF
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE_NAME: ${{ secrets.HF_SPACE_NAME }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: |
+          # Clone only the backend folder and push to HF Space
+          cd backend
+          
+          # Initialize a new git repo for the backend
+          rm -rf .git
+          git init
+          git remote add space https://${HF_USERNAME}:${HF_TOKEN}@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME}
+          
+          # Add all files and push
+          git add .
+          git commit -m "Auto-deploy from GitHub: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push space main --force
+          
+          echo "✅ Successfully deployed to Hugging Face Space!"

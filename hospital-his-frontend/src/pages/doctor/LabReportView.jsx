@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import labReportService from '../../services/labReport.service';
+import { API_BASE_URL } from '../../config/api';
 
 /**
  * LabReportView - Doctor-facing page for viewing PDF lab reports with AI summary
@@ -119,15 +120,15 @@ const LabReportView = () => {
                                     <div
                                         key={idx}
                                         className={`p-3 rounded-lg border ${finding.status === 'high' || finding.status === 'low'
-                                                ? 'bg-red-50 border-red-200'
-                                                : 'bg-green-50 border-green-200'
+                                            ? 'bg-red-50 border-red-200'
+                                            : 'bg-green-50 border-green-200'
                                             }`}
                                     >
                                         <div className="flex justify-between items-center">
                                             <span className="font-medium">{finding.parameter}</span>
                                             <span className={`font-semibold ${finding.status === 'high' || finding.status === 'low'
-                                                    ? 'text-red-600'
-                                                    : 'text-green-600'
+                                                ? 'text-red-600'
+                                                : 'text-green-600'
                                                 }`}>
                                                 {finding.value}
                                             </span>
@@ -255,7 +256,7 @@ const LabReportView = () => {
                     <div className="p-4">
                         {report?.pdf?.url ? (
                             <iframe
-                                src={`http://localhost:5001${report.pdf.url}`}
+                                src={`${API_BASE_URL}${report.pdf.url}`}
                                 className="w-full h-[600px] border rounded-lg"
                                 title="Lab Report PDF"
                             />

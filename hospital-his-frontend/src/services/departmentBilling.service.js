@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/department-billing';
+const DEPT_BILLING_URL = `${API_URL}/department-billing`;
 
 // Get token from local storage
 const getConfig = () => {
@@ -16,7 +17,7 @@ const getConfig = () => {
  */
 const generateLabBill = async (orderIds, encounterId, encounterModel, patientId) => {
     const response = await axios.post(
-        `${API_URL}/lab/generate`,
+        `${DEPT_BILLING_URL}/lab/generate`,
         { orderIds, encounterId, encounterModel, patientId },
         getConfig()
     );
@@ -28,7 +29,7 @@ const generateLabBill = async (orderIds, encounterId, encounterModel, patientId)
  */
 const generateRadiologyBill = async (orderIds, encounterId, encounterModel, patientId) => {
     const response = await axios.post(
-        `${API_URL}/radiology/generate`,
+        `${DEPT_BILLING_URL}/radiology/generate`,
         { orderIds, encounterId, encounterModel, patientId },
         getConfig()
     );
@@ -40,7 +41,7 @@ const generateRadiologyBill = async (orderIds, encounterId, encounterModel, pati
  */
 const generatePharmacyBill = async (dispenseIds, encounterId, encounterModel, patientId) => {
     const response = await axios.post(
-        `${API_URL}/pharmacy/generate`,
+        `${DEPT_BILLING_URL}/pharmacy/generate`,
         { dispenseIds, encounterId, encounterModel, patientId },
         getConfig()
     );
@@ -52,7 +53,7 @@ const generatePharmacyBill = async (dispenseIds, encounterId, encounterModel, pa
  */
 const recordPayment = async (billId, amount, mode, reference = '') => {
     const response = await axios.post(
-        `${API_URL}/${billId}/pay`,
+        `${DEPT_BILLING_URL}/${billId}/pay`,
         { amount, mode, reference },
         getConfig()
     );
@@ -63,7 +64,7 @@ const recordPayment = async (billId, amount, mode, reference = '') => {
  * Get department bill by ID
  */
 const getDepartmentBill = async (billId) => {
-    const response = await axios.get(`${API_URL}/${billId}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}/${billId}`, getConfig());
     return response.data.data;
 };
 
@@ -71,7 +72,7 @@ const getDepartmentBill = async (billId) => {
  * Get department bills for an encounter
  */
 const getDepartmentBillsForEncounter = async (encounterId) => {
-    const response = await axios.get(`${API_URL}/encounter/${encounterId}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}/encounter/${encounterId}`, getConfig());
     return response.data.data;
 };
 
@@ -84,7 +85,7 @@ const getUnbilledOrders = async (department, patientId = null, encounterId = nul
     if (encounterId) params.append('encounterId', encounterId);
 
     const response = await axios.get(
-        `${API_URL}/${department}/unbilled?${params.toString()}`,
+        `${DEPT_BILLING_URL}/${department}/unbilled?${params.toString()}`,
         getConfig()
     );
     return response.data.data;
@@ -94,7 +95,7 @@ const getUnbilledOrders = async (department, patientId = null, encounterId = nul
  * Get central billing view for an encounter
  */
 const getCentralBillingView = async (encounterId) => {
-    const response = await axios.get(`${API_URL}/central/${encounterId}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}/central/${encounterId}`, getConfig());
     return response.data.data;
 };
 
@@ -102,7 +103,7 @@ const getCentralBillingView = async (encounterId) => {
  * Get patient's department bills
  */
 const getPatientDepartmentBills = async (patientId) => {
-    const response = await axios.get(`${API_URL}/patient/${patientId}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}/patient/${patientId}`, getConfig());
     return response.data.data;
 };
 
@@ -110,7 +111,7 @@ const getPatientDepartmentBills = async (patientId) => {
  * Get department dashboard stats
  */
 const getDepartmentDashboard = async (department) => {
-    const response = await axios.get(`${API_URL}/dashboard/${department}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}/dashboard/${department}`, getConfig());
     return response.data.data;
 };
 
@@ -124,7 +125,7 @@ const getAllDepartmentBills = async (filters = {}) => {
     if (filters.page) params.append('page', filters.page);
     if (filters.limit) params.append('limit', filters.limit);
 
-    const response = await axios.get(`${API_URL}?${params.toString()}`, getConfig());
+    const response = await axios.get(`${DEPT_BILLING_URL}?${params.toString()}`, getConfig());
     return response.data;
 };
 

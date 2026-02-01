@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import radiologyService from '../../services/radiology.service';
 import departmentBillingService from '../../services/departmentBilling.service';
+import { API_BASE_URL } from '../../config/api';
 import {
     Scan, Clock, CheckCircle, AlertCircle,
     Calendar, FileText, Eye, Plus, X,
@@ -136,7 +137,7 @@ const ReportEntryModal = ({ order, onClose, onSubmit }) => {
 
                 // Upload to backend
                 const user = JSON.parse(localStorage.getItem('user'));
-                const response = await fetch(`http://localhost:5001/api/v1/radiology/upload-scan/${order._id}`, {
+                const response = await fetch(`${API_BASE_URL}/api/v1/radiology/upload-scan/${order._id}`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${user?.token}`

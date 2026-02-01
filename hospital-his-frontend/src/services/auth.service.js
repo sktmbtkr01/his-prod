@@ -1,11 +1,11 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-// Align with your backend server URL
-const API_URL = 'http://localhost:5001/api/v1/auth/';
+const AUTH_URL = `${API_URL}/auth/`;
 
 // Login user
 const login = async (userData) => {
-    const response = await axios.post(API_URL + 'login', userData);
+    const response = await axios.post(AUTH_URL + 'login', userData);
 
     if (response.data) {
         // Check if account is pending approval
@@ -35,13 +35,13 @@ const logout = () => {
 
 // Validate onboarding ID (first step of staff signup)
 const validateOnboardingId = async (onboardingCode) => {
-    const response = await axios.post(API_URL + 'validate-onboarding-id', { onboardingCode });
+    const response = await axios.post(AUTH_URL + 'validate-onboarding-id', { onboardingCode });
     return response.data;
 };
 
 // Signup with onboarding ID (complete staff signup)
 const signupWithOnboarding = async (signupData) => {
-    const response = await axios.post(API_URL + 'signup-with-onboarding', signupData);
+    const response = await axios.post(AUTH_URL + 'signup-with-onboarding', signupData);
     return response.data;
 };
 

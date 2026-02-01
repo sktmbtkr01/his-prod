@@ -4,8 +4,9 @@ import { FlaskConical, Eye, X, FileText, Bot, Loader, AlertTriangle, CheckCircle
 import labService from '../../services/lab.service';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { API_URL } from '../../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/';
+const API_BASE = API_URL + '/';
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     return { headers: { Authorization: `Bearer ${user?.token}` } };
@@ -109,7 +110,7 @@ const DoctorLabTests = () => {
         setRiskLoading(true);
         try {
             const response = await axios.put(
-                `${API_URL}opd/appointments/${selectedTest.visit}/lab-risk`,
+                `${API_BASE}opd/appointments/${selectedTest.visit}/lab-risk`,
                 { riskLevel: selectedRiskLevel },
                 getConfig()
             );
@@ -129,7 +130,8 @@ const DoctorLabTests = () => {
             const pdfPath = selectedTest.reportPdf.startsWith('/')
                 ? selectedTest.reportPdf
                 : '/' + selectedTest.reportPdf;
-            return `http://localhost:5001${pdfPath}`;
+            const baseUrl = API_URL.replace('/api/v1', '');
+            return `${baseUrl}${pdfPath}`;
         }
         return null;
     };
@@ -514,8 +516,8 @@ const DoctorLabTests = () => {
                                             onClick={handleSetRiskLevel}
                                             disabled={riskLoading || selectedRiskLevel === savedRiskLevel}
                                             className={`px-5 py-2 rounded-lg font-medium flex items-center gap-2 ${selectedRiskLevel === savedRiskLevel
-                                                    ? 'bg-green-100 text-green-700 cursor-default'
-                                                    : 'bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50'
+                                                ? 'bg-green-100 text-green-700 cursor-default'
+                                                : 'bg-purple-600 hover:bg-purple-700 text-white disabled:opacity-50'
                                                 }`}
                                         >
                                             {riskLoading ? <Loader size={16} className="animate-spin" /> :

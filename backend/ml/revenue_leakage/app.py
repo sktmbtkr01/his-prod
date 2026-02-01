@@ -1,13 +1,18 @@
 """
-Flask API for Revenue Leakage Detection ML Service
+FastAPI API for Revenue Leakage Detection ML Service
 Provides endpoints for anomaly detection, model training, and health checks
 """
 
 import os
 import sys
 from datetime import datetime
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from typing import Optional, List
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, HTTPException, Query, Path
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
 # Add parent directory to path for shared imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -19,18 +24,6 @@ from anomaly_detector import get_anomaly_detector
 from pattern_analyzer import get_pattern_analyzer
 from alert_generator import get_alert_generator
 from model_trainer import get_model_trainer
-
-# Initialize Flask app
-app = Flask(__name__)
-
-# Configure CORS
-CORS(app, resources={
-    r"/ml/*": {
-        "origins": "*",
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"]
-    }
-})
 
 # Setup logging
 logger = setup_logging('revenue_leakage_api')
@@ -56,12 +49,65 @@ def init_components():
             logger.error(f"Error initializing components: {e}")
 
 
+# Lifespan context manager for startup/shutdown
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: Initialize components
+    logger.info(f"Starting Revenue Leakage Detection Service on port {Config.UVICORN_PORT}")
+    try:
+        init_components()
+    except Exception as e:
+        logger.warning(f"Component initialization failed (will retry on first request): {e}")
+    yield
+    # Shutdown: Cleanup if needed
+    logger.info("Shutting down Revenue Leakage Detection Service")
+
+
+# Create FastAPI app
+app = FastAPI(
+    title="Revenue Leakage Detection ML Service",
+    description="API for anomaly detection, model training, and health checks",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+)
+
+
+# ============================================================
+# Pydantic Models for Request/Response
+# ============================================================
+
+class DetectAnomaliesRequest(BaseModel):
+    days: int = 7
+    include_rules: bool = True
+    include_ml: bool = True
+    create_alerts: bool = True
+
+
+class UpdateAnomalyRequest(BaseModel):
+    status: str
+    reviewed_by: Optional[str] = None
+    resolution_notes: Optional[str] = None
+
+
+class TrainModelRequest(BaseModel):
+    force: bool = False
+
+
 # ============================================================
 # Health Check Endpoint
 # ============================================================
 
-@app.route('/ml/revenue/health', methods=['GET'])
-def health_check():
+@app.get('/ml/revenue/health')
+async def health_check():
     """
     Health check endpoint
     GET /ml/revenue/health
@@ -83,7 +129,7 @@ def health_check():
         detector = get_anomaly_detector()
         model_status = "trained" if detector.is_trained else "not_trained"
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'service': 'revenue-leakage-detection',
             'status': 'healthy',
             'timestamp': datetime.now().isoformat(),
@@ -93,22 +139,22 @@ def health_check():
                 'model': model_status
             },
             'config': {
-                'port': Config.FLASK_PORT,
+                'port': Config.UVICORN_PORT,
                 'model_path': Config.MODEL_PATH
             }
         }, message='Service is healthy'))
         
     except Exception as e:
         logger.error(f"Health check failed: {e}")
-        return jsonify(error_response(str(e), 'HEALTH_CHECK_FAILED')), 500
+        return JSONResponse(content=error_response(str(e), 'HEALTH_CHECK_FAILED'), status_code=500)
 
 
 # ============================================================
 # Detection Endpoints
 # ============================================================
 
-@app.route('/ml/revenue/detect', methods=['POST'])
-def detect_anomalies():
+@app.post('/ml/revenue/detect')
+async def detect_anomalies(request: DetectAnomaliesRequest):
     """
     Run anomaly detection scan
     POST /ml/revenue/detect
@@ -126,25 +172,18 @@ def detect_anomalies():
     try:
         init_components()
         
-        # Parse request parameters
-        data = request.get_json() or {}
-        days = data.get('days', 7)
-        include_rules = data.get('include_rules', True)
-        include_ml = data.get('include_ml', True)
-        create_alerts = data.get('create_alerts', True)
-        
-        logger.info(f"Starting detection scan for {days} days")
+        logger.info(f"Starting detection scan for {request.days} days")
         
         ml_anomalies = []
         rule_anomalies = []
         
         # ML-based detection
-        if include_ml:
+        if request.include_ml:
             detector = get_anomaly_detector()
             
             if detector.is_trained:
                 processor = get_data_processor()
-                features, visit_df = processor.get_detection_data(days=days)
+                features, visit_df = processor.get_detection_data(days=request.days)
                 
                 if features.size > 0:
                     # Normalize features
@@ -162,9 +201,9 @@ def detect_anomalies():
                 logger.warning("ML model not trained, skipping ML detection")
         
         # Rule-based detection
-        if include_rules:
+        if request.include_rules:
             analyzer = get_pattern_analyzer()
-            rule_anomalies = analyzer.analyze_all_patterns(days=days)
+            rule_anomalies = analyzer.analyze_all_patterns(days=request.days)
             logger.info(f"Rule detection found {len(rule_anomalies)} issues")
         
         # Combine anomalies
@@ -173,7 +212,7 @@ def detect_anomalies():
         
         # Create alerts in database
         alert_summary = {'created': 0, 'alerts': []}
-        if create_alerts and combined:
+        if request.create_alerts and combined:
             alert_summary = generator.create_alerts_batch(combined)
         
         # Calculate summary statistics
@@ -186,11 +225,11 @@ def detect_anomalies():
             by_type[atype]['count'] += 1
             by_type[atype]['amount'] += anomaly.get('leakage_amount', 0)
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'scan_parameters': {
-                'days': days,
-                'include_ml': include_ml,
-                'include_rules': include_rules
+                'days': request.days,
+                'include_ml': request.include_ml,
+                'include_rules': request.include_rules
             },
             'summary': {
                 'total_anomalies': len(combined),
@@ -205,11 +244,15 @@ def detect_anomalies():
         
     except Exception as e:
         logger.error(f"Detection failed: {e}")
-        return jsonify(error_response(str(e), 'DETECTION_FAILED')), 500
+        return JSONResponse(content=error_response(str(e), 'DETECTION_FAILED'), status_code=500)
 
 
-@app.route('/ml/revenue/anomalies', methods=['GET'])
-def get_anomalies():
+@app.get('/ml/revenue/anomalies')
+async def get_anomalies(
+    status: Optional[str] = Query(default=None),
+    type: Optional[str] = Query(default=None, alias="type"),
+    limit: int = Query(default=100)
+):
     """
     Get detected anomalies from database
     GET /ml/revenue/anomalies
@@ -222,29 +265,25 @@ def get_anomalies():
     try:
         init_components()
         
-        status = request.args.get('status')
-        anomaly_type = request.args.get('type')
-        limit = int(request.args.get('limit', 100))
-        
         generator = get_alert_generator()
         anomalies = generator.get_alerts(
             status=status,
-            anomaly_type=anomaly_type,
+            anomaly_type=type,
             limit=limit
         )
         
-        return jsonify(success_response({
+        return JSONResponse(content=success_response({
             'count': len(anomalies),
             'anomalies': anomalies
         }))
         
     except Exception as e:
         logger.error(f"Error fetching anomalies: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/revenue/anomalies/<anomaly_id>', methods=['GET'])
-def get_anomaly(anomaly_id):
+@app.get('/ml/revenue/anomalies/{anomaly_id}')
+async def get_anomaly(anomaly_id: str = Path(...)):
     """
     Get specific anomaly by ID
     GET /ml/revenue/anomalies/<id>
@@ -256,17 +295,17 @@ def get_anomaly(anomaly_id):
         anomaly = generator.get_alert_by_id(anomaly_id)
         
         if anomaly is None:
-            return jsonify(error_response('Anomaly not found', 'NOT_FOUND')), 404
+            return JSONResponse(content=error_response('Anomaly not found', 'NOT_FOUND'), status_code=404)
         
-        return jsonify(success_response(anomaly))
+        return JSONResponse(content=success_response(anomaly))
         
     except Exception as e:
         logger.error(f"Error fetching anomaly {anomaly_id}: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/revenue/anomalies/<anomaly_id>', methods=['PUT'])
-def update_anomaly(anomaly_id):
+@app.put('/ml/revenue/anomalies/{anomaly_id}')
+async def update_anomaly(anomaly_id: str, request: UpdateAnomalyRequest):
     """
     Update anomaly status
     PUT /ml/revenue/anomalies/<id>
@@ -281,45 +320,37 @@ def update_anomaly(anomaly_id):
     try:
         init_components()
         
-        data = request.get_json() or {}
-        status = data.get('status')
-        reviewed_by = data.get('reviewed_by')
-        resolution_notes = data.get('resolution_notes')
-        
-        if not status:
-            return jsonify(error_response('Status is required', 'VALIDATION_ERROR')), 400
-        
         # Validate status
         valid_statuses = list(Config.ALERT_STATUS.values())
-        if status not in valid_statuses:
-            return jsonify(error_response(
-                f'Invalid status. Must be one of: {valid_statuses}',
-                'VALIDATION_ERROR'
-            )), 400
+        if request.status not in valid_statuses:
+            return JSONResponse(
+                content=error_response(f'Invalid status. Must be one of: {valid_statuses}', 'VALIDATION_ERROR'),
+                status_code=400
+            )
         
         generator = get_alert_generator()
         success = generator.update_alert_status(
             anomaly_id,
-            status,
-            reviewed_by,
-            resolution_notes
+            request.status,
+            request.reviewed_by,
+            request.resolution_notes
         )
         
         if success:
-            return jsonify(success_response(
-                {'id': anomaly_id, 'status': status},
+            return JSONResponse(content=success_response(
+                {'id': anomaly_id, 'status': request.status},
                 message='Anomaly updated successfully'
             ))
         else:
-            return jsonify(error_response('Failed to update anomaly')), 500
+            return JSONResponse(content=error_response('Failed to update anomaly'), status_code=500)
         
     except Exception as e:
         logger.error(f"Error updating anomaly {anomaly_id}: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
-@app.route('/ml/revenue/dashboard', methods=['GET'])
-def get_dashboard():
+@app.get('/ml/revenue/dashboard')
+async def get_dashboard():
     """
     Get revenue leakage dashboard statistics
     GET /ml/revenue/dashboard
@@ -334,19 +365,19 @@ def get_dashboard():
         detector = get_anomaly_detector()
         stats['model_info'] = detector.get_model_info()
         
-        return jsonify(success_response(stats))
+        return JSONResponse(content=success_response(stats))
         
     except Exception as e:
         logger.error(f"Error getting dashboard: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Training Endpoints
 # ============================================================
 
-@app.route('/ml/revenue/train', methods=['POST'])
-def train_model():
+@app.post('/ml/revenue/train')
+async def train_model(request: TrainModelRequest):
     """
     Train or retrain the ML model
     POST /ml/revenue/train
@@ -359,29 +390,26 @@ def train_model():
     try:
         init_components()
         
-        data = request.get_json() or {}
-        force = data.get('force', False)
-        
-        logger.info(f"Training request received (force={force})")
+        logger.info(f"Training request received (force={request.force})")
         
         trainer = get_model_trainer()
-        result = trainer.train(force_retrain=force)
+        result = trainer.train(force_retrain=request.force)
         
         if result.get('success'):
-            return jsonify(success_response(result, message='Training complete'))
+            return JSONResponse(content=success_response(result, message='Training complete'))
         else:
-            return jsonify(error_response(
-                result.get('error', 'Training failed'),
-                'TRAINING_FAILED'
-            )), 500
+            return JSONResponse(
+                content=error_response(result.get('error', 'Training failed'), 'TRAINING_FAILED'),
+                status_code=500
+            )
         
     except Exception as e:
         logger.error(f"Training failed: {e}")
-        return jsonify(error_response(str(e), 'TRAINING_FAILED')), 500
+        return JSONResponse(content=error_response(str(e), 'TRAINING_FAILED'), status_code=500)
 
 
-@app.route('/ml/revenue/train/status', methods=['GET'])
-def get_training_status():
+@app.get('/ml/revenue/train/status')
+async def get_training_status():
     """
     Get model training status
     GET /ml/revenue/train/status
@@ -392,34 +420,34 @@ def get_training_status():
         trainer = get_model_trainer()
         status = trainer.get_training_status()
         
-        return jsonify(success_response(status))
+        return JSONResponse(content=success_response(status))
         
     except Exception as e:
         logger.error(f"Error getting training status: {e}")
-        return jsonify(error_response(str(e))), 500
+        return JSONResponse(content=error_response(str(e)), status_code=500)
 
 
 # ============================================================
 # Error Handlers
 # ============================================================
 
-@app.errorhandler(404)
-def not_found(error):
+@app.exception_handler(404)
+async def not_found_handler(request, exc):
     """Handle 404 errors"""
-    return jsonify(error_response('Endpoint not found', 'NOT_FOUND')), 404
+    return JSONResponse(content=error_response('Endpoint not found', 'NOT_FOUND'), status_code=404)
 
 
-@app.errorhandler(500)
-def internal_error(error):
+@app.exception_handler(500)
+async def internal_error_handler(request, exc):
     """Handle 500 errors"""
-    return jsonify(error_response('Internal server error', 'INTERNAL_ERROR')), 500
+    return JSONResponse(content=error_response('Internal server error', 'INTERNAL_ERROR'), status_code=500)
 
 
-@app.errorhandler(Exception)
-def handle_exception(error):
+@app.exception_handler(Exception)
+async def generic_exception_handler(request, exc):
     """Handle uncaught exceptions"""
-    logger.error(f"Unhandled exception: {error}")
-    return jsonify(error_response(str(error), 'UNHANDLED_ERROR')), 500
+    logger.error(f"Unhandled exception: {exc}")
+    return JSONResponse(content=error_response(str(exc), 'UNHANDLED_ERROR'), status_code=500)
 
 
 # ============================================================
@@ -427,17 +455,10 @@ def handle_exception(error):
 # ============================================================
 
 if __name__ == '__main__':
-    logger.info(f"Starting Revenue Leakage Detection Service on port {Config.FLASK_PORT}")
-    
-    # Initialize components on startup
-    try:
-        init_components()
-    except Exception as e:
-        logger.warning(f"Component initialization failed (will retry on first request): {e}")
-    
-    # Run Flask app
-    app.run(
-        host=Config.FLASK_HOST,
-        port=Config.FLASK_PORT,
-        debug=Config.FLASK_DEBUG
+    import uvicorn
+    uvicorn.run(
+        "app:app",
+        host=Config.UVICORN_HOST,
+        port=Config.UVICORN_PORT,
+        reload=Config.UVICORN_RELOAD
     )

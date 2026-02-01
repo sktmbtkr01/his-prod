@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ScanLine, Eye, X, FileText, Image, RefreshCw, Shield, Loader, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { API_URL } from '../../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/';
+const API_BASE = API_URL + '/';
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     return { headers: { Authorization: `Bearer ${user?.token}` } };
@@ -31,7 +32,7 @@ const DoctorRadiologyTests = () => {
     const fetchCompletedTests = async () => {
         try {
             setLoading(true);
-            const response = await axios.get(`${API_URL}radiology/doctor/results`, getConfig());
+            const response = await axios.get(`${API_BASE}radiology/doctor/results`, getConfig());
             setCompletedTests(response.data.data || []);
         } catch (err) {
             console.error('Error fetching completed radiology tests:', err);
@@ -42,7 +43,7 @@ const DoctorRadiologyTests = () => {
 
     const openTestDetails = async (test) => {
         try {
-            const response = await axios.get(`${API_URL}radiology/doctor/results/${test._id}`, getConfig());
+            const response = await axios.get(`${API_BASE}radiology/doctor/results/${test._id}`, getConfig());
             setSelectedTest(response.data.data);
             setShowModal(true);
         } catch (err) {
@@ -69,7 +70,7 @@ const DoctorRadiologyTests = () => {
         setRiskLoading(true);
         try {
             const response = await axios.put(
-                `${API_URL}opd/appointments/${selectedTest.visit}/radiology-risk`,
+                `${API_BASE}opd/appointments/${selectedTest.visit}/radiology-risk`,
                 { riskLevel: selectedRiskLevel },
                 getConfig()
             );
@@ -88,7 +89,8 @@ const DoctorRadiologyTests = () => {
             const imagePath = selectedTest.scanImage.startsWith('/')
                 ? selectedTest.scanImage
                 : '/' + selectedTest.scanImage;
-            return `http://localhost:5001${imagePath}`;
+            const baseUrl = API_URL.replace('/api/v1', '');
+            return `${baseUrl}${imagePath}`;
         }
         return null;
     };
@@ -98,7 +100,8 @@ const DoctorRadiologyTests = () => {
             const reportPath = selectedTest.reportUrl.startsWith('/')
                 ? selectedTest.reportUrl
                 : '/' + selectedTest.reportUrl;
-            return `http://localhost:5001${reportPath}`;
+            const baseUrl = API_URL.replace('/api/v1', '');
+            return `${baseUrl}${reportPath}`;
         }
         return null;
     };

@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell, ReferenceLine } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
+import { SOCKET_URL } from '../../config/api';
 
-const SOCKET_URL = 'http://localhost:5001';
 const POLLING_INTERVAL = 60000; // 1 minute
 
 // Animated CountUp

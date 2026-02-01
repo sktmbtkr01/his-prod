@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/lab-reports';
+const LAB_REPORT_URL = `${API_URL}/lab-reports`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -18,7 +19,7 @@ const labReportService = {
         formData.append('report', file);
         const config = getConfig();
         config.headers['Content-Type'] = 'multipart/form-data';
-        const response = await axios.post(`${API_URL}/${patientId}/upload`, formData, config);
+        const response = await axios.post(`${LAB_REPORT_URL}/${patientId}/upload`, formData, config);
         return response.data;
     },
 
@@ -27,7 +28,7 @@ const labReportService = {
      * @param {string} reportId - Report ID
      */
     getReport: async (reportId) => {
-        const response = await axios.get(`${API_URL}/${reportId}`, getConfig());
+        const response = await axios.get(`${LAB_REPORT_URL}/${reportId}`, getConfig());
         return response.data;
     },
 
@@ -36,7 +37,7 @@ const labReportService = {
      * @param {string} reportId - Report ID
      */
     generateSummary: async (reportId) => {
-        const response = await axios.post(`${API_URL}/${reportId}/summarize`, {}, getConfig());
+        const response = await axios.post(`${LAB_REPORT_URL}/${reportId}/summarize`, {}, getConfig());
         return response.data;
     },
 
@@ -45,7 +46,7 @@ const labReportService = {
      * @param {string} patientId - Patient ID
      */
     getReportsByPatient: async (patientId) => {
-        const response = await axios.get(`${API_URL}/patient/${patientId}`, getConfig());
+        const response = await axios.get(`${LAB_REPORT_URL}/patient/${patientId}`, getConfig());
         return response.data;
     },
 
@@ -53,7 +54,7 @@ const labReportService = {
      * Get all lab reports (Doctor/Admin only)
      */
     getAllReports: async () => {
-        const response = await axios.get(`${API_URL}/all`, getConfig());
+        const response = await axios.get(`${LAB_REPORT_URL}/all`, getConfig());
         return response.data;
     },
 };

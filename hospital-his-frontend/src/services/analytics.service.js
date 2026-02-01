@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/analytics/';
+const ANALYTICS_URL = `${API_URL}/analytics/`;
 
 // Get user from local storage to send token
 const getConfig = () => {
@@ -15,23 +16,23 @@ const getConfig = () => {
 };
 
 const getExecutiveStats = async () => {
-    const response = await axios.get(API_URL + 'executive-dashboard', getConfig());
+    const response = await axios.get(ANALYTICS_URL + 'executive-dashboard', getConfig());
     return response.data.data;
 };
 
 const getClinicalStats = async (filters = {}) => {
     // Construct query string from filters if needed
-    const response = await axios.get(API_URL + 'clinical', getConfig());
+    const response = await axios.get(ANALYTICS_URL + 'clinical', getConfig());
     return response.data.data;
 };
 
 const getFinancialStats = async () => {
-    const response = await axios.get(API_URL + 'financial', getConfig());
+    const response = await axios.get(ANALYTICS_URL + 'financial', getConfig());
     return response.data.data;
 };
 
 const getReceptionistStats = async () => {
-    const response = await axios.get(API_URL + 'reception', getConfig());
+    const response = await axios.get(ANALYTICS_URL + 'reception', getConfig());
     return response.data.data;
 };
 
@@ -43,4 +44,3 @@ const analyticsService = {
 };
 
 export default analyticsService;
-

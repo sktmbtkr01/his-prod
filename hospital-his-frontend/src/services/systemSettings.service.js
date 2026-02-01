@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/system-settings';
+const SETTINGS_URL = `${API_URL}/system-settings`;
 
 // Get token from local storage
 const getConfig = () => {
@@ -15,7 +16,7 @@ const getConfig = () => {
  * Get clinical coding status (public endpoint)
  */
 const getClinicalCodingStatus = async () => {
-    const response = await axios.get(`${API_URL}/clinical-coding-status`, getConfig());
+    const response = await axios.get(`${SETTINGS_URL}/clinical-coding-status`, getConfig());
     return response.data.data;
 };
 
@@ -23,7 +24,7 @@ const getClinicalCodingStatus = async () => {
  * Get all system settings (admin only)
  */
 const getSettings = async () => {
-    const response = await axios.get(API_URL, getConfig());
+    const response = await axios.get(SETTINGS_URL, getConfig());
     return response.data.data;
 };
 
@@ -32,7 +33,7 @@ const getSettings = async () => {
  */
 const toggleClinicalCoding = async (enabled, reason = '') => {
     const response = await axios.put(
-        `${API_URL}/clinical-coding`,
+        `${SETTINGS_URL}/clinical-coding`,
         { enabled, reason },
         getConfig()
     );
@@ -44,7 +45,7 @@ const toggleClinicalCoding = async (enabled, reason = '') => {
  */
 const forceToggleClinicalCoding = async (enabled, reason = '') => {
     const response = await axios.put(
-        `${API_URL}/clinical-coding/force`,
+        `${SETTINGS_URL}/clinical-coding/force`,
         { enabled, reason },
         getConfig()
     );
@@ -55,7 +56,7 @@ const forceToggleClinicalCoding = async (enabled, reason = '') => {
  * Get audit log
  */
 const getAuditLog = async () => {
-    const response = await axios.get(`${API_URL}/audit-log`, getConfig());
+    const response = await axios.get(`${SETTINGS_URL}/audit-log`, getConfig());
     return response.data.data;
 };
 

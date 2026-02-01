@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/pharmacy';
-const APPOINTMENT_URL = 'http://localhost:5001/api/v1/opd/appointments';
-const PRESCRIPTION_URL = 'http://localhost:5001/api/v1/prescriptions';
+const PHARMACY_URL = `${API_URL}/pharmacy`;
+const APPOINTMENT_URL = `${API_URL}/opd/appointments`;
+const PRESCRIPTION_URL = `${API_URL}/prescriptions`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -16,7 +17,7 @@ const pharmacyService = {
 
     // Get Pharmacy Inventory With Search
     getInventory: async (searchString = '') => {
-        const response = await axios.get(`${API_URL}/inventory`, {
+        const response = await axios.get(`${PHARMACY_URL}/inventory`, {
             ...getConfig(),
             params: { search: searchString }
         });
@@ -25,13 +26,13 @@ const pharmacyService = {
 
     // Add New Stock (and Medicine if new)
     addInventory: async (data) => {
-        const response = await axios.post(`${API_URL}/inventory`, data, getConfig());
+        const response = await axios.post(`${PHARMACY_URL}/inventory`, data, getConfig());
         return response.data;
     },
 
     // Get batches in FEFO order
     getBatchesFEFO: async (medicineId, quantity) => {
-        const response = await axios.get(`${API_URL}/batches/fefo/${medicineId}`, {
+        const response = await axios.get(`${PHARMACY_URL}/batches/fefo/${medicineId}`, {
             ...getConfig(),
             params: { quantity }
         });
@@ -40,7 +41,7 @@ const pharmacyService = {
 
     // Get expiring batches
     getExpiringBatches: async (days = 30) => {
-        const response = await axios.get(`${API_URL}/batches/expiring`, {
+        const response = await axios.get(`${PHARMACY_URL}/batches/expiring`, {
             ...getConfig(),
             params: { days }
         });
@@ -49,7 +50,7 @@ const pharmacyService = {
 
     // Get recalled batches
     getRecalledBatches: async () => {
-        const response = await axios.get(`${API_URL}/batches/recalled`, getConfig());
+        const response = await axios.get(`${PHARMACY_URL}/batches/recalled`, getConfig());
         return response.data;
     },
 
@@ -59,7 +60,7 @@ const pharmacyService = {
 
     // Get Pending Prescriptions (dispense queue)
     getPendingPrescriptions: async () => {
-        const response = await axios.get(`${API_URL}/dispense-queue`, getConfig());
+        const response = await axios.get(`${PHARMACY_URL}/dispense-queue`, getConfig());
         return response.data;
     },
 
@@ -71,7 +72,7 @@ const pharmacyService = {
 
     // Dispense with full safety checks
     dispensePrescription: async (prescriptionId, items, admissionId = null) => {
-        const response = await axios.post(`${API_URL}/dispense`, {
+        const response = await axios.post(`${PHARMACY_URL}/dispense`, {
             prescriptionId,
             items,
             admissionId
@@ -81,7 +82,7 @@ const pharmacyService = {
 
     // Get dispense traceability
     getDispenseTraceability: async (dispenseId) => {
-        const response = await axios.get(`${API_URL}/dispense/${dispenseId}/traceability`, getConfig());
+        const response = await axios.get(`${PHARMACY_URL}/dispense/${dispenseId}/traceability`, getConfig());
         return response.data;
     },
 
@@ -91,7 +92,7 @@ const pharmacyService = {
 
     // Check drug interactions for medicine list
     checkInteractions: async (medicineIds, patientId) => {
-        const response = await axios.post(`${API_URL}/check-interactions`, {
+        const response = await axios.post(`${PHARMACY_URL}/check-interactions`, {
             medicineIds,
             patientId
         }, getConfig());
@@ -101,7 +102,7 @@ const pharmacyService = {
     // Validate prescription safety
     validatePrescriptionSafety: async (prescriptionId) => {
         const response = await axios.post(
-            `${API_URL}/validate-prescription/${prescriptionId}`,
+            `${PHARMACY_URL}/validate-prescription/${prescriptionId}`,
             {},
             getConfig()
         );
@@ -111,7 +112,7 @@ const pharmacyService = {
     // Record interaction override (doctor only)
     overrideInteraction: async (prescriptionId, medicineIndex, overrideReason) => {
         const response = await axios.post(
-            `${API_URL}/override-interaction/${prescriptionId}`,
+            `${PHARMACY_URL}/override-interaction/${prescriptionId}`,
             { medicineIndex, overrideReason },
             getConfig()
         );
@@ -120,7 +121,7 @@ const pharmacyService = {
 
     // Pre-dispense comprehensive check
     preDispenseCheck: async (prescriptionId, selectedBatches) => {
-        const response = await axios.post(`${API_URL}/pre-dispense-check`, {
+        const response = await axios.post(`${PHARMACY_URL}/pre-dispense-check`, {
             prescriptionId,
             selectedBatches
         }, getConfig());
@@ -134,7 +135,7 @@ const pharmacyService = {
     // Get recalls (with optional status filter)
     getRecalls: async (status = '') => {
         const params = status && status !== 'all' ? { status } : {};
-        const response = await axios.get(`${API_URL}/recalls`, {
+        const response = await axios.get(`${PHARMACY_URL}/recalls`, {
             ...getConfig(),
             params
         });
@@ -143,31 +144,31 @@ const pharmacyService = {
 
     // Get single recall
     getRecallById: async (recallId) => {
-        const response = await axios.get(`${API_URL}/recalls/${recallId}`, getConfig());
+        const response = await axios.get(`${PHARMACY_URL}/recalls/${recallId}`, getConfig());
         return response.data;
     },
 
     // Initiate recall
     initiateRecall: async (data) => {
-        const response = await axios.post(`${API_URL}/recalls`, data, getConfig());
+        const response = await axios.post(`${PHARMACY_URL}/recalls`, data, getConfig());
         return response.data;
     },
 
     // Get affected patients for recall
     getAffectedPatients: async (recallId) => {
-        const response = await axios.get(`${API_URL}/recalls/${recallId}/affected-patients`, getConfig());
+        const response = await axios.get(`${PHARMACY_URL}/recalls/${recallId}/affected-patients`, getConfig());
         return response.data;
     },
 
     // Send recall notifications
     notifyRecallPatients: async (recallId) => {
-        const response = await axios.post(`${API_URL}/recalls/${recallId}/notify`, {}, getConfig());
+        const response = await axios.post(`${PHARMACY_URL}/recalls/${recallId}/notify`, {}, getConfig());
         return response.data;
     },
 
     // Resolve recall
     resolveRecall: async (recallId, resolutionNotes) => {
-        const response = await axios.post(`${API_URL}/recalls/${recallId}/resolve`, {
+        const response = await axios.post(`${PHARMACY_URL}/recalls/${recallId}/resolve`, {
             resolutionNotes
         }, getConfig());
         return response.data;
@@ -179,7 +180,7 @@ const pharmacyService = {
 
     // Get all interactions
     getDrugInteractions: async (severity = '', drug = '') => {
-        const response = await axios.get(`${API_URL}/interactions`, {
+        const response = await axios.get(`${PHARMACY_URL}/interactions`, {
             ...getConfig(),
             params: { severity, drug }
         });
@@ -188,7 +189,7 @@ const pharmacyService = {
 
     // Add new interaction
     addDrugInteraction: async (data) => {
-        const response = await axios.post(`${API_URL}/interactions`, data, getConfig());
+        const response = await axios.post(`${PHARMACY_URL}/interactions`, data, getConfig());
         return response.data;
     },
 };

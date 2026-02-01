@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
-const API_URL = 'http://localhost:5001/api/v1/patients/';
+const PATIENTS_URL = `${API_URL}/patients/`;
 
 const getConfig = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -15,37 +16,37 @@ const getConfig = () => {
 
 // Get all patients
 const getPatients = async () => {
-    const response = await axios.get(API_URL, getConfig());
+    const response = await axios.get(PATIENTS_URL, getConfig());
     return response.data.data;
 };
 
 // Create new patient
 const createPatient = async (patientData) => {
-    const response = await axios.post(API_URL, patientData, getConfig());
+    const response = await axios.post(PATIENTS_URL, patientData, getConfig());
     return response.data.data;
 };
 
 // Search patients
 const searchPatients = async (query) => {
-    const response = await axios.get(`${API_URL}search?query=${query}`, getConfig());
+    const response = await axios.get(`${PATIENTS_URL}search?query=${query}`, getConfig());
     return response.data;
 };
 
 // Get single patient
 const getPatient = async (id) => {
-    const response = await axios.get(API_URL + id, getConfig());
+    const response = await axios.get(PATIENTS_URL + id, getConfig());
     return response.data.data;
 };
 
 // Get patient history (Timeline)
 const getPatientHistory = async (id) => {
-    const response = await axios.get(API_URL + id + '/history', getConfig());
+    const response = await axios.get(PATIENTS_URL + id + '/history', getConfig());
     return response.data.data;
 };
 
 // Get patient lab results
 const getPatientLabResults = async (patientId) => {
-    const response = await axios.get(`http://localhost:5001/api/v1/lab/orders?patient=${patientId}`, getConfig());
+    const response = await axios.get(`${API_URL}/lab/orders?patient=${patientId}`, getConfig());
     return response.data.data;
 };
 

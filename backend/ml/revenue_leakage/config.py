@@ -13,10 +13,10 @@ load_dotenv()
 class Config:
     """Configuration class for Revenue Leakage Service"""
     
-    # Flask Configuration
-    FLASK_HOST = os.getenv('FLASK_HOST', '0.0.0.0')
-    FLASK_PORT = int(os.getenv('FLASK_PORT', 5001))
-    FLASK_DEBUG = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
+    # Uvicorn/FastAPI Configuration
+    UVICORN_HOST = os.getenv('UVICORN_HOST', os.getenv('FLASK_HOST', '0.0.0.0'))
+    UVICORN_PORT = int(os.getenv('UVICORN_PORT', os.getenv('FLASK_PORT', 5001)))
+    UVICORN_RELOAD = os.getenv('UVICORN_RELOAD', os.getenv('FLASK_DEBUG', 'False')).lower() == 'true'
     
     # MongoDB Configuration
     MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/hospital_his')
