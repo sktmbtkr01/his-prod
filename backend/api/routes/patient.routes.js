@@ -37,6 +37,13 @@ router.post('/scan-id',
 );
 
 /**
+ * @route   GET /api/patients/ocr-health
+ * @desc    Check status of AI OCR service
+ * @access  Public (or authenticated if preferred)
+ */
+router.get('/ocr-health', patientController.checkOcrStatus);
+
+/**
  * @route   POST /api/patients
  * @desc    Register a new patient
  */

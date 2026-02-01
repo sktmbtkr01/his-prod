@@ -52,6 +52,19 @@ exports.scanIdCard = asyncHandler(async (req, res, next) => {
         ));
     }
 });
+
+/**
+ * @desc    Check OCR service health
+ * @route   GET /api/patients/ocr-health
+ * @access  Public
+ */
+exports.checkOcrStatus = asyncHandler(async (req, res, next) => {
+    const status = await aiOcrService.getStatus();
+    res.status(200).json({
+        success: true,
+        data: status
+    });
+});
 const fs = require('fs');
 const path = require('path');
 const logger = require('../utils/logger');

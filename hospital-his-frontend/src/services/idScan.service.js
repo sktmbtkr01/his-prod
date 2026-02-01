@@ -78,11 +78,11 @@ const scanIdCard = async (imageFile) => {
  */
 const checkServiceAvailability = async () => {
     try {
-        const response = await axios.get(`${OCR_BASE_URL}/health`, {
-            timeout: 3000
-        });
-        return response.data.status === 'healthy';
-    } catch {
+        // Call backend proxy which talks to internal OCR service
+        const response = await axios.get(`${PATIENTS_URL}ocr-health`, getConfig());
+        return response.data.success && response.data.data.available;
+    } catch (error) {
+        console.warn('OCR Service Health Check Failed:', error.message);
         return false;
     }
 };
