@@ -1,3 +1,6 @@
+# ML Services for HIS
+# Lightweight requirements for HF Spaces
+
 fastapi>=0.104.1
 uvicorn[standard]>=0.24.0
 pydantic>=2.5.0
@@ -7,6 +10,4 @@ scikit-learn>=1.4.0
 pymongo>=4.6.0
 python-dotenv>=1.0.0
 joblib>=1.3.0
-prophet>=1.1.5
 statsmodels>=0.14.1
-matplotlib>=3.8.0
