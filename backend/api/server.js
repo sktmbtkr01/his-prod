@@ -137,6 +137,34 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+// Diagnostic endpoint (Public) - Check dependencies and env vars
+app.get('/api/diagnose', async (req, res) => {
+    const axios = require('axios');
+    const ocrUrl = process.env.AI_OCR_SERVICE_URL || 'http://localhost:8000';
+    let ocrStatus = 'unknown';
+
+    try {
+        await axios.get(`${ocrUrl}/health`, { timeout: 2000 });
+        ocrStatus = 'connected';
+    } catch (e) {
+        ocrStatus = `failed: ${e.message}`;
+    }
+
+    res.status(200).json({
+        env: {
+            NODE_ENV: process.env.NODE_ENV,
+            HAS_MONGO_URI: !!process.env.MONGODB_URI,
+            HAS_GEMINI_KEY: !!process.env.GEMINI_API_KEY,
+            HAS_GOOGLE_KEY: !!process.env.GOOGLE_API_KEY,
+            HAS_OPENROUTER_KEY: !!process.env.OPENROUTER_API_KEY,
+            AI_OCR_URL: ocrUrl
+        },
+        services: {
+            ocr: ocrStatus
+        }
+    });
+});
+
 // API version prefix
 const API_PREFIX = '/api/v1';
 

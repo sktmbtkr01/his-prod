@@ -22,6 +22,13 @@ const upload = multer({
     }
 });
 
+/**
+ * @route   GET /api/patients/ocr-health
+ * @desc    Check status of AI OCR service
+ * @access  Public
+ */
+router.get('/ocr-health', patientController.checkOcrStatus);
+
 // All routes require authentication
 router.use(authenticate);
 
@@ -36,12 +43,7 @@ router.post('/scan-id',
     patientController.scanIdCard
 );
 
-/**
- * @route   GET /api/patients/ocr-health
- * @desc    Check status of AI OCR service
- * @access  Public (or authenticated if preferred)
- */
-router.get('/ocr-health', patientController.checkOcrStatus);
+// Duplicate route removed
 
 /**
  * @route   POST /api/patients
