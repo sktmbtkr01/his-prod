@@ -99,7 +99,7 @@ async def health_check():
     """Detailed health check"""
     return {
         "status": "healthy",
-        "model_loaded": get_donut_loader()._initialized,
+        "ocr_engine": "tesseract + gemini",
         "raw_upload_dir": str(UPLOAD_DIR_RAW),
         "masked_upload_dir": str(UPLOAD_DIR_MASKED)
     }
