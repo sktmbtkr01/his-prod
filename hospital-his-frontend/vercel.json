@@ -17,10 +17,5 @@
             "src": "/(.*)",
             "dest": "/index.html"
         }
-    ],
-    "env": {
-        "VITE_API_URL": "@his_api_url",
-        "VITE_OCR_URL": "@his_api_url",
-        "VITE_SOCKET_URL": "@his_api_url"
-    }
+    ]
 }
