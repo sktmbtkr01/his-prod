@@ -52,3 +52,11 @@ build/
 .idea/
 
 .env
+
+# Binary/trained data files (too large for HF spaces without LFS)
+*.traineddata
+*.pkl
+*.h5
+*.pt
+*.pth
+*.onnx

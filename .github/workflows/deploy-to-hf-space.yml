@@ -34,6 +34,14 @@ jobs:
           # Clone only the backend folder and push to HF Space
           cd backend
           
+          # Remove binary files that HF rejects (too large without LFS)
+          find . -name "*.traineddata" -delete
+          find . -name "*.pkl" -delete
+          find . -name "*.h5" -delete
+          find . -name "*.pt" -delete
+          find . -name "*.pth" -delete
+          find . -name "*.onnx" -delete
+          
           # Initialize a new git repo for the backend
           rm -rf .git
           git init -b main
