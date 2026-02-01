@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'backend/**'
+      - '.github/workflows/deploy-to-hf-space.yml'
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions tab
 
 jobs:
   deploy:
