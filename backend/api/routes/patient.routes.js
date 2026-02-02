@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const patientController = require('../controllers/patient.controller');
+const opdController = require('../controllers/opd.controller');
 const { authenticate } = require('../middleware/auth.middleware');
 const { authorize } = require('../middleware/rbac.middleware');
 
@@ -43,12 +44,6 @@ router.post('/scan-id',
     patientController.scanIdCard
 );
 
-// Duplicate route removed
-
-/**
- * @route   POST /api/patients
- * @desc    Register a new patient
- */
 /**
  * @route   POST /api/patients
  * @desc    Register a new patient
@@ -104,5 +99,11 @@ router.get('/:id/history', patientController.getPatientHistory);
  */
 router.get('/:id/emr', patientController.getPatientEMR);
 
-module.exports = router;
+/**
+ * @route   GET /api/patients/:id/risk-history
+ * @desc    Get patient risk history (delegates to OPD controller)
+ * @access  Doctor
+ */
+router.get('/:id/risk-history', authorize('doctor'), opdController.getPatientRiskHistory);
 
+module.exports = router;
