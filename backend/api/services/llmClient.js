@@ -79,7 +79,8 @@ const summarizeWithOpenRouter = async (extractedText) => {
  * Gemini Implementation (Fallback)
  */
 const summarizeWithGemini = async (extractedText) => {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    // Use Flash model for better reliability on free tier
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown formatting.";
 
     const result = await model.generateContent(prompt);

@@ -1,30 +1,27 @@
 # ⏸️ Resume Context: HIS Production Deployment
 
 **Last Update:** Sunday, Feb 2nd, 2026 (Morning)
-**Status:** � Fixes applied, waiting for push & HF Space rebuild.
+**Status:** 🔧 Fixes applied, waiting for push & HF Space rebuild.
 
 ---
 
 ## 🔍 Where We Left Off
-User reported OCR and Summarizer errors. Frontend was timing out (fixed by Vercel redeploy).
+User reported OCR (low confidence) and Summarizer errors. Frontend was timing out (fixed by Vercel redeploy).
 
 ### Root Causes Found & Fixed:
 
-#### 1. **Summarizer - Missing API Key Fallback** ✅ FIXED
-- `ai.service.js` only checked `GOOGLE_API_KEY` but HF Space had `GEMINI_API_KEY`
-- **Fix:** Added fallback: `GOOGLE_API_KEY || GEMINI_API_KEY`
+#### 1. **Summarizer - Wrong Model & Missing Fallback** ✅ FIXED
+- `llmClient.js` was using `gemini-1.5-pro` (fails on free tier/OpenRouter).
+- **Fix:** Switched to `gemini-2.0-flash` (faster, reliable).
+- `ai.service.js` updated to have API key fallback (though not used by this flow).
 
-#### 2. **OCR - IPv6 Connection Refused** ✅ FIXED
+#### 2. **OCR - IPv6 Connection Refused** ✅ FIXED & COMMITTED
 - Error was `ECONNREFUSED ::1:8000` (IPv6 localhost)
-- Node.js was resolving `localhost` to IPv6 first
-- **Fix:** Changed all `localhost:8000` to `127.0.0.1:8000` in:
-  - `aiOcr.service.js`
-  - `server.js`
-  - `config/config.js`
+- **Fix:** Changed all `localhost:8000` to `127.0.0.1:8000`.
 
-#### 3. **OCR - Missing GEMINI_API_KEY in Python** ✅ FIXED
-- Supervisor didn't pass env vars to Python OCR process
-- **Fix:** Updated `supervisor.conf` to pass `GEMINI_API_KEY` to Python
+#### 3. **OCR - Low Confidence (Missing API Key)** ✅ FIXED & COMMITTED
+- Supervisor didn't pass env vars to Python OCR process.
+- **Fix:** Updated `supervisor.conf` to pass `GEMINI_API_KEY`.
 
 ---
 
@@ -34,7 +31,7 @@ User reported OCR and Summarizer errors. Frontend was timing out (fixed by Verce
 ```bash
 cd HIS_Quasar
 git add -A
-git commit -m "fix: OCR and Summarizer issues - IPv6 fix, API key fallbacks"
+git commit -m "fix: switch summarizer to gemini-2.0-flash for reliability"
 git push origin main
 ```
 
@@ -45,35 +42,14 @@ git push origin main
 ### 3. Verify with Diagnostics
 Open: **`https://sktmbtkr-his-prod-backend.hf.space/api/diagnose`**
 
-**Expected:**
-```json
-{
-  "env": {
-    "HAS_GEMINI_KEY": true,
-    "HAS_GOOGLE_KEY": true or false (doesn't matter now)
-  },
-  "services": {
-    "ocr": "connected"  <-- CRITICAL
-  }
-}
-```
-
 ### 4. Test Features
-1. **"Scan ID"** - Should work now
-2. **"Summarize Lab Report"** - Should work now
+1. **"Scan ID"** - Should work with HIGH confidence now.
+2. **"Summarize Lab Report"** - Should work now (using Flash model).
 
 ---
 
-## 🛠️ Files Changed in this Session
-- `backend/api/services/ai.service.js` - Added API key fallback
-- `backend/api/services/aiOcr.service.js` - IPv4 fix
-- `backend/api/server.js` - IPv4 fix
-- `backend/api/config/config.js` - IPv4 fix  
-- `backend/supervisor.conf` - Pass GEMINI_API_KEY to Python
-
----
-
-## � Quick Links
-- **Frontend:** https://his-prod.vercel.app
-- **Backend Logs:** https://huggingface.co/spaces/sktmbtkr/his-prod-backend/logs
-- **Diagnostics:** https://sktmbtkr-his-prod-backend.hf.space/api/diagnose
+## 🛠️ Files Changed
+- `backend/api/services/llmClient.js` (Model switch)
+- `backend/api/services/ai.service.js` (Fallback added)
+- `backend/api/services/aiOcr.service.js` (IPv4 fix)
+- `backend/supervisor.conf` (Env var fix)
