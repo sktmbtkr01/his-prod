@@ -28,7 +28,7 @@ const RiskScoreChart = ({ appointmentId, patientId }) => {
             setLoading(true);
             console.log('🔍 Fetching risk history for patient:', patientId);
             const response = await axios.get(
-                `${API_URL}opd/patients/${patientId}/risk-history`,
+                `${API_URL}/opd/patients/${patientId}/risk-history`,
                 getConfig()
             );
             console.log('📊 Risk history response:', response.data);
