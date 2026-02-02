@@ -95,15 +95,15 @@ const summarizeWithOpenRouter = async (extractedText) => {
  * Gemini Implementation (Fallback)
  */
 const summarizeWithGemini = async (extractedText) => {
-    // Use gemini-1.5-flash - confirmed working on free tier
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    // Use gemini-pro - stable model that works with v1beta API
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown formatting.";
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
 
-    return parseResponse(text, "gemini-1.5-flash");
+    return parseResponse(text, "gemini-pro");
 };
 
 /**
