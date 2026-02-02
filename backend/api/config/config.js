@@ -21,7 +21,7 @@ const config = {
     // ML Services URLs (internal container ports)
     mlRevenueServiceUrl: process.env.ML_REVENUE_SERVICE_URL || 'http://localhost:5002',
     mlPredictServiceUrl: process.env.ML_PREDICT_SERVICE_URL || 'http://localhost:5003',
-    ocrServiceUrl: process.env.OCR_SERVICE_URL || 'http://localhost:8000',
+    ocrServiceUrl: process.env.OCR_SERVICE_URL || 'http://127.0.0.1:8000',
 
     // Email/SMTP Configuration
     smtp: {

@@ -7,8 +7,13 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const fs = require('fs');
 const path = require('path');
 
-// Initialize Gemini
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+// Initialize Gemini - support both GOOGLE_API_KEY and GEMINI_API_KEY
+const GEMINI_KEY = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+const genAI = GEMINI_KEY ? new GoogleGenerativeAI(GEMINI_KEY) : null;
+
+if (!genAI) {
+    console.warn('[AI Service] WARNING: No Gemini API key found (GOOGLE_API_KEY or GEMINI_API_KEY)');
+}
 
 /**
  * Extract text from PDF file
@@ -59,6 +64,10 @@ const extractTextFromPdf = async (filePath) => {
  */
 const generateLabSummary = async (reportText) => {
     try {
+        if (!genAI) {
+            throw new Error('AI service not configured - missing GOOGLE_API_KEY or GEMINI_API_KEY');
+        }
+
         const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
         const prompt = `You are a clinical lab report summarizer. Analyze this lab test report and provide a structured summary for a physician.

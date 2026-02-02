@@ -140,7 +140,7 @@ app.get('/api/health', (req, res) => {
 // Diagnostic endpoint (Public) - Check dependencies and env vars
 app.get('/api/diagnose', async (req, res) => {
     const axios = require('axios');
-    const ocrUrl = process.env.AI_OCR_SERVICE_URL || 'http://localhost:8000';
+    const ocrUrl = process.env.AI_OCR_SERVICE_URL || 'http://127.0.0.1:8000';
     let ocrStatus = 'unknown';
 
     try {
