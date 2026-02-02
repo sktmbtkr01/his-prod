@@ -158,6 +158,21 @@ def parse_name(text: str) -> Dict[str, str]:
             elif len(parts) == 1:
                 result["firstName"] = parts[0]
                 return result
+
+    # Fallback: Look for lines with 2-3 capitalized words (common in ID cards)
+    # Exclude common headers like "GOVERNMENT", "INDIA", "CARD", "MALE", "FEMALE"
+    ignore_words = {"GOVERNMENT", "INDIA", "INCOME", "TAX", "DEPARTMENT", "MALE", "FEMALE", "DOB", "YEAR", "BIRTH"}
+    lines = text.split('\n')
+    for line in lines:
+        words = line.strip().split()
+        if 2 <= len(words) <= 3:
+            # Check if likely a name (mostly alpha, not in ignore list)
+            if all(w.isalpha() and w.upper() not in ignore_words for w in words):
+                # Check for All Caps or Title Case
+                if line.isupper() or line.istitle():
+                    result["firstName"] = words[0]
+                    result["lastName"] = " ".join(words[1:])
+                    return result
     
     return result
 
