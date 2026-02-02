@@ -92,18 +92,48 @@ const summarizeWithOpenRouter = async (extractedText) => {
 };
 
 /**
- * Gemini Implementation (Fallback)
+ * Gemini Implementation (Fallback) - Using direct REST API
  */
 const summarizeWithGemini = async (extractedText) => {
-    // Use gemini-pro - stable model that works with v1beta API
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+    if (!apiKey) throw new Error('No Gemini API key configured');
+
     const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown formatting.";
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
+    // Try multiple model names in order of preference
+    const modelsToTry = ['gemini-1.5-flash', 'gemini-pro', 'gemini-1.0-pro'];
+    let lastError = null;
 
-    return parseResponse(text, "gemini-pro");
+    for (const modelName of modelsToTry) {
+        try {
+            console.log(`[LLM] Trying Gemini model: ${modelName}`);
+
+            // Use v1 API (not v1beta) for better stability
+            const url = `https://generativelanguage.googleapis.com/v1/models/${modelName}:generateContent?key=${apiKey}`;
+
+            const response = await axios.post(url, {
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: {
+                    temperature: 0.3,
+                    maxOutputTokens: 2000,
+                }
+            }, {
+                headers: { 'Content-Type': 'application/json' },
+                timeout: 30000
+            });
+
+            const text = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (!text) throw new Error('Empty response from Gemini');
+
+            console.log(`[LLM] Gemini ${modelName} succeeded`);
+            return parseResponse(text, modelName);
+        } catch (err) {
+            lastError = err.response?.data?.error?.message || err.message;
+            console.warn(`[LLM] Gemini ${modelName} failed: ${lastError}`);
+        }
+    }
+
+    throw new Error(`All Gemini models failed. Last error: ${lastError}`);
 };
 
 /**
