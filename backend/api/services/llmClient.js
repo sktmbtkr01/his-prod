@@ -1,25 +1,26 @@
 /**
  * LLM Client Service - Lab Report Summarization
- * Uses OpenRouter API with configurable model
- * Fallback: Google Gemini API
+ * Priority: Groq (fast, free) -> OpenRouter -> Gemini
  */
 
 const axios = require('axios');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-// OpenRouter Configuration
+// Groq Configuration (Primary - Fast & Free)
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const GROQ_MODEL = 'llama-3.3-70b-versatile'; // Best free model on Groq
+const GROQ_BASE_URL = 'https://api.groq.com/openai/v1/chat/completions';
+
+// OpenRouter Configuration (Fallback 1)
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'google/gemma-3-27b-it:free';
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
-// Google Gemini Configuration (Fallback)
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
-const genAI = GOOGLE_API_KEY ? new GoogleGenerativeAI(GOOGLE_API_KEY) : null;
+// Gemini Configuration (Fallback 2)
+const GEMINI_API_KEY = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
 
 /**
- * Summarize a lab report using OpenRouter LLM (with Gemini Fallback)
- * @param {string} extractedText - Raw text extracted from the PDF
- * @returns {Promise<Object>} - Structured summary JSON
+ * Summarize a lab report using LLM
+ * Tries: Groq -> OpenRouter -> Gemini
  */
 const summarizeLabReport = async (extractedText) => {
     // Validate input
@@ -27,43 +28,89 @@ const summarizeLabReport = async (extractedText) => {
         throw new Error(`Insufficient text for summarization (${extractedText?.length || 0} chars). Please ensure PDF text was extracted.`);
     }
 
-    let openRouterError = null;
-    let geminiError = null;
+    const errors = {};
 
-    // Try OpenRouter first
-    try {
-        console.log(`[LLM] Attempting summary with OpenRouter (${OPENROUTER_MODEL})...`);
-        console.log(`[LLM] Text length: ${extractedText.length} chars`);
-        return await summarizeWithOpenRouter(extractedText);
-    } catch (err) {
-        openRouterError = err.message;
-        console.warn(`[LLM] OpenRouter failed: ${err.message}. Attempting fallback to Gemini...`);
-    }
-
-    // Fallback to Gemini
-    if (genAI) {
+    // Try Groq first (fastest, most reliable)
+    if (GROQ_API_KEY) {
         try {
-            console.log('[LLM] Trying Gemini fallback...');
-            return await summarizeWithGemini(extractedText);
+            console.log(`[LLM] Trying Groq (${GROQ_MODEL})...`);
+            return await summarizeWithGroq(extractedText);
         } catch (err) {
-            geminiError = err.message;
-            console.error(`[LLM] Gemini fallback failed: ${err.message}`);
+            errors.groq = err.message;
+            console.warn(`[LLM] Groq failed: ${err.message}`);
         }
     } else {
-        geminiError = 'No API key configured';
-        console.warn('[LLM] No Google API Key for fallback.');
+        errors.groq = 'No API key';
+        console.log('[LLM] Groq API key not configured, skipping...');
     }
 
-    // Both failed - provide detailed error
-    throw new Error(`All LLM services failed. OpenRouter: ${openRouterError}. Gemini: ${geminiError}`);
+    // Try OpenRouter
+    if (OPENROUTER_API_KEY) {
+        try {
+            console.log(`[LLM] Trying OpenRouter (${OPENROUTER_MODEL})...`);
+            return await summarizeWithOpenRouter(extractedText);
+        } catch (err) {
+            errors.openRouter = err.message;
+            console.warn(`[LLM] OpenRouter failed: ${err.message}`);
+        }
+    } else {
+        errors.openRouter = 'No API key';
+    }
+
+    // Try Gemini
+    if (GEMINI_API_KEY) {
+        try {
+            console.log('[LLM] Trying Gemini...');
+            return await summarizeWithGemini(extractedText);
+        } catch (err) {
+            errors.gemini = err.message;
+            console.warn(`[LLM] Gemini failed: ${err.message}`);
+        }
+    } else {
+        errors.gemini = 'No API key';
+    }
+
+    // All failed
+    throw new Error(`All LLM services failed. Groq: ${errors.groq}. OpenRouter: ${errors.openRouter}. Gemini: ${errors.gemini}`);
 };
 
 /**
- * OpenRouter Implementation
+ * Groq Implementation (Primary)
+ */
+const summarizeWithGroq = async (extractedText) => {
+    const prompt = getPrompt(extractedText);
+
+    const response = await axios.post(
+        GROQ_BASE_URL,
+        {
+            model: GROQ_MODEL,
+            messages: [
+                { role: 'system', content: 'You are a clinical lab report analyzer. Always respond with valid JSON only.' },
+                { role: 'user', content: prompt }
+            ],
+            temperature: 0.3,
+            max_tokens: 2000,
+            response_format: { type: "json_object" }
+        },
+        {
+            headers: {
+                'Authorization': `Bearer ${GROQ_API_KEY}`,
+                'Content-Type': 'application/json',
+            },
+            timeout: 30000
+        }
+    );
+
+    const content = response.data.choices?.[0]?.message?.content;
+    if (!content) throw new Error('Empty response from Groq');
+
+    return parseResponse(content, GROQ_MODEL);
+};
+
+/**
+ * OpenRouter Implementation (Fallback 1)
  */
 const summarizeWithOpenRouter = async (extractedText) => {
-    if (!OPENROUTER_API_KEY) throw new Error('OpenRouter API Key missing');
-
     const prompt = getPrompt(extractedText);
 
     const response = await axios.post(
@@ -73,15 +120,15 @@ const summarizeWithOpenRouter = async (extractedText) => {
             messages: [{ role: 'user', content: prompt }],
             temperature: 0.3,
             max_tokens: 2000,
-            response_format: { type: "json_object" } // Hints for JSON
         },
         {
             headers: {
                 'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
                 'Content-Type': 'application/json',
-                'HTTP-Referer': 'http://localhost:5001',
+                'HTTP-Referer': 'https://his-prod.vercel.app',
                 'X-Title': 'Hospital HIS Lab Report Summarizer',
             },
+            timeout: 30000
         }
     );
 
@@ -92,48 +139,29 @@ const summarizeWithOpenRouter = async (extractedText) => {
 };
 
 /**
- * Gemini Implementation (Fallback) - Using direct REST API
+ * Gemini Implementation (Fallback 2)
  */
 const summarizeWithGemini = async (extractedText) => {
-    const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
-    if (!apiKey) throw new Error('No Gemini API key configured');
+    const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown.";
 
-    const prompt = getPrompt(extractedText) + "\n\nIMPORTANT: Return ONLY valid JSON. No markdown formatting.";
+    // Try v1 API with gemini-1.5-flash
+    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-    // Try multiple model names in order of preference
-    const modelsToTry = ['gemini-1.5-flash', 'gemini-pro', 'gemini-1.0-pro'];
-    let lastError = null;
-
-    for (const modelName of modelsToTry) {
-        try {
-            console.log(`[LLM] Trying Gemini model: ${modelName}`);
-
-            // Use v1 API (not v1beta) for better stability
-            const url = `https://generativelanguage.googleapis.com/v1/models/${modelName}:generateContent?key=${apiKey}`;
-
-            const response = await axios.post(url, {
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: {
-                    temperature: 0.3,
-                    maxOutputTokens: 2000,
-                }
-            }, {
-                headers: { 'Content-Type': 'application/json' },
-                timeout: 30000
-            });
-
-            const text = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (!text) throw new Error('Empty response from Gemini');
-
-            console.log(`[LLM] Gemini ${modelName} succeeded`);
-            return parseResponse(text, modelName);
-        } catch (err) {
-            lastError = err.response?.data?.error?.message || err.message;
-            console.warn(`[LLM] Gemini ${modelName} failed: ${lastError}`);
+    const response = await axios.post(url, {
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 2000,
         }
-    }
+    }, {
+        headers: { 'Content-Type': 'application/json' },
+        timeout: 30000
+    });
 
-    throw new Error(`All Gemini models failed. Last error: ${lastError}`);
+    const text = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!text) throw new Error('Empty response from Gemini');
+
+    return parseResponse(text, 'gemini-1.5-flash');
 };
 
 /**
@@ -141,6 +169,7 @@ const summarizeWithGemini = async (extractedText) => {
  */
 const parseResponse = (content, modelName) => {
     let jsonStr = content.trim();
+
     // Remove markdown code blocks if present
     if (jsonStr.startsWith('```json')) jsonStr = jsonStr.slice(7);
     if (jsonStr.startsWith('```')) jsonStr = jsonStr.slice(3);
@@ -153,7 +182,7 @@ const parseResponse = (content, modelName) => {
         console.log(`[LLM] Summary generated successfully using ${modelName}`);
         return summary;
     } catch (e) {
-        console.error("[LLM] Failed to parse JSON response:", jsonStr);
+        console.error("[LLM] Failed to parse JSON response:", jsonStr.substring(0, 200));
         throw new Error("Invalid JSON response from AI");
     }
 };
@@ -162,6 +191,7 @@ const parseResponse = (content, modelName) => {
  * Helper: Construct Prompt
  */
 const getPrompt = (text) => `You are a clinical lab report analyzer helping physicians.
+
 LAB DATA:
 ${text}
 
