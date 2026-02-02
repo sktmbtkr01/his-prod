@@ -61,7 +61,8 @@ const extractIdDetails = async (imageBuffer, filename, mimetype) => {
                 lastName: response.data.lastName || '',
                 dateOfBirth: response.data.dateOfBirth || null,
                 gender: response.data.gender || null,
-                phone: response.data.phone || null,
+                // Sanitize phone number: remove non-digits, keep last 10
+                phone: response.data.phone ? response.data.phone.replace(/\D/g, '').slice(-10) : null,
                 maskedAadhaar: response.data.maskedAadhaar || null,
                 maskedImageUrl: response.data.maskedImageUrl
                     ? `${AI_OCR_SERVICE_URL}${response.data.maskedImageUrl}`
