@@ -22,24 +22,40 @@ const genAI = GOOGLE_API_KEY ? new GoogleGenerativeAI(GOOGLE_API_KEY) : null;
  * @returns {Promise<Object>} - Structured summary JSON
  */
 const summarizeLabReport = async (extractedText) => {
+    // Validate input
+    if (!extractedText || extractedText.length < 20) {
+        throw new Error(`Insufficient text for summarization (${extractedText?.length || 0} chars). Please ensure PDF text was extracted.`);
+    }
+
+    let openRouterError = null;
+    let geminiError = null;
+
+    // Try OpenRouter first
     try {
         console.log(`[LLM] Attempting summary with OpenRouter (${OPENROUTER_MODEL})...`);
+        console.log(`[LLM] Text length: ${extractedText.length} chars`);
         return await summarizeWithOpenRouter(extractedText);
-    } catch (openRouterError) {
-        console.warn(`[LLM] OpenRouter failed: ${openRouterError.message}. Attempting fallback to Gemini...`);
-
-        if (genAI) {
-            try {
-                return await summarizeWithGemini(extractedText);
-            } catch (geminiError) {
-                console.error(`[LLM] Gemini fallback failed: ${geminiError.message}`);
-                throw new Error('All LLM services failed to generate summary.');
-            }
-        } else {
-            console.warn('[LLM] No Google API Key for fallback. Returning validation error.');
-            throw new Error('AI Service unavailable (OpenRouter failed and Google Key missing).');
-        }
+    } catch (err) {
+        openRouterError = err.message;
+        console.warn(`[LLM] OpenRouter failed: ${err.message}. Attempting fallback to Gemini...`);
     }
+
+    // Fallback to Gemini
+    if (genAI) {
+        try {
+            console.log('[LLM] Trying Gemini fallback...');
+            return await summarizeWithGemini(extractedText);
+        } catch (err) {
+            geminiError = err.message;
+            console.error(`[LLM] Gemini fallback failed: ${err.message}`);
+        }
+    } else {
+        geminiError = 'No API key configured';
+        console.warn('[LLM] No Google API Key for fallback.');
+    }
+
+    // Both failed - provide detailed error
+    throw new Error(`All LLM services failed. OpenRouter: ${openRouterError}. Gemini: ${geminiError}`);
 };
 
 /**
