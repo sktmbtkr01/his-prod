@@ -6,7 +6,28 @@
 
 ---
 
-## 📁 Project Structure (HIS Quasar)
+## � Overview / Index
+
+This document covers the complete deployment process for a full-stack application:
+
+| Phase | Description | Platform |
+|-------|-------------|----------|
+| **[Phase 1](#phase-1-backend-preparation)** | Backend Preparation | Local |
+| **[Phase 2](#phase-2-deploy-backend-to-hugging-face-spaces)** | Deploy Backend via GitHub Actions | Hugging Face Spaces |
+| **[Phase 3](#phase-3-deploy-frontend-to-vercel)** | Deploy Frontend | Vercel |
+| **[Phase 4](#phase-4-verification)** | Verification & Testing | All |
+
+### Quick Jump Links:
+- [📁 Project Structure](#-project-structure-his-quasar)
+- [🎯 Deployment Stack](#-deployment-stack)
+- [📝 Exact Steps We Followed](#-exact-steps-we-followed)
+- [⚠️ Common Issues & Solutions](#️-common-issues-we-encountered)
+- [📋 Quick Checklist](#-quick-checklist-for-future-deployments)
+- [🔑 Default Credentials](#-default-credentials-from-database-seed)
+
+---
+
+## �📁 Project Structure (HIS Quasar)
 
 This is how my HIS project is structured:
 
@@ -258,6 +279,8 @@ npm error 'npm ci' can only install packages when your package.json and package-
 
 ### PHASE 2: Deploy Backend to Hugging Face Spaces
 
+> **Deployment Method**: We use a **GitHub Action** to automatically deploy the `backend/` folder directly to Hugging Face Spaces whenever changes are pushed to the main branch.
+
 #### Step 2.1: Ensure Dockerfile exists
 
 **Location**: `backend/api/Dockerfile`
@@ -293,9 +316,62 @@ CMD ["node", "server.js"]
 
 ---
 
-#### Step 2.3: Set Environment Variables in HF Spaces
+#### Step 2.3: Set Up GitHub Action for Deployment
 
-Go to Space Settings → Repository Secrets:
+**Create file**: `.github/workflows/deploy-backend-hf.yml`
+
+This action deploys the `backend/api/` folder directly to your Hugging Face Space:
+
+```yaml
+name: Deploy Backend to HF Spaces
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/api/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Push to HF Space
+        uses: JacobLinCool/huggingface-sync@v1
+        with:
+          github: ${{ github.repository }}
+          huggingface: ${{ secrets.HF_SPACE_PATH }}  # e.g., "username/space-name"
+          token: ${{ secrets.HF_TOKEN }}
+          directory: backend/api  # Deploy only the backend folder
+```
+
+**Alternative**: You can also use the official `huggingface/push-to-hub-action`.
+
+---
+
+#### Step 2.4: Set GitHub Repository Secrets
+
+Go to your GitHub Repository → Settings → Secrets and variables → Actions → New repository secret:
+
+| Secret Name | Value |
+|-------------|-------|
+| `HF_TOKEN` | Your Hugging Face access token (with write permissions) |
+| `HF_SPACE_PATH` | Your HF Space path (e.g., `username/his-prod-backend`) |
+
+**How to get HF Token**:
+1. Go to huggingface.co → Settings → Access Tokens
+2. Create a new token with **Write** permissions
+3. Copy and save as `HF_TOKEN` secret in GitHub
+
+---
+
+#### Step 2.5: Set Environment Variables in HF Spaces
+
+Go to HF Space Settings → Repository Secrets:
 
 | Variable | Value |
 |----------|-------|
@@ -307,18 +383,11 @@ Go to Space Settings → Repository Secrets:
 
 ---
 
-#### Step 2.4: Push to HF Spaces
+#### Step 2.6: Deploy
 
-Option A - Push entire repo then it builds from Dockerfile path:
-```bash
-git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE
-git push hf main
-```
+**Automatic**: Push any changes to `backend/api/` on the `main` branch → GitHub Action triggers automatically → Backend deploys to HF Spaces
 
-Option B - Push just backend folder:
-```bash
-git subtree push --prefix=backend/api hf main
-```
+**Manual**: Go to GitHub → Actions → "Deploy Backend to HF Spaces" → Run workflow
 
 ---
 
