@@ -60,6 +60,10 @@ const medicineRoutes = require('./routes/medicine.routes');
 const labReportRoutes = require('./routes/labReport.routes');
 const onboardingRoutes = require('./routes/onboarding.routes');
 
+// Swagger documentation
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger.config');
+
 // Initialize Express app
 const app = express();
 const httpServer = createServer(app);
@@ -135,12 +139,31 @@ app.get('/', (req, res) => {
         version: '1.0.0',
         environment: config.nodeEnv,
         endpoints: {
+            docs: '/docs',
             health: '/api/health',
             diagnose: '/api/diagnose',
             api: '/api/v1/*'
         },
         timestamp: new Date().toISOString()
     });
+});
+
+// Swagger API Documentation
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    customCss: '.swagger-ui .topbar { display: none }',
+    customSiteTitle: 'HIS API Documentation',
+    swaggerOptions: {
+        persistAuthorization: true,
+        displayRequestDuration: true,
+        docExpansion: 'none',
+        filter: true
+    }
+}));
+
+// Serve swagger spec as JSON
+app.get('/api-docs.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
 });
 
 // Health check endpoint
